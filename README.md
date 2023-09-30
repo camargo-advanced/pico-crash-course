@@ -19,7 +19,7 @@ Ao longo deste curso, você aprenderá tudo sobre o Raspberry Pi Pico, mas as ha
 ## Conhecendo o Raspberry Pi Pico
 O Raspberry Pi Pico é um dispositivo muito compacto. Apesar disso, ele inclui uma série de recursos, todos acessíveis pelos pinos ao redor da borda da placa. Se você observar as bordas mais longas, verá seções de cor dourada. Esses são os pinos que fornecem ao microcontrolador RP2040 conexões com o mundo exterior - conhecidos como entrada/saída (I/O).
 
-![Raspberry Pi Pico visto de cima.](images/pico-top.png "Raspberry Pi Pico visto de cima")
+![Raspberry Pi Pico visto de cima](images/pico-top.png "Raspberry Pi Pico visto de cima")
 
 O chip no centro do seu Pico é um microcontrolador RP2040. Este é um circuito integrado personalizado (CI), projetado e construído especificamente pelos engenheiros para dar poder computacional ao seu Pico e outros dispositivos baseados em microcontrolador. Se você olhar para ele contra a luz, verá um logotipo da Raspberry Pi gravado na parte superior do chip, juntamente com uma série de letras e números que permitem aos engenheiros rastrear quando e onde o chip foi fabricado.
 
@@ -57,7 +57,7 @@ A seguir você irá instalar o Thonny, irá se conectar ao seu Raspberry Pi Pico
 ## Instalando o Thonny Python IDE
 Você pode instalar a versão mais recente do Thonny IDE no Windows, macOS e Linux, ou seja, o Thonny está presente em todas as plataformas. Em um navegador da web, acesse [thonny.org](https://thonny.org/). No canto superior direito da janela do navegador, você verá os links de download para Windows e macOS, além das instruções para Linux. Siga as instruções apresentadas de acordo com o seu sistema operacional para instalar o Thonny.
 
-![Links com instruções de instalação do Thonny](images/pico-top.png "Raspberry Pi Pico visto de cima")
+![Links com instruções de instalação do Thonny](images/links-thonny.png "Links com instruções de instalação do Thonny")
 
 
 
