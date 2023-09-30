@@ -78,9 +78,9 @@ Não é necessário entender esse código nesse momento. Utilizamos esse procedi
 
 ## Adicione o firmware MicroPython
 Se você nunca utilizou o MicroPython no seu Raspberry Pi Pico, será necessário adicionar o firmware do MicroPython.
-Encontre o botão BOOTSEL no seu Raspberry Pi Pico.
+Encontre o botão `BOOTSEL` no seu Raspberry Pi Pico.
 
-![Localização do botão BOOTSEL](images/thonny-bootsel.png "Localização do botão BOOTSEL")
+![Localização do botão BOOTSEL](images/pico-bootsel.png "Localização do botão BOOTSEL")
 
 Pressione o botão `BOOTSEL` e mantenha-o pressionado enquanto conecta a outra ponta do cabo micro USB ao seu computador. Uma imagem de um Raspberry Pi é mostrada a seguir, mas o mesmo se aplica a qualquer computador.
 
