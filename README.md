@@ -59,5 +59,10 @@ Você pode instalar a versão mais recente do Thonny IDE no Windows, macOS e Lin
 
 ![Links com instruções de instalação do Thonny](images/links-thonny.png "Links com instruções de instalação do Thonny")
 
+O Thonny Python IDE vem pré-instalado com o suporte para MicroPython. Portanto, quando você instalar o Thonny, já terá a capacidade de programar em MicroPython sem a necessidade de instalar nenhum pacote adicional. 
+
+Agora abra o Thony IDE a partir do seu iniciador de aplicativos e você será apresentado sua a tela principal. 
+
+![Tela principal do Thonny](images/thonny-main-screen.png "Tela principal do Thonny")
 
 
