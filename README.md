@@ -33,6 +33,10 @@ Na parte inferior do seu Pico, há três pequenos pads dourados com a palavra 'D
 
 Vire o seu Pico e você verá que a parte inferior tem escritos rotulando cada um dos pinos com sua função principal. Você verá coisas como 'GP0' e 'GP1', 'GND', 'RUN' e '3V3'. Se você esquecer qual pino é qual, esses rótulos irão te ajudar. Mas você não poderá vê-los quando o Pico estiver inserido em uma placa de prototipagem (breadboard) e por isso você encontrará diagramas completos de pinagem impressos neste material para facilitar a referência.
 
+Se você tiver uma placa de prototipagem, insira o seu Raspberry Pi Pico na placa. Posicione-o de forma que os dois conectores estejam separados pelo vão no meio conforme a figura a seguir.
+
+![Pico inserido na placa de prototipagem](images/pico-breadboaard.png "Pico inserido na placa de prototipagem")
+
 ## Programando com MicroPython
 Desde o seu lançamento em 1991, a linguagem de programação Python, nomeada após o famosa série de televisão Monty Python, em vez da serpente, cresceu para se tornar uma das mais populares no mundo. Sua popularidade, no entanto, não significa que não haja melhorias que possam ser feitas especialmente se você estiver trabalhando com um microcontrolador. 
 
@@ -102,7 +106,7 @@ Clique na versão do Python e escolha 'MicroPython (Raspberry Pi Pico)'.
 
 Se você não vê esta opção, verifique se você conectou o seu Raspberry Pi Pico corretamente. Se tudo correr bem, uma caixa de diálogo irá aparecer para instalar a versão mais recente do firmware MicroPython no seu Raspberry Pi Pico.
 
-![Tela de instalação de firmware](images/install-firmware.png "Tela de instalação de firmware")
+![Tela de instalação de firmware](images/install-firmware-screen.png "Tela de instalação de firmware")
 
 Clique no botão `Install` para gravar o firmware no seu Raspberry Pi Pico.
 Aguarde a instalação ser concluída e clique em `Close`.
