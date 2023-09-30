@@ -52,6 +52,7 @@ Algumas das características do Thonny incluem:
 * Suporte a placas microcontroladoras: Thonny é compatível com microcontroladores como o Raspberry Pi Pico, o que facilita a programação de dispositivos embarcados.
 
 No geral, o Thonny é uma escolha popular para iniciantes em Python devido à sua interface amigável e às ferramentas úteis que oferece para facilitar o aprendizado da linguagem de programação e de desevolvimento de sistemas computação física.
+
 A seguir você irá instalar o Thonny, irá se conectar ao seu Raspberry Pi Pico e também executar um código Python simples usando o Shell.
 
 ## Instalando o Thonny Python IDE
@@ -64,5 +65,26 @@ O Thonny Python IDE vem pré-instalado com o suporte para MicroPython. Portanto,
 Agora abra o Thony IDE a partir do seu iniciador de aplicativos e você será apresentado sua a tela principal. 
 
 ![Tela principal do Thonny](images/thonny-main-screen.png "Tela principal do Thonny")
+
+Você pode usar o Thonny para escrever código Python padrão. Digite o seguinte na janela principal e depois clique no botão Run.
+
+```
+print('Hello World!')
+```
+
+Não é necessário entender esse código nesse momento. Utilizamos esse procedimento apenas para testar o seu ambiente e garantir que a instalação do Thonny tenha sido bem sucedida. Caso não obtenha o resultado como na figura que segue, repita os procedimentos anteriores.
+
+![Hello World no Thonny](images/thonny-hello-world.png "Hello World no Thonny")
+
+## Adicione o firmware MicroPython
+Se você nunca utilizou o MicroPython no seu Raspberry Pi Pico, será necessário adicionar o firmware do MicroPython.
+Encontre o botão BOOTSEL no seu Raspberry Pi Pico.
+
+![Localização do botão BOOTSEL](images/thonny-bootsel.png "Localização do botão BOOTSEL")
+
+Pressione o botão `BOOTSEL` e mantenha-o pressionado enquanto conecta a outra ponta do cabo micro USB ao seu computador. Uma imagem de um Raspberry Pi é mostrada a seguir, mas o mesmo se aplica a qualquer computador.
+
+![Cabo USB sendo conectado ao seu computador](images/pico-usb-connection.png "Cabo USB sendo conectado ao seu computador")
+
 
 
