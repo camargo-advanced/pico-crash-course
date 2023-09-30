@@ -18,3 +18,5 @@ Ao longo deste curso, você aprenderá tudo sobre o Raspberry Pi Pico, mas as ha
 
 ## Conhecendo o Raspberry Pi Pico
 O Raspberry Pi Pico é um dispositivo muito compacto. Apesar disso, ele inclui uma série de recursos, todos acessíveis pelos pinos ao redor da borda da placa. A Figura 1-1 mostra o Raspberry Pi Pico visto de cima. Se você observar as bordas mais longas, verá seções de cor dourada. Esses são os pinos que fornecem ao microcontrolador RP2040 conexões com o mundo exterior - conhecidos como entrada/saída (I/O).
+
+![Raspberry Pi Pico visto de cima.](images/pico-top.png width="48")
