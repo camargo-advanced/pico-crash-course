@@ -12,12 +12,12 @@ O Raspberry Pi Pico é uma maravilha em miniatura, colocando a mesma tecnologia 
 
 O Raspberry Pi Pico é conhecido como uma placa de desenvolvimento de microcontrolador, o que significa simplesmente que é uma placa de circuito impresso que abriga um tipo especial de processador projetado para contato com o mundo físico: o microcontrolador. Do tamanho de um pedaço de goma de mascar, o Raspberry Pi Pico possui uma surpreendente quantidade de potência graças ao chip no centro da placa: um microcontrolador RP2040.
 
-O Raspberry Pi Pico não foi projetado para substituir o computador que você tem em casa, que pertence a uma classe diferente de dispositivo conhecido como computador pessoal (PC). Enquanto você pode usar o seu PC para jogar jogos, escrever histórias e navegar na web, o Raspberry Pi Pico foi projetado para projetos de computação física onde ele controla desde LEDs e botões até sensores, motores e até mesmo outros microcontroladores. 
+O Raspberry Pi Pico não foi projetado para substituir o computador que você tem em casa, que pertence a uma classe diferente de dispositivo conhecido como computador pessoal ou Personal Computer (PC) em inglês. Enquanto você pode usar o seu PC para jogar jogos, escrever histórias e navegar na web, o Raspberry Pi Pico foi projetado para projetos de computação física onde ele controla desde LEDs e botões até sensores, motores e até mesmo outros microcontroladores. 
 
-Ao longo deste curso, você aprenderá tudo sobre o Raspberry Pi Pico, mas as habilidades que você adquirir também se aplicarão a qualquer outra placa de desenvolvimento baseada no microcontrolador RP2040 - e até mesmo a outros dispositivos, contanto que sejam compatíveis com a linguagem de programação MicroPython.
+Ao longo deste curso, você aprenderá tudo sobre o Raspberry Pi Pico, mas as habilidades que você adquirir também se aplicarão a qualquer outra placa de desenvolvimento baseada no microcontrolador RP2040, e até mesmo a outros dispositivos, contanto que sejam compatíveis com a linguagem de programação MicroPython.
 
 ## Conhecendo o Raspberry Pi Pico
-O Raspberry Pi Pico é um dispositivo muito compacto. Apesar disso, ele inclui uma série de recursos, todos acessíveis pelos pinos ao redor da borda da placa. Se você observar as bordas mais longas, verá seções de cor dourada. Esses são os pinos que fornecem ao microcontrolador RP2040 conexões com o mundo exterior - conhecidos como entrada/saída (I/O).
+O Raspberry Pi Pico é um dispositivo muito compacto. Apesar disso, ele inclui uma série de recursos, todos acessíveis pelos pinos ao redor da borda da placa. Se você observar as bordas mais longas, verá seções de cor dourada. Esses são os pinos que fornecem ao microcontrolador RP2040 conexões com o mundo exterior, conhecidos como entrada/saída, ou Input/Output (I/O) em, inglês.
 
 ![Raspberry Pi Pico visto de cima](images/pico-top.png "Raspberry Pi Pico visto de cima")
 
@@ -25,16 +25,16 @@ O chip no centro do seu Pico é um microcontrolador RP2040. Este é um circuito 
 
 Na parte superior do seu Pico há uma porta micro USB. Ela fornece energia para o funcionamento do seu Pico e também permite que o Pico se comunique com o seu Raspberry Pi ou outro computador através da sua porta USB - é assim que você vai carregar seus programas no seu Pico. Se você segurar o seu Pico e olhar para a porta micro USB de frente, verá que ela tem a forma de ser mais estreita na parte inferior e mais larga na parte superior. Pegue um cabo micro USB e você verá que o conector é o mesmo.
 
-> Importante: O cabo micro USB só se encaixará na porta micro USB do seu Pico de uma maneira. Ao conectá-lo, certifique-se de alinhar os lados estreito e largo da maneira correta - ou você pode danificar o seu Pico ao tentar forçar o cabo micro USB na direção errada!
+> `Importante`: O cabo micro USB só se encaixará na porta micro USB do seu Pico de uma maneira. Ao conectá-lo, certifique-se de alinhar os lados estreito e largo da maneira correta - ou você pode danificar o seu Pico ao tentar forçar o cabo micro USB na direção errada!
 
-Logo abaixo da porta micro USB há um pequeno botão marcado como 'BOOTSEL'. 'BOOTSEL' é a abreviação de 'seleção de inicialização', que alterna o seu Pico entre dois modos de inicialização quando é ligado pela primeira vez. Você usará o botão de seleção de inicialização mais tarde, à medida que prepara o seu Pico para a programação com MicroPython.
+Logo abaixo da porta micro USB há um pequeno botão marcado como BOOTSEL. BOOTSEL é a abreviação de 'seleção de inicialização', que alterna o seu Pico entre dois modos de inicialização quando é ligado pela primeira vez. Você usará o botão de seleção de inicialização mais tarde, à medida que prepara o seu Pico para a programação com MicroPython.
 
 Na parte inferior do seu Pico, há três pequenos pads dourados com a palavra 'DEBUG' acima deles. Eles são projetados para depuração, ou seja, encontrar erros, em programas em execução no Pico, usando uma ferramenta especial chamada debugger. Você não fará depuração de código de programas neste curso, mas pode achá-lo útil à medida que escreve programas maiores e mais complicados.
 
 Vire o seu Pico e você verá que a parte inferior tem escritos rotulando cada um dos pinos com sua função principal. Você verá coisas como 'GP0' e 'GP1', 'GND', 'RUN' e '3V3'. Se você esquecer qual pino é qual, esses rótulos irão te ajudar. Mas você não poderá vê-los quando o Pico estiver inserido em uma placa de prototipagem (breadboard) e por isso você encontrará diagramas completos de pinagem impressos neste material para facilitar a referência.
 
 ## Programando com MicroPython
-Desde o seu lançamento em 1991, a linguagem de programação Python - nomeada após o famosa série de televisão Monty Python, em vez da serpente, cresceu para se tornar uma das mais populares no mundo. Sua popularidade, no entanto, não significa que não haja melhorias que possam ser feitas especialmente se você estiver trabalhando com um microcontrolador. 
+Desde o seu lançamento em 1991, a linguagem de programação Python, nomeada após o famosa série de televisão Monty Python, em vez da serpente, cresceu para se tornar uma das mais populares no mundo. Sua popularidade, no entanto, não significa que não haja melhorias que possam ser feitas especialmente se você estiver trabalhando com um microcontrolador. 
 
 A linguagem de programação Python foi desenvolvida para sistemas de computador como desktops, laptops e servidores. Placas de microcontrolador como o Raspberry Pi Pico são menores, mais simples e têm consideravelmente menos memória, o que significa que não conseguem executar a mesma linguagem Python que seus equivalentes maiores. 
 
@@ -44,12 +44,12 @@ A linguagem de programação Python foi desenvolvida para sistemas de computador
 O Thonny é um ambiente de desenvolvimento integrado (IDE) para a linguagem de programação Python. Ele é projetado especialmente para iniciantes e estudantes de programação. O Thonny oferece uma interface de usuário simples e intuitiva, o que o torna mais fácil de usar para aqueles que estão aprendendo a programar em Python.
 
 Algumas das características do Thonny incluem:
-* Editor de código: possui um editor de código com destaque de sintaxe, sugestões de código e outras funcionalidades para facilitar a escrita de código Python.
-* Shell integrado: possui um shell Python integrado, permitindo que os usuários testem rapidamente pequenos trechos de código sem a necessidade de criar um módulo Python separado.
-* Depurador simples: oferece funcionalidades de depuração para ajudar a identificar e corrigir erros no código.
-* Explorador de variáveis: permite visualizar o estado das variáveis durante a execução do programa.
-* Gerenciador de pacotes integrado: Facilita a instalação e gerenciamento de bibliotecas e pacotes Python.
-* Suporte a placas microcontroladoras: Thonny é compatível com microcontroladores como o Raspberry Pi Pico, o que facilita a programação de dispositivos embarcados.
+* `Editor de código`: possui um editor de código com destaque de sintaxe, sugestões de código e outras funcionalidades para facilitar a escrita de código Python.
+* `Shell integrado`: possui um shell Python integrado, permitindo que os usuários testem rapidamente pequenos trechos de código sem a necessidade de criar um módulo Python separado.
+* `Depurador` simples: oferece funcionalidades de depuração para ajudar a identificar e corrigir erros no código.
+* `Explorador` de variáveis: permite visualizar o estado das variáveis durante a execução do programa.
+* `Gerenciador` de pacotes integrado: Facilita a instalação e gerenciamento de bibliotecas e pacotes Python.
+* `Suporte a placas microcontroladoras`: Thonny é compatível com microcontroladores como o Raspberry Pi Pico, o que facilita a programação de dispositivos embarcados.
 
 No geral, o Thonny é uma escolha popular para iniciantes em Python devido à sua interface amigável e às ferramentas úteis que oferece para facilitar o aprendizado da linguagem de programação e de desevolvimento de sistemas computação física.
 
