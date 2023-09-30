@@ -25,7 +25,7 @@ O chip no centro do seu Pico é um microcontrolador RP2040. Este é um circuito 
 
 Na parte superior do seu Pico há uma porta micro USB. Ela fornece energia para o funcionamento do seu Pico e também permite que o Pico se comunique com o seu Raspberry Pi ou outro computador através da sua porta USB - é assim que você vai carregar seus programas no seu Pico. Se você segurar o seu Pico e olhar para a porta micro USB de frente, verá que ela tem a forma de ser mais estreita na parte inferior e mais larga na parte superior. Pegue um cabo micro USB e você verá que o conector é o mesmo.
 
-> `Importante`: O cabo micro USB só se encaixará na porta micro USB do seu Pico de uma maneira. Ao conectá-lo, certifique-se de alinhar os lados estreito e largo da maneira correta - ou você pode danificar o seu Pico ao tentar forçar o cabo micro USB na direção errada!
+> `Atenção`: O cabo micro USB só se encaixará na porta micro USB do seu Pico de uma maneira. Ao conectá-lo, certifique-se de alinhar os lados estreito e largo da maneira correta - ou você pode danificar o seu Pico ao tentar forçar o cabo micro USB na direção errada!
 
 Logo abaixo da porta micro USB há um pequeno botão marcado como BOOTSEL. BOOTSEL é a abreviação de 'seleção de inicialização', que alterna o seu Pico entre dois modos de inicialização quando é ligado pela primeira vez. Você usará o botão de seleção de inicialização mais tarde, à medida que prepara o seu Pico para a programação com MicroPython.
 
@@ -78,13 +78,30 @@ Não é necessário entender esse código nesse momento. Utilizamos esse procedi
 
 ## Adicione o firmware MicroPython
 Se você nunca utilizou o MicroPython no seu Raspberry Pi Pico, será necessário adicionar o firmware do MicroPython.
-Encontre o botão `BOOTSEL` no seu Raspberry Pi Pico.
+Primeiramente conecte o cabo micro USB na porta micro USB do seu Pico. 
+
+Agora encontre o botão `BOOTSEL` no seu Raspberry Pi Pico.
 
 ![Localização do botão BOOTSEL](images/pico-bootsel.png "Localização do botão BOOTSEL")
 
 Pressione o botão `BOOTSEL` e mantenha-o pressionado enquanto conecta a outra ponta do cabo micro USB ao seu computador. Uma imagem de um Raspberry Pi é mostrada a seguir, mas o mesmo se aplica a qualquer computador.
 
 ![Cabo USB sendo conectado ao seu computador](images/pico-usb-connection.png "Cabo USB sendo conectado ao seu computador")
+
+Após conectar o cabo micro USB ao seu computador, solte o botão `BOOTSEL`. Isso coloca o seu Raspberry Pi Pico no modo de dispositivo de armazenamento em massa USB.
+
+> `Atenção`: Fique atento a sequência de instruções acima. O botão `BOOTSEL` deve estar pressionado enquanto se conecta o cabo micro USB ao computador, e logo em seguida liberado.
+
+Na parte inferior direita da janela do Thonny, você verá a versão do Python que está atualmente em uso.
+
+[Localização da versão do Python no Thonny](images/thonny-path.png "Localização da versão do Python no Thonny")
+
+Clique na versão do Python e escolha 'MicroPython (Raspberry Pi Pico)'.
+
+[Seleção da linguagem MicroPython](images/thonny-path-firmware.png "Seleção da linguagem MicroPython")
+
+Se você não vê esta opção, verifique se você conectou o seu Raspberry Pi Pico corretamente. Se tudo correr bem, uma caixa de diálogo irá aparecer para instalar a versão mais recente do firmware MicroPython no seu Raspberry Pi Pico.
+
 
 
 
