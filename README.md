@@ -94,13 +94,20 @@ Após conectar o cabo micro USB ao seu computador, solte o botão `BOOTSEL`. Iss
 
 Na parte inferior direita da janela do Thonny, você verá a versão do Python que está atualmente em uso.
 
-[Localização da versão do Python no Thonny](images/thonny-path.png "Localização da versão do Python no Thonny")
+![Localização da versão do Python no Thonny](images/thonny-path.png "Localização da versão do Python no Thonny")
 
 Clique na versão do Python e escolha 'MicroPython (Raspberry Pi Pico)'.
 
-[Seleção da linguagem MicroPython](images/thonny-path-firmware.png "Seleção da linguagem MicroPython")
+![Seleção da linguagem MicroPython](images/thonny-path-firmware.png "Seleção da linguagem MicroPython")
 
 Se você não vê esta opção, verifique se você conectou o seu Raspberry Pi Pico corretamente. Se tudo correr bem, uma caixa de diálogo irá aparecer para instalar a versão mais recente do firmware MicroPython no seu Raspberry Pi Pico.
+
+![Tela de instalação de firmware](images/install-firmware.png "Tela de instalação de firmware")
+
+Clique no botão `Install` para gravar o firmware no seu Raspberry Pi Pico.
+Aguarde a instalação ser concluída e clique em `Close`.
+
+> `Nota`: Você não precisa atualizar o firmware toda vez que usar o seu Raspberry Pi Pico. Da próxima vez, você pode simplesmente conectá-lo ao seu computador sem pressionar o botão `BOOTSEL`.
 
 
 
