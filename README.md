@@ -123,6 +123,13 @@ Aguarde a instalação ser concluída e clique em `Close`.
 
 > `Nota`: Você não precisa atualizar o firmware toda vez que usar o seu Raspberry Pi Pico. Da próxima vez, você pode simplesmente conectá-lo ao seu computador sem pressionar o botão `BOOTSEL`.
 
+## Usando o Shell
+Olhe para o painel do Shell na parte inferior do editor Thonny.
+
+Você deverá ver algo assim:
+
+![Painel do Shell na parte inferior do editor Thonny](images/thonny-shell.png "Painel do Shell na parte inferior do editor Thonny")
+
 
 
 
