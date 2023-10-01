@@ -80,11 +80,15 @@ Agora abra o Thony IDE a partir do seu iniciador de aplicativos e você será ap
 
 ![Tela principal do Thonny](images/thonny-main-screen.png "Tela principal do Thonny")
 
-Você pode usar o Thonny para escrever código Python padrão. Digite o seguinte na janela principal e depois clique no botão `Run`.
+Você pode usar o Thonny para escrever código Python padrão. Digite o seguinte na janela principal e depois clique no botão `Run`. 
 
 ```Python
 print('Hello World!')
 ```
+
+O botão `Run` está localizado na barra de ferramentas do Thonny, logo abaixo da barra de menus principal e permite executar um programa. Nessa barra também se encontra o botão `Stop` que é usado para encerrar a execução de um programa. Caso precise, posicione o seu mouse sobre os botões da barra de ferramentas e aguarde parado por alguns segundos. Uma pequena caixa de texto aparecerá com o nome daquela função.  
+
+![Barra de ferramentas do Thonny](images/thonny-tool-bar.png "Barra de ferramentas do Thonny")
 
 Não é necessário entender esse código nesse momento. Utilizamos esse procedimento apenas para testar o seu ambiente e garantir que a instalação do Thonny tenha sido bem sucedida. Caso não obtenha o resultado como na figura que segue, repita os procedimentos anteriores.
 
@@ -231,11 +235,12 @@ A primeira linha agora importa também a biblioteca `Timer` que permite configur
 
 A terceira linha cria um objeto chamado `timer`. Este objeto será usado para configurar um temporizador que irá chamar uma função em intervalos regulares.
 
-A quarta e quinta linhas definem uma função chamada `blink` que recebe um argumento chamado `timer`. Em Python é possível criar funções personalizadas o que é feito através da declaração `def`.
+A quarta e quinta linhas definem uma função chamada `blink` que recebe um argumento chamado `timer`. Em Python é possível criar funções personalizadas o que é feito através da palavra-chave `def`. Funções são blocos de código que realizam uma tarefa específica e podem ser chamadas/executadas em qualquer parte do programa. Elas são parte fundamental da programação, permitindo a organização e reutilização de código.
 
 A última linha inicializa o temporizador que criamos anteriormente. Ele é configurado para uma frequência de 2.5 Hz (ou seja, a função `blink` será chamada a cada 0.4 segundos), com o modo de operação `Timer.PERIODIC` (significando que o temporizador irá chamar a função de forma repetida). O `callback=blink` indica que a função a ser chamada é a função `blink`.
 
-Clique em `Run` e o seu programa fará o LED piscar até que você clique no botão `Stop`.
+Clique em `Run` e o seu programa fará o LED piscar até que você clique no botão `Stop`. Lembre que os botões `Run` e `Stop` estão localizados na barra de ferramentas do Thonny, logo abaixo da linha de menus. 
+
 
 
 
