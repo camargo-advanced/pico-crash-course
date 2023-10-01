@@ -37,7 +37,13 @@ Se você tiver uma placa de prototipagem, insira o seu Raspberry Pi Pico na plac
 
 ![Pico inserido na placa de prototipagem](images/pico-breadboard.png "Pico inserido na placa de prototipagem")
 
-> `Nota`: Insira o Pico com o conector micro USB posicionado para o canto da placa de prototipagem conforme a figura. Isso facilitará a conexão do cabo micro USB posteriormente.
+> `Nota`: Insira o Pico com o conector micro USB posicionado para o canto da placa de prototipagem conforme a figura. Isso facilitará a conexão do cabo micro USB.
+
+Agora conecte o seu cabo micro USB à porta localizada no lado esquerdo do Pico.
+
+![Conectando cabo micro usb ao Pico](images/pico-usb-connection.png "Conectando cabo micro usb ao Pico")
+
+> `Atenção`: Seja gentil ao conectar o cabo micro USB ao seu Pico. O conector do Pico é frágil e pode danificar facilmente. Após fixar o cabo, evite retirá-lo com frequência.
 
 ## Programando com MicroPython
 Desde o seu lançamento em 1991, a linguagem de programação Python, nomeada após o famosa série de televisão Monty Python, em vez da serpente, cresceu para se tornar uma das mais populares no mundo. Sua popularidade, no entanto, não significa que não haja melhorias que possam ser feitas especialmente se você estiver trabalhando com um microcontrolador. 
