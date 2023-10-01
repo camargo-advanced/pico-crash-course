@@ -183,7 +183,22 @@ Ligue e desligue o LED quantas vezes desejar.
 
 > `Dica`: Você pode usar a seta para cima no teclado para acessar rapidamente linhas de código anteriores.
 
-Se você deseja escrever um programa mais longo, é melhor salvá-lo em um arquivo. Você fará isso no próximo passo.
+Se você deseja escrever um programa mais longo, é melhor salvá-lo em um módulo para poder reutilizá-lo mesmo após reiniciar seu Pico.
 
+## Faça o LED embarcado piscar
+O Shell é útil para garantir que tudo esteja funcionando e experimentar comandos rápidos. No entanto, é melhor colocar programas mais longos em um módulos. Em Python, 'arquivos' são chamados de módulos.
+
+O Thonny pode salvar e executar programas MicroPython diretamente no seu Raspberry Pi Pico. Você irá criar um programa MicroPython para fazer o LED embarcado piscar em um loop infinito.
+
+Clique no painel principal do editor do Thonny localizado na parte superior da tela. Digite o seguinte código para piscar o LED.
+
+```
+from machine import Pin
+led = Pin(25, Pin.OUT)
+
+led.toggle()
+```
+
+![Alternando o LED embarcado entre ligado e desligado](images/thonny-led-toggle.png "Alternando o LED embarcado entre ligado e desligado")
 
 
