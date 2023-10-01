@@ -144,7 +144,7 @@ print('Hello World!')
 
 Pressione a tecla `Enter` e você verá a saída.
 
-
+![Thonny shell após execução de Hello World](images/thonny-shell-hellow.png "Thonny shell após execução de Hello World")
 
 
 
