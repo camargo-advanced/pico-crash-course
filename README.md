@@ -41,7 +41,7 @@ Se você tiver uma placa de prototipagem, insira o seu Raspberry Pi Pico na plac
 
 Agora conecte o seu cabo micro USB à porta localizada no lado esquerdo do Pico.
 
-![Conectando cabo micro usb ao Pico](images/pico-usb-connection.png "Conectando cabo micro usb ao Pico")
+![Conectando cabo micro usb ao Pico](images/micro-usb-pico.png "Conectando cabo micro usb ao Pico")
 
 > `Atenção`: Seja gentil ao conectar o cabo micro USB ao seu Pico. O conector do Pico é frágil e pode danificar facilmente. Após fixar o cabo, evite retirá-lo com frequência.
 
