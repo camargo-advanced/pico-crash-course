@@ -243,6 +243,9 @@ A última linha inicializa o temporizador que criamos anteriormente. Ele é conf
 
 Clique em `Run` e o seu programa fará o LED piscar até que você clique no botão `Stop`. Lembre que os botões `Run` e `Stop` estão localizados na barra de ferramentas do Thonny, logo abaixo da linha de menus. 
 
+## Projeto - Olá Led!
+Os projetos a seguir serão muito mais fáceis de concluir se você estiver usando uma placa de prototipagem para segurar os componentes e realizar as conexões elétricas.
+
 
 
 
