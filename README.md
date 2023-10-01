@@ -86,15 +86,15 @@ Você pode usar o Thonny para escrever código Python padrão. Digite o seguinte
 print('Hello World!')
 ```
 
+Não é necessário entender esse código nesse momento. Utilizamos esse procedimento apenas para testar o seu ambiente e garantir que a instalação do Thonny tenha sido bem sucedida. Caso não obtenha o resultado como na figura que segue, repita os procedimentos anteriores.
+
+![Hello World no Thonny](images/thonny-hello-world.png "Hello World no Thonny")
+
 O botão `Run` está localizado na barra de ferramentas do Thonny, logo abaixo da barra de menus principal e permite executar um programa. 
 
 ![Barra de ferramentas do Thonny](images/thonny-tool-bar.png "Barra de ferramentas do Thonny")
 
 Nessa barra também se encontra o botão `Stop` que é usado para encerrar a execução de um programa. Caso precise, posicione o seu mouse sobre os botões da barra de ferramentas e aguarde parado por alguns segundos. Uma pequena caixa de texto aparecerá com o nome daquela função.  
-
-Não é necessário entender esse código nesse momento. Utilizamos esse procedimento apenas para testar o seu ambiente e garantir que a instalação do Thonny tenha sido bem sucedida. Caso não obtenha o resultado como na figura que segue, repita os procedimentos anteriores.
-
-![Hello World no Thonny](images/thonny-hello-world.png "Hello World no Thonny")
 
 ## Adicione o firmware MicroPython
 Se você nunca utilizou o MicroPython no seu Raspberry Pi Pico, será necessário adicionar o firmware do MicroPython.
