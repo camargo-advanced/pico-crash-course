@@ -132,7 +132,7 @@ Você deverá ver algo assim:
 
 ![Painel do Shell na parte inferior do editor Thonny](images/thonny-shell.png "Painel do Shell na parte inferior do editor Thonny")
 
-Com o cabo micro USB conectado ao seu computador o Thonny é capaz de se comunicar com o seu Raspberry Pi Pico usando o REPL (loop de leitura-avaliação-escrita ou _read–eval–print loop_ em inglês), o que permite que você digite código Python no Shell e veja a saída.
+Com o cabo micro USB conectado ao seu computador o Thonny é capaz de se comunicar com o seu Raspberry Pi Pico usando o REPL (loop de leitura-avaliação-escrita ou _Read–Rval–Print Loop_ em inglês), o que permite que você digite código Python no Shell e veja a saída.
 
 Agora você pode digitar comandos diretamente no Shell e eles serão executados no seu Raspberry Pi Pico.
 
@@ -147,6 +147,16 @@ Pressione a tecla `Enter` e você verá a saída.
 ![Thonny shell após execução de Hello World](images/thonny-shell-hellow.png "Thonny shell após execução de Hello World")
 
 
+O comando print em Python é uma função que exibe informações na saída padrão, geralmente na tela do seu computador. Ele é usado para mostrar mensagens, resultados de cálculos, variáveis e outros tipos de dados. Nesse caso ele apresentou a string 'Hello World' no painel do Shell.
+
+Uma string em Python é uma sequência de caracteres, ou seja, um conjunto ordenado de caracteres alfanuméricos, símbolos ou espaços em branco. As strings são usadas para representar texto em programas Python. Em Python as strings devem estar entre aspas simples, ou aspas duplas. Dessa forma ambas as strings que seguem são válidas.
+
+```
+'Hello World.'
+"Hello World."
+```
+
+O importante é ser consistente: se iniciou uma string com aspas simples, feche-a com aspas simples. Se iniciou com aspas duplas, feche-a com aspas duplas.
 
 
 
