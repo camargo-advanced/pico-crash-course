@@ -228,8 +228,11 @@ timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
 ```
 
 A primeira linha está agora importa também a biblioteca `Timer` que permite configurar e gerenciar temporizadores.
+
 A terceira linha cria um objeto chamado `timer`. Este objeto será usado para configurar um temporizador que irá chamar uma função em intervalos regulares.
+
 A quarta e quinta linhas definem uma função chamada `blink` que recebe um argumento chamado `timer`. Em Python é possível criar funções personalizadas o que é feito através da declaração `def`.
+
 A última linha inicializa o temporizador que criamos anteriormente. Ele é configurado para uma frequência de 2.5 Hz (ou seja, a função `blink` será chamada a cada 0.4 segundos), com o modo de operação `Timer.PERIODIC` (significando que o temporizador irá chamar a função de forma repetida). O `callback=blink` indica que a função a ser chamada é a função `blink`.
 
 Clique em `Run` e o seu programa fará o LED piscar até que você clique no botão `Stop`.
