@@ -152,7 +152,7 @@ Uma string em Python é uma sequência de caracteres, ou seja, um conjunto orden
 
 O importante é ser consistente: se iniciou uma string com aspas simples, feche-a com aspas simples. Se iniciou com aspas duplas, feche-a com aspas duplas.
 
-As funções em Python, assim como na maioria das linguagens de programação, utilizam um par de parenteses `()` para indicar onde os parametros devem ser colocados.  Por isso a string 'Hello World!' foi colocada dentro dos parênteses da função `print`.
+As funções em Python, assim como na maioria das linguagens de programação, utilizam um par de parenteses `()` para indicar onde os argumentos devem ser colocados.  Por isso a string 'Hello World!' foi colocada dentro dos parênteses da função `print`.
 
 O MicroPython adiciona bibliotecas específicas de hardware, como `machine`, que você pode usar para programar o seu Raspberry Pi Pico. Vamos criar um objeto `machine.Pin` para corresponder ao LED embarcado, que pode ser acessado usando o pino GPIO 25.
 
@@ -180,7 +180,7 @@ Ligue e desligue o LED quantas vezes desejar.
 
 Se você deseja escrever um programa mais longo, é melhor salvá-lo em um arquivo para poder reutilizá-lo mesmo após reiniciar seu Pico.
 
-## Faça o LED embarcado alternar entre ligado e desligado
+## Faça o LED embarcado piscar
 O Shell é útil para garantir que tudo esteja funcionando e experimentar comandos rápidos. No entanto, é melhor colocar programas mais longos em um arquivo. 
 
 O Thonny pode salvar e executar programas MicroPython diretamente no seu Raspberry Pi Pico. Você irá criar um programa MicroPython para fazer o LED embarcado alternar entre ligado e desligado.
@@ -211,5 +211,28 @@ Digite 'blink.py' como o nome do arquivo.
 > `Dica`: Você precisa incluir a extensão `.py` para que o Thonny reconheça o arquivo como um arquivo Python.
 
 Agora clique no botão `Run` para executar seu código. Você deverá ver o LED embarcado alternar entre ligado e desligado a cada vez que clicar no botão `Run`.
+
+Você pode usar a biblioteca `Timer` para configurar um temporizador que executa uma função em Python em intervalos regulares.
+
+Atualize seu código para que pareça com isso.
+
+```Python
+from machine import Pin, Timer
+led = Pin(25, Pin.OUT)
+timer = Timer()
+
+def blink(timer):
+    led.toggle()
+
+timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
+```
+
+A primeira linha está agora importa também a biblioteca `Timer` que permite configurar e gerenciar temporizadores.
+A terceira linha cria um objeto chamado `timer`. Este objeto será usado para configurar um temporizador que irá chamar uma função em intervalos regulares.
+A quarta e quinta linhas definem uma função chamada `blink` que recebe um argumento chamado `timer`. Em Python é possível criar funções personalizadas o que é feito através da declaração `def`.
+A última linha inicializa o temporizador que criamos anteriormente. Ele é configurado para uma frequência de 2.5 Hz (ou seja, a função `blink` será chamada a cada 0.4 segundos), com o modo de operação `Timer.PERIODIC` (significando que o temporizador irá chamar a função de forma repetida). O `callback=blink` indica que a função a ser chamada é a função `blink`.
+
+Clique em `Run` e o seu programa fará o LED piscar até que você clique no botão `Stop`.
+
 
 
