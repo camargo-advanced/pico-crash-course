@@ -183,14 +183,14 @@ Ligue e desligue o LED quantas vezes desejar.
 
 > `Dica`: Você pode usar a seta para cima no teclado para acessar rapidamente linhas de código anteriores.
 
-Se você deseja escrever um programa mais longo, é melhor salvá-lo em um módulo para poder reutilizá-lo mesmo após reiniciar seu Pico.
+Se você deseja escrever um programa mais longo, é melhor salvá-lo em um arquivo para poder reutilizá-lo mesmo após reiniciar seu Pico.
 
 ## Faça o LED embarcado piscar
-O Shell é útil para garantir que tudo esteja funcionando e experimentar comandos rápidos. No entanto, é melhor colocar programas mais longos em um módulos. Em Python, 'arquivos' são chamados de módulos.
+O Shell é útil para garantir que tudo esteja funcionando e experimentar comandos rápidos. No entanto, é melhor colocar programas mais longos em um arquivo. 
 
-O Thonny pode salvar e executar programas MicroPython diretamente no seu Raspberry Pi Pico. Você irá criar um programa MicroPython para fazer o LED embarcado piscar em um loop infinito.
+O Thonny pode salvar e executar programas MicroPython diretamente no seu Raspberry Pi Pico. Você irá criar um programa MicroPython para fazer o LED embarcado alternar entre ligado e desligado.
 
-Clique no painel principal do editor do Thonny localizado na parte superior da tela. Digite o seguinte código para piscar o LED.
+Clique no painel principal do editor do Thonny localizado na parte superior da tela. Digite o seguinte código para alternar o LED.
 
 ```
 from machine import Pin
@@ -201,4 +201,13 @@ led.toggle()
 
 ![Alternando o LED embarcado entre ligado e desligado](images/thonny-led-toggle.png "Alternando o LED embarcado entre ligado e desligado")
 
+Clique em `File -> Save as...` para salvar seu programa. O Thonny perguntará se você deseja salvar o arquivo em seu computador 'This computer' ou em seu Raspberry Pi Pico. Escolha 'Raspberry Pi Pico'. 
+
+![Salvando o arquivo no Pico](images/this-computer-or-pico.png "Salvando o arquivo no Pico")
+
+Digite "blink.py" como o nome do arquivo.
+
+>> `Dica`: Você precisa incluir a extensão `.py` para que o Thonny reconheça o arquivo como um arquivo Python.
+
+Agora clique no botão `Run` para executar seu código. Você deverá ver o LED embarcado alternar entre ligado e desligado cada vez que clicar no botão `Run`.
 
