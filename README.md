@@ -192,12 +192,18 @@ O Thonny pode salvar e executar programas MicroPython diretamente no seu Raspber
 
 Clique no painel principal do editor do Thonny localizado na parte superior da tela. Digite o seguinte código para alternar o LED.
 
-```
+```Python
 from machine import Pin
 led = Pin(25, Pin.OUT)
 
 led.toggle()
 ```
+
+A primeira linha de código importa uma biblioteca do MicroPython chamada `machine` que contém funções para interagir com hardware, como seus pinos. Mais especificamente, ela está importando a função `Pin`, que permite controlar os pinos do Raspberry Pi Pico.
+
+Na segunda linha é criada uma variável chamada `led`. Esta variável é configurada para controlar o pino 25 do Raspberry Pi Pico, que está conectado ao LED embarcado da placa. A segunda parte `Pin.OUT` significa que este pino será usado para enviar um sinal de saída (como acender ou apagar um LED).
+
+A terceira linha está dizendo para o LED trocar de estado. Se o LED estiver aceso, ele será apagado, e vice-versa.
 
 ![Alternando o LED embarcado entre ligado e desligado](images/thonny-led-toggle.png "Alternando o LED embarcado entre ligado e desligado")
 
@@ -205,9 +211,10 @@ Clique em `File -> Save as...` para salvar seu programa. O Thonny perguntará se
 
 ![Salvando o arquivo no Pico](images/this-computer-or-pico.png "Salvando o arquivo no Pico")
 
-Digite "blink.py" como o nome do arquivo.
+Digite 'blink.py' como o nome do arquivo.
 
 >> `Dica`: Você precisa incluir a extensão `.py` para que o Thonny reconheça o arquivo como um arquivo Python.
 
-Agora clique no botão `Run` para executar seu código. Você deverá ver o LED embarcado alternar entre ligado e desligado cada vez que clicar no botão `Run`.
+Agora clique no botão `Run` para executar seu código. Você deverá ver o LED embarcado alternar entre ligado e desligado a cada vez que clicar no botão `Run`.
+
 
