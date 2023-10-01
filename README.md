@@ -227,7 +227,7 @@ def blink(timer):
 timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
 ```
 
-A primeira linha está agora importa também a biblioteca `Timer` que permite configurar e gerenciar temporizadores.
+A primeira linha agora importa também a biblioteca `Timer` que permite configurar e gerenciar temporizadores.
 
 A terceira linha cria um objeto chamado `timer`. Este objeto será usado para configurar um temporizador que irá chamar uma função em intervalos regulares.
 
