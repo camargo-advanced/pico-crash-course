@@ -147,7 +147,7 @@ Pressione a tecla `Enter` e você verá a saída.
 ![Thonny shell após execução de Hello World](images/thonny-shell-hellow.png "Thonny shell após execução de Hello World")
 
 
-O comando print em Python é uma função que exibe informações na saída padrão, geralmente na tela do seu computador. Ele é usado para mostrar mensagens, resultados de cálculos, variáveis e outros tipos de dados. Nesse caso ele apresentou a string 'Hello World' no painel do Shell.
+O comando `print` em Python é uma função que exibe informações na saída padrão, geralmente na tela do seu computador. Ele é usado para mostrar mensagens, resultados de cálculos, variáveis e outros tipos de dados. Nesse caso a função apresentou a string 'Hello World' no painel do Shell.
 
 Uma string em Python é uma sequência de caracteres, ou seja, um conjunto ordenado de caracteres alfanuméricos, símbolos ou espaços em branco. As strings são usadas para representar texto em programas Python. Em Python as strings devem estar entre aspas simples, ou aspas duplas. Dessa forma ambas as strings que seguem são válidas.
 
@@ -157,6 +157,8 @@ Uma string em Python é uma sequência de caracteres, ou seja, um conjunto orden
 ```
 
 O importante é ser consistente: se iniciou uma string com aspas simples, feche-a com aspas simples. Se iniciou com aspas duplas, feche-a com aspas duplas.
+
+As funções em Python, assim como na maioria das linguagens de programação, utilizam parenteses para indicar onde os parametros devem ser colocados.  Por isso a string 'Hello World!' foi colocada dentro dos parênteses da função `print`.
 
 
 
