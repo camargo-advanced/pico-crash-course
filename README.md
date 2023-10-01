@@ -59,7 +59,7 @@ O Thonny é um ambiente de desenvolvimento integrado (IDE) para a linguagem de p
 
 Algumas das características do Thonny incluem:
 * `Editor de código`: possui um editor de código com destaque de sintaxe, sugestões de código e outras funcionalidades para facilitar a escrita de código Python.
-* `Shell integrado`: possui um shell Python integrado, permitindo que os usuários testem rapidamente pequenos trechos de código sem a necessidade de criar um módulo Python separado.
+* `Shell integrado`: possui um shell Python integrado, permitindo que os usuários testem rapidamente pequenos trechos de código sem a necessidade de criar um arquivo Python separado.
 * `Depurador simples`: oferece funcionalidades de depuração para ajudar a identificar e corrigir erros no código.
 * `Explorador de variáveis`: permite visualizar o estado das variáveis durante a execução do programa.
 * `Gerenciador de pacotes integrado`: Facilita a instalação e gerenciamento de bibliotecas e pacotes Python.
@@ -159,7 +159,7 @@ O importante é ser consistente: se iniciou uma string com aspas simples, feche-
 
 As funções em Python, assim como na maioria das linguagens de programação, utilizam um par de parenteses `()` para indicar onde os parametros devem ser colocados.  Por isso a string 'Hello World!' foi colocada dentro dos parênteses da função `print`.
 
-O MicroPython adiciona módulos específicos de hardware, como o `machine`, que você pode usar para programar o seu Raspberry Pi Pico. Vamos criar um objeto `machine.Pin` para corresponder ao LED embarcado, que pode ser acessado usando o pino GPIO 25.
+O MicroPython adiciona bibliotecas específicas de hardware, como `machine`, que você pode usar para programar o seu Raspberry Pi Pico. Vamos criar um objeto `machine.Pin` para corresponder ao LED embarcado, que pode ser acessado usando o pino GPIO 25.
 
 Se você definir o valor do LED como `1`, ele se acende.
 
