@@ -180,7 +180,7 @@ Ligue e desligue o LED quantas vezes desejar.
 
 Se você deseja escrever um programa mais longo, é melhor salvá-lo em um arquivo para poder reutilizá-lo mesmo após reiniciar seu Pico.
 
-## Faça o LED embarcado piscar
+## Faça o LED embarcado alternar entre ligado e desligado
 O Shell é útil para garantir que tudo esteja funcionando e experimentar comandos rápidos. No entanto, é melhor colocar programas mais longos em um arquivo. 
 
 O Thonny pode salvar e executar programas MicroPython diretamente no seu Raspberry Pi Pico. Você irá criar um programa MicroPython para fazer o LED embarcado alternar entre ligado e desligado.
