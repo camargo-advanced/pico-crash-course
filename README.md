@@ -80,7 +80,7 @@ Agora abra o Thony IDE a partir do seu iniciador de aplicativos e você será ap
 
 ![Tela principal do Thonny](images/thonny-main-screen.png "Tela principal do Thonny")
 
-Você pode usar o Thonny para escrever código Python padrão. Digite o seguinte na janela principal e depois clique no botão Run.
+Você pode usar o Thonny para escrever código Python padrão. Digite o seguinte na janela principal e depois clique no botão `Run`.
 
 ```Python
 print('Hello World!')
