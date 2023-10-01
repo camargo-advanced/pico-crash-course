@@ -39,7 +39,7 @@ Se você tiver uma placa de prototipagem, insira o seu Raspberry Pi Pico na plac
 
 ![Pico inserido na placa de prototipagem](images/pico-breadboard.png "Pico inserido na placa de prototipagem")
 
-> `Nota`: Insira o Pico com o conector micro USB posicionado para o canto da placa de prototipagem conforme a figura. Isso facilitará a conexão do cabo micro USB.
+> `Dica`: Insira o Pico com o conector micro USB posicionado para o canto da placa de prototipagem conforme a figura. Isso facilitará a conexão do cabo micro USB.
 
 Agora conecte o seu cabo micro USB à porta localizada no lado esquerdo do Pico.
 
@@ -82,7 +82,7 @@ Agora abra o Thony IDE a partir do seu iniciador de aplicativos e você será ap
 
 Você pode usar o Thonny para escrever código Python padrão. Digite o seguinte na janela principal e depois clique no botão Run.
 
-```
+```Python
 print('Hello World!')
 ```
 
@@ -121,7 +121,7 @@ Se você não vê esta opção, verifique se você conectou o seu Raspberry Pi P
 Clique no botão `Install` para gravar o firmware no seu Raspberry Pi Pico.
 Aguarde a instalação ser concluída e clique em `Close`.
 
-> `Nota`: Você não precisa atualizar o firmware toda vez que usar o seu Raspberry Pi Pico. Da próxima vez, você pode simplesmente conectá-lo ao seu computador sem pressionar o botão `BOOTSEL`.
+> `Dica`: Você não precisa atualizar o firmware toda vez que usar o seu Raspberry Pi Pico. Da próxima vez, você pode simplesmente conectá-lo ao seu computador sem pressionar o botão `BOOTSEL`.
 
 ## Usando o Shell
 > `Importante`: Antes de continuar, certifique-se de que o seu Raspberry Pi Pico está conectado ao seu computador e que você selecionou o interpretador 'MicroPython (Raspberry Pi Pico)'.
@@ -138,7 +138,7 @@ Agora você pode digitar comandos diretamente no Shell e eles serão executados 
 
 Digite o seguinte comando. 
 
-```
+```Python
 print('Hello World!')
 ```
 
@@ -150,7 +150,7 @@ O comando `print` em Python é uma função que exibe informações na saída pa
 
 Uma string em Python é uma sequência de caracteres, ou seja, um conjunto ordenado de caracteres alfanuméricos, símbolos ou espaços em branco. As strings são usadas para representar texto em programas Python. Em Python as strings devem estar entre aspas simples `'`, ou aspas entre aspas duplas `"`. Dessa forma ambas as strings que seguem são válidas.
 
-```
+```Python
 'Hello World.'
 "Hello World."
 ```
@@ -165,7 +165,7 @@ Se você definir o valor do LED como `1`, ele se acende.
 
 Digite o seguinte código, e certifique-se de pressionar `Enter` após cada linha.
 
-```
+```Python
 from machine import Pin
 led = Pin(25, Pin.OUT)
 led.value(1)
@@ -175,7 +175,7 @@ Você deverá ver o LED embarcado se acender. Confirme isso localizando o LED em
 
 Agora digite o seguinte código para definir o valor como `0` e desligar o LED.
 
-```
+```Python
 led.value(0)
 ```
 
@@ -213,7 +213,7 @@ Clique em `File -> Save as...` para salvar seu programa. O Thonny perguntará se
 
 Digite 'blink.py' como o nome do arquivo.
 
->> `Dica`: Você precisa incluir a extensão `.py` para que o Thonny reconheça o arquivo como um arquivo Python.
+> `Dica`: Você precisa incluir a extensão `.py` para que o Thonny reconheça o arquivo como um arquivo Python.
 
 Agora clique no botão `Run` para executar seu código. Você deverá ver o LED embarcado alternar entre ligado e desligado a cada vez que clicar no botão `Run`.
 
