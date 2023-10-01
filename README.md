@@ -45,6 +45,10 @@ Agora conecte o seu cabo micro USB à porta localizada no lado esquerdo do Pico.
 
 > `Atenção`: Seja gentil ao conectar o cabo micro USB ao seu Pico. O conector do Pico é frágil e pode danificar facilmente. Após fixar o cabo, evite retirá-lo com frequência.
 
+Se você precisa saber os números dos pinos para um Raspberry Pi Pico, você pode consultar o seguinte diagrama.
+
+![Diagrama dos pinos do Pico](images/pico-pinout.png "Diagrama dos pinos do Pico")
+
 ## Programando com MicroPython
 Desde o seu lançamento em 1991, a linguagem de programação Python, nomeada após o famosa série de televisão Monty Python, em vez da serpente, cresceu para se tornar uma das mais populares no mundo. Sua popularidade, no entanto, não significa que não haja melhorias que possam ser feitas especialmente se você estiver trabalhando com um microcontrolador. 
 
