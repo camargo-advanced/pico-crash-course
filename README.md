@@ -90,7 +90,7 @@ Não é necessário entender esse código nesse momento. Utilizamos esse procedi
 
 ## Adicione o firmware MicroPython
 Se você nunca utilizou o MicroPython no seu Raspberry Pi Pico, será necessário adicionar o firmware do MicroPython.
-Primeiramente conecte o cabo micro USB na porta micro USB do seu Pico. 
+Primeiramente confirme que cabo micro USB está conectado na porta micro USB do seu Pico.
 
 Agora encontre o botão `BOOTSEL` no seu Raspberry Pi Pico.
 
