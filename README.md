@@ -263,15 +263,27 @@ Inserir componentes eletrônicos a uma placa de prototipagem é simples: alinhe 
 ## Resistores
 Os resistores são usados em circuitos para reduzir o fluxo de corrente elétrica. Isso os torna úteis na proteção de certos componentes que podem se danificar se uma corrente muito alta passar por eles. Também são úteis para garantir que uma voltagem muito específica seja fornecida a outro componente.
 
-Ao usar LEDs com um Raspberry Pi Pico, você deve utilizar um resistor de cerca de 100Ω (ohms). Qualquer resistor entre 75Ω e 220Ω funcionará.
+![Array de Resistores Eletrônicos de Pinos Axiais](images/resistors.png "Array de Resistores Eletrônicos de Pinos Axiais")
+
+O valor de um resistor é medido em `ohms` e utiliza o símbolo `Ω`.
+
+Você pode determinar o valor da resistência de um resistor pela cor das faixas nele presentes. A maioria dos resistores possui 4 faixas, mas resistores de 5 e 6 faixas também estão disponíveis.
+
+Em um resistor de 4 faixas, a primeira cor indica o primeiro dígito do valor, a segunda faixa indica o segundo dígito do valor, e a terceira faixa indica o que multiplicar pelos dois primeiros dígitos (ou quantos zeros adicionar no final). A quarta faixa indicará a precisão do valor do resistor calculada como uma porcentagem.
+
+![Código de cores em resistores](images/color-code-resistors.png "Código de cores em resistores")
+
+Por exemplo, com as faixas, é possível calcular o valor em ohms destes resistores da seguinte forma:
 
 ![Resistor mostrando faixas de vermelho, vermelho, marrom](images/220-resistor.png "Resistor mostrando faixas de vermelho, vermelho, marrom")
 
-Vermelho Vermelho Marrom = 2 2 1 = 2 2 x 10 = 220Ω
+Vermelho Vermelho Marrom = 2 2 1 = 2 2 x 10 = 220Ω.
 
 ![Resistor mostrando faixas de violeta, verde, preto](images/75-resistor.png "Resistor mostrando faixas de violeta, verde, preto")
 
-Violeta Verde Preto = 7 5 1 = 7 5 x 1 = 75Ω
+Violeta Verde Preto = 7 5 1 = 7 5 x 1 = 75Ω.
+
+Ao usar LEDs com um Raspberry Pi Pico, você deve utilizar um resistor de cerca de 100Ω (ohms). Qualquer resistor entre 75Ω e 220Ω funcionará.
 
 
 
