@@ -35,11 +35,11 @@ Vire o seu Pico e você verá que a parte inferior tem escritos rotulando cada u
 
 ![Diagrama dos pinos do Pico](images/pico-pinout.png "Diagrama dos pinos do Pico")
 
-Se você tiver uma placa de prototipagem, insira o seu Raspberry Pi Pico na placa. Posicione-o de forma que os dois conectores estejam separados pelo vão no meio conforme a figura a seguir.
+Se você tiver uma placa de prototipagem, insira o seu Raspberry Pi Pico na placa para que ele abranja a divisão do meio e a porta micro USB esteja no topo da placa, conforme a figura que segue. O pino superior esquerdo, Pino 0, deve estar na fileira marcada com um 1, se sua placa de prototipagem estiver numerada. Antes de empurrar o seu Pico para baixo, certifique-se de que os pinos estejam todos devidamente posicionados. Se você dobrar um pino, pode ser difícil endireitá-lo novamente sem quebrá-lo.
 
 ![Pico inserido na placa de prototipagem](images/pico-breadboard.png "Pico inserido na placa de prototipagem")
 
-> `Dica`: Insira o Pico com o conector micro USB posicionado para o canto da placa de prototipagem conforme a figura. Isso facilitará a conexão do cabo micro USB.
+> `Dica`: Insira o Pico com o conector micro USB posicionado para o topo da placa de prototipagem conforme a figura. Isso facilitará a conexão do cabo micro USB posteriormente.
 
 Agora conecte o seu cabo micro USB à porta localizada no lado esquerdo do Pico.
 
@@ -243,8 +243,20 @@ A última linha inicializa o temporizador que criamos anteriormente. Ele é conf
 
 Clique em `Run` e o seu programa fará o LED piscar até que você clique no botão `Stop`. Lembre que os botões `Run` e `Stop` estão localizados na barra de ferramentas do Thonny, logo abaixo da linha de menus. 
 
-## Placa de prototipagem
+## Usando uma Placa de Prototipagem
 Os projetos a seguir serão muito mais fáceis de concluir se você estiver usando uma placa de prototipagem para segurar os componentes e realizar as conexões elétricas.
+
+Uma placa de prototipagem está coberta com pequenos furos ou orifífios - espaçados, para corresponder aos componentes, com 2,54 mm de distância. Debaixo desses orifícios, existem tiras de metal que funcionam como os fios de conexão. Estes percorrem em fileiras pela placa, com a maioria das placas tendo uma abertura no meio para dividi-las em dois lados.
+
+![Placa de prototipagem](images/this-computer-or-pico.png "Placa de prototipagem")
+
+Muitas placas de prototipagem também têm letras na parte superior e números nas laterais. Isso permite que você encontre um orifício específico: A1 é o canto superior esquerdo, B1 é o orifício imediatamente à direita, enquanto B2 é um orifício abaixo dali. A1 está conectado a B1 pelas tiras de metal ocultas, mas nenhum orifício marcado com um 1 está conectado a qualquer orifício marcado com um 2, a menos que você adicione um fio de conexão por conta própria. 
+
+Placas de prototipagem maiores também têm fileiras de orifícios nas laterais, geralmente marcadas com listras vermelhas e pretas ou vermelhas e azuis. Estas são as trilhas de energia, e são projetadas para facilitar a conexão dos fios: você pode conectar um único fio de um dos pinos de terra do seu Pico a uma das trilhas de energia - normalmente marcadas com uma listra azul ou preta e um símbolo de menos - para fornecer um terra comum para muitos componentes na placa , e você pode fazer o mesmo se o seu circuito precisar de energia de 3,3 V ou 5 V. Todos os orifícios unidos por uma faixa estão conectados mas uma lacuna indica uma interrupção. 
+
+Adicionar componentes eletrônicos a uma placa de prototipagem é simples: alinhe apenas seus terminais (as partes metálicas salientes) com os orifícios e empurre suavemente até que o componente esteja no lugar. Para conexões além das que a placa  faz por você, você pode usar fios de conexão macho-macho (M2M); para conexões da placa a dispositivos externos, como seu Raspberry Pi Pico, use fios de conexão macho-fêmea (M2F). Nunca tente inserir mais de um terminal de componente ou fio de conexão em um mesmo orifício na placa. 
+
+> `Dica`: Os orifícios estão conectados em fileiras, exceto pela divisão no meio, então um terminal de componente em A1 está eletricamente conectado a qualquer coisa que você adicione em B1, C1, D1 e E1. 
 
 
 
