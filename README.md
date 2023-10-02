@@ -35,7 +35,9 @@ Vire o seu Pico e você verá que a parte inferior tem escritos rotulando cada u
 
 ![Diagrama dos pinos do Pico](images/pico-pinout.png "Diagrama dos pinos do Pico")
 
-Se você tiver uma placa de prototipagem, insira o seu Raspberry Pi Pico na placa para que ele abranja a divisão do meio e a porta micro USB esteja no topo da placa, conforme a figura que segue. O pino superior esquerdo, Pino 0, deve estar na fileira marcada com um 1, se sua placa de prototipagem estiver numerada. Antes de empurrar o seu Pico para baixo, certifique-se de que os pinos estejam todos devidamente posicionados. Se você dobrar um pino, pode ser difícil endireitá-lo novamente sem quebrá-lo.
+Se você tiver uma placa de prototipagem, insira o seu Raspberry Pi Pico na placa de prototipagem para que ele abranja a divisão do meio e a porta micro USB esteja no topo da placa, conforme a figura que segue. Empurre delicadamente o Pico para baixo até que as partes plásticas dos pinos estejam tocando a placa de prototipagem. Isso significa que as partes metálicas dos pinos estão totalmente inseridas e fazendo um bom contato elétrico com a placa de prototipagem.
+
+O pino superior esquerdo, Pino 0, deve estar na fileira marcada com um 1, se sua placa de prototipagem estiver numerada. Antes de empurrar o seu Pico para baixo, certifique-se de que os pinos estejam todos devidamente posicionados. Se você dobrar um pino, pode ser difícil endireitá-lo novamente sem quebrá-lo.
 
 ![Pico inserido na placa de prototipagem](images/pico-breadboard.png "Pico inserido na placa de prototipagem")
 
@@ -254,10 +256,22 @@ Muitas placas de prototipagem também têm letras na parte superior e números n
 
 Placas de prototipagem maiores também têm fileiras de orifícios nas laterais, geralmente marcadas com listras vermelhas e pretas ou vermelhas e azuis. Estas são as trilhas de energia, e são projetadas para facilitar a conexão dos fios: você pode conectar um único fio de um dos pinos de terra do seu Pico a uma das trilhas de energia - normalmente marcadas com uma listra azul ou preta e um símbolo de menos - para fornecer um terra comum para muitos componentes na placa , e você pode fazer o mesmo se o seu circuito precisar de energia de 3,3 V ou 5 V. Todos os orifícios unidos por uma faixa estão conectados mas uma lacuna indica uma interrupção. 
 
-Adicionar componentes eletrônicos a uma placa de prototipagem é simples: alinhe apenas seus terminais (as partes metálicas salientes) com os orifícios e empurre suavemente até que o componente esteja no lugar. Para conexões além das que a placa  faz por você, você pode usar fios de conexão macho-macho (M2M); para conexões da placa a dispositivos externos, como seu Raspberry Pi Pico, use fios de conexão macho-fêmea (M2F). Nunca tente inserir mais de um terminal de componente ou fio de conexão em um mesmo orifício na placa. 
+Inserir componentes eletrônicos a uma placa de prototipagem é simples: alinhe seus terminais (as partes metálicas salientes) com os orifícios e empurre suavemente até que o componente esteja no lugar. Nunca tente inserir mais de um terminal de componente ou fio de conexão em um mesmo orifício na placa. 
 
-> `Dica`: Os orifícios estão conectados em fileiras, exceto pela divisão no meio, então um terminal de componente em A1 está eletricamente conectado a qualquer coisa que você adicione em B1, C1, D1 e E1. 
+> `Dica`: Os orifícios estão conectados em fileiras, exceto pela divisão no meio, então o terminal de componente inserido em A1 está eletricamente conectado a qualquer coisa que você insira em B1, C1, D1 e E1, e não conectado aos orifícios F1, G1, H1, I1 ou J1. 
 
+## Resistores
+Os resistores são usados em circuitos para reduzir o fluxo de corrente elétrica. Isso os torna úteis na proteção de certos componentes que podem se danificar se uma corrente muito alta passar por eles. Também são úteis para garantir que uma voltagem muito específica seja fornecida a outro componente.
+
+Ao usar LEDs com um Raspberry Pi Pico, você deve utilizar um resistor de cerca de 100Ω (ohms). Qualquer resistor entre 75Ω e 220Ω funcionará.
+
+![Resistor mostrando faixas de vermelho, vermelho, marrom](images/220-resistor.png "Resistor mostrando faixas de vermelho, vermelho, marrom")
+
+Vermelho Vermelho Marrom = 2 2 1 = 2 2 x 10 = 220Ω
+
+![Resistor mostrando faixas de violeta, verde, preto](images/75-resistor.png "Resistor mostrando faixas de violeta, verde, preto")
+
+Violeta Verde Preto = 7 5 1 = 7 5 x 1 = 75Ω
 
 
 
