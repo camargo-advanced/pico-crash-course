@@ -288,27 +288,27 @@ Ao usar LEDs com um Raspberry Pi Pico, você deve utilizar um resistor de cerca 
 ## LEDs
 Diodos Emissores de Luz, ou _Light Emitting Diodes_ (LED) em inglês, emitem luz quando uma corrente elétrica passa por eles. Existem LEDs em muitas cores diferentes.
 
-![3 LEDs nas cores vermelho, verde e azul](images/3-leds-rgb.png "3 LEDs nas cores vermelho, verde e azul")
+![3 LEDs nas cores vermelho, verde e azul](images/3-leds-rgb.jpg "3 LEDs nas cores vermelho, verde e azul")
 
 Normalmente, um LED precisará de um resistor para ser usado. Isso ocorre porque uma corrente elétrica muito alta pode fazer com que um LED queime ou até mesmo exploda. 
 
-Para obter o brilho máximo de um LED, você precisa encontrar o resistor correto para usar. Quando você compra um LED, pode consultar a especificação técnica, conhecido como _datasheet_ para encontrar sua tensão direta _forward voltage_, e corrente direta _forward current_.
+Para obter o brilho máximo de um LED, você precisa encontrar o resistor correto para usar. Quando você compra um LED, pode consultar a sua especificação técnica, conhecido como _datasheet_ para encontrar sua tensão direta _forward voltage_, e a sua corrente direta _forward current_.
 
 A tensão é medida em `Volts`, cujo símbolo é `V`. E a corrente é medida em `Amperes`, cujo símbolo é `A`.
 
 Por exemplo, caso o _datasheet_ informe os seguintes valores para seu LED:
-_forward voltage_ = 2,1 V (2,1 volts)
-_forward current_ = 25 mA (25 miliamperes)
+* _forward voltage_ = 2,1 V (2,1 volts)
+* _forward current_ = 25 mA (25 miliamperes)
 
-E sabendo que a tensão em volts (V) de fornecimento do Raspberry Pi Pico é de 3,3 V, você pode calcular o valor do resistor necessário como segue.
+E sabendo que a tensão em volts (V) de fornecimento do Raspberry Pi Pico é de `3,3 V`, você pode calcular o valor do resistor necessário como segue.
 
-Resistência Necessária = ( 3,3 V - _forward voltage_ ) / _forward current_ 
+* Resistência Necessária = ( 3,3 V - _forward voltage_ ) / _forward current_
 
-A corrente direta _forward current_ deve ser fornecida na unidade Amperes. Portanto divida o valor por 1000 antes de substituir o valor na fórmula anterior.
+A corrente direta _forward current_ deve ser fornecida na unidade Amperes. Portanto divida o valor do _datasheet_ para _forward current_ por `1000` nesse caso antes de substituir na fórmula anterior.
 
-Por exemplo, para os dados do LED acima, é necessário um resistor de pelo menos 48Ω.
+Por exemplo, para os dados do LED acima, é necessário um resistor de pelo menos 48 Ω, conforme o cálculo que segue:
 
-Resistência Necessária = ( 3,3 V - 2,1 V ) / 0,025 A = 48 Ω
+* Resistência Necessária = ( 3,3 V - 2,1 V ) / 0,025 A = 48 Ω
 
 Seu resistor pode ser conectado a qualquer um dos pinos do seu LED, e depois ao seu Raspberry Pi Pico. Entretanto o LED só acenderá quando a eletricidade passar por ele na direção correta, do pino mais longo (ânodo) para o pino mais curto (cátodo).
 
