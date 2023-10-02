@@ -246,9 +246,9 @@ Clique em `Run` e o seu programa fará o LED piscar até que você clique no bot
 ## Usando uma Placa de Prototipagem
 Os projetos a seguir serão muito mais fáceis de concluir se você estiver usando uma placa de prototipagem para segurar os componentes e realizar as conexões elétricas.
 
-Uma placa de prototipagem está coberta com pequenos furos ou orifífios - espaçados, para corresponder aos componentes, com 2,54 mm de distância. Debaixo desses orifícios, existem tiras de metal que funcionam como os fios de conexão. Estes percorrem em fileiras pela placa, com a maioria das placas tendo uma abertura no meio para dividi-las em dois lados.
+Uma placa de prototipagem está coberta com pequenos furos ou orifícios - espaçados, para corresponder aos componentes, com 2,54 mm de distância. Debaixo desses orifícios, existem tiras de metal que funcionam como os fios de conexão, identificadas em verde na figura que segue. Estes percorrem em fileiras pela placa, com a maioria das placas tendo uma abertura no meio para dividi-las em dois lados.
 
-![Placa de prototipagem](images/this-computer-or-pico.png "Placa de prototipagem")
+![Placa de prototipagem](images/breadboard-internal-wiring.png "Placa de prototipagem")
 
 Muitas placas de prototipagem também têm letras na parte superior e números nas laterais. Isso permite que você encontre um orifício específico: A1 é o canto superior esquerdo, B1 é o orifício imediatamente à direita, enquanto B2 é um orifício abaixo dali. A1 está conectado a B1 pelas tiras de metal ocultas, mas nenhum orifício marcado com um 1 está conectado a qualquer orifício marcado com um 2, a menos que você adicione um fio de conexão por conta própria. 
 
