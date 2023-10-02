@@ -312,7 +312,25 @@ Por exemplo, para os dados do LED acima, é necessário um resistor de pelo meno
 
 Seu resistor pode ser conectado a qualquer um dos pinos do seu LED, e depois ao seu Raspberry Pi Pico. Entretanto o LED só acenderá quando a eletricidade passar por ele na direção correta, do pino mais longo (ânodo) para o pino mais curto (cátodo).
 
-## Fios de ligação com pinos e soquetes.
+## Fios de conexão com pinos e soquetes
+Os fios de conexão, também conhecidos como _jumpers_, são usados para conduzir a corrente elétrica entre os componentes eletrônicos. Eles são utilizados em projetos de prototipagem porque permitem que você conecte e desconecte os componentes sem a necessidade de soldagem (criando conexões mais permanentes ao fundir o metal).
+
+Existem três tipos diferentes de fios de conexão:
+* soquete-soquete, ou fêmea-fêmea
+* pino-soquete, ou macho-fêmea
+* pino-pino, ou macho-macho
+
+Cada tipo é identificado pelo que está colocado em cada extremidade do fio.
+
+Uma extremidade de pino possui um pequeno pedaço de metal saindo da extremidade de plástico preto. Isso pode ser inserido dentro de uma extremidade de soquete ou em uma placa de prototipagem.
+
+![A extremidade de pino de um fio de conexão](images/pin.png "A extremidade de pino de um fio de conexão")
+
+A extremidade de soquete parece uma pequena peça de plástico preto. Ela tem um orifício no interior que pode receber uma extremidade de pino.
+
+![A extremidade de soquete de um fio de conexão](images/socket.png "A extremidade de soquete de um fio de conexão")
+
+
 
 
 
