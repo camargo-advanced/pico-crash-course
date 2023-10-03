@@ -160,7 +160,7 @@ O importante é ser consistente: se você iniciou uma string com aspas simples, 
 
 As funções em Python, assim como na maioria das linguagens de programação, utilizam um par de parenteses `()` para indicar onde os argumentos devem ser colocados.  Por isso a string 'Hello World!' foi colocada dentro dos parênteses da função `print`.
 
-O MicroPython adiciona bibliotecas específicas de hardware, como `machine`, que você pode usar para programar o seu Raspberry Pi Pico. Vamos criar um objeto `machine.Pin` para corresponder ao LED embarcado, que pode ser acessado usando o pino GPIO 25.
+O MicroPython adiciona bibliotecas específicas de hardware, como `machine`, que você pode usar para programar o seu Raspberry Pi Pico. Vamos criar um objeto `machine.Pin` para corresponder ao LED embarcado, que pode ser acessado usando o pino `25`.
 
 Se você definir o valor do LED como `1`, ele se acende.
 
@@ -173,7 +173,7 @@ led.value(1)
 ```
 
 Você deverá ver o LED embarcado se acender. Confirme isso localizando o LED embarcado em seu Pico.
-'Embarcado' neste contexto significa que o LED faz parte do próprio Raspberry Pi Pico. É como aquela luzinha que já vem junto com a sua televisão e indica se ela está ligada. Portanto, o 'LED embarcado do Raspberry Pi Pico' se refere à luzinha, nesse caso um LED, que está diretamente conectada e vem junto com o próprio Raspberry Pi Pico.
+'Embarcado' neste contexto significa que o LED faz parte do próprio Raspberry Pi Pico. É como aquela luzinha que já vem junto com a sua televisão e indica se ela está ligada. Portanto, o 'LED embarcado do Raspberry Pi Pico' se refere ao LED que está diretamente conectado e vem junto com o próprio Raspberry Pi Pico.
 
 Agora digite o seguinte código para definir o valor como `0` e desligar o LED embarcado.
 
@@ -185,12 +185,10 @@ Ligue e desligue o LED quantas vezes desejar.
 
 > `Dica`: Você pode usar a seta para cima no teclado para acessar rapidamente linhas de código anteriores.
 
-Apesar de ser vantajoso utilizar o REPL para realizar testes de código de forma interativa, se você deseja escrever um programa mais longo é melhor salvá-lo em um arquivo para poder reutilizá-lo mesmo após reiniciar seu Pico.
-
 ## Faça o LED embarcado piscar
-O Shell é útil para garantir que tudo esteja funcionando e experimentar comandos rápidos. No entanto, é melhor colocar programas mais longos em um arquivo. 
+Apesar de ser vantajoso utilizar o painel de Shell para realizar testes de código de forma rápida e interativa, se você deseja escrever um programa mais longo é melhor salvá-lo em um arquivo para poder reutilizá-lo mesmo após reiniciar seu Pico.
 
-O Thonny pode salvar e executar programas MicroPython diretamente no seu Raspberry Pi Pico. Você irá criar um programa MicroPython para fazer o LED embarcado alternar entre ligado e desligado.
+O Thonny pode salvar e executar programas MicroPython diretamente no seu Raspberry Pi Pico. Para testar isso você irá criar um programa em MicroPython para fazer o LED embarcado alternar entre ligado e desligado.
 
 Clique no painel principal do editor do Thonny localizado na parte superior da tela. Digite o seguinte código para alternar o LED.
 
@@ -201,11 +199,11 @@ led = Pin(25, Pin.OUT)
 led.toggle()
 ```
 
-A primeira linha de código importa uma biblioteca do MicroPython chamada `machine` que contém funções para interagir com hardware, como seus pinos. Mais especificamente, ela está importando a função `Pin`, que permite controlar os pinos do Raspberry Pi Pico.
+A primeira linha de código importa uma biblioteca do MicroPython chamada `machine` que contém funções para interagir com hardware. Mais especificamente, ela está importando a função `Pin`, que permite controlar os pinos do Raspberry Pi Pico.
 
-Na segunda linha é criada uma variável chamada `led`. Esta variável é configurada para controlar o pino 25 do Raspberry Pi Pico, que está conectado ao LED embarcado da placa. A segunda parte `Pin.OUT` significa que este pino será usado para enviar um sinal de saída (como acender ou apagar um LED).
+Na segunda linha é criada uma variável chamada `led`. Esta variável é configurada para controlar o pino `25` do Raspberry Pi Pico, que está conectado ao LED embarcado da placa. A segunda parte `Pin.OUT` significa que este pino será usado para enviar um sinal de saída (como acender ou apagar um LED).
 
-A terceira linha está dizendo para o LED trocar de estado. Se o LED estiver aceso, ele será apagado, e vice-versa.
+A última linha está dizendo para o LED trocar de estado. Se o LED estiver aceso, ele será apagado, e vice-versa.
 
 ![Alternando o LED embarcado entre ligado e desligado](images/thonny-led-toggle.png "Alternando o LED embarcado entre ligado e desligado")
 
@@ -215,11 +213,11 @@ Clique em `File -> Save as...` para salvar seu programa. O Thonny perguntará se
 
 Digite 'blink.py' como o nome do arquivo.
 
-> `Dica`: Você precisa incluir a extensão `.py` para que o Thonny reconheça o arquivo como um arquivo Python.
+> `Dica`: Você precisa incluir a extensão `.py` para que o Thonny reconheça o arquivo como um arquivo MicroPython.
 
 Agora clique no botão `Run` para executar seu código. Você deverá ver o LED embarcado alternar entre ligado e desligado a cada vez que clicar no botão `Run`.
 
-Você pode usar a biblioteca `Timer` para configurar um temporizador que executa uma função em Python em intervalos regulares.
+Você pode usar a biblioteca `Timer` para configurar um temporizador que executa uma função em intervalos regulares.
 
 Atualize seu código para que pareça com isso.
 
@@ -238,15 +236,17 @@ A primeira linha agora importa também a biblioteca `Timer` que permite configur
 
 A terceira linha cria um objeto chamado `timer`. Este objeto será usado para configurar um temporizador que irá chamar uma função em intervalos regulares.
 
-Na quarta linha `def blink(timer)`: é uma função. Uma função é um conjunto de instruções que podem ser usadas repetidamente. No caso, esta função é chamada de `blink` e ela recebe um parâmetro chamado `timer`. `def` é uma palavra-chave importante em MicroPython que é usada para definir funções. Funções são parte fundamental da programação, permitindo a organização e reutilização de código.
+Na quarta linha `def blink(timer)`: é uma função. Uma função é um conjunto de instruções que podem ser usadas repetidamente. No caso, esta função é chamada de `blink` e ela recebe um parâmetro chamado `timer`. `def` é uma palavra-chave importante em MicroPython que é usada para definir funções. A sintaxe de MicroPython exige que se coloque dois pontos `:` no final da linha de declaração da função. Funções são parte fundamental da programação, permitindo a organização e reutilização de código.
 
-Uma parte importante aqui é a indentação. A indentação refere-se aos espaços ou tabulações que são usados no início das linhas para organizar o código. No MicroPython, a indentação é muito importante e é usada para indicar quais linhas de código estão dentro de um bloco de código.
+Uma parte importante aqui é a indentação. A indentação refere-se aos espaços ou tabulações que são usados no início das linhas para organizar o código. No MicroPython, a indentação é muito importante e é usada para indicar quais instruções estão dentro de um bloco de código.
 
-No exemplo dado, a linha `led.toggle()` está indentada. Isso significa que ela faz parte do bloco de código da função `blink`. Ou seja, quando a função `blink` é chamada, o programa executa a linha `led.toggle()`  como parte dessa função. Se a linha `led.toggle()` não estivesse indentada, o MicroPython não entenderia que ela faz parte da função `blink`. A indentação é como uma forma de dizer ao MicroPython quais partes do código pertencem a uma função ou a um loop.
+No exemplo dado, a linha `led.toggle()` está indentada. Isso significa que ela faz parte do bloco de código da função `blink`. Ou seja, quando a função `blink` é chamada, o programa executa `led.toggle()` como parte dessa função. Se `led.toggle()` não estivesse indentada, o MicroPython não entenderia que ela faz parte da função `blink`. A indentação é como uma forma de dizer ao MicroPython quais partes do código pertencem a uma função.
 
-A última linha inicializa o temporizador que criamos anteriormente. Ele é configurado para uma frequência de 2.5 Hz (ou seja, a função `blink` será chamada a cada 0.4 segundos), com o modo de operação `Timer.PERIODIC` (significando que o temporizador irá chamar a função de forma repetida). O `callback=blink` indica que a função a ser chamada é a função `blink`.
+A última linha inicializa o temporizador que criamos anteriormente. Ele é configurado para uma frequência de 2,5 Hz (ou seja, a função `blink` será chamada a cada 0,4 segundos), com o modo de operação `Timer.PERIODIC` (significando que o temporizador irá chamar a função de forma repetida). O `callback=blink` indica que a função a ser chamada é a função `blink` definida anteriormente.
 
-O conceito de 'frequência', em termos simples, se refere a quantas vezes algo acontece em um determinado intervalo de tempo. No contexto do temporizador, isso significa quantas vezes ele executa uma ação específica dentro do intervalo de 1 segundo. Neste caso, a frequência é 2.5 vezes por segundo, o que significa que a função `blink` será chamada 2.5 vezes a cada segundo. Se você define a frequência como 2.5, significa que o LED pisca 2.5 vezes por segundo, o que é relativamente rápido. Se você definisse a frequência como 0.5, o LED piscaria apenas a cada dois segundos, o que seria mais devagar.
+O conceito de 'frequência', em termos simples, se refere a quantas vezes algo acontece em um determinado intervalo de tempo. No contexto do temporizador, isso significa quantas vezes ele executa uma ação específica dentro do intervalo de 1 segundo. Neste caso, a frequência é 2,5 vezes por segundo, o que significa que a função `blink` será chamada 2,5 vezes a cada segundo. Se você definisse a frequência como 0,5, o LED piscaria apenas a cada dois segundos, o que seria mais devagar.
+
+Em códigos MicroPython, lembre-se de utilizar o padrão norte-americano para valores decimais. Nele, o separador decimal é o ponto (`.`), e não a vírgula (`,`). Por exemplo, o número `0,5` deve ser inserido como `0.5` no código.
 
 Clique em `Run` e o seu programa fará o LED piscar até que você clique no botão `Stop`. Lembre que os botões `Run` e `Stop` estão localizados na barra de ferramentas do Thonny, logo abaixo da linha de menus. 
 
@@ -403,7 +403,7 @@ Entenda a explicação do código linha por linha:
 O código geral faz com que o LED pisque cada vez que o botão é pressionado. Se o botão for mantido pressionado, o LED continuará piscando a cada meio segundo até que o botão seja solto.
 
 Aqui cabem algumas explicações adicionais:
-* Note que valores decimais quando colocados no código MicroPython devem ser colocados no padrão norte americano. Nesse padrão o separador decimal é o ponto, e não a vírgula ! Por isso o número `0,5` foi colocado no código como `0.5`.
+
 * Note a utilização da palavra-chave de MicroPython, ou _keyword_ em inglês, `while`. Essa construção repete o bloco de código que estiver 'dentro' dela enquanto a condição lógica passada a ela for avaliada como verdadeira, ou `True`. Como nesse caso foi colocado o valor `True` fixo no código, o bloco de código será repetido para sempre. Para colocar uma ou mais linhas de código 'dentro' do `while`, colocam-se 4 espaços no início de cada uma das linhas. Esses 4 espaços são conhecidos como `indentação`. Ou seja, as linhas são 'indentadas' e com isso passam a ser 'comandadas' pela ação do `while`.
 * Utiliza-se aqui também a palavra-chave de MicroPython `if`. Essa construção executa o bloco de código indentado caso a condição lógica passada a ela seja avaliada como verdadeira, ou `True`. Caso contrário o bloco indentado não será executado.
 
