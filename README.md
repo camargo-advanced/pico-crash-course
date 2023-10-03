@@ -266,29 +266,27 @@ Por outro lado, `pin.low()` faria o oposto, configurando o pino para ter um nív
 
 Essa jornada da eletricidade pelo LED é o que faz com que ele brilhe. Um LED é um componente eletrônico que emite luz quando uma corrente elétrica o atravessa. Ele é construído a partir de materiais que têm propriedades especiais para esse efeito. A cor da luz emitida pelo LED depende do tipo de material utilizado. Diferentes materiais resultam em cores variadas, como vermelho, verde, azul, entre outras.
 
-Com essas habilidades, podemos acender luzes, mover motores, e até mesmo criar projetos mais complexos. Agora que você conhece os fundamentos da eletricidade e circuitos, está pronto para dar vida aos seus projetos com MicroPython! 
-
 ## Usando uma Placa de Prototipagem
 Os projetos a seguir serão muito mais fáceis de concluir se você estiver usando uma placa de prototipagem para segurar os componentes e realizar as conexões elétricas.
 
-Uma placa de prototipagem está coberta com pequenos furos ou orifícios espaçados com 2,54 mm de distância. Debaixo desses orifícios, existem tiras de metal que funcionam como os fios de conexão, identificadas em verde na figura que segue. Estes percorrem em fileiras pela placa, com a maioria das placas tendo uma abertura no meio para dividi-las em dois lados.
+Uma placa de prototipagem está coberta com pequenos furos ou orifícios espaçados com 2,54 mm de distância. Debaixo desses orifícios, existem tiras de metal que funcionam como os fios de conexão, identificadas em verde na figura que segue. As tiras de metal percorrem em fileiras pela placa, com a maioria das placas tendo uma abertura no meio para dividi-las em dois lados.
 
 ![Placa de prototipagem](images/breadboard-internal-wiring.png "Placa de prototipagem")
 
 Muitas placas de prototipagem têm letras na parte superior e números nas laterais. Isso permite que você encontre um orifício específico: A1 é o canto superior esquerdo, B1 é o orifício imediatamente à direita, enquanto B2 é um orifício abaixo dali. A1 está conectado a B1 pelas tiras de metal ocultas, mas nenhum orifício marcado com um 1 está conectado a qualquer orifício marcado com um 2, a menos que você adicione um fio de conexão por conta própria. 
 
-Placas de prototipagem maiores também têm fileiras de orifícios nas laterais, geralmente marcadas com listras vermelhas e pretas ou vermelhas e azuis. Estas são as trilhas de energia, e são projetadas para facilitar a conexão dos fios: você pode conectar um único fio de um dos pinos de terra do seu Pico a uma das trilhas de energia, que são normalmente marcadas com uma listra azul ou preta e um símbolo de menos, para fornecer um terra comum para muitos componentes na placa. Você pode fazer o mesmo se o seu circuito precisar de energia de 3,3 V ou 5 V utilizando a trilha com listra vermelha. Todos os orifícios de uma mesma trilha estão conectados eletricamente. 
+Placas de prototipagem maiores têm fileiras de orifícios nas laterais, geralmente marcadas com listras vermelhas e pretas ou vermelhas e azuis. Estas são as trilhas de energia e são projetadas para facilitar a conexão dos fios: por exemplo, você pode conectar um único pino GND do seu Pico a uma das trilhas de energia, que são normalmente marcadas com uma listra azul ou preta e um símbolo de menos, para fornecer um terra comum para muitos componentes na placa. Você pode fazer o mesmo se o seu circuito precisar de energia de 3,3V ou 5V utilizando a trilha com listra vermelha. Todos os orifícios de uma mesma trilha estão conectados eletricamente. 
 
 Inserir componentes eletrônicos a uma placa de prototipagem é simples: alinhe seus terminais (as partes metálicas salientes) com os orifícios e empurre suavemente até que o componente esteja no lugar. Nunca tente inserir mais de um terminal de componente ou fio de conexão em um mesmo orifício na placa. 
 
 > `Importante`: Os orifícios estão conectados em fileiras, exceto pela divisão no meio, então o terminal de componente inserido em A1 está eletricamente conectado a qualquer coisa que você insira em B1, C1, D1 e E1, e não conectado aos orifícios F1, G1, H1, I1 ou J1. 
 
 ## Resistores
-Os resistores são usados em circuitos para reduzir o fluxo de corrente elétrica. Isso os torna úteis na proteção de certos componentes que podem se danificar se uma corrente muito alta passar por eles. Também são úteis para garantir que uma voltagem muito específica seja fornecida a outro componente.
+Os resistores são usados em circuitos para reduzir o fluxo de corrente elétrica. Isso os torna úteis na proteção de certos componentes que podem se danificar se uma corrente muito alta passar por eles. Também são úteis para garantir que uma corrente ou tensão específica seja fornecida a um componente, como por exemplo um LED.
 
 ![Array de Resistores Eletrônicos de Pinos Axiais](images/resistors.jpg "Array de Resistores Eletrônicos de Pinos Axiais")
 
-O valor de um resistor é medido em `ohms` e utiliza o símbolo `Ω`.
+A resistência à passagem de corrente elétrica de um resistor é medido em `ohms` e utiliza o símbolo `Ω`.
 
 Você pode determinar o valor da resistência de um resistor pela cor das faixas nele presentes. A maioria dos resistores possui 4 faixas, mas resistores de 5 e 6 faixas também estão disponíveis.
 
@@ -296,17 +294,15 @@ Em um resistor de 4 faixas, a primeira cor indica o primeiro dígito do valor, a
 
 ![Código de cores em resistores](images/color-code-resistors.png "Código de cores em resistores")
 
-Por exemplo, com as faixas, é possível calcular o valor em ohms destes resistores da seguinte forma:
+Por exemplo, é possível calcular o valor em ohms destes resistores da seguinte forma:
 
 ![Resistor mostrando faixas de vermelho, vermelho, marrom](images/220-resistor.png "Resistor mostrando faixas de vermelho, vermelho, marrom")
 
-Vermelho Vermelho Marrom = 2 2 1 = 2 2 x 10 = 220Ω.
+Vermelho Vermelho Marrom = 2 2 x 10 = 220Ω.
 
 ![Resistor mostrando faixas de violeta, verde, preto](images/75-resistor.png "Resistor mostrando faixas de violeta, verde, preto")
 
-Violeta Verde Preto = 7 5 1 = 7 5 x 1 = 75Ω.
-
-Ao usar LEDs com um Raspberry Pi Pico, você deve utilizar um resistor de cerca de 100Ω (ohms). Qualquer resistor entre 75Ω e 220Ω funcionará.
+Violeta Verde Preto = 7 5 x 1 = 75Ω.
 
 ## LEDs
 Diodos Emissores de Luz, ou _Light Emitting Diodes_ (LED) em inglês, emitem luz quando uma corrente elétrica passa por eles. Existem LEDs em muitas cores diferentes.
@@ -323,44 +319,44 @@ Por exemplo, caso o _datasheet_ informe os seguintes valores para seu LED:
 * _forward voltage_ = 2,1 V (2,1 volts)
 * _forward current_ = 25 mA (25 miliamperes)
 
-E sabendo que a tensão em volts (V) de fornecimento do Raspberry Pi Pico é de `3,3 V`, você pode calcular o valor do resistor necessário como segue.
+E sabendo que a tensão em volts (V) de fornecimento do Raspberry Pi Pico é de `3,3 V`, você pode calcular o valor do resistor necessário utilizando a seguinte fórmula.
 
 * Resistência Necessária = ( 3,3 V - _forward voltage_ ) / _forward current_
 
-A corrente direta _forward current_ deve ser fornecida na unidade Amperes. Portanto divida o valor do _datasheet_ para _forward current_ por `1000` nesse caso antes de substituir na fórmula anterior.
+A corrente direta _forward current_ deve ser fornecida na unidade Amperes. Portanto divida o valor encontrado no _datasheet_ para _forward current_ por `1000` antes de substituir na fórmula anterior.
 
 Por exemplo, para os dados do LED acima, é necessário um resistor de pelo menos 48 Ω, conforme o cálculo que segue:
 
 * Resistência Necessária = ( 3,3 V - 2,1 V ) / 0,025 A = 48 Ω
 
-Seu resistor pode ser conectado a qualquer um dos pinos do seu LED, e depois ao seu Raspberry Pi Pico. Entretanto o LED só acenderá quando a eletricidade passar por ele na direção correta, do pino mais longo (ânodo) para o pino mais curto (cátodo).
+Seu resistor pode ser conectado a qualquer um dos pinos do seu LED, e depois ao seu Raspberry Pi Pico. Entretanto o LED só acenderá quando a eletricidade passar por ele na direção correta, do pino mais longo (ânodo) para o pino mais curto (cátodo). O pino mais curto do LED deve ser sempre conectado a um dos pinos GND do seu Raspberry Pi Pico.
 
 ## Fios de conexão com pinos e soquetes
-Os fios de conexão, também conhecidos como _jumpers_, são usados para conduzir a corrente elétrica entre os componentes eletrônicos. Eles são utilizados em projetos de prototipagem porque permitem que você conecte e desconecte os componentes sem a necessidade de soldagem (criando conexões mais permanentes ao fundir o metal).
+Os fios de conexão, também conhecidos como _jumpers_, são usados para conduzir a corrente elétrica entre os componentes eletrônicos. Eles são utilizados em projetos de prototipagem porque permitem que você conecte e desconecte os componentes sem a necessidade de soldagem. A soldagem é um método que cria conexões permanentes ao fundir o metal.
 
 Existem três tipos diferentes de fios de conexão:
-* soquete-soquete, ou fêmea-fêmea (F-F)
-* pino-soquete, ou macho-fêmea (M-F)
-* pino-pino, ou macho-macho (M-M)
+* `soquete-soquete`, ou fêmea-fêmea (F-F)
+* `pino-soquete`, ou macho-fêmea (M-F)
+* `pino-pino`, ou macho-macho (M-M)
 
 Cada tipo é identificado pelo que está colocado em cada extremidade do fio.
 
-Uma extremidade de pino possui um pequeno pedaço de metal saindo da extremidade de plástico preto. Isso pode ser inserido dentro de uma extremidade de soquete ou em uma placa de prototipagem.
+Uma extremidade do tipo `pino` possui um pequeno pedaço de metal saindo da extremidade de plástico preto. Isso pode ser inserido dentro de uma extremidade do tipo `soquete` ou em um orifício de uma placa de prototipagem.
 
 ![A extremidade de pino de um fio de conexão](images/pin.png "A extremidade de pino de um fio de conexão")
 
-A extremidade de soquete parece uma pequena peça de plástico preto. Ela tem um orifício no interior que pode receber uma extremidade de pino.
+A extremidade do tipo `soquete` parece uma pequena peça de plástico preto. Ela tem um orifício no interior que pode receber uma extremidade do tipo `pino`.
 
 ![A extremidade de soquete de um fio de conexão](images/socket.png "A extremidade de soquete de um fio de conexão")
 
 ## Piscando um LED externo
-Agora que você conhece o básico, pode controlar um LED externo com o seu Raspberry Pi Pico e também fazê-lo ler a entrada de um botão externo.
+Agora que você conhece os fundamentos da eletricidade, circuitos, e alguns componentes, está pronto para dar vida aos seus projetos com MicroPython! Será que você pode fazer um LED acender e apagar caso um botão seja pressionado? Com certeza!
 
-Use um resistor entre 50 e 330 ohms, um LED vermelho e um par de fios de conexão M-M para conectar o seu Raspberry Pi Pico conforme mostrado na imagem abaixo.
+Use um resistor entre `50` e `330 ohms`, um LED vermelho e um par de fios de conexão do tipo `pino-pino` e conecte esses componentes utilizando a placa de prototipagem conforme mostrado na imagem abaixo.
 
 ![LED e resistor conectados ao Pico](images/single_LED.png "LED e resistor conectados ao Pico")
 
-Neste exemplo, o LED está conectado ao pino 15. Se você usar um pino diferente, lembre-se de procurar o número no diagrama de pinos do Raspberry Pi Pico.
+Neste exemplo, o LED está conectado ao pino `15` do seu Raspberry Pi Pico. Se você usar um pino diferente, lembre-se de procurar o número no diagrama de pinos.
 
 Use o mesmo código que você usou para piscar o LED embarcado, mas mude o número do pino para `15`.
 
@@ -375,15 +371,15 @@ def blink(timer):
 timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
 ```
 
-Execute o seu programa e o LED deverá começar a piscar. Se não estiver funcionando, verifique a sua conexão para ter certeza de que o LED está conectado corretamente.
+Salve o seu programa no seu Raspberry Pi Pico com o nome de `blink1.py`. Execute o seu programa e o LED deverá começar a piscar. Se não estiver funcionando, verifique a as conexões entre os componentes para ter certeza de que o LED está conectado corretamente.
 
 Em seguida, vamos tentar controlar o LED usando um botão. Adicione um botão ao seu circuito conforme mostrado no diagrama abaixo.
 
 ![LED e botão em uma placa de prototipagem](images/button_and_LED.png "LED e botão em uma placa de prototipagem")
 
-Um pino do botão está conectado ao pino `14` do seu Raspberry Pi Pico e o outro pino do botão está conectado ao pino `3.3V` do seu Raspberry Pi Pico. Ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser puxado para baixo, ou _pulled down_ em inglês, o que significa que o pino `14` do Pico lerá o valor lógico `0 zero` caso o botão não esteja pressionado, e o valor lógico `1 um` caso o botão esteja pressionado. Existem palavras-chave em MicroPython para esses valores lógicos: `True` é o mesmo que `1` e `False` é o mesmo que `0'.
+Uma das extremidades do botão está conectada ao pino `14` do seu Raspberry Pi Pico e a outra extremidade do botão está conectada ao pino `3.3V` do seu Raspberry Pi Pico. Ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser 'puxado para baixo', ou _pulled down_ em inglês, o que significa que o pino do Pico lerá o valor lógico `0 zero` caso o botão não esteja pressionado, e o valor lógico `1 um` caso o botão esteja pressionado. Existem palavras-chave em MicroPython para esses valores lógicos: `True` é o mesmo que `1` e `False` é o mesmo que `0'.
 
-Crie um novo arquivo e adicione este código.
+Crie um novo arquivo chamado `blink2.py`, adicione este código e salve-o no seu Raspberry Pi Pico.
 
 ```python
 from machine import Pin
