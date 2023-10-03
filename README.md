@@ -171,6 +171,7 @@ Digite o seguinte código, e certifique-se de pressionar `Enter` após cada linh
 ```Python
 from machine import Pin
 led = Pin(25, Pin.OUT)
+
 led.value(1)
 ```
 
@@ -239,9 +240,15 @@ A primeira linha agora importa também a biblioteca `Timer` que permite configur
 
 A terceira linha cria um objeto chamado `timer`. Este objeto será usado para configurar um temporizador que irá chamar uma função em intervalos regulares.
 
-A quarta e quinta linhas definem uma função chamada `blink` que recebe um argumento chamado `timer`. Em Python é possível criar funções personalizadas o que é feito através da palavra-chave `def`. Funções são blocos de código que realizam uma tarefa específica e podem ser chamadas/executadas em qualquer parte do programa. Elas são parte fundamental da programação, permitindo a organização e reutilização de código.
+Na quarta linha `def blink(timer)`: é uma função. Uma função é um conjunto de instruções que podem ser usadas repetidamente. No caso, esta função é chamada de `blink` e ela recebe um parâmetro chamado `timer`. `def` é uma palavra-chave importante em MicroPython que é usada para definir funções. Funções são parte fundamental da programação, permitindo a organização e reutilização de código.
+
+Uma parte importante aqui é a indentação. A indentação refere-se aos espaços ou tabulações que são usados no início das linhas para organizar o código. No MicroPython, a indentação é muito importante e é usada para indicar quais linhas de código estão dentro de um bloco de código.
+
+No exemplo dado, a linha `led.toggle()` está indentada. Isso significa que ela faz parte do bloco de código da função `blink`. Ou seja, quando a função `blink` é chamada, o programa executa a linha `led.toggle()`  como parte dessa função. Se a linha `led.toggle()` não estivesse indentada, o MicroPython não entenderia que ela faz parte da função `blink`. A indentação é como uma forma de dizer ao MicroPython quais partes do código pertencem a uma função ou a um loop.
 
 A última linha inicializa o temporizador que criamos anteriormente. Ele é configurado para uma frequência de 2.5 Hz (ou seja, a função `blink` será chamada a cada 0.4 segundos), com o modo de operação `Timer.PERIODIC` (significando que o temporizador irá chamar a função de forma repetida). O `callback=blink` indica que a função a ser chamada é a função `blink`.
+
+O conceito de 'frequência', em termos simples, se refere a quantas vezes algo acontece em um determinado intervalo de tempo. No contexto do temporizador, isso significa quantas vezes ele executa uma ação específica dentro do intervalo de 1 segundo. Neste caso, a frequência é 2.5 vezes por segundo, o que significa que a função `blink` será chamada 2.5 vezes a cada segundo. Se você define a frequência como 2.5, significa que o LED pisca 2.5 vezes por segundo, o que é relativamente rápido. Se você definisse a frequência como 0.5, o LED piscaria apenas a cada dois segundos, o que seria mais devagar.
 
 Clique em `Run` e o seu programa fará o LED piscar até que você clique no botão `Stop`. Lembre que os botões `Run` e `Stop` estão localizados na barra de ferramentas do Thonny, logo abaixo da linha de menus. 
 
