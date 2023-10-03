@@ -379,7 +379,7 @@ Em seguida, vamos tentar controlar o LED usando um botão. Adicione um botão ao
 
 Uma das extremidades do botão está conectada ao pino `14` do seu Raspberry Pi Pico e a outra extremidade do botão está conectada ao pino `3.3V` do seu Raspberry Pi Pico. Ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser 'puxado para baixo', ou _pulled down_ em inglês, o que significa que o pino do Pico lerá o valor lógico `0 zero` caso o botão não esteja pressionado, e o valor lógico `1 um` caso o botão esteja pressionado. Existem palavras-chave em MicroPython para esses valores lógicos: `True` é o mesmo que `1` e `False` é o mesmo que `0'.
 
-Crie um novo arquivo chamado `blink2.py`, adicione este código e salve-o no seu Raspberry Pi Pico.
+Crie um novo arquivo, adicione o código a seguir e salve-o com o nome de `blink2.py` no seu Raspberry Pi Pico.
 
 ```python
 from machine import Pin
@@ -396,29 +396,28 @@ while True:
 
 Execute o seu código e então, quando você pressionar o botão, o LED deverá acender ou apagar. Se você segurar o botão pressionado, ele irá piscar.
 
-Entenda a explicação do código linha por linha:
+Vamos revisar juntos todas as linhas de código desse programa.
 
-1. `from machine import Pin`: Esta linha importa uma biblioteca que permite ao Raspberry Pi Pico controlar os seus pinos. 
+A linha 1 `from machine import Pin` importa uma biblioteca que permite ao Raspberry Pi Pico controlar os seus pinos. Por exemplo, podemos alternar a tensão de um pino entre alta (3,3 V) e baixa (0 V).
 
-2. `import time`: Aqui é importada a biblioteca que permite lidar com o temporizadores, como fazer o programa esperar por um tempo específico sem fazer nada.
+A linha 2 `import time`: importa a biblioteca que permite lidar com o temporizadores. Com isso podemos fazer o programa esperar por um tempo específico sem fazer nada por exemplo.
 
-3. `led = Pin(15, Pin.OUT)`: Aqui é criada uma variável chamada `led` (que poderia ser qualquer outro nome) e dizendo que ela está conectada ao pino 15 do seu Raspberry Pi Pico. Além disso, está configurando este pino como uma saída `Pin.OUT`. Isso significa que esse pino pode enviar corrente elétrica para acender um LED conectado a ele através de um fio de conexão (jumper).
+A linha 3 `led = Pin(15, Pin.OUT)` cria uma variável chamada `led` (que poderia ser qualquer outro nome) dizendo que ela está conectada ao pino 15 do seu Raspberry Pi Pico. Além disso, está configurando este pino como uma saída `Pin.OUT`. Isso significa que esse pino pode enviar corrente elétrica para acender um LED conectado a ele através de um fio de conexão (jumper).
 
-4. `button = Pin(14, Pin.IN, Pin.PULL_DOWN)`: Da mesma forma, aqui é criada uma variável chamada `button` conectada ao pino 14 do seu Raspberry Pi Pico. O pino é configurando como uma entrada `Pin.IN`. Isso significa que o pino pode 'escutar' se existe eletricidade passando por ele ou não. O `Pin.PULL_DOWN` significa que há uma resistência especial ligada ao pino que ajuda a manter o valor do pino como `0 zero` quando não há corrente elétrica.
+A linha 4 `button = Pin(14, Pin.IN, Pin.PULL_DOWN)` cria uma variável chamada `button` conectada ao pino 14 do seu Raspberry Pi Pico. O pino é configurando como uma entrada `Pin.IN`. Isso significa que o pino pode 'escutar' se existe eletricidade passando por ele ou não. O `Pin.PULL_DOWN` significa que há um resistor interno especial ligado ao pino que ajuda a manter o valor do pino como `0 V` quando não há corrente elétrica.
 
-5. `while True:`: Esta linha inicia um loop que vai continuar para sempre, a menos que algo o pare. É como dizer 'faça isso para sempre'.
+A quinta linha `while True:` inicia um 'loop' que vai continuar para sempre, a menos que algo o pare. É como dizer 'repita isso para sempre'.
 
-6. `if button.value():`: Aqui se verifica se o botão está sendo pressionado. `button.value()` retorna `True` se o botão estiver pressionado e `False` se não estiver.
+A palavra-chave `while` ('enquanto' em Português) permite que um pedaço de código seja repetido várias vezes, enquanto a condição fornecida seja verdadeira. O `while` funciona assim: primeiro, verifica se uma condição é verdadeira. Se for, ele executa o bloco de código dentro dele. Depois, ele verifica a condição novamente. Se ainda for verdadeira, ele executa o bloco de código novamente. Isso se repete até que a condição não seja mais verdadeira. Quando isso acontece, o programa continua para a próxima parte do código após o `while`. Como em nosso caso a condição avaliada é a palavra-chave `True`, o laço se repetirá para sempre.
 
-7. `led.toggle()`: Se o botão estiver pressionado, esta linha muda o estado do LED. Se o LED estiver aceso, ele é apagado, e vice-versa.
+A linha 6 `if button.value():` verifica se o botão está sendo pressionado. A palavra chave `if` executa o bloco de código indentado caso a condição lógica fornecida, no caso `button.value()`, seja avaliada como verdadeira, ou `True`. Caso contrário o bloco indentado não será executado. `button.value()` retorna `True` se o botão estiver pressionado e `False` se não estiver. 
 
-8. `time.sleep(0.5)`: Esta linha faz o programa esperar por meio segundo (0,5 segundos) antes de continuar. É como um pequeno intervalo de tempo para que possamos ver o LED piscar.
+A palavra-chave `if` ('se' em Português) permite ao programa tomar decisões com base em certas condições. É como quando você tem que decidir algo na vida real: 'Se' estiver chovendo, então leve um guarda-chuva. Ao usar o `if` em programação, você está dando uma ordem para MicroPython verificar se algo é verdadeiro ou falso. Dependendo do resultado dessa verificação, o programa irá seguir um caminho ou outro. 
 
-O código geral faz com que o LED pisque cada vez que o botão é pressionado. Se o botão for mantido pressionado, o LED continuará piscando a cada meio segundo até que o botão seja solto.
+A linha 7 `led.toggle()` muda o estado do LED. Se o LED estiver aceso, ele é apagado, e vice-versa. Note que essa linha de código está dentro da condição `if`. Logo, somente quando o botão estiver sendo pressionado essa linha será executada.
 
-Aqui cabem algumas explicações adicionais:
+A linha 8 `time.sleep(0.5)` faz o programa esperar por meio segundo (0,5 segundos) antes de continuar. É como um pequeno intervalo de tempo para que possamos ver o LED piscar. Note que essa linha de código também está dentro da condição `if`. Logo, somente quando o botão estiver sendo pressionado essa linha será executada.
 
-* Note a utilização da palavra-chave de MicroPython, ou _keyword_ em inglês, `while`. Essa construção repete o bloco de código que estiver 'dentro' dela enquanto a condição lógica passada a ela for avaliada como verdadeira, ou `True`. Como nesse caso foi colocado o valor `True` fixo no código, o bloco de código será repetido para sempre. Para colocar uma ou mais linhas de código 'dentro' do `while`, colocam-se 4 espaços no início de cada uma das linhas. Esses 4 espaços são conhecidos como `indentação`. Ou seja, as linhas são 'indentadas' e com isso passam a ser 'comandadas' pela ação do `while`.
-* Utiliza-se aqui também a palavra-chave de MicroPython `if`. Essa construção executa o bloco de código indentado caso a condição lógica passada a ela seja avaliada como verdadeira, ou `True`. Caso contrário o bloco indentado não será executado.
+O comportamento final desse código faz com que o LED pisque cada vez que o botão é pressionado. Se o botão for mantido pressionado, o LED continuará piscando a cada meio segundo até que o botão seja solto.
 
 
