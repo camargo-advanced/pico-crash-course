@@ -135,7 +135,7 @@ Aguarde a instalação ser concluída e clique em `Close`.
 ## Usando o Shell
 > `Importante`: Antes de continuar, certifique-se de que o seu Raspberry Pi Pico está conectado ao seu computador e que você selecionou o interpretador 'MicroPython (Raspberry Pi Pico)'.
 
-Com o cabo micro USB conectado ao seu computador o Thonny é capaz de se comunicar com o seu Raspberry Pi Pico usando o REPL (loop de leitura-avaliação-escrita ou _Read–Eval–Print Loop_ em inglês), o que permite que você digite código Python no Shell e veja a saída imediatamente. Dessa forma você pode digitar comandos diretamente no Shell e eles serão executados no seu Raspberry Pi Pico.
+Com o cabo micro USB conectado ao seu computador o Thonny é capaz de se comunicar com o seu Raspberry Pi Pico usando o REPL (loop de leitura-avaliação-escrita ou _Read–Eval–Print Loop_ em inglês), o que permite que você digite código Python no painel do Shell e veja a saída imediatamente. Dessa forma você pode digitar comandos diretamente no painel do Shell e eles serão executados no seu Raspberry Pi Pico de forma interativa.
 
 No painel do Shell, localizado na parte inferior do editor Thonny, digite o seguinte comando. 
 
@@ -147,7 +147,7 @@ Pressione a tecla `Enter` e você verá a saída.
 
 ![Thonny shell após execução de Hello World](images/thonny-shell-hellow.png "Thonny shell após execução de Hello World")
 
-O comando `print` em Python é uma função que exibe informações na saída padrão, geralmente na tela do seu computador. Ele é usado para mostrar mensagens, resultados de cálculos, variáveis e outros tipos de dados. Nesse caso a função apresentou a string 'Hello World' no painel do Shell.
+A função `print` em Python exibe informações na saída padrão, geralmente na tela do seu computador. Ele é usado para mostrar mensagens, resultados de cálculos, variáveis e outros tipos de dados. Nesse caso a função apresentou a string 'Hello World' no painel do Shell.
 
 Uma string em Python é uma sequência de caracteres, ou seja, um conjunto ordenado de caracteres alfanuméricos, símbolos ou espaços em branco. As strings são usadas para representar texto em programas Python. Em Python as strings devem estar entre aspas simples `'`, ou aspas entre aspas duplas `"`. Dessa forma ambas as strings que seguem são válidas.
 
@@ -156,7 +156,7 @@ Uma string em Python é uma sequência de caracteres, ou seja, um conjunto orden
 "Hello World."
 ```
 
-O importante é ser consistente: se iniciou uma string com aspas simples, feche-a com aspas simples. Se iniciou com aspas duplas, feche-a com aspas duplas.
+O importante é ser consistente: se você iniciou uma string com aspas simples, feche-a com aspas simples. Se iniciou com aspas duplas, feche-a com aspas duplas.
 
 As funções em Python, assim como na maioria das linguagens de programação, utilizam um par de parenteses `()` para indicar onde os argumentos devem ser colocados.  Por isso a string 'Hello World!' foi colocada dentro dos parênteses da função `print`.
 
@@ -169,13 +169,13 @@ Digite o seguinte código, e certifique-se de pressionar `Enter` após cada linh
 ```Python
 from machine import Pin
 led = Pin(25, Pin.OUT)
-
 led.value(1)
 ```
 
 Você deverá ver o LED embarcado se acender. Confirme isso localizando o LED embarcado em seu Pico.
+'Embarcado' neste contexto significa que o LED faz parte do próprio Raspberry Pi Pico. É como aquela luzinha que já vem junto com a sua televisão e indica se ela está ligada. Portanto, o 'LED embarcado do Raspberry Pi Pico' se refere à luzinha, nesse caso um LED, que está diretamente conectada e vem junto com o próprio Raspberry Pi Pico.
 
-Agora digite o seguinte código para definir o valor como `0` e desligar o LED.
+Agora digite o seguinte código para definir o valor como `0` e desligar o LED embarcado.
 
 ```Python
 led.value(0)
@@ -185,7 +185,7 @@ Ligue e desligue o LED quantas vezes desejar.
 
 > `Dica`: Você pode usar a seta para cima no teclado para acessar rapidamente linhas de código anteriores.
 
-Se você deseja escrever um programa mais longo, é melhor salvá-lo em um arquivo para poder reutilizá-lo mesmo após reiniciar seu Pico.
+Apesar de ser vantajoso utilizar o REPL para realizar testes de código de forma interativa, se você deseja escrever um programa mais longo é melhor salvá-lo em um arquivo para poder reutilizá-lo mesmo após reiniciar seu Pico.
 
 ## Faça o LED embarcado piscar
 O Shell é útil para garantir que tudo esteja funcionando e experimentar comandos rápidos. No entanto, é melhor colocar programas mais longos em um arquivo. 
