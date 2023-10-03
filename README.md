@@ -358,7 +358,7 @@ Em seguida, vamos tentar controlar o LED usando um botão. Adicione um botão ao
 
 ![LED e botão em uma placa de prototipagem](images/button_and_LED.png "LED e botão em uma placa de prototipagem")
 
-Um pino do botão está conectado ao pino `14` do seu Raspberry Pi Pico e o outro pino do botão está conectado ao pino `3.3V` do seu Raspberry Pi Pico. Ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser puxado para baixo, ou _pulled down_ em inglês, o que significa que o pino `14` do Pico lerá o valor lógico `0 zero` caso o botão não esteja pressionado, e o valor lógico `1 um` caso o botão esteja pressionado.
+Um pino do botão está conectado ao pino `14` do seu Raspberry Pi Pico e o outro pino do botão está conectado ao pino `3.3V` do seu Raspberry Pi Pico. Ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser puxado para baixo, ou _pulled down_ em inglês, o que significa que o pino `14` do Pico lerá o valor lógico `0 zero` caso o botão não esteja pressionado, e o valor lógico `1 um` caso o botão esteja pressionado. Existem palavras-chave em MicroPython para esses valores lógicos: `True` é o mesmo que `1` e `False` é o mesmo que `0'.
 
 Crie um novo arquivo e adicione este código.
 
@@ -398,8 +398,8 @@ Entenda a explicação do código linha por linha:
 O código geral faz com que o LED pisque cada vez que o botão é pressionado. Se o botão for mantido pressionado, o LED continuará piscando a cada meio segundo até que o botão seja solto.
 
 Aqui cabem algumas explicações adicionais:
-* Note que valores decimais quando colocados no código Python ou MicroPython devem ser colocados no padrão norte americano. Nesse padrão o separador decimal é o ponto, e não a vírgula ! Por isso o número `0,5` foi colocado no código como `0.5`.
-* Note a utilização da palavra-chave de Python, ou _keyword_ em inglês, `while`. Essa construção repete o bloco de código que estiver 'dentro' dela enquanto a condição lógica passada a ela for avaliada como verdadeira, ou `True`. Como nesse caso foi colocado o valor `True` fixo no código, o bloco de código será repetido para sempre. Para colocar uma ou mais linhas de código 'dentro' do `while`, colocam-se 4 espaços no início de cada uma das linhas. Esses 4 espaços são conhecidos como indentação. Ou seja, as linhas são 'indentadas' e com isso passam a ser 'comandadas' pela ação do `while`.
-* Utiliza-se aqui também a palavra-chave de Python `if`. Essa construção executa o bloco de código indentado caso a condição lógica passada a ela seja avaliada como verdadeira, ou `True`. Caso contrário o bloco indentado não será executado.
+* Note que valores decimais quando colocados no código MicroPython devem ser colocados no padrão norte americano. Nesse padrão o separador decimal é o ponto, e não a vírgula ! Por isso o número `0,5` foi colocado no código como `0.5`.
+* Note a utilização da palavra-chave de MicroPython, ou _keyword_ em inglês, `while`. Essa construção repete o bloco de código que estiver 'dentro' dela enquanto a condição lógica passada a ela for avaliada como verdadeira, ou `True`. Como nesse caso foi colocado o valor `True` fixo no código, o bloco de código será repetido para sempre. Para colocar uma ou mais linhas de código 'dentro' do `while`, colocam-se 4 espaços no início de cada uma das linhas. Esses 4 espaços são conhecidos como indentação. Ou seja, as linhas são 'indentadas' e com isso passam a ser 'comandadas' pela ação do `while`.
+* Utiliza-se aqui também a palavra-chave de MicroPython `if`. Essa construção executa o bloco de código indentado caso a condição lógica passada a ela seja avaliada como verdadeira, ou `True`. Caso contrário o bloco indentado não será executado.
 
 
