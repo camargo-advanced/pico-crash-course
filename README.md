@@ -316,9 +316,9 @@ Seu resistor pode ser conectado a qualquer um dos pinos do seu LED, e depois ao 
 Os fios de conexão, também conhecidos como _jumpers_, são usados para conduzir a corrente elétrica entre os componentes eletrônicos. Eles são utilizados em projetos de prototipagem porque permitem que você conecte e desconecte os componentes sem a necessidade de soldagem (criando conexões mais permanentes ao fundir o metal).
 
 Existem três tipos diferentes de fios de conexão:
-* soquete-soquete, ou fêmea-fêmea
-* pino-soquete, ou macho-fêmea
-* pino-pino, ou macho-macho
+* soquete-soquete, ou fêmea-fêmea (F-F)
+* pino-soquete, ou macho-fêmea (M-F)
+* pino-pino, ou macho-macho (M-M)
 
 Cada tipo é identificado pelo que está colocado em cada extremidade do fio.
 
@@ -330,8 +330,73 @@ A extremidade de soquete parece uma pequena peça de plástico preto. Ela tem um
 
 ![A extremidade de soquete de um fio de conexão](images/socket.png "A extremidade de soquete de um fio de conexão")
 
+## Piscando um LED externo
+Agora que você conhece o básico, pode controlar um LED externo com o seu Raspberry Pi Pico e fazê-lo ler entrada de um botão.
 
+Use um resistor entre 50 e 330 ohms, um LED e um par de fios de conexão M-M para conectar o seu Raspberry Pi Pico conforme mostrado na imagem abaixo.
 
+![LED e resistor conectados ao Pico](images/single_LED.png "LED e resistor conectados ao Pico")
 
+Neste exemplo, o LED está conectado ao pino 15. Se você usar um pino diferente, lembre-se de procurar o número no diagrama de pinos do Raspberry Pi Pico.
+
+Use o mesmo código que você usou para piscar o LED embarcado, mas mude o número do pino para `15`.
+
+```python
+from machine import Pin, Timer
+led = Pin(15, Pin.OUT)
+timer = Timer()
+
+def blink(timer):
+    led.toggle()
+
+timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
+```
+
+Execute o seu programa e o LED deverá começar a piscar. Se não estiver funcionando, verifique a sua conexão para ter certeza de que o LED está conectado corretamente.
+
+Em seguida, vamos tentar controlar o LED usando um botão.
+
+Adicione um botão ao seu circuito conforme mostrado no diagrama abaixo.
+
+![LED e botão em uma placa de prototipagem](images/button_and_LED.png "LED e botão em uma placa de prototipagem")
+
+Um pino do botão está conectado ao pino `14` do seu Raspberry Pi Pico e o outro pino do botão está conectado ao pino `3.3V` do seu Raspberry Pi Pico. Isso significa que, ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser puxado para baixo, ou _pulled down_ em inglês, o que significa que o pino `14` do Pico lerá o valor lógico `0 zero` caso o botão não esteja pressionado, e o valor lógico `1 um` caso o botão esteja pressionado.
+
+Crie um novo arquivo e adicione este código.
+
+```python
+from machine import Pin
+import time
+
+led = Pin(15, Pin.OUT)
+button = Pin(14, Pin.IN, Pin.PULL_DOWN)
+
+while True:
+    if button.value():
+        led.toggle()
+        time.sleep(0.5)
+```
+
+Execute o seu código e então, quando você pressionar o botão, o LED deverá acender ou apagar. Se você segurar o botão pressionado, ele irá piscar.
+
+Entenda a explicação do código linha por linha:
+
+1. `from machine import Pin`: Esta linha importa uma biblioteca que permite ao Raspberry Pi Pico controlar seus pinos. 
+
+2. `import time`: Aqui é importada a biblioteca que permite lidar com o temporizadores, como fazer o programa esperar por um tempo específico.
+
+3. `led = Pin(15, Pin.OUT)`: Aqui é criada uma variável chamada `led` (que poderia ser qualquer nome) e dizendo que ela está conectada ao pino 15 do seu Raspberry Pi Pico. Além disso, está configurando este pino como uma saída `Pin.OUT`. Isso significa que esse pino pode enviar eletricidade para acender um LED conectado a ele através de um fio de conexão (jumper).
+
+4. `button = Pin(14, Pin.IN, Pin.PULL_DOWN)`: Da mesma forma, aqui é criada uma variável chamada `button` conectada ao pino 14 do seu Raspberry Pi Pico. O pino é configurando como uma entrada `Pin.IN`. Isso significa que o pino pode 'escutar' se existe eletricidade passando por ele ou não. O `Pin.PULL_DOWN` significa que há uma resistência especial ligada ao pino que ajuda a manter o valor do pino como `0 zero` quando não há corrente elétrica.
+
+5. `while True:`: Esta linha inicia um loop que vai continuar para sempre, a menos que algo o pare. É como dizer 'faça isso para sempre'.
+
+6. `if button.value():`: Aqui se verifica se o botão está sendo pressionado. `button.value()` retorna `True` se o botão estiver pressionado e `False` se não estiver.
+
+7. `led.toggle()`: Se o botão estiver pressionado, esta linha muda o estado do LED. Se o LED estiver aceso, ele é apagado, e vice-versa.
+
+8. `time.sleep(0.5)`: Esta linha faz o programa esperar por meio segundo (0.5 segundos) antes de continuar. É como um pequeno intervalo de tempo para que possamos ver o LED piscar.
+
+O código geral faz com que o LED pisque cada vez que o botão é pressionado. Se o botão for mantido pressionado, o LED continuará piscando a cada meio segundo até que o botão seja solto.
 
 
