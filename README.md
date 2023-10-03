@@ -331,9 +331,9 @@ A extremidade de soquete parece uma pequena peça de plástico preto. Ela tem um
 ![A extremidade de soquete de um fio de conexão](images/socket.png "A extremidade de soquete de um fio de conexão")
 
 ## Piscando um LED externo
-Agora que você conhece o básico, pode controlar um LED externo com o seu Raspberry Pi Pico e fazê-lo ler entrada de um botão.
+Agora que você conhece o básico, pode controlar um LED externo com o seu Raspberry Pi Pico e também fazê-lo ler a entrada de um botão externo.
 
-Use um resistor entre 50 e 330 ohms, um LED e um par de fios de conexão M-M para conectar o seu Raspberry Pi Pico conforme mostrado na imagem abaixo.
+Use um resistor entre 50 e 330 ohms, um LED vermelho e um par de fios de conexão M-M para conectar o seu Raspberry Pi Pico conforme mostrado na imagem abaixo.
 
 ![LED e resistor conectados ao Pico](images/single_LED.png "LED e resistor conectados ao Pico")
 
@@ -354,13 +354,11 @@ timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
 
 Execute o seu programa e o LED deverá começar a piscar. Se não estiver funcionando, verifique a sua conexão para ter certeza de que o LED está conectado corretamente.
 
-Em seguida, vamos tentar controlar o LED usando um botão.
-
-Adicione um botão ao seu circuito conforme mostrado no diagrama abaixo.
+Em seguida, vamos tentar controlar o LED usando um botão. Adicione um botão ao seu circuito conforme mostrado no diagrama abaixo.
 
 ![LED e botão em uma placa de prototipagem](images/button_and_LED.png "LED e botão em uma placa de prototipagem")
 
-Um pino do botão está conectado ao pino `14` do seu Raspberry Pi Pico e o outro pino do botão está conectado ao pino `3.3V` do seu Raspberry Pi Pico. Isso significa que, ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser puxado para baixo, ou _pulled down_ em inglês, o que significa que o pino `14` do Pico lerá o valor lógico `0 zero` caso o botão não esteja pressionado, e o valor lógico `1 um` caso o botão esteja pressionado.
+Um pino do botão está conectado ao pino `14` do seu Raspberry Pi Pico e o outro pino do botão está conectado ao pino `3.3V` do seu Raspberry Pi Pico. Ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser puxado para baixo, ou _pulled down_ em inglês, o que significa que o pino `14` do Pico lerá o valor lógico `0 zero` caso o botão não esteja pressionado, e o valor lógico `1 um` caso o botão esteja pressionado.
 
 Crie um novo arquivo e adicione este código.
 
@@ -381,11 +379,11 @@ Execute o seu código e então, quando você pressionar o botão, o LED deverá 
 
 Entenda a explicação do código linha por linha:
 
-1. `from machine import Pin`: Esta linha importa uma biblioteca que permite ao Raspberry Pi Pico controlar seus pinos. 
+1. `from machine import Pin`: Esta linha importa uma biblioteca que permite ao Raspberry Pi Pico controlar os seus pinos. 
 
-2. `import time`: Aqui é importada a biblioteca que permite lidar com o temporizadores, como fazer o programa esperar por um tempo específico.
+2. `import time`: Aqui é importada a biblioteca que permite lidar com o temporizadores, como fazer o programa esperar por um tempo específico sem fazer nada.
 
-3. `led = Pin(15, Pin.OUT)`: Aqui é criada uma variável chamada `led` (que poderia ser qualquer nome) e dizendo que ela está conectada ao pino 15 do seu Raspberry Pi Pico. Além disso, está configurando este pino como uma saída `Pin.OUT`. Isso significa que esse pino pode enviar eletricidade para acender um LED conectado a ele através de um fio de conexão (jumper).
+3. `led = Pin(15, Pin.OUT)`: Aqui é criada uma variável chamada `led` (que poderia ser qualquer outro nome) e dizendo que ela está conectada ao pino 15 do seu Raspberry Pi Pico. Além disso, está configurando este pino como uma saída `Pin.OUT`. Isso significa que esse pino pode enviar corrente elétrica para acender um LED conectado a ele através de um fio de conexão (jumper).
 
 4. `button = Pin(14, Pin.IN, Pin.PULL_DOWN)`: Da mesma forma, aqui é criada uma variável chamada `button` conectada ao pino 14 do seu Raspberry Pi Pico. O pino é configurando como uma entrada `Pin.IN`. Isso significa que o pino pode 'escutar' se existe eletricidade passando por ele ou não. O `Pin.PULL_DOWN` significa que há uma resistência especial ligada ao pino que ajuda a manter o valor do pino como `0 zero` quando não há corrente elétrica.
 
@@ -395,7 +393,7 @@ Entenda a explicação do código linha por linha:
 
 7. `led.toggle()`: Se o botão estiver pressionado, esta linha muda o estado do LED. Se o LED estiver aceso, ele é apagado, e vice-versa.
 
-8. `time.sleep(0.5)`: Esta linha faz o programa esperar por meio segundo (0.5 segundos) antes de continuar. É como um pequeno intervalo de tempo para que possamos ver o LED piscar.
+8. `time.sleep(0.5)`: Esta linha faz o programa esperar por meio segundo (0,5 segundos) antes de continuar. É como um pequeno intervalo de tempo para que possamos ver o LED piscar.
 
 O código geral faz com que o LED pisque cada vez que o botão é pressionado. Se o botão for mantido pressionado, o LED continuará piscando a cada meio segundo até que o botão seja solto.
 
