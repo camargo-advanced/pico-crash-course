@@ -394,9 +394,9 @@ while True:
         time.sleep(0.5)
 ```
 
-Execute o seu código e então, quando você pressionar o botão, o LED deverá acender ou apagar. Se você segurar o botão pressionado, ele irá piscar.
+Ao executar o código e ele fará com que o LED pisque cada vez que o botão é pressionado. Se o botão for mantido pressionado, o LED continuará piscando a cada meio segundo até que o botão seja solto.
 
-Vamos revisar juntos todas as linhas de código desse programa.
+Veja a seguir uma explicação de cada linha de código desse programa.
 
 A linha 1 `from machine import Pin` importa uma biblioteca que permite ao Raspberry Pi Pico controlar os seus pinos. Por exemplo, podemos alternar a tensão de um pino entre alta (3,3 V) e baixa (0 V).
 
@@ -406,7 +406,7 @@ A linha 3 `led = Pin(15, Pin.OUT)` cria uma variável chamada `led` (que poderia
 
 A linha 4 `button = Pin(14, Pin.IN, Pin.PULL_DOWN)` cria uma variável chamada `button` conectada ao pino 14 do seu Raspberry Pi Pico. O pino é configurando como uma entrada `Pin.IN`. Isso significa que o pino pode 'escutar' se existe eletricidade passando por ele ou não. O `Pin.PULL_DOWN` significa que há um resistor interno especial ligado ao pino que ajuda a manter o valor do pino como `0 V` quando não há corrente elétrica.
 
-A quinta linha `while True:` inicia um 'loop' que vai continuar para sempre, a menos que algo o pare. É como dizer 'repita isso para sempre'.
+A linha 5 `while True:` inicia um 'loop' que vai continuar para sempre, a menos que algo o pare. É como dizer 'repita isso para sempre'.
 
 A palavra-chave `while` ('enquanto' em Português) permite que um pedaço de código seja repetido várias vezes, enquanto a condição fornecida seja verdadeira. O `while` funciona assim: primeiro, verifica se uma condição é verdadeira. Se for, ele executa o bloco de código dentro dele. Depois, ele verifica a condição novamente. Se ainda for verdadeira, ele executa o bloco de código novamente. Isso se repete até que a condição não seja mais verdadeira. Quando isso acontece, o programa continua para a próxima parte do código após o `while`. Como em nosso caso a condição avaliada é a palavra-chave `True`, o laço se repetirá para sempre.
 
@@ -418,6 +418,50 @@ A linha 7 `led.toggle()` muda o estado do LED. Se o LED estiver aceso, ele é ap
 
 A linha 8 `time.sleep(0.5)` faz o programa esperar por meio segundo (0,5 segundos) antes de continuar. É como um pequeno intervalo de tempo para que possamos ver o LED piscar. Note que essa linha de código também está dentro da condição `if`. Logo, somente quando o botão estiver sendo pressionado essa linha será executada.
 
-O comportamento final desse código faz com que o LED pisque cada vez que o botão é pressionado. Se o botão for mantido pressionado, o LED continuará piscando a cada meio segundo até que o botão seja solto.
+## Controle da intensidade do LED com PWM
 
+Imagine que exista uma forma de fazer um LED brilhar mais forte ou mais fraco, como se ele estivesse respirando devagar e rápido. Isso é ótimo porque não precisamos apenas ligar ou desligar o LED, podemos controlar o quão forte ele brilha.
+
+Modulação por largura de pulso, ou _Pulse Width Molulation_ (PWM) em inglês, permite conferir comportamentos analógicos a dispositivos digitais, como LEDs. Isso significa que, ao invés de um LED estar simplesmente ligado ou desligado, você pode controlar sua intensidade.
+
+Nesse exemplo você pode usar o circuito que fizemos antes.
+
+Abra um novo arquivo no Thonny e adicione o seguinte código.
+
+```python
+from machine import Pin, PWM
+from time import sleep
+
+pwm = PWM(Pin(15))
+
+pwm.freq(1000)
+
+while True:
+    for duty in range(65025):
+        pwm.duty_u16(duty)
+        sleep(0.0001)
+    for duty in range(65025, 0, -1):
+        pwm.duty_u16(duty)
+        sleep(0.0001)
+```
+
+Depois de escrever o código, salve-o no Raspberry Pi Pico com o nome `pulse.py` e execute. Vai ser legal ver como o LED pulsa e brilha continuamente de uma forma especial!
+
+Se quiser, você pode mexer nas configurações para mudar o ritmo e a intensidade do brilho do LED. É como ajustar a música para que ela toque mais rápido ou mais devagar, mas com luzes!
+
+A linha `pwm.freq(1000)` significa que a frequência do sinal PWM está configurada para 1000 Hertz (Hz). Isso significa que o LED será ligado e desligado 1000 vezes por segundo, o que é uma frequência bastante rápida. Isso resulta em um piscar de LED que parece contínuo para o olho humano.
+
+A linha `for duty in range(65025):` inicia um loop, como uma repetição em um jogo, que vai de 0 a 65024. O número dentro do parênteses diz quantas vezes o loop vai acontecer, ou seja, quantas vezes as linhas indentadas ao `for` serão executadas.
+
+A palavra-chave `for` do MicroPython é uma ferramenta muito útil em programação. Ela nos permite repetir uma ação várias vezes criando um loop, sem ter que escrever o mesmo código várias vezes. Por exemplo, se você tem uma lista de músicas, o `for` pode te ajudar a tocar cada uma delas uma após a outra, sem ter que ficar repetindo o mesmo comando toda vez. 
+
+A linha `pwm.duty_u16(duty)` dentro do loop diz ao LED o quão forte ele deve brilhar. O número `duty` começa em 0 e vai aumentando a cada repetição. Portanto, o LED vai brilhar mais e mais forte a cada vez. Isso pode variar de 0 a 65025. 65025 seria 100% do tempo, então o LED ficaria sempre brilhante. Um valor em torno de 32512 indicaria que ele deveria ficar aceso metade do tempo.
+
+A linha `sleep(0.0001)` permite que após ajustar o brilho, ocorra uma pausa muito curta (0,0001 segundos). É como dar uma respirada entre cada vez que o LED brilha.
+
+Juntas, essas três linhas fazem com que o LED brilhe mais forte a cada repetição do loop, criando um efeito de aumento gradual de brilho. Isso acontece muito rápido, então parece que o LED está pulsando de forma suave e contínua. É como se o LED estivesse "respirando" luz. É uma forma de controlar a intensidade da luz de uma maneira especial!
+
+As últimas 3 linhas fazem outro loop similar que fará o oposto, ou seja, ocorrerá uma redução gradual do brilho do LED até que ele se apague totalmente. Esse ciclo se repete para sempre pois os dois loops estão indentados ao `While True`.
+
+Experimente brincar com os valores de frequência, ciclo de trabalho, ou _duty cycle_ em inglês, assim como o tempo de espera (sleep), para ter uma ideia de como você pode ajustar a intensidade e o ritmo do LED pulsante.
 
