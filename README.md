@@ -427,15 +427,17 @@ Você fará isso daqui a pouco mas antes é necessário entender alguns conceito
 ### Frequência, período e ciclo de trabalho
 
 **Frequência (_Frequency_ em inglês):**
-Frequência é como nós medimos a rapidez com que alguma coisa acontece de novo e de novo. Imagine um LED que se liga e desliga várias vezes em 1 segundo. Se isso acontece muitas vezes em um curto período, dizemos que tem uma alta frequência. Por exemplo, se um LED piscar 3 vezes por segundo, ele tem uma frequência 3 vezes mais alta que um LED piscando 1 vez por segundo. A frequência é medida em Hertz (Hz), sendo que 1 Hz é igual a uma piscada do led (acender e apagar) por segundo. No exemplo da figura o LED é ligado e desligado 3 vezes em 1 segundo. Logo, a frequência é de 3 Hz.
+é como se mede a rapidez com que alguma coisa acontece de novo e de novo. Imagine um LED que se liga e desliga várias vezes em 1 segundo. Se isso acontece muitas vezes em pouco tempo, dizemos que tem uma alta frequência. Por exemplo, se um LED pisca 3 vezes por segundo, ele tem uma frequência 3 vezes mais alta que um LED que pisca 1 vez por segundo. A frequência é medida em Hertz (Hz), sendo que 1 Hz é igual a uma piscada do LED (acender e apagar) por segundo. No exemplo da figura o LED é ligado e desligado 3 vezes em 1 segundo. Logo, a frequência é de 3 Hz.
+
+![Frequência, período e ciclo de trabalho](images/pwm.png "Frequência, período e ciclo de trabalho")
 
 **Período (_Period_ em inglês):**
 O período é o tempo que leva para algo acontecer uma vez. Se temos um LED piscando, o período é o tempo entre cada piscada. Por exemplo, se o LED pisca 3 vezes a cada 1 segundo, o período será de 1 segundo dividido por 3, ou seja 0,333 segundos, ou 333 milisegundos. Lembre que 1 segundo é igual a 1000 milisegundos.
 
 **Ciclo de trabalho (_Duty Cycle_ em inglês):**
-O ciclo de trabalho é como se descreve o tempo que algo está ativo ou "ligado" durante um período. Imagine um LED piscando. Se ele fica aceso metade do tempo e apagado metade do tempo, dizemos que tem um ciclo de trabalho de 50%. Se ele fica acesa por mais tempo do que apagada, o duty cycle é maior. 
+O ciclo de trabalho é como se descreve o tempo que algo está ativo ou "ligado" durante um período. Imagine um LED piscando. Se ele fica aceso metade do tempo e apagado metade do tempo, dizemos que tem um ciclo de trabalho de 50%. Se ele fica aceso por mais tempo do que apagado, o ciclo de trabalho é maior. 
 
-Agora, vamos olhar para o gráfico que mostra 3 períodos de um sinal de 3 Hz:
+Agora, olhe para o figura que mostra 3 períodos de um sinal de 3 Hz e analise os diferentes ciclos de trabalho e como eles afetam o tempo em que o LED fica ligado e desligado:
 
 * **0% Duty Cycle:**
    Neste caso, o LED está sempre apagado. Não importa quantos períodos passem, ele nunca fica ligado. 
@@ -444,7 +446,7 @@ Agora, vamos olhar para o gráfico que mostra 3 períodos de um sinal de 3 Hz:
    Aqui, o LED está ligado por um quarto do período e apagado por três quartos. Isso significa que o LED fica aceso por um curto tempo e depois apagado por um tempo mais longo.
 
 * **50% Duty Cycle:**
-   Com um duty cycle de 50%, o LED está ligado por metade do período e apagado pela outra metade. É como um LED piscando que passa a mesma quantidade de tempo aceso e apagado.
+   Com um ciclo de trabalho de 50%, o LED está ligado por metade do período e apagado pela outra metade. É como um LED piscando que passa a mesma quantidade de tempo aceso e apagado.
 
 * **75% Duty Cycle:**
    Neste caso, o LED está ligado por três quartos do período e apagado por um quarto. Ele fica aceso por mais tempo do que fica apagado.
@@ -453,7 +455,7 @@ Agora, vamos olhar para o gráfico que mostra 3 períodos de um sinal de 3 Hz:
    Aqui, o LED está sempre ligado. Não importa quanto tempo passe, ele nunca se apaga.
 
 ### Modulação por largura de pulso, ou _Pulse Width Molulation_ (PWM)
-Modulação por largura de pulso, ou _Pulse Width Molulation_ (PWM) em inglês, é uma técnica utilizada para controlar a quantidade de energia entregue a um componente, como um LED. Ao invés de simplesmente ligar ou desligar, o PWM liga e desliga muito rapidamente em uma sequência, sendo que a cada tempo pode utilizar um ciclo de trabalho (_duty cycle_) diferente. Isso cria a ilusão de que o componente está operando em um nível intermediário de intensidade.
+Modulação por largura de pulso, ou _Pulse Width Molulation_ (PWM) em inglês, é uma técnica utilizada para controlar a quantidade de energia entregue a um componente, como um LED. Ao invés de simplesmente ligar ou desligar, o PWM liga e desliga muito rapidamente em uma sequência, sendo que a cada tempo ele pode utilizar um ciclo de trabalho (_duty cycle_) diferente. Isso cria a ilusão de que o componente está operando em um nível intermediário de intensidade.
 
 ### LED pulsando em 3 Hz
 Agora que você já entendeu esses conceitos, imagine fazer um código que faça um LED piscar em 3 Hz e além disso pulsar como um coração? Você fará isso acendendo e desligando o LED a cada período, só que gradualmente através da alteração do ciclo de trabalho (duty cycle) a cada milisegundo usando o PWM do seu Raspberry Pi Pico. 
@@ -485,11 +487,11 @@ while True:
         sleep_ms(1)
 ```
 
-Depois de escrever o código, salve-o no Raspberry Pi Pico com o nome `pulse.py` e execute. Vai ser legal ver como o LED pulsar e brilhar continuamente de uma forma especial!
+Depois de escrever o código, salve-o no Raspberry Pi Pico com o nome `pulse.py` e execute. Vai ser legal ver o LED pulsar e brilhar continuamente de uma forma especial!
 
 Se quiser, você pode mexer nas configurações para mudar o ritmo e a intensidade do brilho do LED. É como ajustar a música para que ela toque mais rápido ou mais devagar, mas com luzes!
 
-Segue a explicação de cada parte do código para você.
+Segue a explicação de cada parte do código para você entender melhor.
 
 ```python
 from machine import Pin, PWM
@@ -501,7 +503,7 @@ from time import sleep_ms
 ```python
 MAX_DUTY_VALUE = 65025
 ```
-* `MAX_DUTY_VALUE` é uma constante que representa o valor máximo de intensidade luminosa que o LED pode atingir. Este valor é específico para o hardware e pode variar de acordo com o microcontrolador.
+* `MAX_DUTY_VALUE` é uma constante que representa o valor máximo de intensidade luminosa que o LED pode atingir. Este valor é específico para o hardware e pode variar de acordo com o microcontrolador. Em MicroPython usamos nomes de variáveis em maiúsculo para representar valores constantes.
 
 ```python
 pwm = PWM(Pin(15))
@@ -536,11 +538,11 @@ while True:
 
 * `for duty in range(0, MAX_DUTY_VALUE, duty_inc_per_ms):`: Este loop percorre uma série de valores de 0 até o `MAX_DUTY_VALUE`, aumentando de acordo com `duty_inc_per_ms`. O `duty` representa o novo ciclo de trabalho.
 
-* `pwm.duty_u16(duty)`: Define o ciclo de trabalho do PWM para o valor atual de `duty`.
+* `pwm.duty_u16(duty)`: Altera o ciclo de trabalho do PWM para o valor atual de `duty`.
 
 * `sleep_ms(1)`: Espera por 1 milissegundo. Isso controla a velocidade com que o ciclo de trabalho é alterado, influenciando na frequência do pulsar.
 
-* O segundo loop (`for duty in range(MAX_DUTY_VALUE, 0, -duty_inc_per_ms)`) faz o mesmo, mas em ordem reversa, para criar o efeito de pulsar.
+* O segundo loop (`for duty in range(MAX_DUTY_VALUE, 0, -duty_inc_per_ms)`) faz o mesmo, mas em ordem reversa, para criar o efeito de pulsar. Note o sinal de menos antes da variável `duty_inc_per_ms`. Dessa forma informamos ao laço `for` que ele deve decrementar aquele valor a cada iteração.
 
 Experimente brincar com os valores de frequência, ciclo de trabalho, ou _duty cycle_ em inglês, assim como o tempo de espera (sleep), para ter uma ideia de como você pode ajustar a intensidade e o ritmo do LED pulsante.
 
