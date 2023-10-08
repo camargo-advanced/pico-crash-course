@@ -37,7 +37,7 @@ Vire o seu Pico e você verá que a parte inferior tem escritos rotulando cada u
 
 Se você tiver uma placa de prototipagem, insira o seu Raspberry Pi Pico na placa de forma que ele cubra a divisão do meio e a porta micro USB esteja no topo da placa, conforme a figura que segue. Empurre delicadamente o Pico para baixo até que as partes plásticas dos pinos estejam tocando a placa de prototipagem. Isso significa que as partes metálicas dos pinos estão totalmente inseridas e fazendo um bom contato elétrico com a placa de prototipagem.
 
-O pino superior esquerdo, **Pino 0**, deve estar na fileira marcada com um **1**, se sua placa de prototipagem estiver numerada. Antes de empurrar o seu Pico para baixo, certifique-se de que os pinos estejam todos devidamente posicionados. Se você dobrar um pino, pode ser difícil endireitá-lo novamente sem quebrá-lo.
+O pino superior esquerdo, **GP0**, deve estar na fileira marcada com um **1**, se sua placa de prototipagem estiver numerada (algumas placas iniciam pelo valor **0**). Antes de empurrar o seu Pico para baixo, certifique-se de que os pinos estejam todos devidamente posicionados. Se você dobrar um pino, pode ser difícil endireitá-lo novamente sem quebrá-lo.
 
 ![Pico inserido na placa de prototipagem](images/pico-breadboard.png "Pico inserido na placa de prototipagem")
 
@@ -160,7 +160,7 @@ O importante é ser consistente: se você iniciou uma `string` com aspas simples
 As funções em Python, assim como na maioria das linguagens de programação, utilizam um par de parenteses `()` para indicar onde os argumentos devem ser colocados.  Por isso a `string` 'Hello World!' foi colocada dentro dos parênteses da função `print`.
 
 ### Acendendo o LED embarcado
-O MicroPython adiciona bibliotecas específicas de hardware, como `machine`, que você pode usar para programar o seu Raspberry Pi Pico. Vamos criar um objeto `machine.Pin` para acessar o LED embarcado conectado ao pino `25` do seu Pico.
+O MicroPython adiciona bibliotecas específicas de hardware, como `machine`, que você pode usar para programar o seu Raspberry Pi Pico. Vamos criar um objeto `machine.Pin` para acessar o LED embarcado conectado ao pino `GP25` do seu Pico.
 
 Digite o seguinte código, e certifique-se de pressionar `Enter` após cada linha.
 
@@ -201,7 +201,7 @@ led.toggle()
 
 A primeira linha de código `from machine import Pin` importa uma biblioteca do MicroPython chamada `machine` que contém funções para interagir com hardware. Mais especificamente, ela está importando a função `Pin`, que permite controlar os pinos do Raspberry Pi Pico.
 
-Na segunda linha `led = Pin(25, Pin.OUT)` é criada uma variável chamada `led`. Esta variável é configurada para controlar o pino `25` do Raspberry Pi Pico, que está conectado ao LED embarcado da placa. A segunda parte `Pin.OUT` significa que este pino será usado para enviar um sinal de saída (como acender ou apagar um LED).
+Na segunda linha `led = Pin(25, Pin.OUT)` é criada uma variável chamada `led`. Esta variável é configurada para controlar o pino `GP25` do Raspberry Pi Pico, que está conectado ao LED embarcado da placa. A segunda parte `Pin.OUT` significa que este pino será usado para enviar um sinal de saída (como acender ou apagar um LED).
 
 A última linha `led.toggle()` está dizendo para o LED trocar de estado. Se o LED estiver aceso, ele será apagado, e vice-versa.
 
@@ -357,7 +357,7 @@ Use um resistor entre `50` e `330 ohms`, um LED vermelho e um par de fios de con
 
 ![LED e resistor conectados ao Pico](images/single_LED.png "LED e resistor conectados ao Pico")
 
-Neste exemplo, o LED está conectado ao pino `15` do seu Raspberry Pi Pico. Se você usar um pino diferente, lembre-se de procurar o número no diagrama de pinos.
+Neste exemplo, o LED está conectado ao pino `GP15` do seu Raspberry Pi Pico. Se você usar um pino diferente, lembre-se de procurar o número no diagrama de pinos.
 
 Use o mesmo código que você usou anteriormente para piscar o LED embarcado, mas mude o número do pino para `15`.
 
@@ -378,7 +378,7 @@ Em seguida, vamos controlar o LED usando um botão. Adicione um botão ao seu ci
 
 ![LED e botão em uma placa de prototipagem](images/button_and_LED.png "LED e botão em uma placa de prototipagem")
 
-Uma das extremidades do botão está conectada ao pino `14` do seu Raspberry Pi Pico e a outra extremidade do botão está conectada ao pino `3.3V` do seu Raspberry Pi Pico. Ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser 'puxado para baixo', ou _pulled down_ em inglês, o que significa que o pino lerá o valor lógico `0` (zero) caso o botão não esteja pressionado, e o valor lógico `1` (um) caso o botão esteja pressionado. Existem palavras-chave em MicroPython para esses valores lógicos: `True` é o mesmo que `1` e `False` é o mesmo que `0'.
+Uma das extremidades do botão está conectada ao pino `GP14` do seu Raspberry Pi Pico e a outra extremidade do botão está conectada ao pino `3.3V` do seu Raspberry Pi Pico. Ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser 'puxado para baixo', ou _pulled down_ em inglês, o que significa que o pino lerá o valor lógico `0` (zero) caso o botão não esteja pressionado, e o valor lógico `1` (um) caso o botão esteja pressionado. Existem palavras-chave em MicroPython para esses valores lógicos: `True` é o mesmo que `1` e `False` é o mesmo que `0'.
 
 Crie um novo arquivo, adicione o código a seguir e salve-o com o nome de `blink2.py` no seu Raspberry Pi Pico.
 
@@ -403,9 +403,9 @@ Veja a seguir uma explicação de cada linha de código desse programa.
 
 * **`import time`**: importa a biblioteca que permite lidar com o temporizadores. Com isso podemos fazer o programa esperar por um tempo específico sem fazer nada por exemplo.
 
-* **`led = Pin(15, Pin.OUT)`** cria uma variável chamada `led` (que poderia ser qualquer outro nome) dizendo que ela está conectada ao pino 15 do seu Raspberry Pi Pico. Além disso, está configurando este pino como uma saída `Pin.OUT`. Isso significa que esse pino pode enviar corrente elétrica para acender um LED conectado a ele através de um fio de conexão (jumper).
+* **`led = Pin(15, Pin.OUT)`** cria uma variável chamada `led` (que poderia ser qualquer outro nome) dizendo que ela está conectada ao pino 15 (`GP15`) do seu Raspberry Pi Pico. Além disso, está configurando este pino como uma saída `Pin.OUT`. Isso significa que esse pino pode enviar corrente elétrica para acender um LED conectado a ele através de um fio de conexão (jumper).
 
-* **`button = Pin(14, Pin.IN, Pin.PULL_DOWN)`** cria uma variável chamada `button` conectada ao pino 14 do seu Raspberry Pi Pico. O pino é configurando como uma entrada `Pin.IN`. Isso significa que o pino pode 'escutar' se existe eletricidade passando por ele ou não. O `Pin.PULL_DOWN` significa que há um resistor interno especial ligado ao pino que ajuda a manter o valor do pino como `0 V` quando não há corrente elétrica.
+* **`button = Pin(14, Pin.IN, Pin.PULL_DOWN)`** cria uma variável chamada `button` conectada ao pino 14 (`GP14`) do seu Raspberry Pi Pico. O pino é configurando como uma entrada `Pin.IN`. Isso significa que o pino pode 'escutar' se existe eletricidade passando por ele ou não. O `Pin.PULL_DOWN` significa que há um resistor interno especial ligado ao pino que ajuda a manter o valor do pino como `0 V` quando não há corrente elétrica.
 
 * **`while True:`** inicia um 'loop' que vai continuar para sempre, a menos que algo o pare. É como dizer 'repita isso para sempre'.
 
@@ -469,7 +469,7 @@ Abra um novo arquivo no Thonny e adicione o seguinte código.
 from machine import Pin, PWM
 from time import sleep_ms
 
-MAX_DUTY_VALUE = 65025 
+MAX_DUTY_VALUE = 65535 
 
 pwm = PWM(Pin(15))
 pwm.freq(500)
@@ -502,7 +502,7 @@ from time import sleep_ms
 * `from time import sleep_ms`: Isso importa a função `sleep_ms` da biblioteca `time`, que nos permite pausar o programa por um número especificado de milissegundos.
 
 ```python
-MAX_DUTY_VALUE = 65025
+MAX_DUTY_VALUE = 65535
 ```
 * `MAX_DUTY_VALUE` é uma constante que representa o valor máximo de intensidade luminosa que o LED pode atingir. Este valor é específico para o hardware e pode variar de acordo com o microcontrolador. Em MicroPython usamos nomes de variáveis em maiúsculo para representar valores constantes.
 
@@ -510,7 +510,7 @@ MAX_DUTY_VALUE = 65025
 pwm = PWM(Pin(15))
 pwm.freq(500)
 ```
-* `pwm = PWM(Pin(15))`: Aqui, estamos configurando o pino 15 como uma saída PWM (Modulação por Largura de Pulso) e associando isso à variável chamada `pwm`.
+* `pwm = PWM(Pin(15))`: Aqui, estamos configurando o pino 15 (`GP15`) como uma saída PWM (Modulação por Largura de Pulso) e associando isso à variável chamada `pwm`.
 
 * `pwm.freq(500)`: Estamos definindo a frequência do sinal PWM como 500 Hz (ciclos por segundo). Isso significa que o LED irá ligar e desligar 500 vezes por segundo.
 
@@ -546,4 +546,78 @@ while True:
 * O segundo loop (`for duty in range(MAX_DUTY_VALUE, 0, -duty_inc_per_ms)`) faz o mesmo, mas em ordem reversa, para criar o efeito de pulsar. Note o sinal de menos antes da variável `duty_inc_per_ms`. Dessa forma informamos ao laço `for` que ele deve decrementar aquele valor a cada iteração.
 
 Experimente brincar com os valores de frequência, ciclo de trabalho, ou _duty cycle_ em inglês, assim como o tempo de espera (sleep), para ter uma ideia de como você pode ajustar a intensidade e o ritmo do LED pulsante.
+
+## Controle de intensidade do LED com Potenciômetro 
+O seu Raspberry Pi Pico possui pinos de entrada que podem receber sinais analógicos. Isso significa que, em vez de apenas ler os valores `1` e `0` (ligado e desligado), ele pode ler valores intermediários.
+
+Um potenciômetro é o dispositivo analógico perfeito para esse objetivo.
+
+### O que é um Potenciômetro?
+O potenciômetro é um componente muito útil na eletrônica. Pode ser um pouco difícil de pronunciar, mas é fácil de entender! 
+
+Vamos imaginar um potenciômetro como uma torneira de água em um encanamento.
+
+Imagine que temos um cano por onde a água (eletricidade) pode fluir. O potenciômetro é como uma torneira nesse cano (circuito). Girando a torneira, podemos controlar o fluxo de água através do encanamento.
+
+Se abrimos a torneira completamente, a água flui livremente. Mas, se giramos a torneira para um ponto intermediário, a água encontra mais resistência e flui mais devagar. Se fecharmos a torneira o fluxo de água cessa.
+
+Se ligarmos um LED a esse circuito, podemos controlar o brilho dele girando a torneira. Quanto mais resistência (torneira mais fechada), menos eletricidade passa e a lâmpada fica mais fraca. Se abrimos totalmente, a lâmpada brilha forte.
+
+Dessa forma o potenciômetro atua como uma torneira no nosso encanamento elétrico, controlando o fluxo de eletricidade. Isso nos dá a capacidade de ajustar o funcionamento de dispositivos elétricos com mais precisão.
+
+### Conversor Analógico-Digital (ADC)
+Um Conversor Analógico-Digital ou _Analog-to-Digital Converter_ (ADC) em inglês, é como um tradutor que transforma coisas que são contínuas, como luz, som ou temperatura, em números para que um computador pode entender. É como quando você mede algo com uma régua e anota o número para saber o tamanho.
+
+Isso é muito útil porque os computadores entendem apenas números, mas o mundo ao nosso redor é cheio de coisas que não são números diretamente. Com um ADC, podemos medir e usar essas coisas em nossos projetos com Raspberry Pi Pico.
+
+Por exemplo, o ADC pode ler um potenciômetro e traduzir essa leitura em valor entre 0 e 65535. Esse valor pode ser utilizado para definir o ciclo de trabalho (_duty cycle_) em um PWM para controlar a intensidade de um LED, que também opera na mesma faixa de valores.
+
+### Lendo valores de um Potenciômetro
+Substitua o botão no seu circuito por um potenciômetro. Siga o diagrama abaixo para conectá-lo ao pino analógico `GP26`.
+
+![Potenciômetro conectado com um LED ao Pico](images/pot_and_LED.png "Potenciômetro conectado com um LED ao Pico")
+
+Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `pot.py` e depois execute-o. 
+
+A seguir a explicação das linhas mais importantes do código.
+
+```python
+from machine import ADC, Pin
+import time
+
+adc = ADC(Pin(26))
+
+while True:
+    print(adc.read_u16())
+    time.sleep(1)
+```
+
+* **`from machine import ADC, Pin`**: A novidade aqui é que estamos importando a função `ADC` da biblioteca `machine`, que nos ajudará a ler o potenciômetro.
+
+* **`adc = ADC(Pin(26))`**: Nessa linha estamos criando um objeto ADC conectado ao pino 26 (`GP26`) do Raspberry Pi Pico, ou seja, estamos dizendo ao Raspberry Pi Pico para usar o pino para 'escutar' o potenciômetro. Pense nisso como conectar um ouvido (o pino) para ouvir o potenciômetro.
+
+* **`print(adc.read_u16())`**: Esta linha lê a posição do potenciômetro e converte em um número que é impresso no Shell.
+
+Agora gire o potenciômetro para ver seus valores máximo e mínimo. Eles devem estar aproximadamente entre 0 e 65535. 
+
+> **`Dica`**: Caso tenha pequenas variações nos valores mínimo e máximo lidos do potenciômetro pode ser devido a qualidade do componente. Mas não se preocupe, pequenas variações não vão atrapalhar nesse caso.
+
+Agora você pode usar esse valor para controlar o ciclo de trabalho do o PWM e dessa forma controlar a intensidade do LED!
+
+Altere o código anterior conforme segue. Uma vez que você o tenha executado, ajuste o botão do potenciômetro para controlar a intensidade do LED.
+
+```python
+from machine import Pin, PWM, ADC
+
+pwm = PWM(Pin(15))
+adc = ADC(Pin(26))
+
+pwm.freq(1000)
+
+while True:
+    duty = adc.read_u16()
+    pwm.duty_u16(duty)
+```
+
+Parabéns! Você conseguiu controlar o LED usando o potenciômetro! Continue explorando esse mundo da eletrônica e programação, pois você está trilhando um caminho cheio de descobertas empolgantes!
 
