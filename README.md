@@ -555,7 +555,9 @@ Um potenciômetro é o dispositivo analógico perfeito para esse objetivo.
 ### O que é um Potenciômetro?
 O potenciômetro é um componente muito útil na eletrônica. Pode ser um pouco difícil de pronunciar, mas é fácil de entender! 
 
-Vamos imaginar um potenciômetro como uma torneira de água em um encanamento.
+Vamos imaginar um potenciômetro como uma torneira de água em um encanamento. A imagem que segue mostra um potenciômetro típico.
+
+![Potenciômetro conectado com um LED ao Pico](images/potentiometer.jpg "Potenciômetro conectado com um LED ao Pico")
 
 Imagine que temos um cano por onde a água (eletricidade) pode fluir. O potenciômetro é como uma torneira nesse cano (circuito). Girando a torneira, podemos controlar o fluxo de água através do encanamento.
 
@@ -602,9 +604,15 @@ Agora gire o potenciômetro para ver seus valores máximo e mínimo. Eles devem 
 
 > **`Dica`**: Caso tenha pequenas variações nos valores mínimo e máximo lidos do potenciômetro pode ser devido a qualidade do componente. Mas não se preocupe, pequenas variações não vão atrapalhar nesse caso.
 
-Agora você pode usar esse valor para controlar o ciclo de trabalho do o PWM e dessa forma controlar a intensidade do LED!
+O Thonny tem uma opção chamada **Plotter** permite que você exiba os valores lidos do potenciômetro de forma gráfica para que possa entender o efeito ao girar o botão. No Thonny, escolha **'View > Plotter'** e o plotador aparecerá ao lado direito do Shell.
 
-Altere o código anterior conforme segue. Uma vez que você o tenha executado, ajuste o botão do potenciômetro para controlar a intensidade do LED.
+![Imagem animada do plotter](images/thonny-plotter.gif "Imagem animada do plotter")
+
+Gire novamente o potenciômetro e veja a alteração dos valores no **Plotter**. É possível ver a linha subir a medida que você 'abre mais a torneira' do potenciômetro, e vice-versa.
+
+E porque não usar esse valor para controlar o ciclo de trabalho do PWM e dessa forma controlar a intensidade do LED?
+
+Altere o código anterior conforme segue, e salve-o no Raspberry Pi Pico como `pot-led.py`. Uma vez que você o tenha executado, ajuste o botão do potenciômetro para controlar a intensidade do LED.
 
 ```python
 from machine import Pin, PWM, ADC
@@ -619,5 +627,5 @@ while True:
     pwm.duty_u16(duty)
 ```
 
-Parabéns! Você conseguiu controlar o LED usando o potenciômetro! Continue explorando esse mundo da eletrônica e programação, pois você está trilhando um caminho cheio de descobertas empolgantes!
+Parabéns! Você conseguiu controlar o LED usando um potenciômetro! Continue explorando esse mundo da eletrônica e programação, pois você está trilhando um caminho cheio de descobertas empolgantes!
 
