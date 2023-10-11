@@ -1108,97 +1108,97 @@ Em nosso código utilizaremos 88 notas musicais que correspondem à notação mu
 
 ![Imagem de teclado padrão ocidental](images/keyboard.png "Imagem de teclado padrão ocidental")
 
-Segue a lista de notas musicais que utilizaremos:
+Segue a lista completa de notas musicais que utilizaremos:
 
-b0
-c1
-c#1
-d1
-d#1
-e1
-f1
-f#1
-g1
-g#1
-a1
-a#1
-b1
-c2
-c#2
-d2
-d#2
-e2
-f2
-f#2
-g2
-g#2
-a2
-a#2
-b2
-c3
-c#3
-d3
-d#3
-e3
-f3
-f#3
-g3
-g#3
-a3
-a#3
-b3
-c4 - This is middle C on a keyboard
-c#4
-d4
-d#4
-e4
-f4
-f#4
-g4
-g#4
-a4
-a#4
-b4
-c5
-c#5
-d5
-d#5
-e5
-f5
-f#5
-g5
-g#5
-a5
-a#5
-b5
-c6
-c#6
-d6
-d#6
-e6
-f6
-f#6
-g6
-g#6
-a6
-a#6
-b6
-c7
-c#7
-d7
-d#7
-e7
-f7
-f#7
-g7
-g#7
-a7
-a#7
-b7
-c8
-c#8
-d8
-d#8
+`b0`
+`c1`
+`c#1`
+`d1`
+`d#1`
+`e1`
+`f1`
+`f#1`
+`g1`
+`g#1`
+`a1`
+`a#1`
+`b1`
+`c2`
+`c#2`
+`d2`
+`d#2`
+`e2`
+`f2`
+`f#2`
+`g2`
+`g#2`
+`a2`
+`a#2`
+`b2`
+`c3`
+`c#3`
+`d3`
+`d#3`
+`e3`
+`f3`
+`f#3`
+`g3`
+`g#3`
+`a3`
+`a#3`
+`b3`
+`c4`
+`c#4`
+`d4`
+`d#4`
+`e4`
+`f4`
+`f#4`
+`g4`
+`g#4`
+`a4`
+`a#4`
+`b4`
+`c5`
+`c#5`
+`d5`
+`d#5`
+`e5`
+`f5`
+`f#5`
+`g5`
+`g#5`
+`a5`
+`a#5`
+`b5`
+`c6`
+`c#6`
+`d6`
+`d#6`
+`e6`
+`f6`
+`f#6`
+`g6`
+`g#6`
+`a6`
+`a#6`
+`b6`
+`c7`
+`c#7`
+`d7`
+`d#7`
+`e7`
+`f7`
+`f#7`
+`g7`
+`g#7`
+`a7`
+`a#7`
+`b7`
+`c8`
+`c#8`
+`d8`
+`d#8`
 
 ### Transformando partituras em notas
 Você pode inserir notas musicais reais para criar melodias para tocar no seu buzzer.
@@ -1217,12 +1217,12 @@ Sua partitura musical pode incluir notas que são sustenidos. Estes são represe
 
 ![Uma partitura musical mostrando notas que são sustenidos](images/sharp-notes.png "Uma partitura musical mostrando notas que são sustenidos")
 
-Sua partitura musical pode incluir notas que são bemóis. Estes também são representados usando um # porque a biblioteca não tem um código específico para bemóis. Para transformar um bemóis em um sustenido, você precisa descer na escala.
+Sua partitura musical pode incluir notas que são bemóis. Estes também serão representados usando um # porque não temos bemóis em nossa lista de notas. Para transformar um bemól em um sustenido, você precisa descer na escala.
 
-Um Ré bemol se torna um Dó sustenido ou c#4
-Um Mi bemol se torna um Ré sustenido ou d#4
-Um Sol bemol se torna um Fá sustenido ou f#4
-Um Lá bemol se torna um Sol sustenido ou g#4
+* Um Ré bemol se torna um Dó sustenido ou c#4
+* Um Mi bemol se torna um Ré sustenido ou d#4
+* Um Sol bemol se torna um Fá sustenido ou f#4
+* Um Lá bemol se torna um Sol sustenido ou g#4
 
 ![Uma partitura musical mostrando notas que são bemóis](images/flat-notes.png "Uma partitura musical mostrando notas que são bemóis")
 
