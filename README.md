@@ -920,7 +920,7 @@ def flash_morse_code(morse):
         led.off()
         sleep_ms(200)
 ```
-Esta parte do código define uma função chamada `flash_morse_code`. Funções são como pequenos pedaços de código que podem ser reutilizados. Esta função faz o LED piscar para representar o código Morse. Se o caractere é um ponto ('.'), o LED pisca rapidamente. Se for um traço ('-'), o LED pisca por mais tempo.
+Esta parte do código define uma função chamada `flash_morse_code`. Esta função faz o LED piscar para representar o código Morse. Se o caractere é um ponto ('.'), o LED pisca rapidamente. Se for um traço ('-'), o LED pisca por mais tempo.
 
 ```python
 def text_to_morse(text):
@@ -945,6 +945,141 @@ flash_morse_code(code)
 ```
 Aqui, a função `flash_morse_code` é usada para fazer o LED piscar conforme o código Morse que acabamos de criar.
 
+A seguir vamos adicionar som ao nosso projeto. Para isso precisamos entender sobre o componente eletrônico que pode nos ajudar a emitir um sinal sonoro.
 
+### Gerando som com um Buzzer
+Um **buzzer** é um pequeno dispositivo que emite um som quando é alimentado com energia elétrica. É como uma campainha que emite um som quando é ativada. Existem dois tipos principais de buzzers:
 
+**Buzzer Ativo**: Um buzzer ativo é mais simples de usar. Ele possui um circuito interno que gera um tom específico quando é alimentado com energia. Esse tipo de buzzer sempre emite o mesmo som.
+
+**Buzzer Passivo**: Um buzzer passivo é um pouco mais versátil. Ele não possui um circuito interno para gerar um tom específico. Em vez disso, ele emite sons diferentes dependendo do sinal elétrico que recebe. Para fazer um buzzer passivo emitir um som, você precisa conectar e desconectar a energia rapidamente, criando assim diferentes tons.
+
+![Imagem de buzzers passivos](images/buzzers.jpg "magem de buzzers passivos")
+
+Se você quiser criar diferentes sons ou músicas, um buzzer passivo pode ser mais interessante porque você pode controlar os tons que ele emite usando programação. Isso pode ser feito através do controle da frequência em Hertz usando a função **PWM**. Por exemplo, para gerar a nota musical **A4** podemos definir a frequência em **440 Hz**.
+
+### Adicionando som ao projeto
+Primeiramente conecte o buzzer em circuito. Para fazer isso conecte um fio de conexão ao pino **GP14** do seu pico e conecte a outra ponta dele na '**perna mais longa**' do buzzer. A perna mais curta do buzzer deve ser conectada ao terra (**GND**), o que pode ser feito com um outro fio de conexão. 
+
+> **`Importante`**: O buzzer, assim como o LED, possui uma perna mais longa que deve ser conectada a tensão mais alta gerada por um pino do seu pico. Lembre-se de sempre considerar essa regra para não queimar seus componentes.
+
+Após conectar o buzzer, adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `morse_led_buzzer.py` e depois execute-o. 
+
+```python
+from machine import Pin, PWM, Timer
+from time import sleep_ms
+
+# Configurando o pino 15 como saída para controlar o LED.
+led = Pin(15, Pin.OUT)
+
+# Configurando o pino 14 para controlar o buzzer com PWM
+buzzer = PWM(Pin(14))
+buzzer.freq(440) 
+
+# Dicionário que relaciona letras e números ao código Morse.
+morse_code = {
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 
+    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 
+    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 
+    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----'
+}
+
+# Função que pisca o LED e emite som para representar o código Morse.
+def flash_morse_code(morse):
+    for char in morse:
+        if char == '.':
+            led.on()  
+            buzzer.duty_u16(1000)  
+            sleep_ms(200)  
+        elif char == '-':
+            led.on()  
+            buzzer.duty_u16(1000)  
+            sleep_ms(600)  
+        led.off()  
+        buzzer.duty_u16(0)  
+        sleep_ms(200)  
+
+# Função que converte texto em código Morse.
+def text_to_morse(text):
+    morse = ""
+    for char in text:
+        if char.upper() in morse_code:
+            morse += morse_code[char.upper()] + " "
+        else:
+            morse += " "
+    return morse
+
+# Converte o texto "Hello World" em código Morse e imprime.
+code = text_to_morse("Hello World")
+print("Morse Code:", code)
+
+# Piscando o LED para representar o código Morse.
+flash_morse_code(code)
+```
+Vamos desvendar esse código !
+
+```python
+from machine import Pin, PWM, Timer
+from time import sleep_ms
+
+led = Pin(15, Pin.OUT)
+
+buzzer = PWM(Pin(14))
+buzzer.freq(440) 
+```
+
+Neste bloco, estamos inicializando o Raspberry Pi Pico para controlar o LED e o buzzer. O pino 15 é configurado como saída para o LED e o pino 14 é configurado para controlar o buzzer utilizando modulação por largura de pulso (PWM). A frequência do buzzer é ajustada para 440 Hz, que é a frequência aproximada do tom A4. A4 é uma frequência próxima ao som utilizado em código morse.
+
+```python
+morse_code = {
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+    # ... (outros códigos Morse)
+    '0': '-----'
+}
+```
+
+Aqui definimos um dicionário que mapeia letras e números para seus equivalentes em código Morse. Por exemplo, 'A' é representado como '.-'.
+
+```python
+def flash_morse_code(morse):
+    for char in morse:
+        if char == '.':
+            led.on()  
+            buzzer.duty_u16(1000)  
+            sleep_ms(200)  
+        elif char == '-':
+            led.on()  
+            buzzer.duty_u16(1000)  
+            sleep_ms(600)  
+        led.off()  
+        buzzer.duty_u16(0)  
+        sleep_ms(200)  
+```
+
+Esta função aceita uma sequência de código Morse e a percorre. Para cada caractere (ponto ou traço), ela liga o LED e o buzzer e aguarda o tempo especificado. Em seguida, desliga o LED e o buzzer e espera um curto intervalo antes de passar para o próximo caractere. Para ligar o buzzer definimos alteramos seu ciclo de trabalho (duty cycle) para 1000. Para desligá-lo, alteramos o ciclo de trabalho para 0. O ciclo de trabalho foi explicado anteriormente. Consulte a explicação anterior para revisar seu funcionamento.
+
+```python
+def text_to_morse(text):
+    morse = ""
+    for char in text:
+        if char.upper() in morse_code:
+            morse += morse_code[char.upper()] + " "
+        else:
+            morse += " "
+    return morse
+```
+
+Esta função aceita uma string de texto e a converte em código Morse usando o dicionário `morse_code`. Se um caractere não estiver no dicionário, ele é substituído por um espaço.
+
+```python
+code = text_to_morse("Hello World")
+print("Morse Code:", code)
+
+flash_morse_code(code)
+```
+
+Aqui, o texto "Hello World" é convertido em código Morse e exibido. Em seguida, a função `flash_morse_code` é chamada para piscar o LED e emitir som de acordo com o código Morse gerado.
+
+Altere o texto para outras palavras e frases e veja o resultado. Por exemplo, você pode mudar para **'SOS'** e dessa forma estar preparado para se comunicar em uma situação de emergência com uma lanterna!
 
