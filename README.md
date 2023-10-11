@@ -1239,6 +1239,48 @@ play_song(song)
 
 Finalmente, esta linha de código chama a função `play_song` para tocar a música definida na lista `song`.
 
+### Testando com outras músicas
+Agora que já implementou e ouviu a música 'Brilha, Brilha, Estrelinha', que tal ouvir outras músicas?
+
+**Happy Birthday**:
+
+```python
+song = [
+    "C4", "C4", "D4", "C4", "F4", "E4", "P",
+    "C4", "C4", "D4", "C4", "G4", "F4", "P",
+    "C4", "C4", "C5", "A4", "F4", "E4", "D4", "P",
+    "AS3", "AS3", "A3", "F4", "G4", "F4"
+]
+```
+
+**Jingle Bells**:
+
+```python
+song = [
+    "E4", "E4", "E4", "P", "E4", "E4", "E4", "P", 
+    "E4", "G4", "C4", "D4", "E4", "P",
+    "F4", "F4", "F4", "F4", "F4", "E4", "E4", "E4", 
+    "E4", "D4", "D4", "E4", "D4", "P",
+    "E4", "E4", "E4", "E4", "E4", "E4", "P", "E4", 
+    "G4", "C4", "D4", "E4", "P",
+    "F4", "F4", "F4", "P", "F4", "E4", "E4", "P",
+    "G4", "G4", "F4", "D4", "C4"
+]
+```
+
+**Ode to Joy** (Hino à Alegria de Beethoven):
+
+```python
+song = [
+    "E4", "E4", "F4", "G4", "G4", "F4", "E4", 
+    "D4", "C4", "C4", "D4", "E4", "E4", "D4", "D4", "P"
+    "E4", "E4", "F4", "G4", "G4", "F4", "E4", 
+    "D4", "C4", "C4", "D4", "E4", "D4", "C4", "C4"
+]
+```
+
+Você pode substituir a variável `song` por qualquer uma dessas listas de notas para tocar a música correspondente. Lembre-se de manter a mesma estrutura com as notas e pausas.
+
 
 
 
