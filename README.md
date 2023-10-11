@@ -848,7 +848,9 @@ morse_code = {
     'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 
     'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 
     'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
-    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----'
+    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', 
+    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..',
+     '9': '----.', '0': '-----'
 }
 
 # Função que pisca o LED para representar o código Morse.
@@ -898,12 +900,13 @@ Esta linha está configurando o pino `15` como um pino `OUT` de saída para cont
 
 ```python
 morse_code = {
-    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
-    'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.',
-    'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
-    'Y': '-.--', 'Z': '--..',
-    '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',
-    '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----'
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 
+    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 
+    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 
+    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', 
+    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..',
+     '9': '----.', '0': '-----'
 }
 ```
 Aqui nós criamos um dicionário chamado `morse_code`. Ele associa letras e números ao código Morse correspondente. Por exemplo, a letra '**A**' é representada como '**.-**'.
@@ -948,7 +951,9 @@ Aqui, a função `flash_morse_code` é usada para fazer o LED piscar conforme o 
 A seguir vamos adicionar som ao nosso projeto. Para isso precisamos entender sobre o componente eletrônico que pode nos ajudar a emitir um sinal sonoro.
 
 ### Gerando som com um Buzzer
-Um **buzzer** é um pequeno dispositivo que emite um som quando é alimentado com energia elétrica. É como uma campainha que emite um som quando é ativada. Existem dois tipos principais de buzzers:
+Um **buzzer** é um pequeno dispositivo que emite um som quando é alimentado com energia elétrica. É como uma campainha que emite um som quando é ativada. 
+
+Existem dois tipos principais de buzzers:
 
 **Buzzer Ativo**: Um buzzer ativo é mais simples de usar. Ele possui um circuito interno que gera um tom específico quando é alimentado com energia. Esse tipo de buzzer sempre emite o mesmo som.
 
@@ -956,10 +961,10 @@ Um **buzzer** é um pequeno dispositivo que emite um som quando é alimentado co
 
 ![Imagem de buzzers passivos](images/buzzers.jpg "magem de buzzers passivos")
 
-Se você quiser criar diferentes sons ou músicas, um buzzer passivo pode ser mais interessante porque você pode controlar os tons que ele emite usando programação. Isso pode ser feito através do controle da frequência em Hertz usando a função **PWM**. Por exemplo, para gerar a nota musical **A4** podemos definir a frequência em **440 Hz**.
+Se você quiser criar diferentes sons ou músicas, um buzzer passivo pode ser mais interessante porque você pode controlar os tons que ele emite usando programação. Isso pode ser feito através do controle da frequência em Hertz usando a função `PWM`. Por exemplo, para gerar a nota musical **A4** podemos definir a frequência em **440 Hz**.
 
 ### Adicionando som ao projeto
-Primeiramente conecte o buzzer em circuito. Para fazer isso conecte um fio de conexão ao pino **GP14** do seu pico e conecte a outra ponta dele na '**perna mais longa**' do buzzer. A perna mais curta do buzzer deve ser conectada ao terra (**GND**), o que pode ser feito com um outro fio de conexão. 
+Primeiramente conecte o buzzer em circuito. Para fazer isso conecte um fio de conexão ao pino `GP14` do seu pico e conecte a outra ponta dele na '**perna mais longa**' do buzzer. A perna mais curta do buzzer deve ser conectada ao terra (`GND`), o que pode ser feito com um outro fio de conexão. 
 
 > **`Importante`**: O buzzer, assim como o LED, possui uma perna mais longa que deve ser conectada a tensão mais alta gerada por um pino do seu pico. Lembre-se de sempre considerar essa regra para não queimar seus componentes.
 
@@ -974,6 +979,7 @@ led = Pin(15, Pin.OUT)
 
 # Configurando o pino 14 para controlar o buzzer com PWM
 buzzer = PWM(Pin(14))
+buzzer.duty_u16(0)  # Desliga o buzzer inicialmente
 buzzer.freq(440) 
 
 # Dicionário que relaciona letras e números ao código Morse.
@@ -982,7 +988,9 @@ morse_code = {
     'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 
     'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 
     'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
-    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----'
+    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--', 
+    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..',
+     '9': '----.', '0': '-----'
 }
 
 # Função que pisca o LED e emite som para representar o código Morse.
@@ -1026,10 +1034,11 @@ from time import sleep_ms
 led = Pin(15, Pin.OUT)
 
 buzzer = PWM(Pin(14))
+buzzer.duty_u16(0)  
 buzzer.freq(440) 
 ```
 
-Neste bloco, estamos inicializando o Raspberry Pi Pico para controlar o LED e o buzzer. O pino 15 é configurado como saída para o LED e o pino 14 é configurado para controlar o buzzer utilizando modulação por largura de pulso (PWM). A frequência do buzzer é ajustada para 440 Hz, que é a frequência aproximada do tom A4. A4 é uma frequência próxima ao som utilizado em código morse.
+Neste bloco, estamos inicializando o Raspberry Pi Pico para controlar o LED e o buzzer. O pino `15` (GP15) é configurado como saída para o LED e o pino `14` (GP14) é configurado para controlar o buzzer utilizando modulação por largura de pulso (PWM). A frequência do buzzer é ajustada para 440 Hz, que é a frequência aproximada da nota musical **A4**. A4 é uma frequência próxima ao som utilizado em código morse.
 
 ```python
 morse_code = {
@@ -1057,7 +1066,7 @@ def flash_morse_code(morse):
         sleep_ms(200)  
 ```
 
-Esta função aceita uma sequência de código Morse e a percorre. Para cada caractere (ponto ou traço), ela liga o LED e o buzzer e aguarda o tempo especificado. Em seguida, desliga o LED e o buzzer e espera um curto intervalo antes de passar para o próximo caractere. Para ligar o buzzer definimos alteramos seu ciclo de trabalho (duty cycle) para 1000. Para desligá-lo, alteramos o ciclo de trabalho para 0. O ciclo de trabalho foi explicado anteriormente. Consulte a explicação anterior para revisar seu funcionamento.
+Esta função aceita uma sequência de código Morse e a percorre. Para cada caractere (ponto ou traço), ela liga o LED e o buzzer e aguarda o tempo especificado. Em seguida, desliga o LED e o buzzer e espera um curto intervalo antes de passar para o próximo caractere. Para ligar o buzzer definimos alteramos seu ciclo de trabalho (duty cycle) para o valor 1000. Para desligá-lo, alteramos o ciclo de trabalho para 0. O ciclo de trabalho foi explicado anteriormente nesse curso. Consulte a explicação anterior para entender seu funcionamento se necessário.
 
 ```python
 def text_to_morse(text):
@@ -1082,4 +1091,154 @@ flash_morse_code(code)
 Aqui, o texto "Hello World" é convertido em código Morse e exibido. Em seguida, a função `flash_morse_code` é chamada para piscar o LED e emitir som de acordo com o código Morse gerado.
 
 Altere o texto para outras palavras e frases e veja o resultado. Por exemplo, você pode mudar para **'SOS'** e dessa forma estar preparado para se comunicar em uma situação de emergência com uma lanterna!
+
+## Introdução à Música com Buzzer: Descubra o Mágico Mundo do Som!
+Você sabia que é possível criar melodias e sons incríveis usando apenas um Raspberry Pi Pico e um pequeno componente chamado buzzer? Neste capítulo, vamos explorar o emocionante universo da música com buzzer, e você aprenderá como fazer isso de uma forma simples e divertida.
+
+Relembre que um buzzer é um dispositivo eletrônico que pode emitir sons quando uma corrente elétrica é aplicada a ele. É como um pequeno alto-falante que produz tons simples, permitindo-nos criar melodias divertidas e efeitos sonoros interessantes.
+
+Assim como em uma linguagem, onde temos letras que formam palavras, na música, temos as "notas" que se combinam para criar melodias emocionantes. Cada nota tem um nome, como Dó, Ré, Mi, e assim por diante, e essas notas têm frequências específicas que determinam o som que ouvimos.
+
+A frequência de uma nota determina se ela soa grave ou aguda. Notas com frequências mais baixas, como o Dó, soam mais graves, enquanto notas com frequências mais altas, como o Sol, soam mais agudas.
+
+Assim como em uma música que você escuta no rádio, a música que criaremos terá um ritmo. O ritmo é a pulsação da música e nos diz quando uma nota começa e termina.
+
+Usaremos um Raspberry Pi Pico e um pouco de código em MicroPython para dizer ao buzzer quando tocar cada nota e por quanto tempo. Isso nos permite criar músicas incríveis com apenas algumas linhas de código!
+
+Vamos Começar!
+
+### Escrevendo o programa
+Vamos implementar a música '**Brilha, Brilha, Estrelinha**' ou '_Twinkle, Twinkle, Little Star_' em inglês. Não será necessário fazer nenhuma alteração no circuito que você já possui. Neste exemplo, estaremos utilizando o buzzer e o LED.
+
+```python
+from machine import Pin, PWM
+from utime import sleep_ms
+
+# Configurando o pino 15 como saída para controlar o LED
+led = Pin(15, Pin.OUT)
+
+# Configurando o buzzer no pino 14
+buzzer = PWM(Pin(14))
+buzzer.duty_u16(0)  # Desliga o buzzer inicialmente
+
+# Definindo as notas e pausas com as respectivas durações
+song = ["C4", "C4", "G4", "G4", "A4", "A4", "G4", "P",
+        "F4", "F4", "E4", "E4", "D4", "D4", "C4", "P",
+        "G4", "G4", "F4", "F4", "E4", "E4", "D4", "P",
+        "G4", "G4", "F4", "F4", "E4", "E4", "D4", "P",
+        "C4", "C4", "G4", "G4", "A4", "A4", "G4", "P",
+        "F4", "F4", "E4", "E4", "D4", "D4", "C4"]
+
+# Dicionário de frequências das notas
+tones = {
+    "B0": 31, "C1": 33, "CS1": 35, "D1": 37, "DS1": 39, "E1": 41, "F1": 44, 
+    "FS1": 46, "G1": 49, "GS1": 52, "A1": 55, "AS1": 58, "B1": 62, "C2": 65,
+    "CS2": 69, "D2": 73, "DS2": 78, "E2": 82, "F2": 87, "FS2": 93, "G2": 98,
+    "GS2": 104, "A2": 110, "AS2": 117, "B2": 123, "C3": 131, "CS3": 139,
+    "D3": 147, "DS3": 156, "E3": 165, "F3": 175, "FS3": 185, "G3": 196,
+    "GS3": 208, "A3": 220, "AS3": 233, "B3": 247, "C4": 262, "CS4": 277,
+    "D4": 294, "DS4": 311, "E4": 330, "F4": 349, "FS4": 370, "G4": 392,
+    "GS4": 415, "A4": 440, "AS4": 466, "B4": 494, "C5": 523, "CS5": 554,
+    "D5": 587, "DS5": 622, "E5": 659, "F5": 698, "FS5": 740, "G5": 784,
+    "GS5": 831, "A5": 880, "AS5": 932, "B5": 988, "C6": 1047, "CS6": 1109,
+    "D6": 1175, "DS6": 1245, "E6": 1319, "F6": 1397, "FS6": 1480, "G6": 1568,
+    "GS6": 1661, "A6": 1760, "AS6": 1865, "B6": 1976, "C7": 2093, "CS7": 2217,
+    "D7": 2349, "DS7": 2489, "E7": 2637, "F7": 2794, "FS7": 2960, "G7": 3136,
+    "GS7": 3322, "A7": 3520, "AS7": 3729, "B7": 3951, "C8": 4186, "CS8": 4435,
+    "D8": 4699, "DS8": 4978
+}
+
+# Função para tocar uma nota
+def play_tone(note):
+    if note in tones: 
+        buzzer.freq(tones[note])
+        buzzer.duty_u16(1000)
+        led.on()
+        sleep_ms(300)  
+        buzzer.duty_u16(0)
+        led.off() 
+        sleep_ms(100)  
+    else:
+        sleep_ms(400)  
+
+# Função para tocar a música
+def play_song(song):
+    for note in song:
+        play_tone(note)
+
+# Toca a música
+play_song(song)
+```
+
+Vamos desvendar esse código a seguir!
+
+```python
+from machine import Pin, PWM
+from utime import sleep_ms
+```
+Aqui estamos importando algumas bibliotecas necessárias. A biblioteca `machine` permite o controle de pinos do microcontrolador e a biblioteca `utime` é usada para gerar pausas em milissegundos.
+
+```python
+led = Pin(15, Pin.OUT)
+buzzer = PWM(Pin(14))
+buzzer.duty_u16(0)
+```
+
+Aqui estamos configurando dois componentes: um LED no pino `15` (GP15) e um buzzer no pino `14` (GP14). O LED é configurado como saída (`Pin.OUT`) para que possa ser controlado para acender ou apagar. O buzzer é configurado usando `PWM` (Modulação por Largura de Pulso), o que permite controlar a frequência e o tempo de atividade do sinal, permitindo assim criar diferentes tons.
+
+```python
+song = ["C4", "C4", "G4", "G4", "A4", "A4", "G4", "P",
+        "F4", "F4", "E4", "E4", "D4", "D4", "C4", "P",
+        "G4", "G4", "F4", "F4", "E4", "E4", "D4", "P",
+        "G4", "G4", "F4", "F4", "E4", "E4", "D4", "P",
+        "C4", "C4", "G4", "G4", "A4", "A4", "G4", "P",
+        "F4", "F4", "E4", "E4", "D4", "D4", "C4"]
+```
+
+Aqui definimos uma lista chamada `song` que contém uma série de notas musicais (`C4`, `G4`, etc.) e "P" representa uma pausa. Essa lista forma a música que será tocada.
+
+```python
+tones = {
+    "B0": 31, "C1": 33, "CS1": 35, "D1": 37, "DS1": 39, "E1": 41, "F1": 44, 
+    "FS1": 46, "G1": 49, "GS1": 52, "A1": 55, "AS1": 58, "B1": 62, "C2": 65,
+    # ...
+    # Muitas frequências associadas a notas musicais
+    # ...
+    "D8": 4699, "DS8": 4978
+    }
+```
+Aqui criamos um dicionário chamado `tones` que associa notas musicais com suas respectivas frequências em hertz.
+
+```python
+def play_tone(note):
+    if note in tones: 
+        buzzer.freq(tones[note])
+        buzzer.duty_u16(1000)
+        led.on()
+        sleep_ms(300)  
+        buzzer.duty_u16(0)
+        led.off() 
+        sleep_ms(100)  
+    else:
+        sleep_ms(400)  
+```
+Esta função `play_tone` toca uma única nota. Primeiro, verifica se a nota está no dicionário `tones`. Se estiver, configura a frequência do buzzer e o aciona. Em seguida, acende o LED. Após um curto período, desliga o buzzer e apaga o LED.
+
+Se a nota não for encontrada no dicionário, isso significa que é uma pausa, então a função apenas espera por um tempo antes de prosseguir.
+
+```python
+def play_song(song):
+    for note in song:
+        play_tone(note)
+```
+Esta função `play_song` percorre a lista `song` e chama a função `play_tone` para tocar cada nota ou pausa.
+
+```python
+play_song(song)
+```
+
+Finalmente, esta linha de código chama a função `play_song` para tocar a música definida na lista `song`.
+
+
+
 
