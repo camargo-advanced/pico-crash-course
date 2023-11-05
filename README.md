@@ -1442,7 +1442,7 @@ Ao longo deste capítulo, vamos guiar vocês através do código que faz tudo ac
 Então, preparem-se para uma competição emocionante e descubram quem entre vocês será coroado como o campeão da "Batalha dos Botões". Vamos lá!
 
 ### Interrupções 
-Em MicroPython uma interrupção (também conhecida como "interrupt" em inglês) é um mecanismo que permite que um programa pare temporariamente sua execução para lidar com um evento externo. No contexto de hardware, isso geralmente significa responder a um sinal elétrico gerado por um componente, como um botão pressionado.
+Em MicroPython uma interrupção (também conhecida como "*interrupt*" em inglês) é um mecanismo que permite que um programa pare temporariamente sua execução para lidar com um evento externo. No contexto de hardware, isso geralmente significa responder a um sinal elétrico gerado por um componente, como um botão pressionado.
 
 A utilização de interrupções é especialmente útil para lidar com eventos em tempo real, como um botão pressionado, sem a necessidade de ficar constantemente verificando o estado do botão em um loop. Em vez disso, o programa pode continuar sua execução normal até que uma interrupção seja acionada.
 
@@ -1581,7 +1581,7 @@ right_button = Pin(3, Pin.IN)
 left_button = Pin(14, Pin.IN)
 ```
 
-Aqui, estamos "configurando" os pinos do nosso equipamento. O pino `GP15` é para o led, e os pinos GP3 e GP14 são para os botões (um para a direita e outro para a esquerda).
+Aqui, estamos "configurando" os pinos do nosso equipamento. O pino **GP15** é para o led, e os pinos **GP3** e **GP14** são para os botões (um para a direita e outro para a esquerda).
 
 ```python
 pressed_button = None
