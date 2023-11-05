@@ -1485,7 +1485,7 @@ Experimente rodar o programa acima com um botão de acordo com o circuito do exe
 
 Agora remova a linha `button.irq(handler=None)` e rode novamente o programa. Note que agora várias mensagens aparecem no Shell. Isso ocorre por causa do efeito de debounce dos botões que levam um tempo para estabilizar os contatos elétricos e com isso geram esse efeito indesejado de "piscar" que é entendido pela porta do RaspBerry Pi Pico como se o botão tivesse sido presisonado várias vezes. 
 
-# Codificando o jogo
+### Codificando o jogo
 
 Mas primeiramente monte o circuito do jogo colocando um led vermelho no pino GP15 do seu Raspberry Pi Pico. Lembre de colocar um resistor para limitar a corrente conforme discutido em exemplos anteriores.
 
