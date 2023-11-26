@@ -1506,12 +1506,12 @@ from random import uniform, randint
 
 # Configuração dos pinos
 led = Pin(15, Pin.OUT)
-right_button = Pin(3, Pin.IN)
-left_button = Pin(14, Pin.IN)
+right_button = Pin(3, Pin.IN, Pin.PULL_DOWN)
+left_button = Pin(14, Pin.IN, Pin.PULL_DOWN)
 
 pressed_button = None
 
-# Identifica botão vencedor e calcula tempo de reação
+# Identifica botão pressionado
 def button_pressed(pin):
     right_button.irq(handler=None)
     left_button.irq(handler=None)
