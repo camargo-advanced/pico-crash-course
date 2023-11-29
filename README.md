@@ -1041,7 +1041,7 @@ from time import sleep_ms
 # Configurando o pino 15 como saída para controlar o LED.
 led = Pin(15, Pin.OUT)
 
-# Configurando o pino 14 para controlar o buzzer com PWM
+# Configurando o pino 16 para controlar o buzzer com PWM
 buzzer = PWM(Pin(16))
 buzzer.duty_u16(0)  # Desliga o buzzer inicialmente
 buzzer.freq(440) 
@@ -1100,7 +1100,7 @@ from time import sleep_ms
 
 led = Pin(15, Pin.OUT)
 
-buzzer = PWM(Pin(14))
+buzzer = PWM(Pin(16))
 buzzer.duty_u16(0)  
 buzzer.freq(440) 
 ```
@@ -1159,19 +1159,20 @@ Aqui, o texto 'Hello World' é convertido em código Morse e exibido. Em seguida
 
 Altere o texto para outras palavras e frases e veja o resultado. Por exemplo, você pode mudar para SOS e dessa forma estar preparado para se comunicar em uma situação de emergência com uma lanterna!
 
-## Introdução à Música com Buzzer: Descubra o Mágico Mundo do Som!
+## Projeto: Tocando músicas com um Buzzer
 
 Você sabia que é possível criar melodias e sons incríveis usando apenas um Raspberry Pi Pico e um pequeno componente chamado buzzer? Neste capítulo, vamos explorar o emocionante universo da música com buzzer, e você aprenderá como fazer isso de uma forma simples e divertida.
 
 Relembre que um buzzer é um dispositivo eletrônico que pode emitir sons quando uma corrente elétrica é aplicada a ele. É como um pequeno alto-falante que produz tons simples, permitindo-nos criar melodias divertidas e efeitos sonoros interessantes.
 
-Assim como em uma linguagem, onde temos letras que formam palavras, na música, temos as "notas" que se combinam para criar melodias emocionantes. Cada nota tem um nome, como Dó, Ré, Mi, e assim por diante, e essas notas têm frequências específicas que determinam o som que ouvimos.
+Assim como em uma linguagem, onde temos letras que formam palavras, na música, temos as 'notas' que se combinam para criar melodias emocionantes. Cada nota tem um nome, como Dó, Ré, Mi, e assim por diante, e essas notas têm frequências específicas que determinam o som que ouvimos.
 
 A frequência de uma nota determina se ela soa grave ou aguda. Notas com frequências mais baixas, como o Dó, soam mais graves, enquanto notas com frequências mais altas, como o Sol, soam mais agudas.
 
 Assim como em uma música que você escuta no rádio, a música que criaremos terá um ritmo. O ritmo é a pulsação da música e nos diz quando uma nota começa e termina.
 
 ### Notas musicais 
+
 Em nosso código utilizaremos 88 notas musicais que correspondem à notação musical ocidental e são todas as notas que você pode encontrar em um teclado de tamanho padrão.
 
 ![Imagem de teclado padrão ocidental](images/keyboard.png "Imagem de teclado padrão ocidental")
@@ -1269,13 +1270,14 @@ Segue a lista completa de notas musicais que utilizaremos:
 `d#8`
 
 ### Transformando partituras em notas
-Você pode inserir notas musicais reais para criar melodias para tocar no seu buzzer.
+
+Você pode inserir notas musicais reais e criar melodias para tocar no seu buzzer.
 
 Uma letra é usada para representar a nota musical e um número é usado para indicar onde a nota aparece na clave de sol.
 
 ![Uma partitura com um Dó central colocado na clave de sol](images/middle-c.png "Uma partitura com um Dó central colocado na clave de sol")
 
-Por exemplo, o Dó central (acima) está no centro da clave de sol e usa c4.
+Por exemplo, o Dó central está no centro da clave de sol e usa c4.
 
 Quando você sobe na clave de sol, o número aumenta. Quando você desce na clave de sol, o número diminui.
 
@@ -1299,7 +1301,8 @@ Usaremos um Raspberry Pi Pico e um pouco de código em MicroPython para dizer ao
 Vamos Começar!
 
 ### Escrevendo o programa
-Vamos implementar a música '**Brilha, Brilha, Estrelinha**' ('Twinkle, Twinkle, Little Star' em inglês). Não será necessário fazer nenhuma alteração no circuito que você já possui. Neste exemplo, você usará o buzzer e o LED.
+
+Vamos implementar a música Brilha, Brilha, Estrelinha (Twinkle, Twinkle, Little Star em inglês). Não será necessário fazer nenhuma alteração no circuito que você já possui. Neste exemplo, você usará o buzzer e o LED.
 
 ```python
 from machine import Pin, PWM
@@ -1308,8 +1311,8 @@ from utime import sleep_ms
 # Configurando o pino 15 como saída para controlar o LED
 led = Pin(15, Pin.OUT)
 
-# Configurando o buzzer no pino 14
-buzzer = PWM(Pin(14))
+# Configurando o buzzer 
+buzzer = PWM(Pin(16))
 buzzer.duty_u16(0)  # Desliga o buzzer inicialmente
 
 # Definindo as notas e pausas com as respectivas durações
@@ -1373,11 +1376,11 @@ Aqui estamos importando algumas bibliotecas necessárias. A biblioteca `machine`
 
 ```python
 led = Pin(15, Pin.OUT)
-buzzer = PWM(Pin(14))
+buzzer = PWM(Pin(16))
 buzzer.duty_u16(0)
 ```
 
-Aqui estamos configurando dois componentes: um LED no pino `15` (GP15) e um buzzer no pino `14` (GP14). O LED é configurado como saída (`Pin.OUT`) para que possa ser controlado para acender ou apagar. O buzzer é configurado usando `PWM` (Modulação por Largura de Pulso), o que permite controlar a frequência e o tempo de atividade do sinal, permitindo assim criar diferentes tons.
+Aqui estamos configurando dois componentes: um LED no pino `15` (GP15) e um buzzer no pino `16` (GP16). O LED é configurado como saída (`Pin.OUT`) para que possa ser controlado para acender ou apagar. O buzzer é configurado usando `PWM` (Modulação por Largura de Pulso), o que permite controlar a frequência e o tempo de atividade do sinal, permitindo assim criar diferentes tons.
 
 ```python
 song = ["C4", "C4", "G4", "G4", "A4", "A4", "G4", "P",
@@ -1388,7 +1391,7 @@ song = ["C4", "C4", "G4", "G4", "A4", "A4", "G4", "P",
         "F4", "F4", "E4", "E4", "D4", "D4", "C4"]
 ```
 
-Aqui definimos uma lista chamada `song` que contém uma série de notas musicais (`C4`, `G4`, etc.) e "P" representa uma pausa. Essa lista forma a música que será tocada. Nesse caso trata-se da música 'Brilha, Brilha, Estrelinha'.
+Aqui definimos uma lista chamada `song` que contém uma série de notas musicais (C4, G4, etc.) e P representa uma pausa. Essa lista forma a música que será tocada. Nesse caso trata-se da música Brilha, Brilha, Estrelinha.
 
 ```python
 tones = {
@@ -1400,6 +1403,7 @@ tones = {
     "D8": 4699, "DS8": 4978
     }
 ```
+
 Aqui criamos um dicionário chamado `tones` que associa notas musicais com suas respectivas frequências em hertz.
 
 ```python
@@ -1416,7 +1420,7 @@ def play_tone(note):
         sleep_ms(400)  
 ```
 
-Esta função `play_tone` toca uma única nota. Primeiro, verifica se a nota está no dicionário `tones`. Se estiver, configura a frequência do buzzer e o aciona. Em seguida, acende o LED. Após um curto período, desliga o buzzer e apaga o LED.
+A função `play_tone` toca uma única nota. Primeiro, verifica se a nota está no dicionário `tones`. Se estiver, configura a frequência do buzzer e o aciona. Em seguida, acende o LED. Após um curto período, desliga o buzzer e apaga o LED.
 
 Se a nota não for encontrada no dicionário, isso significa que é uma pausa, então a função apenas espera por um tempo antes de prosseguir.
 
@@ -1425,6 +1429,7 @@ def play_song(song):
     for note in song:
         play_tone(note)
 ```
+
 Esta função `play_song` percorre a lista `song` e chama a função `play_tone` para tocar cada nota ou pausa.
 
 ```python
@@ -1433,8 +1438,9 @@ play_song(song)
 
 Finalmente, esta linha de código chama a função `play_song` para tocar a música definida na lista `song`.
 
-### Testando com outras músicas
-Agora que já implementou e ouviu a música 'Brilha, Brilha, Estrelinha', que tal ouvir outras músicas?
+### Tocando outras músicas
+
+Agora que já implementou e ouviu a música Brilha, Brilha, Estrelinha, que tal ouvir outras músicas?
 
 **Happy Birthday**:
 
@@ -1473,20 +1479,22 @@ song = [
 ]
 ```
 
-Você pode substituir a variável `song` por qualquer uma dessas listas de notas para tocar a música correspondente. Lembre-se de manter a mesma estrutura com as notas e pausas.
+Você pode substituir a variável `song` por qualquer uma dessas listas de notas para tocar a música correspondente. 
 
-## Batalha dos Botões: Quem Será o Mais Rápido?
+## Projeto: Batalha dos Botões
+
 Este é um emocionante desafio de agilidade projetado especialmente para dois jogadores que estão prontos para testar seus reflexos e habilidades de reação!
 
 Neste jogo, vocês serão desafiados a pressionar um botão no momento exato em que a luz se apagar. Parece simples, certo? No entanto, a velocidade é essencial, e qualquer hesitação pode custar a vitória! 
 
 Mas tome cuidado, se algum jogador pressionar o botão antes da luz se apagar, perde o jogo!
 
-Ao longo deste capítulo, vamos guiar vocês através do código que faz tudo acontecer. Vocês vão aprender como configurar os botões, controlar a luz e calcular o tempo de reação. 
+Ao longo deste capítulo, vamos guiar você através do código que faz tudo acontecer. Vocês vão aprender como configurar os botões, controlar a luz e calcular o tempo de reação. 
 
-Então, preparem-se para uma competição emocionante e descubram quem entre vocês será coroado como o campeão da "Batalha dos Botões". Vamos lá!
+Então, preparem-se para uma competição emocionante e descubram quem entre vocês será coroado como o campeão da Batalha dos Botões. Vamos lá!
 
 ### Interrupções 
+
 Em MicroPython uma interrupção (Interrupt em inglês) é um mecanismo que permite que um programa pare temporariamente sua execução para lidar com um evento externo. No contexto de hardware, isso geralmente significa responder a um sinal elétrico gerado por um componente, como um botão pressionado.
 
 A utilização de interrupções é especialmente útil para lidar com eventos em tempo real, como um botão pressionado, sem a necessidade de ficar constantemente verificando o estado do botão em um loop. Em vez disso, o programa pode continuar sua execução normal até que uma interrupção seja acionada.
@@ -1513,24 +1521,26 @@ while True:
 
 ```
 
-Neste exemplo a função `button_pressed` será chamada quando o botão for pressionado. Em seguida, configuramos a interrupção usando `botao.irq(trigger=Pin.IRQ_RISING, handler=button_pressed)`. Isso indica que queremos que a função `button_pressed` seja chamada quando o botão fizer a transição de estado de baixo (0) para alto (1), ou seja, quando for pressionado.
+Neste exemplo a função `button_pressed` será chamada quando o botão for pressionado. `trigger=Pin.IRQ_RISING` indica que queremos que a função `button_pressed` seja chamada quando o botão fizer a transição de estado de nível de tensão baixo (Low) para nível de tensão alto (High), ou seja, quando for pressionado.
 
 Enquanto o programa está no loop `while True`, ele continua executando normalmente, mas mas pode ser interrompido a qualquer momento quando o botão for pressionado.
 
-### Debounce
+### Efeito bounce
+
 Imagine que você tem um botão em um videogame. Quando você pressiona o botão, quer que algo aconteça, certo? Por exemplo, em um jogo de corrida, você quer que o carro acelere quando você aperta o botão de aceleração.
 
-Agora, às vezes, o botão pode ficar "um pouco agitado". Isso significa que, quando você pressiona o botão, ele pode fazer uma coisa tipo: pressionar, soltar, pressionar novamente bem rápido. É como se o botão "piscasse" rapidamente. Para o computador, ele pode entender isso como várias pressões de botão em vez de apenas uma. 
+Agora, às vezes, o botão pode ficar um pouco agitado. Isso significa que, quando você pressiona o botão, ele pode fazer uma coisa tipo: pressionar, soltar, pressionar novamente bem rápido. É como se o botão piscasse rapidamente. Para o computador, ele pode entender isso como várias pressões de botão em vez de apenas uma. Esse efeito indesejado chama-se bounce.
 
-O debounce é como uma "ajuda" que colocamos para o botão. Ele verifica se o botão foi realmente pressionado, e não se está apenas "piscando". Imagina que é como se alguém estivesse olhando atentamente para o botão e dizendo: "Ok, isso foi uma pressão de verdade!".
+O debounce é como uma ajuda que colocamos para evitar o efeito bounce. Ele verifica se o botão foi realmente pressionado, e não se está apenas piscando. Imagina que é como se alguém estivesse olhando atentamente para o botão e dizendo: Ok, isso foi uma pressão de verdade!
 
-Adicionar a linha `button.irq(handler=None)` no exemplo anterior desativa a interrupção no pino do botão. Isso significa que, uma vez que o botão foi pressionado e a interrupção foi tratada, o programa não irá mais responder a novas interrupções provenientes desse botão até que a interrupção seja explicitamente reativada.
+Adicionar a linha `button.irq(handler=None)` no exemplo anterior desativa a interrupção no pino do botão. Isso significa que, uma vez que o botão foi pressionado e a interrupção foi ativada, o programa não irá mais responder a novas interrupções provenientes desse botão até que a interrupção seja explicitamente reativada.
 
-Experimente rodar o programa acima com um botão de acordo com o circuito do exemplo 5. Note que ao pressionar o botão apenas uma mensagem aparece no Shell do Thonny. 
+Experimente rodar o programa acima com um botão de acordo com o circuito do Programa 5. Note que ao pressionar o botão apenas uma mensagem aparece no Shell do Thonny. 
 
-Agora remova a linha `button.irq(handler=None)` e rode novamente o programa. Note que agora várias mensagens aparecem no Shell. Isso ocorre por causa do efeito de debounce dos botões que levam um tempo para estabilizar os contatos elétricos e com isso geram esse efeito indesejado de "piscar" que é entendido pela porta do RaspBerry Pi Pico como se o botão tivesse sido pressionado várias vezes. 
+Agora remova a linha `button.irq(handler=None)` e rode novamente o programa. Note que agora várias mensagens aparecem no Shell. Isso ocorre por causa do efeito de bounce dos botões que levam um tempo para estabilizar os contatos elétricos e com isso geram esse efeito indesejado de piscar que é entendido pela porta do RaspBerry Pi Pico como se o botão tivesse sido pressionado várias vezes. 
 
 ### Montando o circuito
+
 Primeiramente monte o circuito do jogo colocando um led vermelho no pino GP15 do seu Raspberry Pi Pico. Lembre de colocar um resistor para limitar a corrente conforme discutido em exemplos anteriores.
 
 Coloque também dois botões no circuito para que sejam utilizados pelos jogadores. Um dos botões deve ser colocando no pino GP3 e o outro no pino GP14 do seu Raspberry Pi Pico.
@@ -1540,9 +1550,8 @@ Uma forma de montar esse circuito segue na figura que segue. Agora que você já
 ![Circuito do jogo da reação](images/reaction-circuit.jpeg "Circuito do jogo da reação")
 
 ### Codificando o jogo
-É hora de você colocar a mão na massa e criar esse jogo! Abaixo está o código completo do jogo. Depois, uma explicação de cada parte em detalhes para que você entenda como tudo funciona.
 
-Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `reaction.py` e depois execute-o. 
+É hora de você colocar a mão na massa e criar esse jogo!  Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `reaction.py` e depois execute-o. 
 
 ```python
 from machine import Pin
@@ -1609,7 +1618,7 @@ main_game()
 
 Programa 13.
 
-Agora a explicação detalhada de como tudo funciona.
+Agora vamos desvendar como tudo funciona.
 
 ```python
 from machine import Pin
@@ -1617,7 +1626,7 @@ from time import sleep_ms, sleep, ticks_ms, ticks_diff
 from random import uniform, randint
 ```
 
-Esta parte do código está importando algumas "ferramentas" que vamos usar no jogo. Coisas como controlar os pinos (como botões e luzes), medir o tempo e gerar números aleatórios.
+Esta parte do código está importando algumas ferramentas que vamos usar no jogo. Coisas como controlar os pinos como botões e luzes, medir o tempo e gerar números aleatórios.
 
 ```python
 # Configuração dos pinos
@@ -1626,13 +1635,13 @@ right_button = Pin(3, Pin.IN, Pin.PULL_DOWN)
 left_button = Pin(14, Pin.IN, Pin.PULL_DOWN)
 ```
 
-Aqui, estamos "configurando" os pinos do nosso equipamento. O pino **GP15** é para o led, e os pinos **GP3** e **GP14** são para os botões (um para a direita e outro para a esquerda).
+Aqui, estamos configurando os pinos do nosso equipamento. O pino **GP15** é para o led, e os pinos **GP3** e **GP14** são para os botões, um para o jogador da direita e outro para o jogador da esquerda.
 
 ```python
 pressed_button = None
 ```
 
-Criamos uma variável chamada `pressed_button` para guardar informações sobre qual botão foi pressionado. No começo, não sabemos qual botão foi pressionado, então deixamos como "None" (que significa "nada").
+Criamos uma variável chamada `pressed_button` para guardar informações sobre qual botão foi pressionado. No começo, não sabemos qual botão foi pressionado, então deixamos como `None` que significa Nada.
 
 ```python
 def button_pressed(pin):
@@ -1642,9 +1651,9 @@ def button_pressed(pin):
     pressed_button = pin
 ```
 
-Esta é uma função que vai ser chamada quando um botão for pressionado. Ela diz que o botão direito `right_button` não deve mais chamar essa função quando pressionado novamente. O mesmo é feito para o botão esquerdo. Isso é uma estratégia para evitar o efeito indesejado da flutuação dos contatos elétricos do botão, ou seja, o debounce. Depois, ela guarda qual botão foi pressionado na variável `pressed_button`. 
+A função `button_pressed` é chamada quando um botão for pressionado. Ela diz que o botão direito `right_button` não deve mais chamar essa função quando pressionado novamente. O mesmo é feito para o botão esquerdo. Isso é uma estratégia para evitar o efeito indesejado da flutuação dos contatos elétricos do botão, ou seja, o bounce. Depois, ela guarda qual botão foi pressionado na variável `pressed_button`. 
 
-Note que utilizamos uma variável global. Variáveis globais são declaradas geralmente no início do programa e para serem acessadas dentro de uma função, precisam ser "declaradas" como globais no contexto da função. Isso é feito na linha `global pressed_button`. Feito isso, pode-se acessar ou alterar o valor da variável global. Nesse caso estamos atribuindo o valor do botão pressionado à variável global pois precisaremos dessa informação posteriormente.
+Note que utilizamos uma variável global. Variáveis globais são declaradas geralmente no início do programa e para serem acessadas e sofrer alterações dentro de uma função, precisam ser declaradas como globais no contexto da função. Isso é feito na linha `global pressed_button`. Feito isso, pode-se acessar ou alterar o valor da variável global. Nesse caso estamos atribuindo o valor do botão pressionado à variável global pois precisaremos dessa informação posteriormente.
 
 ```python
 def pressed_in_waiting():
@@ -1667,7 +1676,7 @@ def pressed_in_waiting():
     return pressed_button
 ```
 
-Esta função se chama `pressed_in_waiting`. Ela vai ser usada para simular o tempo de espera antes do jogo começar, quando os jogadores precisam esperar antes de pressionar o botão.
+A função `pressed_in_waiting` é usada para simular o tempo de espera antes do jogo começar, quando os jogadores precisam esperar antes de pressionar o botão.
 
 `waiting_time = randint(1, 5) * 1000` define um tempo de espera aleatório entre 1 e 5 segundos. O número é multiplicado por 1000 para converter segundos em milissegundos.
 
@@ -1724,42 +1733,46 @@ Agora que você entendeu como o jogo de reação funciona, chegou a hora de colo
 
 Continue a explorar e aprender, pois o mundo da programação e da eletrônica reserva inúmeras aventuras emocionantes para você. Você está no caminho certo para se tornar um verdadeiro mestre no universo da tecnologia.
 
-## Mas que calor! Qual a temperatura?
-Este projeto é um mergulho empolgante no universo da tecnologia, permitindo que você crie um circuito incrível que exibirá a temperatura atual em um display OLED SSD1306, usando o sensor de temperatura interno do chip do Raspberry Pi Pico.
+## Projeto: Mas que calor! Qual a temperatura?
 
-Além disso, utilizaremos um protocolo de comunicação chamado I2C, que possibilita a interação entre o Raspberry Pi Pico e o display OLED SSD1306. Esse protocolo, que significa Inter-Integrated Circuit, é uma das maneiras pelas quais dispositivos podem se comunicar entre si. O I2C não só permite a conexão simples e eficiente entre o Pico e o display, mas também é amplamente utilizado para uma variedade de aplicações em projetos de eletrônica e robótica.
+Este projeto é um mergulho empolgante no universo da tecnologia, permitindo que você crie um circuito que exibirá a temperatura atual em um display OLED, usando o sensor de temperatura interno do chip do Raspberry Pi Pico.
+
+Para isso utilizaremos o protocolo chamado I2C (Inter-Integrated Circuit em inglês), que possibilita a comunicação entre o Raspberry Pi Pico e o display OLED SSD1306. Esse protocolo é uma das maneiras pelas quais dispositivos podem se comunicar entre si. O I2C não só permite a conexão simples e eficiente entre o Pico e o display, mas também é amplamente utilizado para uma variedade de aplicações em projetos de eletrônica e robótica.
 
 Por exemplo, além de exibir a temperatura, o protocolo I2C pode ser empregado para conectar sensores de diferentes tipos, como sensores de umidade, pressão atmosférica, luminosidade e muitos outros ao Raspberry Pi Pico. 
 
-Imagine a variedade de projetos possíveis! Você pode criar um termômetro digital, um monitor de umidade para suas plantas, um contador de passos em um projeto de wearable, um sistema de controle para um pequeno robô ou até mesmo um dispositivo de automação residencial. As possibilidades são infinitas!
+Imagine a variedade de projetos possíveis! Você pode criar um termômetro digital, um monitor de umidade para suas plantas domésticas, um contador de passos em um projeto de wearable, um sistema de controle para um pequeno robô autônomo ou até mesmo um dispositivo de automação residencial. As possibilidades são infinitas!
 
-Você está pronto para transformar suas ideias em realidade? Vamos começar a criar juntos!
+Preparado para dar vida às suas ideias?
 
 ### O Display OLED SSD1306
-O display OLED SSD1306 é uma tela pequena, mas poderosa, que nos permite mostrar informações de forma visual e interativa. Ele é um tipo especial de tela que utiliza diodos orgânicos emissores de luz (OLED, Organic Light-Emitting Diode em inglês) para criar imagens nítidas e brilhantes. Mas o que torna o SSD1306 ainda mais interessante é que ele não é apenas um 'tela', é uma tela inteligente capaz de exibir texto, gráficos e até mesmo pequenas imagens!
+
+O display OLED SSD1306 é uma tela pequena, mas poderosa, que nos permite mostrar informações de forma visual e interativa. Ele é um tipo especial de tela que utiliza diodos orgânicos emissores de luz (OLED, Organic Light-Emitting Diode em inglês) para criar imagens nítidas e brilhantes. Mas o que torna o SSD1306 ainda mais interessante é que ele não é apenas um tela, é uma tela inteligente capaz de exibir texto, gráficos e até mesmo pequenas imagens!
 
 ![Display OLED SSD1306 visto de frente](images/oled-ssd1306-front.jpg "Display OLED SSD1306 visto de frente")
 
 Esta tela em particular tem um jeito especial de mostrar cores. Alguns desses displays podem ter as duas primeiras linhas de texto amarelas, enquanto as outras seis linhas são azuis. Isso dá um visual diferente e pode tornar seus projetos mais divertidos e criativos!
 
 ### Comunicação entre dispositivos com I2C
-Para conectar o display ao Raspberry Pi Pico, usaremos um protocolo de comunicação chamado I2C. Este protocolo é como um caminho para que o Pico 'converse' com o display, permitindo que eles troquem informações. O display OLED SSD1306 possui quatro pinos que usaremos para conectá-lo ao Pico:
 
-- **VCC**: Esse pino fornece energia para o display. Conectamos ele ao pino de 3.3V no Pico.
-- **GND**: É o pino de terra, usado para completar o circuito elétrico. Conectamos ele ao GND no Pico.
-- **SCL**: Esse pino é para o relógio de sincronização do I2C. Conectamos ele a algum pino com a função SCL no Pico.
-- **SDA**: É o pino de dados que permite enviar e receber dados entre o Raspberry Pi Pico e o display. Conectamos ele a algum pino com a função SDA no Pico.
+Para conectar o display ao Raspberry Pi Pico, usaremos um protocolo de comunicação chamado I2C. Este protocolo é como um caminho para que o Pico converse com o display, permitindo que eles troquem informações. O display OLED SSD1306 possui quatro pinos que usaremos para conectá-lo ao Pico:
 
-No protocolo I2C, vários dispositivos podem ser conectados ao mesmo barramento (compartilhando as linhas SCL e SDA), e cada dispositivo tem um endereço único que o identifica. Um dispositivo coordena a comunicação, iniciando e encerrando as transmissões de dados e direcionando a comunicação para um dispositivo específico através de seu endereço. 
+- `VCC`: Esse pino fornece energia para o display. Conectamos ele ao pino de 3.3V no Pico.
+- `GND`: É o pino de terra, usado para completar o circuito elétrico. Conectamos ele ao GND no Pico.
+- `SCL`: Esse pino é para o relógio de sincronização do I2C. Conectamos ele a algum pino com a função SCL no Pico.
+- `SDA`: É o pino de dados que permite enviar e receber dados entre o Raspberry Pi Pico e o display. Conectamos ele a algum pino com a função SDA no Pico.
 
-O endereço I2C pode estar impresso na placa do display ou em uma etiqueta na parte de trás do componente. Ele geralmente é um número hexadecimal, como 0x3C ou 0x3D, por exemplo. Este endereço é fundamental para que o Raspberry Pi Pico saiba com qual dispositivo ele está se comunicando quando você escreve o código em MicroPython. No exemplo que segue note que existem duas possibilidades de endereço (0x78 ou 0x7A) e que a solda no circuito definiu que o endereço utilizado nesse display é o 0x78. 
+No protocolo I2C, vários dispositivos podem ser conectados ao mesmo barramento compartilhando as linhas SCL e SDA, e cada dispositivo tem um endereço único que o identifica. Um dispositivo coordena a comunicação, iniciando e encerrando as transmissões de dados e direcionando a comunicação para um dispositivo específico através de seu endereço. 
+
+O endereço I2C pode estar impresso na placa do display ou em uma etiqueta na parte de trás do componente. Ele geralmente é um número hexadecimal, como 0x3C ou 0x3D, por exemplo. Este endereço é fundamental para que o Raspberry Pi Pico saiba com qual dispositivo ele está se comunicando quando você escreve o código em MicroPython. No exemplo que segue note que existem duas possibilidades de endereço 0x78 ou 0x7A e que a solda no circuito definiu que o endereço utilizado nesse display é o 0x78. 
 
 ![Display OLED SSD1306 visto de trás](images/oled-ssd1306-back.jpg "Display OLED SSD1306 visto de trás")
 
-Usaremos uma biblioteca chamada 'ssd1306' no Raspberry Pi Pico para ajudar a controlar esse display. A biblioteca 'ssd1306' é como um conjunto de instruções que dizem ao Pico como usar o display OLED SSD1306. Ela nos permite mostrar texto, números e até mesmo criar pequenas imagens no display, tudo isso de forma bem simples usando a linguagem de programação MicroPython.
+Usaremos uma biblioteca chamada `ssd1306` no Raspberry Pi Pico para ajudar a controlar esse display. A biblioteca `ssd1306` é como um conjunto de instruções que dizem ao Pico como usar o display OLED SSD1306. Ela nos permite mostrar texto, números e até mesmo criar pequenas imagens no display, tudo isso de forma bem simples usando a linguagem de programação MicroPython.
 
 ### Codificando o projeto
-Antes de tudo monte o circuito conectando os pinos I2C0 SDA e I2C0 SCL do Raspberry Pi Pico aos pinos SDA e SCL, respectivamente, do display OLED para comunicação I2C. Além disso, o pino de 3.3V do Pico deve ser conectado ao pino VCC de alimentação do OLED para fornecer energia, e o pino GND do Pico deve ser conectado ao pino de terra GND do OLED para completar o circuito, conforme a imagem que segue.
+
+Antes de tudo monte o circuito conectando os pinos `I2C0`, `SDA`, `I2C0` e `SCL` do Raspberry Pi Pico aos pinos `SDA` e `SCL`, respectivamente, do display OLED para comunicação I2C. Além disso, o pino de `3.3V` do Pico deve ser conectado ao pino `VCC` de alimentação do OLED para fornecer energia, e o pino `GND` do Pico deve ser conectado ao pino de terra `GND` do OLED para completar o circuito, conforme a imagem que segue.
 
 ![Circuito do projeto oled](images/circuito-oled.jpeg "Circuito do projeto oled")
 
@@ -1794,6 +1807,8 @@ while True:
     sleep_ms(500)  # Aguarda meio segundo
 ```
 
+Programa 14.
+
 Vamos entender cada uma das linhas desse código juntos.
 
 ```python
@@ -1802,9 +1817,11 @@ from ssd1306 import SSD1306_I2C
 from time import sleep_ms
 ```
 
-Nesta parte, estamos importando as bibliotecas e módulos necessários para o código funcionar. O `machine` é um módulo que oferece acesso a recursos de hardware do Raspberry Pi Pico. `Pin` é usado para controlar os pinos GPIO, `I2C` é usado para comunicação I2C, `ADC` é usado para o conversor analógico-digital e `time` é utilizado para lidar com o tempo. 
+Nesta parte, estamos importando as bibliotecas e módulos necessários para o código funcionar. 
 
-O `ssd1306` é a biblioteca para controle do display OLED SSD1306.
+- `machine` é um módulo que oferece acesso a recursos de hardware do Raspberry Pi Pico. `Pin` é usado para controlar os pinos GPIO, `I2C` é usado para comunicação I2C, `ADC` é usado para o conversor analógico-digital e `time` é utilizado para lidar com o tempo. 
+
+- `ssd1306` é a biblioteca para controle do display OLED SSD1306.
 
 ```python
 # Configura sensor de temperatura
@@ -1812,9 +1829,11 @@ sensor_temp = ADC(4)
 conversion_factor = 3.3 / (65535)
 ```
 
-Aqui estamos configurando o sensor de temperatura interno do Raspberry Pi Pico. Estamos definindo `sensor_temp` como um objeto ADC (conversor analógico-digital) que está conectado ao pino 4 do Pico. `conversion_factor` é usado para converter os valores lidos em tensão para valores de temperatura.
+O Raspberry Pi Pico possui um sensor de temperatura interno, que é lido no quarto canal do conversor analógico-digital. Assim como o potenciômetro, a saída do sensor é uma voltagem variável: à medida que a temperatura muda, a voltagem também muda.
 
-Ao dividir a tensão de referência de 3.3 volts pelo valor máximo do ADC de 16 bits (65535), obtemos o fator de conversão. Esse fator será usado para transformar os valores lidos pelo ADC para uma escala de tensão de 0 a 3.3 volts.
+- Na linha `sensor_temp = ADC(4)` configuramos o conversor analógico-digital, mas em vez de usar o número de um pino, utilizamos o número do canal conectado ao sensor de temperatura interno do Pico. 
+
+- A linha `conversion_factor` converte os valores lidos em tensão para valores de temperatura. Ao dividir a tensão de referência de 3.3 volts pelo valor máximo do ADC de 16 bits (65535), obtemos o fator de conversão. Esse fator será usado para transformar os valores lidos pelo ADC para uma escala de tensão de 0 a 3.3 volts.
 
 ```python
 # Configuração do I2C para se comunicar com o módulo OLED
@@ -1825,13 +1844,13 @@ sleep_ms(1000)  # Aguarda configuração ser aplicada
 
 Nesta parte, estamos configurando a comunicação I2C entre o Raspberry Pi Pico e o display OLED SSD1306. 
 
-Estamos inicializando um objeto `i2c` para a comunicação I2C usando os pinos 0 e 1 (I2C0 SDA e I2C0 SCL) do Pico. 
+- Estamos inicializando um objeto `i2c` para a comunicação I2C usando os pinos **0** (I2C0 SDA) e **1** (I2C0 SCL) do Pico. 
 
-O objeto `display` é inicializado como um display SSD1306_I2C com uma resolução de 128x64 pixels e um endereço específico (0x3C) no barramento I2C. 
+- O objeto `display` é inicializado como um display SSD1306_I2C com uma resolução de 128x64 pixels e um endereço específico (0x3C) no barramento I2C. 
 
 > **`Importante`**: Lembre de verificar o endereço específico de seu display, olhando na parte de trás dele, e altere o código para refletir esse endereço.
 
-O `sleep_ms(1000)` é utilizado para aguardar 1 segundo antes do início do loop principal. Esse período garante que a configuração inicial dos dispositivos esteja completa e estabilizada antes de começar a coleta e exibição dos dados.
+- O `sleep_ms(1000)` é utilizado para aguardar 1 segundo antes do início do loop principal. Esse período garante que a configuração inicial dos dispositivos esteja completa e estabilizada antes de começar a coleta e exibição dos dados.
 
 ```python
 while True:
@@ -1865,9 +1884,9 @@ Esse trecho de código atualiza o display OLED com informações da temperatura.
 
  - `display.fill(0)` limpa o conteúdo atual do display preenchendo-o com zeros (que geralmente representam pixels desligados). Isso garante que o display seja limpo antes de escrever novas informações.
 
-- `display.text("Temperature (C)", 5, 5)` escreve um texto no display OLED. O texto "Temperature (C)" será exibido a uma posição específica no display. Os números `5` e `5` são as coordenadas x e y onde o texto começará a ser exibido.
+- `display.text("Temperature (C)", 5, 5)` escreve um texto no display OLED. O texto "Temperature (C)" será exibido a uma posição específica no display. Os números 5 e 5 são as coordenadas x e y onde o texto começará a ser exibido.
 
-- `display.text(formatted_temperature, 50, 27)` escreve a temperatura formatada no display OLED. `formatted_temperature` é a temperatura previamente calculada e formatada para exibição com uma casa decimal. Novamente, `50` e `27` representam as coordenadas x e y no display onde o texto será exibido.
+- `display.text(formatted_temperature, 50, 27)` escreve a temperatura formatada no display OLED. `formatted_temperature` é a temperatura previamente calculada e formatada para exibição com uma casa decimal. Novamente, 50 e 27 representam as coordenadas x e y no display onde o texto será exibido.
 
 - `display.show()` atualiza o display com as informações que foram escritas. Após escrever os textos desejados, essa função exibe o conteúdo no display, mostrando as informações recém-adicionadas.
 
@@ -1875,12 +1894,14 @@ Esse trecho de código atualiza o display OLED com informações da temperatura.
 
 Parabéns! Ao finalizar este projeto, você não apenas explorou o incrível potencial do Raspberry Pi Pico e do MicroPython, mas também mergulhou no universo fascinante da eletrônica e programação utilizando um display para apresentar informações. Nos vemos no próximo projeto!
 
-## Genius, o jogo de memória dos anos 80
+## Projeto: Genius, o jogo de memória dos anos 80
+
 Seja bem-vindo ao desafio de recriar um clássico dos anos 80! Já ouviu falar do jogo Genius lançado pela Estrela? Imagine a emoção de desenvolver e jogar uma versão própria deste clássico no seu Raspberry Pi Pico usando MicroPython! É isso mesmo! Estamos prestes a mergulhar em uma aventura de aprendizado e diversão enquanto exploramos como esse icônico jogo funciona e o recriamos usando a nossa criatividade e habilidades.
 
 Você terá a oportunidade de colocar em prática todas as habilidades que desenvolveu até aqui. Juntos, vamos enfrentar cada desafio, cada detalhe técnico, e ao final deste projeto, você sairá não apenas com um jogo funcional, mas com uma bagagem de conhecimento e experiência que o levará ainda mais longe. Está pronto para aceitar o desafio?
 
 ### Sobre o Jogo Genius
+
 O Genius é um jogo eletrônico de memória e habilidade onde luzes coloridas acendem em sequência. Nossa versão do Genius será criada utilizando 4 LEDs coloridos, 4 botões e um buzzer. 
 
 Os LEDs acenderão em uma sequência aleatória que deverá ser repetida pressionando os botões correspondentes. Cada rodada aumentará a dificuldade, acrescentando mais elementos à sequência. Se a sequência for repetida corretamente, o jogo prosseguirá com mais um elemento adicionado. Por outro lado, um erro na sequência resultará no reinício do jogo.
@@ -1888,13 +1909,14 @@ Os LEDs acenderão em uma sequência aleatória que deverá ser repetida pressio
 Se quiser dar uma espiada no jogo original em ação, sugiro pesquisar online para ver como ele funciona. Pode ser bem útil para a você se inspirar para esse projeto.
 
 ### Montando o circuito
+
 Monte o circuito conforme as intruções que seguem. Certifique-se de verificar a imagem para referência.
 
-**LEDs**: Quatro LEDs de diferentes cores são utilizados para representar os desafios do jogo. Cada cor possui um pino associado no Raspberry Pi Pico. O LED verde está conectado ao pino GP0, o vermelho ao pino GP1, o amarelo ao pino GP2 e o azul ao pino GP3. É importante ressaltar que cada LED precisa ser conectado em série com um resistor (normalmente entre 220Ω e 470Ω) para limitar a corrente e proteger tanto o LED quanto o Raspberry Pi Pico.  Conecte o terminal positivo do LED (o mais longo) ao pino do seu Raspberry Pi Pico, e o terminal negativo do LED (o mais curto) ao resistor e depois ao terra (GND).
+Quatro LEDs de diferentes cores são utilizados para representar os desafios do jogo. Cada cor possui um pino associado no Raspberry Pi Pico. O LED verde está conectado ao pino GP0, o vermelho ao pino GP1, o amarelo ao pino GP2 e o azul ao pino GP3. É importante ressaltar que cada LED precisa ser conectado em série com um resistor (normalmente entre 220Ω e 470Ω) para limitar a corrente e proteger tanto o LED quanto o Raspberry Pi Pico.  Conecte o terminal positivo do LED (o mais longo) ao pino do seu Raspberry Pi Pico, e o terminal negativo do LED (o mais curto) ao resistor e depois ao terra (GND).
 
-**Botões**: Quatro botões são utilizados para que o jogador possa interagir com o jogo. Cada botão está relacionado a um LED correspondente. O botão verde é conectado ao pino GP16, o vermelho ao pino GP17, o amarelo ao pino GP18 e o azul ao pino GP19. Da mesma forma que os LEDs, os botões devem ter um terminal conectado ao terra (GND) do seu Raspberry Pi Pico.
+Quatro botões são utilizados para que o jogador possa interagir com o jogo. Cada botão está relacionado a um LED correspondente. O botão verde é conectado ao pino GP16, o vermelho ao pino GP17, o amarelo ao pino GP18 e o azul ao pino GP19. Da mesma forma que os LEDs, os botões devem ter um terminal conectado ao terra (GND) do seu Raspberry Pi Pico.
 
-**Buzzer**: Um buzzer é usado para gerar os sons do jogo. Ele tem seu terminal positivo (o mais longo) conectado ao pino GP15 do Raspberry Pi Pico e o outro terminal conectado ao terra (GND).
+Um buzzer é usado para gerar os sons do jogo. Ele tem seu terminal positivo (o mais longo) conectado ao pino GP15 do Raspberry Pi Pico e o outro terminal conectado ao terra (GND).
 
 ![Circuito do projeto genius](images/circuito-genius.jpeg "Circuito do projeto genius")
 
@@ -1903,6 +1925,7 @@ O circuito é montado de maneira a conectar cada componente (LEDs, botões e buz
 O circuito pode ser montado de diversas maneiras, utilizando os mesmos pinos disponíveis no seu Raspberry Pi Pico. O diagrama apresentado é apenas uma das muitas maneiras de realizar a montagem. Você tem total liberdade para organizar e conectar os componentes da forma que melhor se adeque ao seu projeto!
 
 ### Codificando o jogo
+
 É hora de você colocar a mão na massa e criar esse jogo! Abaixo está o código completo. Em seguida, uma explicação detalhada de cada parte para que você entenda como tudo funciona.
 
 Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `genius.py` e depois execute-o. 
@@ -2088,6 +2111,8 @@ def main():
 main()
 ```
 
+Programa 15.
+
 Chegou a hora de explorarmos cada linha do código juntos! Vamos investigar passo a passo para entender em detalhes como esse código funciona.
 
 ```python
@@ -2112,9 +2137,9 @@ buzzer.duty_u16(0)  # Inicialmente, o buzzer está desligado
 
 Esse trecho de código é responsável por configurar o buzzer, que é um componente usado para produzir sons no nosso jogo. 
 
-- `buzzer = PWM(Pin(15))`: Aqui, estamos criando uma variável chamada buzzer e a associando ao componente do tipo PWM (Pulse Width Modulation) conectado ao pino físico GP15 do Raspberry Pi Pico que também tem a função PWM. O PWM é uma técnica usada para controlar a quantidade de energia que é entregue ao buzzer, o que nos permite controlar a frequência e o volume do som emitido.
+- `buzzer = PWM(Pin(15))`: Aqui, estamos criando uma variável chamada buzzer e a associando ao componente do tipo PWM conectado ao pino físico GP15 do Raspberry Pi Pico que também tem a função PWM. O PWM é uma técnica usada para controlar a quantidade de energia que é entregue ao buzzer, o que nos permite controlar a frequência e o volume do som emitido.
 
-- `buzzer.duty_u16(0)`: Esta linha define o "dever" do buzzer, que controla o volume do som. Ao atribuir 0 ao duty_u16, estamos dizendo que inicialmente o buzzer está desligado. O parâmetro duty_u16 é um valor numérico que pode variar de 0 a 65535, onde 0 representa o desligado e 65535 o volume máximo.
+- `buzzer.duty_u16(0)`: Ao atribuir 0 ao duty_u16, estamos dizendo que inicialmente o buzzer está desligado. 
 
 ```python
 # Mapeamento dos LEDs com pinos correspondentes
@@ -2128,11 +2153,11 @@ leds = {
 
 Esse trecho de código cria um mapeamento entre as cores dos LEDs e os pinos correspondentes no Raspberry Pi Pico. 
 
-- `leds = { ... }`: Aqui estamos criando um dicionário chamado leds, que associa cada cor (verde, vermelho, amarelo e azul) com as informações necessárias para controlar cada LED.
+- `leds = { ... }`: Aqui estamos criando um dicionário chamado leds, que associa cada cor verde, vermelho, amarelo e azul com as informações necessárias para controlar cada LED.
 
-- `"Green": {"pin": Pin(0, Pin.OUT), "tone": 415}`: Este é um exemplo de um item no dicionário leds. Para o LED verde, estamos associando a cor "Green" ao dicionário interno `{"pin": Pin(0, Pin.OUT), "tone": 415}`. Isso significa que o LED verde está conectado ao pino GP0 do Raspberry Pi Pico e configurado como saída (Pin.OUT). Além disso, estamos atribuindo um tom (frequência do som) de 415 a este LED.
+- `"Green": {"pin": Pin(0, Pin.OUT), "tone": 415}`: Este é um exemplo de um item no dicionário leds. Para o LED verde, estamos associando a cor "Green" ao dicionário interno `{"pin": Pin(0, Pin.OUT), "tone": 415}`. Isso significa que o LED verde está conectado ao pino `GP0` do Raspberry Pi Pico e configurado como saída `Pin.OUT`. Além disso, estamos atribuindo um tom (frequência do som) de 415 Hz a este LED.
 
-- Similarmente, para os LEDs vermelho, amarelo e azul, estamos definindo os pinos aos quais estão conectados e as frequências de tom correspondentes: LED vermelho (pino GP1, frequência 310), LED amarelo (pino GP2, frequência 252) e LED azul (pino GP3, frequência 209).
+- Similarmente, para os LEDs vermelho, amarelo e azul, estamos definindo os pinos aos quais estão conectados e as frequências de tom correspondentes: LED vermelho (pino `GP1`, frequência 310), LED amarelo (pino `GP2`, frequência 252) e LED azul (pino `GP3`, frequência 209).
 
 Esse dicionário nos permitirá controlar cada LED separadamente, acendendo-os e configurando a frequência do som associado a cada cor específica durante o jogo.
 
@@ -2159,16 +2184,16 @@ Timer(-1).init(period=25, mode=Timer.PERIODIC, callback=check_buttons)
 
 Esse trecho de código configura os botões do jogo e verifica se algum deles foi pressionado. 
 
-- `buttons = { ... }`: Aqui estamos definindo um conjunto de botões que representam as cores do jogo (verde, vermelho, amarelo e azul). Cada botão é representado por um dicionário contendo várias informações.
+- `buttons = { ... }`: Aqui estamos definindo um conjunto de botões que representam as cores do jogo verde, vermelho, amarelo e azul. Cada botão é representado por um dicionário contendo várias informações.
 
-- `"pin": Pin(numero_pino, Pin.IN, Pin.PULL_DOWN)`: Esta linha configura o pino físico do Raspberry Pi Pico ao qual o botão está conectado. O Pin(numero_pino) atribui o número do pino, Pin.IN define o pino como entrada (input), e Pin.PULL_DOWN configura o pull-down resistor no pino para evitar flutuações de sinal.
+- `"pin": Pin(numero_pino, Pin.IN, Pin.PULL_DOWN)`: Esta linha configura o pino físico do Raspberry Pi Pico ao qual o botão está conectado. O `Pin(numero_pino)` atribui o número do pino, `Pin.IN` define o pino como entrada, e `Pin.PULL_DOWN` configura o pull-down resistor no pino para evitar flutuações de sinal.
 
-- `"state": 0, "last_state": 0, "switched": False`: Aqui estamos inicializando três variáveis para cada botão. "state" armazena o estado atual do botão (se está pressionado ou não), "last_state" guarda o estado anterior e "switched" indica se houve mudança no estado do botão.
+- `"state": 0, "last_state": 0, "switched": False`: Aqui estamos inicializando três variáveis para cada botão. `state` armazena o estado atual do botão (se está pressionado ou não), `last_state` guarda o estado anterior e `switched` indica se houve mudança no estado do botão.
 
 - `def check_buttons(timer): ...`: Esta é uma função que verifica se algum botão foi pressionado ou solto. Ela é chamada periodicamente por um timer para checar os botões em intervalos regulares.
 
-- `Timer(-1).init(period=25, mode=Timer.PERIODIC, callback=check_buttons)`: Aqui estamos inicializando um timer para verificar se algum botão foi pressionado. O timer é configurado para chamar a função check_buttons a cada 25 milissegundos (period=25). Ele funciona de maneira periódica para verificar os estados dos botões, garantindo que qualquer pressionamento seja detectado rapidamente.
-Esses botões serão a forma como o jogador interage com o jogo, pressionando-os conforme as sequências de cores forem exibidas pelo jogo, e a função check_buttons estará constantemente verificando se esses botões foram pressionados ou soltos.
+- `Timer(-1).init(period=25, mode=Timer.PERIODIC, callback=check_buttons)`: Aqui estamos inicializando um timer para verificar se algum botão foi pressionado. O timer é configurado para chamar a função `check_buttons` a cada 25 milissegundos `period=25`. Ele funciona de maneira periódica para verificar os estados dos botões, garantindo que qualquer pressionamento seja detectado rapidamente.
+Esses botões serão a forma como o jogador interage com o jogo, pressionando-os conforme as sequências de cores forem exibidas pelo jogo, e a função `check_buttons` estará constantemente verificando se esses botões foram pressionados ou soltos.
 
 ```python
 def create_sequence(skill):
@@ -2201,14 +2226,14 @@ def show_sequence(sequence, step):
 
 Esse trecho de código tem duas funções importantes para o jogo:
 
-1. `def create_sequence(skill): ...`: Esta função gera uma sequência aleatória de cores que será apresentada ao jogador durante o jogo. Ela recebe como entrada `skill`, que representa o nível de habilidade ou a quantidade de cores na sequência. Aqui está o passo a passo do que acontece:
+-  `def create_sequence(skill): ...`: Esta função gera uma sequência aleatória de cores que será apresentada ao jogador durante o jogo. Ela recebe como entrada `skill`, que representa o nível de habilidade ou a quantidade de cores na sequência. Aqui está o passo a passo do que acontece:
     - `sequence = []`: Cria uma lista vazia chamada `sequence` para armazenar a sequência de cores.
     - `for _ in range(skill):`: Itera `skill` vezes para criar a sequência de cores aleatórias.
     - `random_color = random_choice(list(leds.keys()))`: Seleciona uma cor aleatória do conjunto de cores disponíveis (`list(leds.keys())`) usando a função `random_choice`.
     - `sequence.append(random_color)`: Adiciona a cor aleatória à sequência.
     - Por fim, retorna a sequência gerada.
 
-2. `def show_sequence(sequence, step): ...`: Esta função reproduz uma parte da sequência de cores gerada pela função anterior para mostrar ao jogador. Ela recebe como entrada `sequence`, que é a sequência de cores gerada, e `step`, que representa a etapa atual da sequência a ser exibida.
+-  `def show_sequence(sequence, step): ...`: Esta função reproduz uma parte da sequência de cores gerada pela função anterior para mostrar ao jogador. Ela recebe como entrada `sequence`, que é a sequência de cores gerada, e `step`, que representa a etapa atual da sequência a ser exibida.
     - `speed_settings = [...]`: Define as configurações de velocidade para exibir a sequência com diferentes durações, dependendo do passo atual (`step`).
     - O loop `for color in sequence[:step]:` percorre as cores na sequência até a etapa atual. Para cada cor, obtém o LED associado à cor atual na sequência, liga o LED correspondente à cor, produz um tom com a frequência associada à cor por uma determinada duração e finalmente desliga o LED após reproduzir a cor por um tempo.
 
@@ -2242,7 +2267,7 @@ Essas funções são usadas para controlar o buzzer, permitindo que ele emita so
 
 - `def play_tone(freq, duration): ...`: Esta função reproduz um tom com uma frequência específica por uma determinada duração.
     - `start_tone(freq)`: Inicia a reprodução do som com a frequência fornecida.
-    - `sleep_ms(duration)`: Aguarda por um período de tempo determinado (`duration`) antes de interromper o som.
+    - `sleep_ms(duration)`: Aguarda por um período de tempo determinado `duration` antes de interromper o som.
     - `stop_tone()`: Desliga a reprodução do som após a duração especificada.
 
 ```python
@@ -2270,7 +2295,7 @@ Essas funções são utilizadas para criar efeitos sonoros que correspondem às 
 
 - `def play_victory_tone(led): ...`: Esta função reproduz um som de vitória para um LED específico. Ela faz o último LED pressionado pelo jogador piscar enquanto reproduz um som breve. `for _ in range(5): ...` faz o código indentado ser executado cinco vezes para criar uma breve sequência de piscadas e reprodução de som.
     - `led["pin"].on()`: Acende o LED associado.
-    - `play_tone(led["tone"], 70)`: Emite um tom com a frequência do LED (especificada por `led["tone"]`) por um curto período de tempo (70 milissegundos).
+    - `play_tone(led["tone"], 70)`: Emite um tom com a frequência do LED (especificada por `led["tone"]`) por um curto período de tempo de 70 milissegundos.
     - `led["pin"].off()`: Desliga o LED.
     - `sleep_ms(20)`: Aguarda um curto intervalo antes de repetir o processo.
 
@@ -2321,7 +2346,7 @@ def main():
     new_game = True
 ```
 
-- A função `main()` controla todas as etapas do jogo, desde o início até a avaliação das jogadas do jogador e o reinício do jogo quando necessário.
+A função `main()` controla todas as etapas do jogo, desde o início até a avaliação das jogadas do jogador e o reinício do jogo quando necessário.
 - `skill_level = 3`: Define o nível de dificuldade inicial do jogo como 3, representando o número de cores na sequência inicial.
 - `new_game = True`: Define uma variável para controlar o início de um novo jogo.
 
@@ -2374,7 +2399,7 @@ def main():
         led["pin"].off()
 ```
 
-- Este bloco aguarda até que o botão pressionado seja liberado antes de prosseguir. Continua verificando a cada 5 milissegundos.
+Este bloco aguarda até que o botão pressionado seja liberado antes de prosseguir. Continua verificando a cada 5 milissegundos.
 - `stop_tone()`: Interrompe a reprodução de som.
 - `led["pin"].off()`: Desliga o LED associado à cor pressionada.
 
@@ -2395,7 +2420,7 @@ def main():
             new_game = True
 ```
 
-- Este bloco avalia se a jogada do jogador está correta.
+Este bloco avalia se a jogada do jogador está correta.
 - Se estiver correta e o jogador completar a sequência:
   - Toca um som de vitória.
   - Aumenta o nível de dificuldade.
@@ -2410,5 +2435,3 @@ Maravilha! Chegamos ao fim! Parabéns por essa incrível jornada! Durante esse p
 Você aprendeu a criar sequências aleatórias de cores, a controlar LEDs, botões e buzzer. Desenvolveu algoritmos para verificar suas jogadas e gerenciar cada etapa do jogo. Explorou conceitos de lógica, funções, loops e temporizadores.
 
 Continue explorando, desafiando-se e aprendendo. Você é a próxima geração de inovadores! O futuro está nas suas mãos. Continue sonhando, criando e transformando o mundo ao seu redor com as habilidades incríveis que você conquistou. Sucesso!
-
-
