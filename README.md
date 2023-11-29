@@ -173,6 +173,8 @@ led = Pin(25, Pin.OUT)
 led.value(1)
 ```
 
+Programa 1.
+
 Se você definir o valor do LED como `1`, ele se acende. Dessa forma você deverá ver o LED embarcado se acender. Confirme isso localizando o LED embarcado em seu Pico. 
 
 Embarcado neste contexto significa que o LED faz parte da placa do próprio Raspberry Pi Pico. É como aquela luzinha que já vem junto com a sua televisão e indica se ela está ligada. Portanto, o LED embarcado do Raspberry Pi Pico se refere ao LED que está diretamente conectado e vem junto com o próprio Raspberry Pi Pico.
@@ -189,7 +191,8 @@ Experimente ligar e desligar o LED quantas vezes desejar.
 
 > **`Atenção`**: Você pode usar a seta para cima no teclado para acessar rapidamente linhas de código anteriores e então pressionar o botão `Enter` do seu teclado para executá-las.
 
-### Faça o LED embarcado piscar
+### Salvando o programa em um arquivo .py
+
 Apesar de ser vantajoso utilizar o painel de Shell para realizar testes de código de forma rápida e interativa, se você deseja escrever um programa mais longo é melhor salvá-lo em um arquivo para poder reutilizá-lo mesmo após reiniciar seu Pico.
 
 O Thonny pode salvar e executar programas MicroPython diretamente no seu Raspberry Pi Pico. Para testar isso você irá criar um programa em MicroPython para fazer o LED embarcado alternar entre ligado e desligado.
@@ -202,6 +205,8 @@ led = Pin(25, Pin.OUT)
 
 led.toggle()
 ```
+
+Programa 2.
 
 A primeira linha de código `from machine import Pin` importa uma biblioteca do MicroPython chamada `machine` que contém funções para interagir com hardware. Mais especificamente, ela está importando a função `Pin`, que permite controlar os pinos do Raspberry Pi Pico.
 
@@ -237,6 +242,8 @@ def blink(timer):
 
 timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
 ```
+
+Programa 3.
 
 A seguir, vamos entender esse código linha a linha.
 
@@ -384,6 +391,8 @@ def blink(timer):
 timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
 ```
 
+Programa 4.
+
 Salve o seu programa no seu Raspberry Pi Pico com o nome de **blink1.py**. Execute o seu programa e o LED deverá começar a piscar. Se não estiver funcionando, verifique as conexões entre os componentes para ter certeza de que o LED está conectado corretamente.
 
 ## Projeto: Acionar um LED com um botão
@@ -408,6 +417,8 @@ while True:
         led.toggle()
         time.sleep(0.5)
 ```
+
+Programa 5.
 
 Ao executar o código e ele fará com que o LED pisque cada vez que o botão é pressionado. Se o botão for mantido pressionado, o LED continuará piscando a cada meio segundo até que o botão seja solto.
 
@@ -439,9 +450,9 @@ Imagine que exista uma forma de fazer um LED brilhar mais forte ou mais fraco, c
 
 Você fará isso daqui a pouco mas antes é necessário entender alguns conceitos novos tais como frequência e período, PWM e ciclo de trabalho (duty cycle in inglês) e como isso afeta a intensidade de um LED. 
 
-### Frequência (Frequency em inglês)
+### Frequência 
 
-É como se mede a rapidez com que alguma coisa acontece de novo e de novo. Imagine um LED que se liga e desliga várias vezes em 1 segundo. Se isso acontece muitas vezes em pouco tempo, dizemos que tem uma alta frequência. Por exemplo, se um LED pisca 3 vezes por segundo, ele tem uma frequência 3 vezes mais alta que um LED que pisca 1 vez por segundo. A frequência é medida em Hertz (Hz), sendo que 1 Hz é igual a uma piscada do LED (acender e apagar) por segundo. No exemplo da figura o LED é ligado e desligado 3 vezes em 1 segundo. Logo, a frequência é de 3 Hz.
+A frequência (Frequency em inglês) é como se mede a rapidez com que alguma coisa acontece de novo e de novo. Imagine um LED que se liga e desliga várias vezes em 1 segundo. Se isso acontece muitas vezes em pouco tempo, dizemos que tem uma alta frequência. Por exemplo, se um LED pisca 3 vezes por segundo, ele tem uma frequência 3 vezes mais alta que um LED que pisca 1 vez por segundo. A frequência é medida em Hertz (Hz), sendo que 1 Hz é igual a uma piscada do LED (acender e apagar) por segundo. No exemplo da figura o LED é ligado e desligado 3 vezes em 1 segundo. Logo, a frequência é de 3 Hz.
 
 ![Frequência, período e ciclo de trabalho](images/pwm.png "Frequência, período e ciclo de trabalho")
 
@@ -499,6 +510,8 @@ while True:
         pwm.duty_u16(duty)
         sleep_ms(1)
 ```
+
+Programa 6.
 
 Depois de escrever o código, salve-o no Raspberry Pi Pico com o nome **pulse.py** e execute. Vai ser legal ver o LED pulsar e brilhar continuamente de uma forma especial!
 
@@ -564,20 +577,21 @@ while True:
 
 Experimente brincar com os valores de frequência, ciclo de trabalho, assim como o tempo de espera (sleep), para ter uma ideia de como você pode ajustar a intensidade e o ritmo do LED pulsante.
 
-## Projeto: Controle de intensidade do LED com Potenciômetro 
+## Projeto: Controle de intensidade do LED com Potenciômetro
 
-O seu Raspberry Pi Pico possui pinos de entrada que podem receber sinais analógicos. Isso significa que, em vez de apenas ler os valores `1` e `0` (ligado e desligado), ele pode ler valores intermediários.
+O seu Raspberry Pi Pico possui pinos de entrada que podem receber sinais analógicos. Isso significa que, em vez de apenas ler os valores **1** e **0**, ou seja, ligado e desligado, ele pode ler valores intermediários.
 
 Um potenciômetro é o dispositivo analógico perfeito para esse objetivo.
 
 ### O que é um Potenciômetro?
+
 O potenciômetro é um componente muito útil na eletrônica. Pode ser um pouco difícil de pronunciar, mas é fácil de entender! 
 
 Vamos imaginar um potenciômetro como uma torneira de água em um encanamento. A imagem que segue mostra um potenciômetro típico.
 
 ![Potenciômetro conectado com um LED ao Pico](images/potentiometer.jpg "Potenciômetro conectado com um LED ao Pico")
 
-Imagine que temos um cano por onde a água (eletricidade) pode fluir. O potenciômetro é como uma torneira nesse cano (circuito). Girando a torneira, podemos controlar o fluxo de água através do encanamento.
+Imagine que temos um cano por onde a água (eletricidade) pode fluir. O potenciômetro é como uma torneira nesse cano (circuito). Girando a torneira, podemos controlar o fluxo de água através do encanamento (fluxo de elétrons pelo circuito).
 
 Se abrimos a torneira completamente, a água flui livremente. Mas, se giramos a torneira para um ponto intermediário, a água encontra mais resistência e flui mais devagar. Se fecharmos a torneira o fluxo de água cessa.
 
@@ -585,14 +599,16 @@ Se ligarmos um LED a esse circuito, podemos controlar o brilho dele girando a to
 
 Dessa forma o potenciômetro atua como uma torneira no nosso encanamento elétrico, controlando o fluxo de eletricidade. Isso nos dá a capacidade de ajustar o funcionamento de dispositivos elétricos com mais precisão.
 
-### Conversor Analógico-Digital (ADC)
+### Conversor Analógico-Digital 
+
 Um Conversor Analógico-Digital (ADC, Analog-to-Digital Converter em inglês), é como um tradutor que transforma coisas que são contínuas, como luz, som ou temperatura, em números para que um computador pode entender. É como quando você mede algo com uma régua e anota o número para saber o tamanho.
 
-Isso é muito útil porque os computadores entendem apenas números, mas o mundo ao nosso redor é cheio de coisas que não são números diretamente. Com um ADC, podemos medir e usar essas coisas em nossos projetos com Raspberry Pi Pico.
+Isso é muito útil porque os computadores entendem apenas números, mas o mundo ao nosso redor é cheio de coisas que não são números diretamente. Com um ADC, podemos medir e usar esses valores em nossos projetos com Raspberry Pi Pico.
 
 Por exemplo, o ADC pode ler um potenciômetro e traduzir essa leitura em valor entre 0 e 65535. Esse valor pode ser utilizado para definir o ciclo de trabalho (_duty cycle_) em um PWM para controlar a intensidade de um LED, que também opera na mesma faixa de valores.
 
 ### Lendo valores de um Potenciômetro
+
 Substitua o botão no seu circuito por um potenciômetro. Siga o diagrama abaixo para conectá-lo ao pino analógico `GP26`.
 
 ![Potenciômetro conectado com um LED ao Pico](images/pot_and_LED.png "Potenciômetro conectado com um LED ao Pico")
@@ -610,25 +626,25 @@ while True:
     time.sleep(0.1)
 ```
 
-Exemplo 7.
+Programa 7.
 
 A seguir a explicação das linhas mais importantes do código.
 
-- **`from machine import ADC, Pin`**: A novidade aqui é que estamos importando a função `ADC` da biblioteca `machine`, que nos ajudará a ler o potenciômetro.
+- `from machine import ADC, Pin`: A novidade aqui é que estamos importando a função `ADC` da biblioteca `machine`, que nos ajudará a ler o potenciômetro.
 
-- **`adc = ADC(Pin(26))`**: Nessa linha estamos criando um objeto ADC conectado ao pino 26 (`GP26`) do Raspberry Pi Pico, ou seja, estamos dizendo ao Raspberry Pi Pico para usar o pino para 'escutar' o potenciômetro. Pense nisso como conectar um ouvido (o pino) para ouvir o potenciômetro.
+- `adc = ADC(Pin(26))`: Nessa linha estamos criando um objeto ADC conectado ao pino 26 (`ADC0`) do Raspberry Pi Pico, ou seja, estamos dizendo ao Raspberry Pi Pico para usar o pino para 'escutar' o potenciômetro. Pense nisso como conectar um ouvido (o pino) para ouvir o potenciômetro.
 
-- **`print(adc.read_u16())`**: Esta linha lê a posição do potenciômetro e converte em um número que é impresso no Shell.
+- `print(adc.read_u16())`: Esta linha lê a posição do potenciômetro e converte em um número que é impresso no Shell.
 
 Agora gire o potenciômetro para ver seus valores máximo e mínimo. Eles devem estar aproximadamente entre 0 e 65535. 
 
 > **`Atenção`**: Caso tenha pequenas variações nos valores mínimo e máximo lidos do potenciômetro pode ser devido a qualidade do componente. Mas não se preocupe, pequenas variações não vão atrapalhar nesse caso.
 
-O Thonny tem uma opção chamada **Plotter** que permite que você exiba os valores impressos no Shell de forma gráfica. Isso pode ajudar a entender melhor o efeito ao girar o botão do potenciômetro. No Thonny, escolha **'View > Plotter'** e a janela do **plotter** aparecerá ao lado direito do Shell.
+O Thonny tem uma opção chamada Plotter que permite que você exiba os valores impressos no Shell de forma gráfica. Isso pode ajudar a entender melhor o efeito ao girar o botão do potenciômetro. No Thonny, escolha 'View > Plotter' e a janela do plotter aparecerá ao lado direito do Shell.
 
 ![Imagem animada do plotter](images/thonny-plotter.gif "Imagem animada do plotter")
 
-Gire novamente o potenciômetro e veja a alteração dos valores no **Plotter**. É possível ver a linha subir a medida que você 'abre mais a torneira' do potenciômetro, e vice-versa.
+Gire novamente o potenciômetro e veja a alteração dos valores no Plotter. É possível ver a linha subir a medida que você 'abre mais a torneira' do potenciômetro, e vice-versa.
 
 E porque não usar esse valor para controlar o ciclo de trabalho do PWM e dessa forma controlar a intensidade do LED?
 
@@ -647,14 +663,18 @@ while True:
     pwm.duty_u16(duty)
 ```
 
+Programa 8.
+
 Parabéns! Você conseguiu controlar o LED usando um potenciômetro! Continue explorando esse mundo da eletrônica e programação, pois você está trilhando um caminho cheio de descobertas empolgantes!
 
-## 3 LEDs piscando em sequência
+## Projeto: 3 LEDs piscando em sequência
+
 E se agora você quiser que uma sequência de 3 LEDs pisque seuquencialmente e em uma frequência controlada pelo potenciômetro? Ao girar o potenciômetro a velocidade da sequência de LEDs aumenta ou diminui.
 
-Mas antes de iniciarmos é necessária uma pausa para conhecermos um novo conceito em MicroPython chamado **Listas** que nos ajudará a alcançar nosso objetivo.
+Mas antes de iniciarmos é necessária uma pausa para conhecermos um novo conceito em MicroPython chamado Listas que nos ajudará a alcançar nosso objetivo.
 
 ### Explorando Listas em Python
+
 Imagine que você tem uma coleção de objetos, como números ou palavras, e quer organizá-los de uma forma que seja fácil de gerenciar. É aí que entram as listas!
 
 Uma lista em Python é uma coleção de itens que podem ser de diferentes tipos, como números, palavras, objetos ou até mesmo outras listas. Cada item em uma lista tem uma posição única, que chamamos de índice. Para acessar um item em uma lista, basta usar o índice correspondente.
@@ -665,9 +685,9 @@ Aqui está um exemplo para ilustrar melhor:
 numeros = [10, 20, 30, 40, 50]
 ```
 
-Neste caso, criamos uma lista chamada `numeros` que contém cinco números. Cada número tem um índice, começando do zero. Por exemplo, o primeiro número, 10, está no índice 0, o segundo número, 20, está no índice 1 e assim por diante.
+Neste caso, criamos uma lista chamada `numeros` que contém cinco números. Cada número tem um índice, começando do zero. Por exemplo, o primeiro número, 10, está no índice 0 da lista, o segundo número, 20, está no índice 1 e assim por diante.
 
-Para acessar um item específico na lista, usamos a seguinte notação:
+Para acessar um item específico na lista, usamos o seu índice com a seguinte notação:
 
 ```python
 primeiro_numero = numeros[0]  # Isso vai atribuir o valor 10 à variável primeiro_numero
@@ -695,6 +715,7 @@ del numeros[2]  # Agora, a lista será [10, 25, 40, 50, 60]
 As listas são muito úteis para organizar e manipular dados em Python. Elas nos permitem trabalhar com coleções de informações de forma eficiente. À medida que você avança em sua jornada na programação, vai descobrir que as listas são uma ferramenta poderosa e versátil em Python!
 
 ### O Loop `for` com Listas
+
 O loop `for` é uma estrutura que permite iterar sobre os elementos de uma sequência. Uma sequência pode ser uma lista, uma tupla, uma string, ou qualquer outra coleção de elementos ordenados.
 
 Ao percorrer uma lista usando um loop `for`, o código executa uma série de instruções para cada elemento da lista, em ordem.
@@ -710,9 +731,9 @@ for number in numbers:
 
 Neste exemplo, temos uma lista chamada `numbers` que contém cinco elementos. O loop `for` está configurado para percorrer cada um desses elementos.
 
-1. Na primeira iteração, `number` terá o valor de 1 (o primeiro elemento da lista).
-2. Na segunda iteração, `number` terá o valor de 2 (o segundo elemento).
-3. E assim por diante, até a última iteração, onde `number` terá o valor de 5 (o último elemento).
+- Na primeira iteração, `number` terá o valor de 1 (o primeiro elemento da lista).
+- Na segunda iteração, `number` terá o valor de 2 (o segundo elemento).
+- E assim por diante, até a última iteração, onde `number` terá o valor de 5 (o último elemento).
 
 Dentro do loop `for`, você pode realizar qualquer operação com o elemento atual. No exemplo acima, estamos apenas imprimindo o número, mas você poderia fazer qualquer coisa, como cálculos, operações de strings, entre outras coisas.
 
@@ -721,19 +742,20 @@ Essa capacidade de percorrer uma lista é fundamental porque permite que você a
 Isso torna o código mais eficiente e legível. Além disso, facilita a manipulação de grandes conjuntos de dados.
 
 ### Implementando a sequência de LEDs
+
 Voltando agora ao seu objetivo, você vai precisar de alguns componentes adicionais: 2 LEDs na cor que desejar, 2 resistores com valores entre `50` e `330 ohms` e 4 fios de conexão do tipo 'pino-pino', além de alguns dos componentes que já está utilizando. 
 
 Conecte esses componentes utilizando a placa de prototipagem conforme mostrado na imagem que segue. 
 
+![Imagem de circuito com 3 LEDs e potenciômetro](images/led_seq_circuit.jpg "Imagem de circuito com 3 LEDs e potenciômetro")
+
 Note que os LEDs estão conectados aos pinos **GP13**, **GP14** e **GP15** do Raspberry Pi Pico. Consulte o diagrama do Pico para confirmar a posição desses pinos. 
 
-> **`Atenção`**: Note que existe um pino **GND** entre os pinos **GP13** e **GP14**. Cuidado para não conectar um LED ao **GND**!
+Note que existe um pino **GND** entre os pinos **GP13** e **GP14**. Consulte o diagrama do Pico para confirmar a posição desse pino. 
 
 Cada um desses pinos tem um fio de conexão que os conecta com um resistor. A outra ponta de cada resistor está conectada a perna mais longa de cada LED. A outra perna de cada LED está conectada a outro fio de conexão que completa o circuito com o terra (GND). Dessa forma os elétrons vão fluir do pino do Pico, pelo fio até o resistor, passam através do LED emitindo luz, e então vão para o terra através de outro fio de conexão. 
 
 > **`Atenção`**: Note que existem 3 fios de conexão conectados a trilha de terra da placa de prototipagem. Essa trilha está conectada a um dos pinos terra (GND) do Pico.
-
-![Imagem de circuito com 3 LEDs e potenciômetro](images/led_seq_circuit.jpg "Imagem de circuito com 3 LEDs e potenciômetro")
 
 Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `led_seq_pot.py` e depois execute-o. 
 
@@ -756,35 +778,35 @@ while True:
         sleep_ms(period_ms)
 ```
 
-Exemplo 8.
+Programa 9.
 
-Vamos desvendar esse código linha por linha:
+Vamos desvendar esse código linha por linha!
 
-- **`from machine import Pin, ADC`**: Aqui estamos importando algumas funcionalidades muito importantes para o nosso projeto. Pin é usado para configurar e controlar os pinos do Raspberry Pi Pico. ADC nos permite ler o valor de um potenciômetro, que é uma espécie de controle giratório.
+- `from machine import Pin, ADC`: Aqui estamos importando algumas funcionalidades muito importantes para o nosso projeto. Pin é usado para configurar e controlar os pinos do Raspberry Pi Pico. ADC nos permite ler o valor de um potenciômetro, que é uma espécie de controle giratório.
 
-- **`from time import sleep_ms`**: Esta linha nos dá a capacidade de fazer o nosso programa "dormir" por um curto período de tempo, o que é útil para criar intervalos entre as ações.
+- `from time import sleep_ms`: Esta linha nos dá a capacidade de fazer o nosso programa "dormir" por um curto período de tempo, o que é útil para criar intervalos entre as ações.
 
-- **`MAX_ADC_VALUE = 65535`**: Aqui, estamos definindo uma constante chamada `MAX_ADC_VALUE` com o valor `65535`. Isso representa o valor máximo que o nosso potenciômetro pode ler.
+- `MAX_ADC_VALUE = 65535`: Aqui, estamos definindo uma constante chamada `MAX_ADC_VALUE` com o valor `65535`. Isso representa o valor máximo que o nosso potenciômetro pode ler.
 
-- **`leds = [Pin(13, Pin.OUT), Pin(14, Pin.OUT), Pin(15, Pin.OUT)]`**: Aqui, criamos uma lista chamada `leds` com três objetos `Pin` conectados aos pinos `13` (GP13), `14` (GP14) e `15` (GP15) do Pico. Cada objeto `Pin` representa um LED, e eles estão configurados como saídas `OUT`, o que significa que podemos controlar se eles estão acesos ou apagados.
+- `leds = [Pin(13, Pin.OUT), Pin(14, Pin.OUT), Pin(15, Pin.OUT)]`: Aqui, criamos uma lista chamada `leds` com três objetos `Pin` conectados aos pinos `13` (GP13), `14` (GP14) e `15` (GP15) do Pico. Cada objeto `Pin` representa um LED, e eles estão configurados como saídas `OUT`, o que significa que podemos controlar se eles estão acesos ou apagados.
 
-- **`pot = ADC(Pin(26))`**: Esta linha configura o pino `26` (GP26) como um canal de leitura analógica usando o `ADC`. Em termos simples, isso nos permite ler a posição do potenciômetro.
+- `pot = ADC(Pin(26))`: Esta linha configura o pino `26` (ADC0) como um canal de leitura analógica usando o `ADC`. Em termos simples, isso nos permite ler a posição do potenciômetro.
 
-- **`while True:`**: Agora, estamos entrando em um loop que vai executar o código indentado a ele infinitamente.
+- `while True:`: Agora, estamos entrando em um loop que vai executar o código indentado a ele infinitamente.
 
-- **`frequency_hz = int(pot.read_u16() / (MAX_ADC_VALUE/50)) + 1`**: Esta linha lê a posição do potenciômetro e calcula uma frequência em Hertz. Em outras palavras, determina o quão rápido os LEDs irão piscar com base na posição do potenciômetro.
+- `frequency_hz = int(pot.read_u16() / (MAX_ADC_VALUE/50)) + 1`: Esta linha lê a posição do potenciômetro e calcula uma frequência em Hertz. Em outras palavras, determina o quão rápido os LEDs irão piscar com base na posição do potenciômetro.
 
-- **`period_ms = int((1000/frequency_hz) / (len(leds)*2))`**: Aqui, estamos calculando o período em milissegundos (quanto tempo os LEDs ficam acesos ou apagados). Isso é determinado pela frequência e pelo número de LEDs.
+- `period_ms = int((1000/frequency_hz) / (len(leds)*2))`: Aqui, estamos calculando o período em milissegundos (quanto tempo os LEDs ficam acesos ou apagados). Isso é determinado pela frequência e pelo número de LEDs.
 
-- **`for led in leds:`**: Este é um loop que percorre cada LED na lista leds e executa o código indentado para cada um desses LEDs.
+- `for led in leds:`: Este é um loop que percorre cada LED na lista leds e executa o código indentado para cada um desses LEDs.
 
-- **`led.high()`**: Esta linha acende o LED. Quando o pino é configurado como **alto** (high), ele fornece energia ao LED, fazendo-o acender.
+- `led.high()`: Esta linha acende o LED. Quando o pino é configurado com nível alto de tesnão (high), ele fornece energia ao LED, fazendo-o acender.
 
-- **`sleep_ms(period_ms)`**: Agora, estamos fazendo o programa esperar por um certo número de milissegundos (determinado pelo **period_ms**). Isso determina quanto tempo o LED ficará aceso.
+- `sleep_ms(period_ms)`: Agora, estamos fazendo o programa esperar por um certo número de milissegundos (determinado pela variável `period_ms`). Isso determina quanto tempo o LED ficará aceso.
 
-- **`led.low()`**: Agora, apagamos o LED. Quando o pino é configurado como **baixo** (low), ele corta a energia para o LED, fazendo-o apagar.
+- `led.low()`: Agora, apagamos o LED. Quando o pino é configurado com nível baixo de tesnão (low), ele corta a energia para o LED, fazendo-o apagar.
 
-- **`sleep_ms(period_ms)`**: Outra pausa para garantir que o LED permaneça apagado pelo mesmo período de tempo.
+- `sleep_ms(period_ms)`: Outra pausa para garantir que o LED permaneça apagado pelo mesmo período de tempo.
 
 Essas linhas de código trabalham juntas para criar um efeito de piscar com os LEDs, e a velocidade desse piscar é controlada pelo potenciômetro. É incrível ver como podemos controlar o mundo físico com código, não é? Experimente ajustar o potenciômetro e veja como isso afeta o padrão de piscar dos LEDs!
 
@@ -794,14 +816,15 @@ Vocês já perceberam que, ao girar o potenciômetro para aumentar a velocidade 
 
 Continuem assim, você está fazendo um ótimo progresso!
 
-## Código Morse com um LED
+## Projeto: Código Morse com um LED
+
 Vamos viajar no tempo e descobrir a fascinante história por trás do Código Morse. Antes dos telefones e mensagens de texto, as pessoas precisavam de uma maneira especial de se comunicar à distância. E é aí que entra o Código Morse.
 
-No início do século 19, um inventor chamado Samuel Morse queria encontrar uma maneira de enviar mensagens de longa distância usando eletricidade. Ele percebeu que podia representar letras e números usando uma combinação de pontos e traços. Cada letra e número no alfabeto recebeu sua própria sequência única de pontos (.) e traços (-). Por exemplo, a letra "A" foi representada como '**.-**' e o número "1" como '**.----**'. É como se cada letra e número tivesse seu próprio código secreto!
+No início do século 19, um inventor chamado Samuel Morse queria encontrar uma maneira de enviar mensagens de longa distância usando eletricidade. Ele percebeu que podia representar letras e números usando uma combinação de pontos e traços. Cada letra e número no alfabeto recebeu sua própria sequência única de pontos '.' e traços '-'. Por exemplo, a letra 'A' foi representada como '**.-**' e o número '1' como '**.----**'. É como se cada letra e número tivesse seu próprio código secreto!
 
 O Código Morse foi uma verdadeira revolução. Pela primeira vez na história, as pessoas podiam enviar mensagens através de fios telegráficos. Era como a Internet da época, mas sem computadores. Para enviar uma mensagem em Código Morse, você precisava de um dispositivo chamado telegrafo. Ao pressionar uma alavanca, você criava pontos e traços que eram transmitidos pelo fio até o destinatário.
 
-Sabia que o famoso sinal de socorro "SOS" é simplesmente três pontos, três traços e mais três pontos? Isso se tornou um pedido universal de ajuda em situações de emergência!
+Sabia que o famoso sinal de socorro SOS é simplesmente três pontos, três traços e mais três pontos? Isso se tornou um pedido universal de ajuda em situações de emergência!
 
 O Código Morse pode ser representado também por luz. Esta é uma forma muito interessante de transmitir mensagens em situações onde a audição não é eficaz, como em ambientes ruidosos ou para pessoas com deficiência auditiva. 
 
@@ -809,18 +832,19 @@ Esta forma de comunicação por luz também é muito utilizada em situações de
 
 Antigamente, e ainda em alguns casos hoje, a comunicação por luz em Código Morse é utilizada em operações militares e na navegação marítima. Luzes de sinalização específicas, como as lanternas de Aldis, eram usadas para enviar mensagens entre navios ou entre tropas no campo de batalha.
 
-Para representar o Código Morse com luz, utilizamos dois estados: luz acesa por um curto período de tempo para representar o ponto (.) e a luz acesa por um período de tempo maior para representar o traço (-).
+Para representar o Código Morse com luz, utilizamos dois estados: luz acesa por um curto período de tempo para representar o ponto '.' e a luz acesa por um período de tempo maior para representar o traço '-'.
 
 A prática de transmitir mensagens em Código Morse com luz é uma habilidade valiosa e é frequentemente ensinada em treinamentos de escoteiros e em cursos de sobrevivência.
 
 Que tal fazer um programa em MicroPython para transformar uma frase de texto em código morse e depois transmitir através de luz emitida por um LED? Faremos isso a seguir !
 
-Antes vamos estudar um novo conceito em MicroPython chamado **Dicionários**. Precisaremos dele nesse projeto.
+Antes vamos estudar um novo conceito em MicroPython chamado Dicionários. Precisaremos dele nesse projeto.
 
 ### Dicionários: Encontrando o Significado das Palavras
-**Dicionário** é uma uma ferramenta incrível em MicroPython. É como ter um livro de referência onde podemos procurar o significado das palavras.
 
-Imagine que você tem um dicionário de verdade. Nele, cada palavra tem um significado associado. Por exemplo, se procurarmos a palavra 'Girafa', encontramos a explicação sobre esse animal incrível. Nos dicionários em Python, as palavras são as 'chaves' e os significados são os 'valores'. Logo, dicionários armazenam pares com 'chave' e 'valor'.
+Um Dicionário é uma uma ferramenta incrível em MicroPython. É como ter um livro de referência onde podemos procurar o significado das palavras.
+
+Imagine que você tem um dicionário de verdade. Nele, cada palavra tem um significado associado. Por exemplo, se procurarmos a palavra 'Girafa', encontramos a explicação sobre esse animal incrível. Nos dicionários em Python, as palavras são as chaves e os significados são os valores. Logo, dicionários armazenam pares com chave e valor.
 
 Podemos criar um dicionário em MicroPython assim:
 
@@ -830,7 +854,7 @@ dictionary = {'MicroPython': 'A powerful programming language', 'Cake': 'A delic
 
 Aqui, 'MicroPython' e 'Cake' são as palavras (chaves) e as explicações são os significados (valores).
 
-Se quisermos saber o que significa 'MicroPython', basta pedir:
+Se quisermos saber o que significa 'MicroPython', basta pedir assim:
 
 ```python
 print(dictionary['MicroPython'])
@@ -838,20 +862,23 @@ print(dictionary['MicroPython'])
 
 E o retorno será 'A powerful programming language'! É como consultar um dicionário de verdade.
 
-Se um dia decidirmos que queremos uma definição diferente para "MicroPython", podemos atualizá-la assim:
+Se um dia decidirmos que queremos uma definição diferente para 'MicroPython', podemos atualizá-la assim:
 
 ```python
 dictionary['MicroPython'] = 'A non-venomous snake found in some regions of the world'
 ```
 
-Agora, a palavra "MicroPython" terá um novo significado!
+Agora, a palavra 'MicroPython' terá um novo significado!
 
 Dicionários são como nossos assistentes pessoais de referência. Eles nos ajudam a organizar informações e a encontrá-las rapidamente quando precisamos! 
 
-Utilizaremos um dicionário para armazenar o código morse (valor) para cada letra do alfabeto (chave) em nosso projeto!
+Utilizaremos um dicionário para armazenar o código morse para cada letra do alfabeto em nosso projeto!
 
 ### Implementando o projeto 
-O circuito para esse projeto é simples. Conecte um LED à porta **GP15** do Raspberry Pi Pico. Não esqueça de colocar um resistor e e fechar o circuito com o terra (GND). Se tiver dúvidas em como montar esse circuito utilizando a placa de prototipagem e fios de conexão, veja circuitos anteriores. 
+
+O circuito para esse projeto é simples. Conecte um LED à porta **GP15** do Raspberry Pi Pico. Não esqueça de colocar um resistor entre o pino e o **GND**. Confirme a posição do pino **GND** no diagrama de layout do Pico. Uma forma de montar esse circuito é apresentada na figura a seguir.
+
+![Imagem de circuito com 1 LED](/images/morse-circuit.jpeg "Imagem de circuito com 1 LED")
 
 Você também pode utilizar o LED embarcado **GP25** do Raspberry Pi Pico caso não deseje conectar componentes físicos externos. Nesse caso não esqueça de substituir o pino do LED do código para **25** (GP25).
 
@@ -905,9 +932,9 @@ print("Morse Code:", code)
 flash_morse_code(code)
 ```
 
-Exemplo 9.
+Programa 10.
 
-Experimente trocar o texto na '**Hello World**' Por qualquer outra palavra ou frase e veja a sua representação luminosa em código morse no LED. Veja também que a conversão do texto original para a representação em pontos e traços do código morse é apresentada no Shell. Dessa forma você pode ver o código que será transmitido para luz.
+Experimente trocar o texto na 'Hello World' Por qualquer outra palavra ou frase e veja a sua representação luminosa em código morse no LED. Veja também que a conversão do texto original para a representação em pontos e traços do código morse é apresentada no Shell. Dessa forma você pode ver o código que será transmitido para luz.
 
 Vamos desvendar esse código linha por linha.
 
@@ -920,7 +947,7 @@ Essas são importações de bibliotecas. Elas trazem funcionalidades prontas par
 ```python
 led = Pin(15, Pin.OUT)
 ```
-Esta linha está configurando o pino `15` como um pino `OUT` de saída para controlar o LED. 
+Esta linha está configurando o pino `GP15` como um pino de saída `OUT` para controlar o LED. 
 
 ```python
 morse_code = {
@@ -933,7 +960,8 @@ morse_code = {
      '9': '----.', '0': '-----'
 }
 ```
-Aqui nós criamos um dicionário chamado `morse_code`. Ele associa letras e números ao código Morse correspondente. Por exemplo, a letra '**A**' é representada como '**.-**'.
+
+Aqui nós criamos um dicionário chamado `morse_code`. Ele associa letras e números ao código Morse correspondente. Por exemplo, a letra 'A' é representada como '.-'.
 
 ```python
 def flash_morse_code(morse):
@@ -947,7 +975,8 @@ def flash_morse_code(morse):
         led.off()
         sleep_ms(200)
 ```
-Esta parte do código define uma função chamada `flash_morse_code`. Esta função faz o LED piscar para representar o código Morse. Se o caractere é um ponto ('.'), o LED pisca rapidamente. Se for um traço ('-'), o LED pisca por mais tempo.
+
+Esta parte do código define uma função chamada `flash_morse_code`. Esta função faz o LED piscar para representar o código Morse. Se o caractere é um ponto '.', o LED pisca rapidamente. Se for um traço '-', o LED pisca por mais tempo.
 
 ```python
 def text_to_morse(text):
@@ -959,38 +988,49 @@ def text_to_morse(text):
             morse += " "
     return morse
 ```
+
 Aqui temos outra função chamada `text_to_morse`. Ela transforma um texto em código Morse. Ela percorre cada caractere do texto e procura no dicionário `morse_code` para encontrar a representação em código Morse.
 
 ```python
 code = text_to_morse("Hello World")
 print("Morse Code:", code)
 ```
-Esta parte converte a frase '**Hello World**' em código Morse usando a função que acabamos de explicar. Em seguida, imprime o código Morse no Shell do Thonny.
+
+Esta parte converte a frase 'Hello World' em código Morse usando a função que acabamos de explicar. Em seguida, imprime o código Morse no Shell do Thonny.
 
 ```python
 flash_morse_code(code)
 ```
+
 Aqui, a função `flash_morse_code` é usada para fazer o LED piscar conforme o código Morse que acabamos de criar.
 
 A seguir vamos adicionar som ao nosso projeto. Para isso precisamos entender sobre o componente eletrônico que pode nos ajudar a emitir um sinal sonoro.
 
+## Projeto: Código morse com um Buzzer
+
 ### Gerando som com um Buzzer
-Um **buzzer** é um pequeno dispositivo que emite um som quando é alimentado com energia elétrica. É como uma campainha que emite um som quando é ativada. 
+
+Um Buzzer é um pequeno dispositivo que emite um som quando é alimentado com energia elétrica. É como uma campainha que emite um som quando é ativada. 
 
 Existem dois tipos principais de buzzers:
 
-**Buzzer Ativo**: Um buzzer ativo é mais simples de usar. Ele possui um circuito interno que gera um tom específico quando é alimentado com energia. Esse tipo de buzzer sempre emite o mesmo som.
+- Buzzer Ativo: Um buzzer ativo é mais simples de usar. Ele possui um circuito interno que gera um tom específico quando é alimentado com energia. Esse tipo de buzzer sempre emite o mesmo som.
 
-**Buzzer Passivo**: Um buzzer passivo é um pouco mais versátil. Ele não possui um circuito interno para gerar um tom específico. Em vez disso, ele emite sons diferentes dependendo do sinal elétrico que recebe. Para fazer um buzzer passivo emitir um som, você precisa conectar e desconectar a energia rapidamente, criando assim diferentes tons.
+- Buzzer Passivo: Um buzzer passivo é um pouco mais versátil. Ele não possui um circuito interno para gerar um tom específico. Em vez disso, ele emite sons diferentes dependendo do sinal elétrico que recebe. Para fazer um buzzer passivo emitir um som, você precisa conectar e desconectar a energia rapidamente, criando assim diferentes tons.
 
-![Imagem de buzzers passivos](images/buzzers.jpg "magem de buzzers passivos")
+![Imagem de buzzers passivos](images/buzzers.jpg "Imagem de buzzers passivos")
 
-Se você quiser criar diferentes sons ou músicas, um buzzer passivo pode ser mais interessante porque você pode controlar os tons que ele emite usando programação. Isso pode ser feito através do controle da frequência em Hertz usando a função `PWM`. Por exemplo, para gerar a nota musical **A4** podemos definir a frequência em **440 Hz**.
+Um buzzer passivo pode ser mais interessante para criar diferentes sons ou músicas, já que você pode controlar os tons emitidos por ele através da programação. Isso pode ser feito através do controle da frequência em Hertz usando a função `PWM`. Por exemplo, para gerar a nota musical **A4** podemos definir a frequência em **440 Hz**.
 
 ### Adicionando som ao projeto
-Primeiramente conecte o buzzer em circuito. Para fazer isso conecte um fio de conexão ao pino **GP14** do seu pico e conecte a outra ponta dele na '**perna mais longa**' do buzzer. A perna mais curta do buzzer deve ser conectada ao terra (`GND`), o que pode ser feito com um outro fio de conexão. 
 
-> **`Importante`**: O buzzer, assim como o LED, possui uma perna mais longa que deve ser conectada a tensão mais alta gerada por um pino do seu pico. Lembre-se de sempre considerar essa regra para não queimar seus componentes.
+Primeiramente conecte o buzzer em circuito. Para fazer isso conecte um fio de conexão ao pino **GP16** do seu pico e conecte a outra ponta dele na perna mais longa do buzzer. A perna mais curta do buzzer deve ser conectada ao terra (GND), o que pode ser feito com um outro fio de conexão. 
+
+A imagem que segue apresenta uma forma de se montar esse cicuito na placa de prototipagem.
+
+![Circuito com 1 LED e 1 Buzzer](/images/morse-buzzer-circuit.jpeg "Circuito com 1 LED e 1 Buzzer")
+
+> **`Importante`**: O buzzer, assim como o LED, possui uma perna mais longa que deve ser conectada a tensão mais alta gerada por um pino do seu pico. Lembre-se de sempre considerar essa regra para não queimar o componente.
 
 Após conectar o buzzer, adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `morse_led_buzzer.py` e depois execute-o. 
 
@@ -1002,7 +1042,7 @@ from time import sleep_ms
 led = Pin(15, Pin.OUT)
 
 # Configurando o pino 14 para controlar o buzzer com PWM
-buzzer = PWM(Pin(14))
+buzzer = PWM(Pin(16))
 buzzer.duty_u16(0)  # Desliga o buzzer inicialmente
 buzzer.freq(440) 
 
@@ -1050,7 +1090,7 @@ print("Morse Code:", code)
 flash_morse_code(code)
 ```
 
-Exemplo 10.
+Programa 11.
 
 Vamos desvendar esse código !
 
@@ -1065,7 +1105,7 @@ buzzer.duty_u16(0)
 buzzer.freq(440) 
 ```
 
-Neste bloco, estamos inicializando o Raspberry Pi Pico para controlar o LED e o buzzer. O pino `15` (GP15) é configurado como saída para o LED e o pino `14` (GP14) é configurado para controlar o buzzer utilizando modulação por largura de pulso (PWM). A frequência do buzzer é ajustada para 440 Hz, que é a frequência aproximada da nota musical **A4**. A4 é uma frequência próxima ao som utilizado em código morse.
+Neste bloco, estamos inicializando o Raspberry Pi Pico para controlar o LED e o buzzer. O pino `15` (GP15) é configurado como saída para o LED e o pino `16` (GP16) é configurado para controlar o buzzer utilizando modulação por largura de pulso (PWM). A frequência do buzzer é ajustada para 440 Hz, que é a frequência aproximada da nota musical **A4** utilizada em código morse.
 
 ```python
 morse_code = {
@@ -1115,11 +1155,12 @@ print("Morse Code:", code)
 flash_morse_code(code)
 ```
 
-Aqui, o texto "Hello World" é convertido em código Morse e exibido. Em seguida, a função `flash_morse_code` é chamada para piscar o LED e emitir som de acordo com o código Morse gerado.
+Aqui, o texto 'Hello World' é convertido em código Morse e exibido. Em seguida, a função `flash_morse_code` é chamada para piscar o LED e emitir som de acordo com o código Morse gerado.
 
-Altere o texto para outras palavras e frases e veja o resultado. Por exemplo, você pode mudar para **'SOS'** e dessa forma estar preparado para se comunicar em uma situação de emergência com uma lanterna!
+Altere o texto para outras palavras e frases e veja o resultado. Por exemplo, você pode mudar para SOS e dessa forma estar preparado para se comunicar em uma situação de emergência com uma lanterna!
 
 ## Introdução à Música com Buzzer: Descubra o Mágico Mundo do Som!
+
 Você sabia que é possível criar melodias e sons incríveis usando apenas um Raspberry Pi Pico e um pequeno componente chamado buzzer? Neste capítulo, vamos explorar o emocionante universo da música com buzzer, e você aprenderá como fazer isso de uma forma simples e divertida.
 
 Relembre que um buzzer é um dispositivo eletrônico que pode emitir sons quando uma corrente elétrica é aplicada a ele. É como um pequeno alto-falante que produz tons simples, permitindo-nos criar melodias divertidas e efeitos sonoros interessantes.
@@ -1320,7 +1361,7 @@ def play_song(song):
 play_song(song)
 ```
 
-Exemplo 11.
+Programa 12.
 
 Vamos desvendar esse código passo-a-passo a seguir!
 
@@ -1566,7 +1607,7 @@ def main_game():
 main_game()
 ```
 
-Exemplo 12.
+Programa 13.
 
 Agora a explicação detalhada de como tudo funciona.
 
