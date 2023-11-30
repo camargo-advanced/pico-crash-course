@@ -374,7 +374,7 @@ Agora que você conhece os fundamentos da eletricidade, circuitos, e alguns comp
 
 Use um resistor entre 50 e 330 ohms, um LED vermelho e um par de fios de conexão do tipo pino-pino e conecte esses componentes utilizando a placa de prototipagem conforme mostrado na imagem abaixo.
 
-![LED e resistor conectados ao Pico](images/single_LED.png "LED e resistor conectados ao Pico")
+![LED e resistor conectados ao Pico](images/single-led.png "LED e resistor conectados ao Pico")
 
 Neste exemplo, o LED está conectado ao pino **GP15** do seu Raspberry Pi Pico. Se você usar um pino diferente, lembre-se de procurar o número no diagrama de pinos.
 
@@ -393,17 +393,21 @@ timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
 
 Programa 4.
 
-Salve o seu programa no seu Raspberry Pi Pico com o nome de **blink1.py**. Execute o seu programa e o LED deverá começar a piscar. Se não estiver funcionando, verifique as conexões entre os componentes para ter certeza de que o LED está conectado corretamente.
+Salve o seu programa no seu Raspberry Pi Pico com o nome de `blink1.py`. Execute o seu programa e o LED deverá começar a piscar. Se não estiver funcionando, verifique as conexões entre os componentes para ter certeza de que o LED está conectado corretamente.
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382840288712936449).
 
 ## Projeto: Acionar um LED com um botão
 
 Em seguida, vamos controlar o LED usando um botão. Adicione um botão ao seu circuito conforme mostrado no diagrama abaixo. Note que você precisará de mais 3 fios de conexão, além de um botão.
 
-![LED e botão em uma placa de prototipagem](images/button_and_LED.png "LED e botão em uma placa de prototipagem")
+![LED e botão em uma placa de prototipagem](images/button-and-led.png "LED e botão em uma placa de prototipagem")
 
 Uma das extremidades do botão está conectada ao pino **GP14** do seu Raspberry Pi Pico e a outra extremidade do botão está conectada ao pino 3.3V. Ao configurar o pino do seu Pico, você precisa informar ao MicroPython que ele é um pino de entrada e precisa ser puxado para o nível lógico baixo (pull-down em inglês), o que significa que o pino lerá o valor lógico **0** (zero) caso o botão não esteja pressionado, e o valor lógico **1** (um) caso o botão esteja pressionado. Existem palavras-chave em MicroPython para esses valores lógicos: `True` é o mesmo que **1** e `False` é o mesmo que **0**.
 
 Crie um novo arquivo, adicione o código a seguir e salve-o com o nome de **blink2.py** no seu Raspberry Pi Pico.
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382839490132061185).
 
 ```python
 from machine import Pin
@@ -484,7 +488,11 @@ Modulação por largura de pulso (PWM, Pulse Width Molulation em inglês), é um
 
 Agora que você já entendeu esses conceitos, imagine fazer um código que faça um LED piscar em 3 Hz e além disso pulsar como um coração? Você fará isso acendendo e desligando o LED a cada período, só que gradualmente através da alteração do ciclo de trabalho (duty cycle) a cada milisegundo usando o PWM do seu Raspberry Pi Pico. 
 
-> **`Atenção`**: Use o mesmo circuito do exercício anterior sem modificações.
+Primeiramente monte o circuito do jogo colocando um led vermelho no pino GP15 do seu Raspberry Pi Pico. Lembre de colocar um resistor para limitar a corrente conforme discutido em exemplos anteriores, como por exemplo, um resistor de 220 Ohms.
+
+Uma forma de montar esse circuito segue na figura que segue. Fique a vontade para ajustar o circuito de acordo com o que for mais conveniente para você!
+
+![Circuito do jogo da reação](images/pulse-circuit.png "Circuito do jogo da reação")
 
 Abra um novo arquivo no editor Thonny e adicione o seguinte código.
 
@@ -513,9 +521,11 @@ while True:
 
 Programa 6.
 
-Depois de escrever o código, salve-o no Raspberry Pi Pico com o nome **pulse.py** e execute. Vai ser legal ver o LED pulsar e brilhar continuamente de uma forma especial!
+Depois de escrever o código, salve-o no Raspberry Pi Pico com o nome `pulse.py` e execute. Vai ser legal ver o LED pulsar e brilhar continuamente de uma forma especial!
 
 Se quiser, você pode mexer nas configurações para mudar o ritmo e a intensidade do brilho do LED. É como ajustar a música para que ela toque mais rápido ou mais devagar, mas com luzes!
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382848966469555201).
 
 Segue a explicação de cada parte do código para você entender melhor.
 
@@ -611,19 +621,21 @@ Por exemplo, o ADC pode ler um potenciômetro e traduzir essa leitura em valor e
 
 Substitua o botão no seu circuito por um potenciômetro. Siga o diagrama abaixo para conectá-lo ao pino analógico `GP26`.
 
-![Potenciômetro conectado com um LED ao Pico](images/pot_and_LED.png "Potenciômetro conectado com um LED ao Pico")
+![Potenciômetro conectado ao Pico](/images/pot-circuit.png "Potenciômetro conectado ao Pico")
 
 Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `pot.py` e depois execute-o. 
 
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382841403521287169).
+
 ```python
 from machine import ADC, Pin
-import time
+from time import sleep_ms
 
 adc = ADC(Pin(26))
 
 while True:
     print(adc.read_u16())
-    time.sleep(0.1)
+    time.sleep_ms(5)
 ```
 
 Programa 7.
@@ -632,9 +644,13 @@ A seguir a explicação das linhas mais importantes do código.
 
 - `from machine import ADC, Pin`: A novidade aqui é que estamos importando a função `ADC` da biblioteca `machine`, que nos ajudará a ler o potenciômetro.
 
+- `from time import sleep_ms`: importa a função `sleep_ms` que faz com que a execução do programa pause por um período de tempo especificado em milisegundos.
+
 - `adc = ADC(Pin(26))`: Nessa linha estamos criando um objeto ADC conectado ao pino 26 (`ADC0`) do Raspberry Pi Pico, ou seja, estamos dizendo ao Raspberry Pi Pico para usar o pino para 'escutar' o potenciômetro. Pense nisso como conectar um ouvido (o pino) para ouvir o potenciômetro.
 
 - `print(adc.read_u16())`: Esta linha lê a posição do potenciômetro e converte em um número que é impresso no Shell.
+
+- `time.sleep_ms(5)`: pausa o programa por 5 milisegundos.
 
 Agora gire o potenciômetro para ver seus valores máximo e mínimo. Eles devem estar aproximadamente entre 0 e 65535. 
 
@@ -648,10 +664,19 @@ Gire novamente o potenciômetro e veja a alteração dos valores no Plotter. É 
 
 E porque não usar esse valor para controlar o ciclo de trabalho do PWM e dessa forma controlar a intensidade do LED?
 
+Primeiramente monte o circuito do jogo colocando um led vermelho no pino GP15 do seu Raspberry Pi Pico. Lembre de colocar um resistor para limitar a corrente conforme discutido em exemplos anteriores, como por exemplo, um resistor de 220 Ohms.
+
+Uma forma de montar esse circuito segue na figura que segue. Fique a vontade para ajustar o circuito de acordo com o que for mais conveniente para você!
+
+![Potenciômetro conectado ao Pico](/images/pot-and-led.png "Potenciômetro conectado ao Pico")
+
 Altere o código anterior conforme segue, e salve-o no Raspberry Pi Pico como `pot-led.py`. Uma vez que você o tenha executado, ajuste o botão do potenciômetro para controlar a intensidade do LED.
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382842211410367489).
 
 ```python
 from machine import Pin, PWM, ADC
+from time import sleep_ms
 
 pwm = PWM(Pin(15))
 adc = ADC(Pin(26))
@@ -661,6 +686,7 @@ pwm.freq(1000)
 while True:
     duty = adc.read_u16()
     pwm.duty_u16(duty)
+    sleep_ms(5)
 ```
 
 Programa 8.
@@ -747,7 +773,11 @@ Voltando agora ao seu objetivo, você vai precisar de alguns componentes adicion
 
 Conecte esses componentes utilizando a placa de prototipagem conforme mostrado na imagem que segue. 
 
-![Imagem de circuito com 3 LEDs e potenciômetro](images/led_seq_circuit.jpg "Imagem de circuito com 3 LEDs e potenciômetro")
+![Imagem de circuito com 3 LEDs e potenciômetro](images/led-seq-circuit.png "Imagem de circuito com 3 LEDs e potenciômetro")
+
+Como exemplo, aqui está uma foto deste circuito montado. Observe como as conexões podem variar um pouco no mundo real.
+
+![Imagem de circuito com 3 LEDs e potenciômetro](images/led-seq-circuit-real.jpg "Imagem de circuito com 3 LEDs e potenciômetro")
 
 Note que os LEDs estão conectados aos pinos **GP13**, **GP14** e **GP15** do Raspberry Pi Pico. Consulte o diagrama do Pico para confirmar a posição desses pinos. 
 
@@ -758,6 +788,8 @@ Cada um desses pinos tem um fio de conexão que os conecta com um resistor. A ou
 > **`Atenção`**: Note que existem 3 fios de conexão conectados a trilha de terra da placa de prototipagem. Essa trilha está conectada a um dos pinos terra (GND) do Pico.
 
 Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `led_seq_pot.py` e depois execute-o. 
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382844312720112641).
 
 ```python
 from machine import Pin, ADC
@@ -878,11 +910,13 @@ Utilizaremos um dicionário para armazenar o código morse para cada letra do al
 
 O circuito para esse projeto é simples. Conecte um LED à porta **GP15** do Raspberry Pi Pico. Não esqueça de colocar um resistor entre o pino e o **GND**. Confirme a posição do pino **GND** no diagrama de layout do Pico. Uma forma de montar esse circuito é apresentada na figura a seguir.
 
-![Imagem de circuito com 1 LED](/images/morse-circuit.jpeg "Imagem de circuito com 1 LED")
+![Imagem de circuito com 1 LED](/images/morse-circuit.png "Imagem de circuito com 1 LED")
 
 Você também pode utilizar o LED embarcado **GP25** do Raspberry Pi Pico caso não deseje conectar componentes físicos externos. Nesse caso não esqueça de substituir o pino do LED do código para **25** (GP25).
 
 Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `morse.py` e depois execute-o. 
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382821932567843841).
 
 ```python
 from machine import Pin, Timer
@@ -1028,11 +1062,13 @@ Primeiramente conecte o buzzer em circuito. Para fazer isso conecte um fio de co
 
 A imagem que segue apresenta uma forma de se montar esse cicuito na placa de prototipagem.
 
-![Circuito com 1 LED e 1 Buzzer](/images/morse-buzzer-circuit.jpeg "Circuito com 1 LED e 1 Buzzer")
+![Circuito com 1 LED e 1 Buzzer](/images/morse-buzzer-circuit.png "Circuito com 1 LED e 1 Buzzer")
 
 > **`Importante`**: O buzzer, assim como o LED, possui uma perna mais longa que deve ser conectada a tensão mais alta gerada por um pino do seu pico. Lembre-se de sempre considerar essa regra para não queimar o componente.
 
 Após conectar o buzzer, adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `morse_led_buzzer.py` e depois execute-o. 
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382822078849464321).
 
 ```python
 from machine import Pin, PWM, Timer
@@ -1302,7 +1338,13 @@ Vamos Começar!
 
 ### Escrevendo o programa
 
-Vamos implementar a música Brilha, Brilha, Estrelinha (Twinkle, Twinkle, Little Star em inglês). Não será necessário fazer nenhuma alteração no circuito que você já possui. Neste exemplo, você usará o buzzer e o LED.
+Vamos implementar a música Brilha, Brilha, Estrelinha (Twinkle, Twinkle, Little Star em inglês). 
+
+Não será necessário fazer nenhuma alteração no circuito que você já possui. Neste exemplo, você usará o buzzer e o LED.
+
+Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `song.py` e depois execute-o. 
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382846451199811585).
 
 ```python
 from machine import Pin, PWM
@@ -1547,11 +1589,13 @@ Coloque também dois botões no circuito para que sejam utilizados pelos jogador
 
 Uma forma de montar esse circuito segue na figura que segue. Agora que você já entende um pouco mais de desenho de circuitos, sabe que existem várias outras possíveis maneiras de montar esse circuito. Fique a vontade para fazer de acordo com o que for mais interessante para você!
 
-![Circuito do jogo da reação](images/reaction-circuit.jpeg "Circuito do jogo da reação")
+![Circuito do jogo da reação](images/reaction-circuit.png "Circuito do jogo da reação")
 
 ### Codificando o jogo
 
 É hora de você colocar a mão na massa e criar esse jogo!  Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `reaction.py` e depois execute-o. 
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382823962591290369).
 
 ```python
 from machine import Pin
@@ -1775,11 +1819,13 @@ Usaremos uma biblioteca chamada `ssd1306` no Raspberry Pi Pico para ajudar a con
 
 ### Codificando o projeto
 
-Antes de tudo monte o circuito conectando os pinos `I2C0`, `SDA`, `I2C0` e `SCL` do Raspberry Pi Pico aos pinos `SDA` e `SCL`, respectivamente, do display OLED para comunicação I2C. Além disso, o pino de `3.3V` do Pico deve ser conectado ao pino `VCC` de alimentação do OLED para fornecer energia, e o pino `GND` do Pico deve ser conectado ao pino de terra `GND` do OLED para completar o circuito, conforme a imagem que segue.
+Antes de tudo monte o circuito conectando os pinos `SDA` e `SCL` do Raspberry Pi Pico aos pinos `SDA` e `SCL` do display OLED para comunicação I2C. Além disso, o pino de `3.3V` do Pico deve ser conectado ao pino `VCC` de alimentação do display OLED para fornecer energia, e o pino `GND` do Pico deve ser conectado ao pino de terra `GND` do display OLED para completar o circuito, conforme a imagem que segue.
 
-![Circuito do projeto oled](images/oled-circuit.jpeg "Circuito do projeto oled")
+![Circuito do projeto oled](images/oled-circuit.png "Circuito do projeto oled")
 
 Agora adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `oled.py` e depois execute-o. 
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382846733223778305).
 
 ```python
 from machine import Pin, I2C, ADC
@@ -1791,7 +1837,7 @@ sensor_temp = ADC(4)
 conversion_factor = 3.3 / (65535)
 
 # Configuração do I2C para se comunicar com o módulo OLED
-i2c = I2C(0, scl=Pin(1), sda=Pin(0), freq=400000)  
+i2c = I2C(0, scl=Pin(17), sda=Pin(16), freq=400000)  
 display = SSD1306_I2C(128, 64, i2c, 0x3C)
 sleep_ms(1000)  # Aguarda configuração ser aplicada
 
@@ -1840,14 +1886,14 @@ O Raspberry Pi Pico possui um sensor de temperatura interno, que é lido no quar
 
 ```python
 # Configuração do I2C para se comunicar com o módulo OLED
-i2c = I2C(0, scl=Pin(1), sda=Pin(0), freq=400000)  
+i2c = I2C(0, scl=Pin(17), sda=Pin(16), freq=400000)
 display = SSD1306_I2C(128, 64, i2c, 0x3C)
 sleep_ms(1000)  # Aguarda configuração ser aplicada
 ```
 
 Nesta parte, estamos configurando a comunicação I2C entre o Raspberry Pi Pico e o display OLED SSD1306. 
 
-- Estamos inicializando um objeto `i2c` para a comunicação I2C usando os pinos **0** (I2C0 SDA) e **1** (I2C0 SCL) do Pico. 
+- Estamos inicializando um objeto `i2c` para a comunicação I2C usando os pinos **16** (I2C0 SDA) e **17** (I2C0 SCL) do Pico. 
 
 - O objeto `display` é inicializado como um display SSD1306_I2C com uma resolução de 128x64 pixels e um endereço específico (0x3C) no barramento I2C. 
 
@@ -1921,7 +1967,7 @@ Quatro botões são utilizados para que o jogador possa interagir com o jogo. Ca
 
 Um buzzer é usado para gerar os sons do jogo. Ele tem seu terminal positivo (o mais longo) conectado ao pino GP20 do Raspberry Pi Pico e o outro terminal conectado ao terra (GND).
 
-![Circuito do projeto genius](images/genius-circuit.jpeg "Circuito do projeto genius")
+![Circuito do projeto genius](images/genius-circuit.png "Circuito do projeto genius")
 
 O circuito é montado de maneira a conectar cada componente (LEDs, botões e buzzer) aos pinos correspondentes do Raspberry Pi Pico, permitindo a interação entre eles para criar a experiência do jogo Genius. 
 
@@ -1932,6 +1978,8 @@ O circuito pode ser montado de diversas maneiras, utilizando os mesmos pinos dis
 É hora de você colocar a mão na massa e criar esse jogo! Abaixo está o código completo. Em seguida, uma explicação detalhada de cada parte para que você entenda como tudo funciona.
 
 Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `genius.py` e depois execute-o. 
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382830081151586305).
 
 ```python
 
