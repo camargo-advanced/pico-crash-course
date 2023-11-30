@@ -1915,11 +1915,11 @@ Se quiser dar uma espiada no jogo original em ação, sugiro pesquisar online pa
 
 Monte o circuito conforme as intruções que seguem. Certifique-se de verificar a imagem para referência.
 
-Quatro LEDs de diferentes cores são utilizados para representar os desafios do jogo. Cada cor possui um pino associado no Raspberry Pi Pico. O LED verde está conectado ao pino GP0, o vermelho ao pino GP1, o amarelo ao pino GP2 e o azul ao pino GP3. É importante ressaltar que cada LED precisa ser conectado em série com um resistor (normalmente entre 220Ω e 470Ω) para limitar a corrente e proteger tanto o LED quanto o Raspberry Pi Pico.  Conecte o terminal positivo do LED (o mais longo) ao pino do seu Raspberry Pi Pico, e o terminal negativo do LED (o mais curto) ao resistor e depois ao terra (GND).
+Quatro LEDs de diferentes cores são utilizados para representar os desafios do jogo. Cada cor possui um pino associado no Raspberry Pi Pico. O LED verde está conectado ao pino GP15, o vermelho ao pino GP14, o amarelo ao pino GP13 e o azul ao pino GP12. É importante ressaltar que cada LED precisa ser conectado em série com um resistor (normalmente entre 220Ω e 470Ω) para limitar a corrente e proteger tanto o LED quanto o Raspberry Pi Pico. Conecte o terminal positivo do LED (o mais longo) a um resistor e dele ao pino do Pico. Conecte o terminal negativo do LED (o mais curto) ao terra (GND).
 
 Quatro botões são utilizados para que o jogador possa interagir com o jogo. Cada botão está relacionado a um LED correspondente. O botão verde é conectado ao pino GP16, o vermelho ao pino GP17, o amarelo ao pino GP18 e o azul ao pino GP19. Da mesma forma que os LEDs, os botões devem ter um terminal conectado ao terra (GND) do seu Raspberry Pi Pico.
 
-Um buzzer é usado para gerar os sons do jogo. Ele tem seu terminal positivo (o mais longo) conectado ao pino GP15 do Raspberry Pi Pico e o outro terminal conectado ao terra (GND).
+Um buzzer é usado para gerar os sons do jogo. Ele tem seu terminal positivo (o mais longo) conectado ao pino GP20 do Raspberry Pi Pico e o outro terminal conectado ao terra (GND).
 
 ![Circuito do projeto genius](images/genius-circuit.jpeg "Circuito do projeto genius")
 
@@ -1934,20 +1934,21 @@ O circuito pode ser montado de diversas maneiras, utilizando os mesmos pinos dis
 Adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `genius.py` e depois execute-o. 
 
 ```python
+
 from machine import Pin, PWM, Timer
 from time import sleep_ms
 from random import choice as random_choice
 
 # Configuração do buzzer
-buzzer = PWM(Pin(15))
+buzzer = PWM(Pin(20))
 buzzer.duty_u16(0)  # Inicialmente, o buzzer está desligado
 
 # Mapeamento dos LEDs com pinos correspondentes
 leds = {
-    "Green": {"pin": Pin(0, Pin.OUT), "tone": 415},
-    "Red": {"pin": Pin(1, Pin.OUT), "tone": 310},
-    "Yellow": {"pin": Pin(2, Pin.OUT), "tone": 252},
-    "Blue": {"pin": Pin(3, Pin.OUT), "tone": 209}
+    "Green": {"pin": Pin(15, Pin.OUT), "tone": 415},
+    "Red": {"pin": Pin(14, Pin.OUT), "tone": 310},
+    "Yellow": {"pin": Pin(13, Pin.OUT), "tone": 252},
+    "Blue": {"pin": Pin(12, Pin.OUT), "tone": 209}
 }
 
 # Configuração dos botões
@@ -2017,7 +2018,7 @@ def play_victory_tone(led):
         led["pin"].on()
         play_tone(led["tone"], 70)
         led["pin"].off()
-        sleep_ms(20)
+        sleep_ms(70)
 
 def play_losing_tone():
     """Reproduz um som de derrota para todos os LEDs."""
@@ -2134,23 +2135,23 @@ Esse trecho de código é responsável por importar funcionalidades especiais qu
 
 ```python
 # Configuração do buzzer
-buzzer = PWM(Pin(15))
+buzzer = PWM(Pin(20))
 buzzer.duty_u16(0)  # Inicialmente, o buzzer está desligado
 ```
 
 Esse trecho de código é responsável por configurar o buzzer, que é um componente usado para produzir sons no nosso jogo. 
 
-- `buzzer = PWM(Pin(15))`: Aqui, estamos criando uma variável chamada buzzer e a associando ao componente do tipo PWM conectado ao pino físico GP15 do Raspberry Pi Pico que também tem a função PWM. O PWM é uma técnica usada para controlar a quantidade de energia que é entregue ao buzzer, o que nos permite controlar a frequência e o volume do som emitido.
+- `buzzer = PWM(Pin(20))`: Aqui, estamos criando uma variável chamada buzzer e a associando ao componente do tipo PWM conectado ao pino físico **GP20** do Raspberry Pi Pico que também tem a função PWM. O PWM é uma técnica usada para controlar a quantidade de energia que é entregue ao buzzer, o que nos permite controlar a frequência e o volume do som emitido.
 
 - `buzzer.duty_u16(0)`: Ao atribuir 0 ao duty_u16, estamos dizendo que inicialmente o buzzer está desligado. 
 
 ```python
 # Mapeamento dos LEDs com pinos correspondentes
 leds = {
-    "Green": {"pin": Pin(0, Pin.OUT), "tone": 415},
-    "Red": {"pin": Pin(1, Pin.OUT), "tone": 310},
-    "Yellow": {"pin": Pin(2, Pin.OUT), "tone": 252},
-    "Blue": {"pin": Pin(3, Pin.OUT), "tone": 209}
+    "Green": {"pin": Pin(15, Pin.OUT), "tone": 415},
+    "Red": {"pin": Pin(14, Pin.OUT), "tone": 310},
+    "Yellow": {"pin": Pin(13, Pin.OUT), "tone": 252},
+    "Blue": {"pin": Pin(12, Pin.OUT), "tone": 209}
 }
 ```
 
@@ -2158,9 +2159,9 @@ Esse trecho de código cria um mapeamento entre as cores dos LEDs e os pinos cor
 
 - `leds = { ... }`: Aqui estamos criando um dicionário chamado leds, que associa cada cor verde, vermelho, amarelo e azul com as informações necessárias para controlar cada LED.
 
-- `"Green": {"pin": Pin(0, Pin.OUT), "tone": 415}`: Este é um exemplo de um item no dicionário leds. Para o LED verde, estamos associando a cor "Green" ao dicionário interno `{"pin": Pin(0, Pin.OUT), "tone": 415}`. Isso significa que o LED verde está conectado ao pino `GP0` do Raspberry Pi Pico e configurado como saída `Pin.OUT`. Além disso, estamos atribuindo um tom (frequência do som) de 415 Hz a este LED.
+- `"Green": {"pin": Pin(15, Pin.OUT), "tone": 415}`: Este é um exemplo de um item no dicionário leds. Para o LED verde, estamos associando a cor "Green" ao dicionário interno `{"pin": Pin(15, Pin.OUT), "tone": 415}`. Isso significa que o LED verde está conectado ao pino `GP15` do Raspberry Pi Pico e configurado como saída `Pin.OUT`. Além disso, estamos atribuindo um tom (frequência do som) de 415 Hz a este LED.
 
-- Similarmente, para os LEDs vermelho, amarelo e azul, estamos definindo os pinos aos quais estão conectados e as frequências de tom correspondentes: LED vermelho (pino `GP1`, frequência 310), LED amarelo (pino `GP2`, frequência 252) e LED azul (pino `GP3`, frequência 209).
+- Similarmente, para os LEDs vermelho, amarelo e azul, estamos definindo os pinos aos quais estão conectados e as frequências de tom correspondentes: LED vermelho (pino `GP14`, frequência 310), LED amarelo (pino `GP13`, frequência 252) e LED azul (pino `GP12`, frequência 209).
 
 Esse dicionário nos permitirá controlar cada LED separadamente, acendendo-os e configurando a frequência do som associado a cada cor específica durante o jogo.
 
@@ -2280,7 +2281,7 @@ def play_victory_tone(led):
         led["pin"].on()
         play_tone(led["tone"], 70)
         led["pin"].off()
-        sleep_ms(20)
+        sleep_ms(70)
 
 def play_losing_tone():
     """Reproduz um som de derrota para todos os LEDs."""
@@ -2300,7 +2301,7 @@ Essas funções são utilizadas para criar efeitos sonoros que correspondem às 
     - `led["pin"].on()`: Acende o LED associado.
     - `play_tone(led["tone"], 70)`: Emite um tom com a frequência do LED (especificada por `led["tone"]`) por um curto período de tempo de 70 milissegundos.
     - `led["pin"].off()`: Desliga o LED.
-    - `sleep_ms(20)`: Aguarda um curto intervalo antes de repetir o processo.
+    - `sleep_ms(70)`: Aguarda um curto intervalo antes de repetir o processo.
 
 - `def play_losing_tone(): ...`: Esta função reproduz um som de derrota usando todos os LEDs. Ela emite um som específico para representar uma situação de derrota no jogo.
     - `start_tone(42)`: Inicia a reprodução de um som específico para indicar a derrota.
