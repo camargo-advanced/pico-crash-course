@@ -1541,9 +1541,9 @@ Agora remova a linha `button.irq(handler=None)` e rode novamente o programa. Not
 
 ### Montando o circuito
 
-Primeiramente monte o circuito do jogo colocando um led vermelho no pino GP15 do seu Raspberry Pi Pico. Lembre de colocar um resistor para limitar a corrente conforme discutido em exemplos anteriores.
+Primeiramente monte o circuito do jogo colocando um led vermelho no pino GP15 do seu Raspberry Pi Pico. Lembre de colocar um resistor para limitar a corrente conforme discutido em exemplos anteriores, como por exemplo, um resistor de 220 Ohms.
 
-Coloque também dois botões no circuito para que sejam utilizados pelos jogadores. Um dos botões deve ser colocando no pino GP3 e o outro no pino GP14 do seu Raspberry Pi Pico.
+Coloque também dois botões no circuito para que sejam utilizados pelos jogadores. Um dos botões deve ser colocando no pino GP16 e o outro no pino GP17 do seu Raspberry Pi Pico.
 
 Uma forma de montar esse circuito segue na figura que segue. Agora que você já entende um pouco mais de desenho de circuitos, sabe que existem várias outras possíveis maneiras de montar esse circuito. Fique a vontade para fazer de acordo com o que for mais interessante para você!
 
@@ -1555,13 +1555,13 @@ Uma forma de montar esse circuito segue na figura que segue. Agora que você já
 
 ```python
 from machine import Pin
-from time import sleep_ms, sleep, ticks_ms, ticks_diff
-from random import uniform, randint
+from time import sleep_ms, ticks_ms, ticks_diff
+from random import randint
 
 # Configuração dos pinos
 led = Pin(15, Pin.OUT)
-right_button = Pin(3, Pin.IN, Pin.PULL_DOWN)
-left_button = Pin(14, Pin.IN, Pin.PULL_DOWN)
+right_button = Pin(16, Pin.IN, Pin.PULL_DOWN)
+left_button = Pin(17, Pin.IN, Pin.PULL_DOWN)
 
 pressed_button = None
 
@@ -1582,6 +1582,7 @@ def pressed_in_waiting():
     # Aguarda jogador pressionar o botão
     while ticks_diff(ticks_ms(), timer_start) < waiting_time:
         if pressed_button is not None: break
+        sleep_ms(5)
         
     if pressed_button is left_button:
         print("Left Player lost!")
@@ -1603,7 +1604,7 @@ def main_game():
 
         # Aguarda jogador pressionar o botão
         while pressed_button is None:
-            pass
+            sleep_ms(5)
                 
         if pressed_button is left_button:
             print("Left Player wins!")
@@ -1622,8 +1623,8 @@ Agora vamos desvendar como tudo funciona.
 
 ```python
 from machine import Pin
-from time import sleep_ms, sleep, ticks_ms, ticks_diff
-from random import uniform, randint
+from time import sleep_ms, ticks_ms, ticks_diff
+from random import randint
 ```
 
 Esta parte do código está importando algumas ferramentas que vamos usar no jogo. Coisas como controlar os pinos como botões e luzes, medir o tempo e gerar números aleatórios.
@@ -1631,11 +1632,11 @@ Esta parte do código está importando algumas ferramentas que vamos usar no jog
 ```python
 # Configuração dos pinos
 led = Pin(15, Pin.OUT)
-right_button = Pin(3, Pin.IN, Pin.PULL_DOWN)
-left_button = Pin(14, Pin.IN, Pin.PULL_DOWN)
+right_button = Pin(16, Pin.IN, Pin.PULL_DOWN)
+left_button = Pin(17, Pin.IN, Pin.PULL_DOWN)
 ```
 
-Aqui, estamos configurando os pinos do nosso equipamento. O pino **GP15** é para o led, e os pinos **GP3** e **GP14** são para os botões, um para o jogador da direita e outro para o jogador da esquerda.
+Aqui, estamos configurando os pinos do nosso equipamento. O pino **GP15** é para o led, e os pinos **GP16** e **GP17** são para os botões, um para o jogador da direita e outro para o jogador da esquerda.
 
 ```python
 pressed_button = None
@@ -1665,6 +1666,7 @@ def pressed_in_waiting():
     # Aguarda jogador pressionar o botão
     while ticks_diff(ticks_ms(), timer_start) < waiting_time:
         if pressed_button is not None: break
+        sleep_ms(5)
         
     if pressed_button is left_button:
         print("Left Player lost!")
@@ -1702,7 +1704,8 @@ def main_game():
     if pressed_in_waiting() is None:
         timer_start = ticks_ms()
 
-        while pressed_button is None: pass
+        while pressed_button is None: 
+            sleep_ms(5)
                 
         if pressed_button is left_button:
             print("Left Player wins!")
@@ -1719,7 +1722,7 @@ A função `main_game` é o coração do nosso jogo, onde toda a ação acontece
 
 Na linha `left_button.irq(trigger=Pin.IRQ_RISING, handler=button_pressed)` estamos configurando os botões para serem sensíveis a interrupções. Isso significa que quando um dos botões é pressionado, eles vão chamar a função `button_pressed`. Isso é feito para os dois botões: o que representa o jogador direito, e um para o jogador esquerdo.
 
-Em `if pressed_in_waiting() is None:` estamos verificando se nenhum botão foi pressionado durante a fase de espera. Se nenhum botão foi pressionado, significa que os jogadores estão prontos para jogar.
+Em `if pressed_in_waiting():  is None:` estamos verificando se nenhum botão foi pressionado durante a fase de espera. Se nenhum botão foi pressionado, significa que os jogadores estão prontos para jogar.
 
 A linha `timer_start = ticks_ms()` marca o momento exato em que o jogo começa. Vamos usar isso para medir quanto tempo os jogadores levam para reagir.
 
@@ -1774,7 +1777,7 @@ Usaremos uma biblioteca chamada `ssd1306` no Raspberry Pi Pico para ajudar a con
 
 Antes de tudo monte o circuito conectando os pinos `I2C0`, `SDA`, `I2C0` e `SCL` do Raspberry Pi Pico aos pinos `SDA` e `SCL`, respectivamente, do display OLED para comunicação I2C. Além disso, o pino de `3.3V` do Pico deve ser conectado ao pino `VCC` de alimentação do OLED para fornecer energia, e o pino `GND` do Pico deve ser conectado ao pino de terra `GND` do OLED para completar o circuito, conforme a imagem que segue.
 
-![Circuito do projeto oled](images/circuito-oled.jpeg "Circuito do projeto oled")
+![Circuito do projeto oled](images/oled-circuit.jpeg "Circuito do projeto oled")
 
 Agora adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `oled.py` e depois execute-o. 
 
@@ -1918,7 +1921,7 @@ Quatro botões são utilizados para que o jogador possa interagir com o jogo. Ca
 
 Um buzzer é usado para gerar os sons do jogo. Ele tem seu terminal positivo (o mais longo) conectado ao pino GP15 do Raspberry Pi Pico e o outro terminal conectado ao terra (GND).
 
-![Circuito do projeto genius](images/circuito-genius.jpeg "Circuito do projeto genius")
+![Circuito do projeto genius](images/genius-circuit.jpeg "Circuito do projeto genius")
 
 O circuito é montado de maneira a conectar cada componente (LEDs, botões e buzzer) aos pinos correspondentes do Raspberry Pi Pico, permitindo a interação entre eles para criar a experiência do jogo Genius. 
 
