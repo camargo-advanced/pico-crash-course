@@ -34,7 +34,7 @@ Na parte inferior, três pinos dourados com a palavra **DEBUG** são destinados 
 
 Ao girar o Pico, os rótulos nos pinos indicam suas funções principais, como **GP0**, **GP1**, **GND** **VSYS**, **3V3** entre outros. Esses rótulos servem como referência, porém, ficam ocultos quando o Pico está inserido em uma placa de prototipagem (breadboard). O diagrama seguinte pode ser consultado para referência sempre que necessário. Mantenha-o por perto!
 
-![Diagrama dos pinos do Pico](images/pico-pinout.png "Diagrama dos pinos do Pico")
+![Diagrama dos pinos do Pico](images/pico-pinout-1.png "Diagrama dos pinos do Pico")
 
 Perceba que um mesmo pino pode ter várias funções. Por exemplo, o pino `GP27` pode ser utilizado tanto como **GPIO** e **PWM**, sendo chamado de `GP27` nesses casos. Este mesmo pino também pode ser usado como **ADC**, sendo então referido como `ADC1`. Além disso, este pino pode desempenhar a função de **I2C**, sendo denominado `I2C1 SCL`. Em resumo, um único pino pode ser designado por vários nomes conforme a função que estiver sendo utilizada. Não se preocupe em compreender essas funções agora, pois as abordaremos em detalhes durante este curso. O importante é lembrar que um mesmo pino pode ser referenciado por mais de um nome ao longo desse
 
