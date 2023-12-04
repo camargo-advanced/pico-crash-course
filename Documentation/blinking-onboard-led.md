@@ -1,5 +1,9 @@
 ## Projeto: Acendendo e piscando o LED embarcado
 
+No capítulo anterior você explorou a base essencial da programação em Python com um simples "Hello, World!", um marco simbólico para iniciantes em linguagens de programação.
+
+Agora você dará um salto empolgante na direção da verdadeira magia da computação física! Vamos sair do mundo abstrato do código para o universo tangível dos dispositivos eletrônicos. Este capítulo marca o verdadeiro "Hello, World" da computação física: vamos controlar um LED!
+
 O MicroPython adiciona bibliotecas específicas de hardware, como `machine`, que você pode usar para programar o seu Raspberry Pi Pico. Vamos criar um objeto `machine.Pin` para acessar o LED embarcado conectado ao pino `GP25` do seu Pico.
 
 Digite o seguinte código no painel do Shell, e certifique-se de pressionar `Enter` após cada linha.
@@ -13,11 +17,11 @@ led.value(1)
 
 Programa 1.
 
-Se você definir o valor do LED como `1`, ele se acende. Dessa forma você deverá ver o LED embarcado se acender. Confirme isso localizando o LED embarcado em seu Pico. 
+Se você definir o valor do LED como 1, ele se acende. Dessa forma você deverá ver o LED embarcado se acender. Confirme isso localizando o LED embarcado em seu Pico. 
 
 Embarcado neste contexto significa que o LED faz parte da placa do próprio Raspberry Pi Pico. É como aquela luzinha que já vem junto com a sua televisão e indica se ela está ligada. Portanto, o LED embarcado do Raspberry Pi Pico se refere ao LED que está diretamente conectado e vem junto com o próprio Raspberry Pi Pico.
 
-Agora digite o seguinte código para definir o valor como `0` e desligar o LED embarcado. Não esqueça de pressionar `Enter` ao final para executar o comando.
+Agora digite o seguinte código para definir o valor como 0 e desligar o LED embarcado. Não esqueça de pressionar `Enter` ao final para executar o comando.
 
 ```Python
 led.value(0)
@@ -105,3 +109,9 @@ O conceito de frequência, em termos simples, se refere a quantas vezes algo aco
 Em programas MicroPython, lembre-se de utilizar o padrão norte-americano para valores decimais. Nele, o separador decimal é o ponto '.', e não a vírgula ','. Por exemplo, o número 0,5 deve ser escrito como 0.5 no código em MicroPython.
 
 Clique no botão `Run` e o seu programa fará o LED piscar até que você clique no botão `Stop`. 
+
+Parabéns por concluir com sucesso nosso primeiro projeto de computação física com MicroPython! Ao acender e piscar um LED, você deu um passo significativo na compreensão da conexão entre o código que escrevemos e a ação real que acontece no mundo físico.
+
+Este projeto pode parecer simples, mas é um marco importante no seu caminho na programação. Você experimentou o poder de transformar comandos de código em ações tangíveis. Esse LED que brilha agora é apenas o começo de uma série de projetos incríveis que você poderá criar com o MicroPython.
+
+Parabéns novamente e até o próximo capítulo, repleto de mais aventuras emocionantes na programação com MicroPython!

@@ -2,7 +2,7 @@
 
 Com o cabo micro USB conectado ao seu computador o Thonny é capaz de se comunicar com o seu Raspberry Pi Pico usando o **REPL** ou loop de leitura-avaliação-escrita (Read–Eval–Print Loop em inglês), o que permite que você digite código Python no painel do Shell e veja a saída imediatamente. Dessa forma você pode digitar comandos diretamente no painel do Shell e eles serão executados no seu Raspberry Pi Pico de forma interativa.
 
-> **`Importante`**: Antes de continuar, certifique-se de que o seu Raspberry Pi Pico está conectado ao seu computador e que você selecionou o interpretador 'MicroPython (Raspberry Pi Pico)'.
+> **`Importante`**: Antes de continuar, certifique-se de que o seu Raspberry Pi Pico está conectado ao seu computador e que você selecionou o interpretador "MicroPython (Raspberry Pi Pico)".
 
 No painel do Shell, localizado na parte inferior do editor Thonny, digite o seguinte comando. 
 
