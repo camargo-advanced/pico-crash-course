@@ -1,6 +1,6 @@
 ## Projeto: Acendendo e piscando o LED embarcado
 
-No capítulo anterior você explorou a base essencial da programação em Python com um simples "Hello, World!", um marco simbólico para iniciantes em linguagens de programação.
+No capítulo anterior você explorou a base essencial da programação em MicroPython com um simples "Hello, World!", um marco simbólico para iniciantes em linguagens de programação.
 
 Agora você dará um salto empolgante na direção da verdadeira magia da computação física! Vamos sair do mundo abstrato do código para o universo tangível dos dispositivos eletrônicos. Este capítulo marca o verdadeiro "Hello, World" da computação física: vamos controlar um LED!
 

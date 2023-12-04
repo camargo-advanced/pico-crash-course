@@ -1,5 +1,11 @@
 ## Preparação do ambiente de desenvolvimento
 
+Prepare-se para dar um mergulho empolgante na preparação do ambiente de desenvolvimento com o incrível Thonny Python IDE! Neste capítulo, vamos explorar passo a passo a configuração do seu ambiente para programar em Python e trabalhar com o Raspberry Pi Pico.
+
+O Thonny é uma ferramenta incrível para quem está começando a aprender MicroPython, oferecendo uma interface intuitiva e diversas funcionalidades que facilitam o desenvolvimento e a depuração de código. Com um editor de código intuitivo, shell integrado e suporte para placas microcontroladoras como o Raspberry Pi Pico, o Thonny é um aliado poderoso para quem está se aventurando no mundo da computação física.
+
+Neste capítulo, vamos guiar você por todo o processo, desde a instalação do Thonny em diferentes sistemas operacionais até a configuração do ambiente para programar no Raspberry Pi Pico. Prepare-se para instalar o Thonny, conectar-se ao seu Raspberry Pi Pico e executar seu primeiro código Python diretamente do Shell!
+
 ### Thonny Python IDE
 
 O Thonny é um ambiente de desenvolvimento integrado (IDE, Integrated Development Environment em inglês) para a linguagem de programação Python. Ele é projetado especialmente para iniciantes e estudantes de programação. O Thonny oferece uma interface de usuário simples e intuitiva, o que o torna mais fácil de usar para aqueles que estão aprendendo a programar em Python.
@@ -37,7 +43,7 @@ Agora abra o Thonny a partir do seu iniciador de aplicativos e você será apres
 Você também pode usar o Thonny para escrever código Python padrão. Digite o seguinte na janela principal e depois clique no botão `Run`. 
 
 ```Python
-print('Hello World!')
+print('Hello World em Python!')
 ```
 
 Não é necessário entender esse código agora. Utilizamos esse procedimento apenas para testar o seu ambiente e garantir que a instalação do Thonny tenha sido bem sucedida. Caso não obtenha o resultado como na figura que segue, repita os procedimentos anteriores.
@@ -98,3 +104,11 @@ Clique no botão `Install` para gravar o firmware no seu Raspberry Pi Pico.
 Aguarde a instalação ser concluída e clique em `Close`.
 
 > **`Atenção`**: Você não precisa atualizar o firmware toda vez que usar o seu Raspberry Pi Pico. Da próxima vez, você pode simplesmente conectá-lo ao seu computador sem pressionar o botão `BOOTSEL`.
+
+Parabéns por concluir a preparação do ambiente de desenvolvimento com sucesso! Durante este capítulo, você aprendeu a instalar o Thonny Python IDE em seu sistema operacional, explorou suas funcionalidades e até mesmo executou um código simples para verificar se tudo estava funcionando perfeitamente.
+
+Ao inserir o Raspberry Pi Pico em uma placa de prototipagem e conectar o cabo micro USB, você deu os primeiros passos essenciais para começar a programar este microcontrolador.
+
+Além disso, você compreendeu a importância de adicionar o firmware MicroPython ao Raspberry Pi Pico e como fazê-lo utilizando o Thonny. A instalação bem-sucedida do firmware abre um mundo de possibilidades para o desenvolvimento de projetos incríveis com o seu Raspberry Pi Pico.
+
+Estamos apenas começando esta jornada emocionante! No próximo capítulo, vamos explorar ainda mais o potencial do Thonny e do Raspberry Pi Pico, mergulhando mais fundo no desenvolvimento de programas e projetos emocionantes. Continue praticando e explorando este vasto mundo da computação física. Até breve!
