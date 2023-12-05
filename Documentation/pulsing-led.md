@@ -1,5 +1,7 @@
 ## Projeto: Controle da intensidade do LED
 
+Neste capítulo adentraremos o fascinante mundo da modulação por largura de pulso (PWM) para controlar a intensidade luminosa de um LED. Imagine a possibilidade de fazer um LED brilhar mais forte ou mais fraco, sem simplesmente ligá-lo e desligá-lo. Aqui, vamos explorar novos conceitos, como frequência, período, ciclo de trabalho e PWM, desvendando como cada um influencia a luminosidade do LED.
+
 Imagine que exista uma forma de fazer um LED brilhar mais forte ou mais fraco, como se ele estivesse respirando devagar e rápido. Isso é ótimo porque não precisamos apenas ligar ou desligar o LED, podemos controlar o quão forte ele brilha.
 
 Você fará isso daqui a pouco mas antes é necessário entender alguns conceitos novos tais como frequência e período, PWM e ciclo de trabalho (duty cycle in inglês) e como isso afeta a intensidade de um LED. 
@@ -136,3 +138,9 @@ while True:
 - O segundo loop `for duty in range(MAX_DUTY_VALUE, 0, -duty_inc_per_ms)` faz o mesmo, mas em ordem reversa, para criar o efeito de pulsar. Note o sinal de menos antes da variável `duty_inc_per_ms`. Dessa forma informamos ao laço `for` que ele deve decrementar aquele valor a cada iteração.
 
 Experimente brincar com os valores de frequência, ciclo de trabalho, assim como o tempo de espera (sleep), para ter uma ideia de como você pode ajustar a intensidade e o ritmo do LED pulsante.
+
+Compreendemos agora a importância da frequência, do período e do ciclo de trabalho na manipulação da intensidade luminosa de um LED utilizando a técnica de modulação por largura de pulso (PWM). Ao explorar esses conceitos, pudemos visualizar o efeito do PWM, permitindo que o LED pulsasse com diferentes níveis de brilho.
+
+Ao programar o Raspberry Pi Pico para realizar esse efeito pulsante, aprendemos a configurar o pino PWM, definir a frequência desejada e manipular o ciclo de trabalho para controlar o brilho do LED. Ao ajustar esses parâmetros, foi possível criar um efeito pulsante semelhante a um coração batendo, adicionando dinamismo e vida ao LED.
+
+Continue explorando, experimentando e transformando suas ideias em realidade por meio da eletrônica e programação. O universo da modulação por largura de pulso é vasto e cheio de possibilidades, e agora você está equipado para explorá-lo e criar projetos cada vez mais interessantes e desafiadores.

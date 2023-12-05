@@ -188,4 +188,12 @@ flash_morse_code(code)
 
 Aqui, a função `flash_morse_code` é usada para fazer o LED piscar conforme o código Morse que acabamos de criar.
 
-A seguir vamos adicionar som ao nosso projeto. Para isso precisamos entender sobre o componente eletrônico que pode nos ajudar a emitir um sinal sonoro.
+Neste capítulo, exploramos o Código Morse, um sistema revolucionário de comunicação desenvolvido por Samuel Morse no século 19. Ele usou pontos e traços para representar letras, números e símbolos, permitindo mensagens à distância através de fios telegráficos.
+
+O Código Morse não apenas facilitou a comunicação, mas também encontrou uso em situações onde a audição é ineficaz, como ambientes ruidosos ou para pessoas com deficiência auditiva. Sua utilização é comum em busca e resgate, navegação marítima e contextos militares.
+
+Apresentamos os dicionários em MicroPython, ferramentas poderosas que associam chaves a valores. Mostramos como podemos usar um dicionário para mapear letras e números ao Código Morse.
+
+Demonstramos um projeto prático em MicroPython que converte um texto em Código Morse e usa um LED para representar esse código por meio de flashes luminosos. Esta experiência prática possibilita visualizar a linguagem de comunicação por luz.
+
+A jornada de aprendizado continua! Cada projeto é uma oportunidade para aprender e descobrir mais sobre eletrônica e programação. Parabéns pelo progresso até aqui! Continuem explorando e experimentando novas ideias!

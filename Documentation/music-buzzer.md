@@ -237,3 +237,15 @@ song = [
 ```
 
 Você pode substituir a variável `song` por qualquer uma dessas listas de notas para tocar a música correspondente. 
+
+Nesse capítulo você explorou o mundo emocionante da criação musical. O buzzer é um dispositivo que, quando conectado ao Raspberry Pi Pico, pode produzir melodias e efeitos sonoros fascinantes.
+
+Assim como na linguagem escrita, onde as letras formam palavras, na música, as notas se unem para criar melodias cativantes. Cada nota possui um nome, como Dó, Ré, Mi, entre outros, e possui frequências específicas que determinam o som que ouvimos. A variação na frequência das notas também determina se elas soam graves ou agudas.
+
+Exploramos um conjunto de 88 notas musicais, correspondentes à notação musical ocidental, que podem ser utilizadas para criar suas próprias melodias. Você aprendeu a representar essas notas usando uma letra associada a um número na clave de sol.
+
+Com o auxílio do Raspberry Pi Pico e um código em MicroPython, conseguimos dizer ao buzzer quando tocar cada nota e por quanto tempo. Isso nos permitiu criar músicas incríveis com apenas algumas linhas de código!
+
+Ao implementar o exemplo da música "Brilha, Brilha, Estrelinha", você já deu um passo significativo. Além disso, sugerimos outras músicas como "Happy Birthday", "Jingle Bells" e "Ode to Joy", proporcionando uma oportunidade para expandir seu conhecimento e diversificar as melodias que pode reproduzir.
+
+Agora você está pronto para experimentar e explorar a criação de suas próprias músicas usando o Raspberry Pi Pico e o buzzer. Através da combinação de diferentes notas e ritmos, você pode dar vida a composições musicais incríveis. Estamos ansiosos para ver as músicas surpreendentes que você será capaz de criar!

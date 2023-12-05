@@ -22,7 +22,7 @@ Uma placa de prototipagem está coberta com pequenos furos ou orifícios espaça
 
 Muitas placas de prototipagem têm letras na parte superior e números nas laterais. Isso permite que você encontre um orifício específico: A1 é o canto superior esquerdo, B1 é o orifício imediatamente à direita, enquanto B2 é um orifício abaixo dali. A1 está conectado a B1 pelas tiras de metal ocultas, mas nenhum orifício marcado com um 1 está conectado a qualquer orifício marcado com um 2, a menos que você adicione um fio de conexão por conta própria. 
 
-Placas de prototipagem maiores têm fileiras de orifícios nas laterais, geralmente marcadas com listras vermelhas e pretas ou vermelhas e azuis. Estas são as trilhas de energia e são projetadas para facilitar a conexão dos fios: por exemplo, você pode conectar um único pino **GND** do seu Pico a uma das trilhas de energia, que são normalmente marcadas com uma listra azul ou preta e um símbolo de menos, para fornecer um terra comum para muitos componentes na placa. Você pode fazer o mesmo se o seu circuito precisar de energia de 3,3V utilizando a trilha com listra vermelha. Todos os orifícios de uma mesma trilha estão conectados eletricamente. 
+Placas de prototipagem maiores têm fileiras de orifícios nas laterais, geralmente marcadas com listras vermelhas e pretas ou vermelhas e azuis. Estas são as trilhas de energia e são projetadas para facilitar a conexão dos fios: por exemplo, você pode conectar um único pino `GND` do seu Pico a uma das trilhas de energia, que são normalmente marcadas com uma listra azul ou preta e um símbolo de menos, para fornecer um terra comum para muitos componentes na placa. Você pode fazer o mesmo se o seu circuito precisar de energia de 3,3V utilizando a trilha com listra vermelha. Todos os orifícios de uma mesma trilha estão conectados eletricamente. 
 
 Inserir componentes eletrônicos a uma placa de prototipagem é simples: alinhe seus terminais (as partes metálicas salientes) com os orifícios e empurre suavemente até que o componente esteja no lugar. Nunca tente inserir mais de um terminal de componente ou fio de conexão em um mesmo orifício na placa. 
 
@@ -107,7 +107,7 @@ Use um resistor entre 50 e 330 ohms, um LED vermelho e um par de fios de conexã
 
 ![LED e resistor conectados ao Pico](/images/single-led.png "LED e resistor conectados ao Pico")
 
-Neste exemplo, o LED está conectado ao pino **GP15** do seu Raspberry Pi Pico. Se você usar um pino diferente, lembre-se de procurar o número no diagrama de pinos.
+Neste exemplo, o LED está conectado ao pino `GP15` do seu Raspberry Pi Pico. Se você usar um pino diferente, lembre-se de procurar o número no diagrama de pinos.
 
 Use o mesmo código que você usou anteriormente para piscar o LED embarcado, mas mude o número do pino para 15.
 
@@ -128,3 +128,11 @@ Programa 4.
 Salve o seu programa no seu Raspberry Pi Pico com o nome de `blink1.py`. Execute o seu programa e o LED deverá começar a piscar. Se não estiver funcionando, verifique as conexões entre os componentes para ter certeza de que o LED está conectado corretamente.
 
 Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382840288712936449).
+
+Neste capítulo, exploramos os fascinantes princípios da eletricidade e dos circuitos, mergulhando no mundo da energia controlada e das maravilhas dos elétrons. Compreendemos como a eletricidade flui por meio de circuitos, alimentando nossos projetos como uma mágica invisível. Desde a explicação dos LEDs até o uso de placas de prototipagem e resistores, cada componente desempenha um papel vital na construção e segurança dos circuitos.
+
+Ao compreender os segredos por trás dos componentes eletrônicos e sua interconexão, aprendemos a calcular resistências, evitar correntes elétricas excessivas e fazer os LEDs brilharem com segurança.
+
+Por meio do conhecimento adquirido, estamos prontos para transformar conceitos em ações concretas. Agora, ao piscar um LED externo usando o Raspberry Pi Pico e MicroPython, iniciamos nossa jornada prática na aplicação desses conceitos. Através do código fornecido e da montagem do circuito com os componentes corretos, podemos testemunhar a energia fluindo e o LED cintilando, dando vida ao que aprendemos teoricamente.
+
+Esse é apenas o início de uma emocionante jornada rumo à criação de projetos mais complexos e desafiadores. Com a compreensão dos fundamentos e a prática contínua, abrimos portas para a criatividade e a inovação, transformando ideias em realidade no vasto mundo da eletrônica e da programação.

@@ -1,6 +1,10 @@
 ## Projeto: Código morse com um Buzzer
 
-### Gerando som com um Buzzer
+Bem-vindos ao incrível mundo da comunicação através do Código Morse com o Raspberry Pi Pico! Neste capítulo, vamos explorar como utilizar um buzzer para criar sons que representam o Código Morse. 
+
+Neste projeto, vamos conectar o buzzer ao Raspberry Pi Pico e utilizar o código Morse para representar mensagens através de luzes e sons. Preparados para decifrar e transmitir mensagens codificadas? Vamos mergulhar nesse fascinante mundo dos sons!
+
+### O que é um Buzzer?
 
 Um Buzzer é um pequeno dispositivo que emite um som quando é alimentado com energia elétrica. É como uma campainha que emite um som quando é ativada. 
 
@@ -152,3 +156,9 @@ flash_morse_code(code)
 Aqui, o texto 'Hello World' é convertido em código Morse e exibido. Em seguida, a função `flash_morse_code` é chamada para piscar o LED e emitir som de acordo com o código Morse gerado.
 
 Altere o texto para outras palavras e frases e veja o resultado. Por exemplo, você pode mudar para SOS e dessa forma estar preparado para se comunicar em uma situação de emergência com uma lanterna!
+
+Parabéns por explorar o projeto emocionante de comunicação através do Código Morse com o Raspberry Pi Pico e um buzzer! Durante este capítulo, você descobriu como um pequeno dispositivo pode ser programado para emitir sons representando letras e números conforme o Código Morse.
+
+Através da programação do Raspberry Pi Pico, você pôde controlar o buzzer para emitir tons curtos e longos, correspondentes aos sinais de ponto e traço do Código Morse. Com isso, criamos uma forma de comunicação que transcendeu a simples escrita, utilizando luzes e sons para transmitir mensagens.
+
+O universo do Raspberry Pi Pico e da comunicação por Código Morse está repleto de possibilidades. Continue explorando, experimentando e se desafiando com novos projetos. Quem sabe você não cria a próxima grande inovação na área da comunicação utilizando essas incríveis ferramentas? Continue aprendendo e se inspirando!

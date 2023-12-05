@@ -1,8 +1,8 @@
 ## Projeto: Dimmer 
 
-O seu Raspberry Pi Pico possui pinos de entrada que podem receber sinais analógicos. Isso significa que, em vez de apenas ler os valores **1** e **0**, ou seja, ligado e desligado, ele pode ler valores intermediários.
+Neste capítulo, mergulharemos no emocionante mundo dos potenciômetros e da leitura de sinais analógicos com o Raspberry Pi Pico. Compreenderemos como um potenciômetro, esse dispositivo tão versátil, pode atuar como uma ferramenta valiosa para controlar a intensidade luminosa de um LED.
 
-Um potenciômetro é o dispositivo analógico perfeito para esse objetivo.
+O potenciômetro, um componente analógico, é como uma torneira em um encanamento elétrico, permitindo-nos regular o fluxo de eletricidade. Ao girá-lo, podemos ajustar a quantidade de energia que flui pelo circuito, influenciando diretamente no brilho do LED. Esta é uma oportunidade emocionante de explorar como componentes analógicos podem ser integrados ao universo digital do Raspberry Pi Pico.
 
 ### O que é um Potenciômetro?
 
@@ -102,4 +102,10 @@ while True:
 
 Programa 8.
 
-Parabéns! Você conseguiu controlar o LED usando um potenciômetro! Continue explorando esse mundo da eletrônica e programação, pois você está trilhando um caminho cheio de descobertas empolgantes!
+Exploramos o papel fundamental do potenciômetro como uma valiosa ferramenta para controlar o brilho de um LED através da leitura de sinais analógicos. Compreendemos sua analogia com uma torneira, regulando o fluxo de eletricidade e, consequentemente, a intensidade luminosa do LED.
+
+Ao substituir o botão por um potenciômetro em nosso circuito, conseguimos ler seus valores de resistência. Com a ajuda do conversor analógico-digital (ADC), traduzimos esses valores em números compreensíveis para o Raspberry Pi Pico, permitindo-nos controlar o ciclo de trabalho do PWM e, consequentemente, a luminosidade do LED.
+
+Ao ajustar o código e conectar o potenciômetro ao LED, experimentamos a capacidade de controlar o brilho do LED girando o potenciômetro. Esse controle dinâmico adiciona uma dimensão interativa e prática aos projetos eletrônicos, destacando o potencial dos componentes analógicos na era digital.
+
+Com este conhecimento, você está pronto para explorar novas possibilidades e criar projetos ainda mais interessantes, manipulando sinais analógicos e integrando-os ao seu mundo digital. O potenciômetro é apenas o começo de suas aventuras eletrônicas com o Raspberry Pi Pico. Aproveite essa jornada emocionante e continue explorando o vasto e fascinante campo da eletrônica e da programação.
