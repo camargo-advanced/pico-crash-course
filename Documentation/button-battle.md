@@ -1,4 +1,4 @@
-## Projeto: Batalha dos Botões
+## Capítulo 14: Projeto Batalha dos Botões
 
 Este é um emocionante desafio de agilidade projetado especialmente para dois jogadores que estão prontos para testar seus reflexos e habilidades de reação!
 
@@ -136,7 +136,7 @@ def main_game():
 main_game()
 ```
 
-Programa 13.
+Programa 14.1
 
 Agora vamos desvendar como tudo funciona.
 
@@ -250,6 +250,8 @@ O loop `while` continua até que um dos jogadores pressione um botão. Enquanto 
 Depois que um botão é pressionado, verificamos qual jogador ganhou na declação `if / elif`. Dependendo do botão pressionado, imprimimos na tela quem foi o vencedor.
 
 Na sequência calculamos quanto tempo levou para o jogador reagir em `timer_reaction = ticks_diff(ticks_ms(), timer_start)`. Isso é mostrado na tela para que os jogadores possam ver o tempo de reação do jogador vencedor.
+
+### Conclusão
 
 Agora que você entendeu como o jogo de reação funciona, chegou a hora de colocar suas habilidades à prova! Lembre-se, a prática leva à excelência, e cada vez que você joga, está dando um passo em direção à maestria.
 

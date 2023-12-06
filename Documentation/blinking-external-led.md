@@ -1,4 +1,4 @@
-## Projeto: Piscando um LED externo
+## Capítulo 6: Projeto Piscando um LED externo
 
 ### Descobrindo os Segredos da Eletricidade
 
@@ -123,11 +123,13 @@ def blink(timer):
 timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
 ```
 
-Programa 4.
+Programa 6.1.
 
 Salve o seu programa no seu Raspberry Pi Pico com o nome de `blink1.py`. Execute o seu programa e o LED deverá começar a piscar. Se não estiver funcionando, verifique as conexões entre os componentes para ter certeza de que o LED está conectado corretamente.
 
 Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382840288712936449).
+
+### Conclusão
 
 Neste capítulo, exploramos os fascinantes princípios da eletricidade e dos circuitos, mergulhando no mundo da energia controlada e das maravilhas dos elétrons. Compreendemos como a eletricidade flui por meio de circuitos, alimentando nossos projetos como uma mágica invisível. Desde a explicação dos LEDs até o uso de placas de prototipagem e resistores, cada componente desempenha um papel vital na construção e segurança dos circuitos.
 

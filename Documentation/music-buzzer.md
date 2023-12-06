@@ -1,4 +1,4 @@
-## Projeto: Tocando músicas com um Buzzer
+## Capítulo 13: Projeto Tocando músicas com um Buzzer
 
 Você sabia que é possível criar melodias e sons incríveis usando apenas um Raspberry Pi Pico e um pequeno componente chamado buzzer? Neste capítulo, vamos explorar o emocionante universo da música com buzzer, e você aprenderá como fazer isso de uma forma simples e divertida.
 
@@ -121,7 +121,7 @@ def play_song(song):
 play_song(song)
 ```
 
-Programa 12.
+Programa 13.1
 
 Vamos desvendar esse código passo-a-passo a seguir!
 
@@ -237,6 +237,8 @@ song = [
 ```
 
 Você pode substituir a variável `song` por qualquer uma dessas listas de notas para tocar a música correspondente. 
+
+### Concllusão
 
 Nesse capítulo você explorou o mundo emocionante da criação musical. O buzzer é um dispositivo que, quando conectado ao Raspberry Pi Pico, pode produzir melodias e efeitos sonoros fascinantes.
 

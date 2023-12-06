@@ -1,4 +1,4 @@
-## Projeto: Código Morse com um LED
+## Capítulo 11: Projeto Código Morse com um LED
 
 Vamos viajar no tempo e descobrir a fascinante história por trás do Código Morse. Antes dos telefones e mensagens de texto, as pessoas precisavam de uma maneira especial de se comunicar à distância. E é aí que entra o Código Morse.
 
@@ -116,7 +116,7 @@ print("Morse Code:", code)
 flash_morse_code(code)
 ```
 
-Programa 10.
+Programa 11.1
 
 Experimente trocar o texto na 'Hello World' Por qualquer outra palavra ou frase e veja a sua representação luminosa em código morse no LED. Veja também que a conversão do texto original para a representação em pontos e traços do código morse é apresentada no Shell. Dessa forma você pode ver o código que será transmitido para luz.
 
@@ -187,6 +187,8 @@ flash_morse_code(code)
 ```
 
 Aqui, a função `flash_morse_code` é usada para fazer o LED piscar conforme o código Morse que acabamos de criar.
+
+### Conclusão
 
 Neste capítulo, exploramos o Código Morse, um sistema revolucionário de comunicação desenvolvido por Samuel Morse no século 19. Ele usou pontos e traços para representar letras, números e símbolos, permitindo mensagens à distância através de fios telegráficos.
 

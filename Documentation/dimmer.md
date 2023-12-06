@@ -1,4 +1,4 @@
-## Projeto: Dimmer 
+## Capítulo 9: Projeto Dimmer 
 
 Neste capítulo, mergulharemos no emocionante mundo dos potenciômetros e da leitura de sinais analógicos com o Raspberry Pi Pico. Compreenderemos como um potenciômetro, esse dispositivo tão versátil, pode atuar como uma ferramenta valiosa para controlar a intensidade luminosa de um LED.
 
@@ -49,7 +49,7 @@ while True:
     time.sleep_ms(5)
 ```
 
-Programa 7.
+Programa 9.1
 
 A seguir a explicação das linhas mais importantes do código.
 
@@ -83,8 +83,6 @@ Uma forma de montar esse circuito segue na figura que segue. Fique a vontade par
 
 Altere o código anterior conforme segue, e salve-o no Raspberry Pi Pico como `pot-led.py`. Uma vez que você o tenha executado, ajuste o botão do potenciômetro para controlar a intensidade do LED.
 
-Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382842211410367489).
-
 ```python
 from machine import Pin, PWM, ADC
 from time import sleep_ms
@@ -100,7 +98,19 @@ while True:
     sleep_ms(5)
 ```
 
-Programa 8.
+Programa 9.2
+
+Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382842211410367489).
+
+### Exercícios
+
+#### Exercício 9.1: Mapeamento de Valores do Potenciômetro
+
+Escreva um código que leia os valores do potenciômetro e mapeie esses valores para diferentes faixas de intensidade de brilho do LED. Por exemplo, você pode definir apenas 3 níveis de brilho para o LED e mapear a 3 faixas de valores do potenciômetro.
+
+Experimente ajustar o mapeamento dos valores do potenciômetro para diferentes faixas de brilho e observe como o LED responde a essas mudanças.
+
+### Conclusão
 
 Exploramos o papel fundamental do potenciômetro como uma valiosa ferramenta para controlar o brilho de um LED através da leitura de sinais analógicos. Compreendemos sua analogia com uma torneira, regulando o fluxo de eletricidade e, consequentemente, a intensidade luminosa do LED.
 

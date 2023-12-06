@@ -1,4 +1,4 @@
-## Projeto: Acionar um LED com um botão
+## Capítulo 7: Projeto Acionar um LED com um botão
 
 Neste capítulo, mergulharemos na emocionante jornada de controle de um LED usando um botão com o Raspberry Pi Pico. Aqui, exploraremos os princípios básicos de eletricidade e circuitos, transformando-os em ações práticas por meio do MicroPython.
 
@@ -27,7 +27,7 @@ while True:
         time.sleep(0.5)
 ```
 
-Programa 5.
+Programa 7.1
 
 Ao executar o código e ele fará com que o LED pisque cada vez que o botão é pressionado. Se o botão for mantido pressionado, o LED continuará piscando a cada meio segundo até que o botão seja solto.
 
@@ -52,6 +52,18 @@ A palavra-chave `if` ('se' em Português) permite ao programa tomar decisões co
 - `led.toggle()`: muda o estado do LED. Se o LED estiver aceso, ele é apagado, e vice-versa. Note que essa linha de código está dentro da condição `if`. Logo, somente quando o botão estiver sendo pressionado essa linha será executada.
 
 - `time.sleep(0.5)`: faz o programa esperar por meio segundo (0,5 segundos) antes de continuar. É como um pequeno intervalo de tempo para que possamos ver o LED piscar. Note que essa linha de código também está dentro da condição `if`. Logo, somente quando o botão estiver sendo pressionado essa linha será executada.
+
+### Exercícios
+
+#### Exercício 7.1: Piscando o LED com pausas diferentes
+
+Desafie-se a modificar o código para que o LED pisque em intervalos de tempo diferentes. Tente fazer com que o LED pisque duas vezes mais rápido alterando os tempos de pausa no código. Depois, faça com que o LED pisque duas vezes mais devagar alterando os tempos de pausa no código.
+
+#### Exercício 7.2: Botão para acender e apagar o LED
+
+Modifique o código para que o LED permaneça aceso enquanto o botão estiver pressionado e se apague quando o botão for solto. Esta mudança requer alterações na lógica do código para controlar o estado do LED com base na leitura contínua do botão.
+
+### Conclusão
 
 E assim, concluímos mais um capítulo repleto de descobertas fascinantes no mundo da eletrônica e programação. Ao controlar um LED com um botão, mergulhamos nas nuances da programação em MicroPython e na interação de componentes eletrônicos, transformando conceitos teóricos em experiências tangíveis.
 

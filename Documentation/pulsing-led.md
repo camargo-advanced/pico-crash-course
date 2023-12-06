@@ -1,4 +1,4 @@
-## Projeto: Controle da intensidade do LED
+## Capítulo 8: Projeto Controle da intensidade do LED
 
 Neste capítulo adentraremos o fascinante mundo da modulação por largura de pulso (PWM) para controlar a intensidade luminosa de um LED. Imagine a possibilidade de fazer um LED brilhar mais forte ou mais fraco, sem simplesmente ligá-lo e desligá-lo. Aqui, vamos explorar novos conceitos, como frequência, período, ciclo de trabalho e PWM, desvendando como cada um influencia a luminosidade do LED.
 
@@ -71,7 +71,7 @@ while True:
         sleep_ms(1)
 ```
 
-Programa 6.
+Programa 8.1
 
 Depois de escrever o código, salve-o no Raspberry Pi Pico com o nome `pulse.py` e execute. Vai ser legal ver o LED pulsar e brilhar continuamente de uma forma especial!
 
@@ -100,7 +100,7 @@ pwm = PWM(Pin(15))
 pwm.freq(500)
 ```
 
-- `pwm = PWM(Pin(15))`: Aqui, estamos configurando o pino 15 (**GP15**) como uma saída PWM (Modulação por Largura de Pulso) e associando isso à variável chamada `pwm`.
+- `pwm = PWM(Pin(15))`: Aqui, estamos configurando o pino GP15 como uma saída PWM (Modulação por Largura de Pulso) e associando isso à variável chamada `pwm`.
 
 - `pwm.freq(500)`: Estamos definindo a frequência do sinal PWM como 500 Hz (ciclos por segundo). Isso significa que o LED irá ligar e desligar 500 vezes por segundo.
 
@@ -138,6 +138,22 @@ while True:
 - O segundo loop `for duty in range(MAX_DUTY_VALUE, 0, -duty_inc_per_ms)` faz o mesmo, mas em ordem reversa, para criar o efeito de pulsar. Note o sinal de menos antes da variável `duty_inc_per_ms`. Dessa forma informamos ao laço `for` que ele deve decrementar aquele valor a cada iteração.
 
 Experimente brincar com os valores de frequência, ciclo de trabalho, assim como o tempo de espera (sleep), para ter uma ideia de como você pode ajustar a intensidade e o ritmo do LED pulsante.
+
+### Exercícios
+
+#### Exercício 8.1: Pulsar do LED
+
+Escreva um código que faça o LED pulsar a uma frequência de 5 Hz.
+
+Experimente diferentes valores de ciclo de trabalho para variar a intensidade do brilho durante o pulsar.
+
+#### Exercício 8.2: Frequência Variável do LED
+
+Escreva um código que permita variar a frequência do pulsar do LED de 2 Hz para 10 Hz em intervalos de 2 Hz.
+
+Execute o código e observe como a mudança na frequência afeta a percepção visual do LED.
+
+### Conclusão
 
 Compreendemos agora a importância da frequência, do período e do ciclo de trabalho na manipulação da intensidade luminosa de um LED utilizando a técnica de modulação por largura de pulso (PWM). Ao explorar esses conceitos, pudemos visualizar o efeito do PWM, permitindo que o LED pulsasse com diferentes níveis de brilho.
 

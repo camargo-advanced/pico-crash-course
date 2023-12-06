@@ -1,4 +1,4 @@
-## Projeto: Acendendo e piscando o LED embarcado
+## Capítulo 5: Projeto Acendendo e piscando o LED embarcado
 
 No capítulo anterior você explorou a base essencial da programação em MicroPython com um simples "Hello, World!", um marco simbólico para iniciantes em linguagens de programação.
 
@@ -15,7 +15,7 @@ led = Pin(25, Pin.OUT)
 led.value(1)
 ```
 
-Programa 1.
+Programa 5.1
 
 Se você definir o valor do LED como 1, ele se acende. Dessa forma você deverá ver o LED embarcado se acender. Confirme isso localizando o LED embarcado em seu Pico. 
 
@@ -48,7 +48,7 @@ led = Pin(25, Pin.OUT)
 led.toggle()
 ```
 
-Programa 2.
+Programa 5.2
 
 A primeira linha de código `from machine import Pin` importa uma biblioteca do MicroPython chamada `machine` que contém funções para interagir com hardware. Mais especificamente, ela está importando a função `Pin`, que permite controlar os pinos do Raspberry Pi Pico.
 
@@ -86,7 +86,7 @@ def blink(timer):
 timer.init(freq=2.5, mode=Timer.PERIODIC, callback=blink)
 ```
 
-Programa 3.
+Programa 5.3
 
 A seguir, vamos entender esse código linha a linha.
 
@@ -112,23 +112,9 @@ Clique no botão `Run` e o seu programa fará o LED piscar até que você clique
 
 ### Exercícios 
 
-#### O simulador Wokwi
-
-Para realizar as atividades práticas relacionadas aos circuitos e códigos em Python,  utilizaremos a plataforma de simulação Wokwi. O Wokwi é um simulador online que permite criar circuitos eletrônicos e desenvolver códigos para interagir com esses circuitos.
-
-Para concluir as atividades práticas propostas, siga estas etapas:
-
-- Acesse o simulador Wokwi através do link: [Wokwi Simulador](https://wokwi.com).
-- Desenhe o circuito correspondente ao exercício proposto utilizando os componentes disponíveis no simulador.
-- Escreva o código Python baseado nas instruções do exercício e integre-o ao circuito e teste-o.
-- Após concluir o circuito e o código, salve seu projeto no Wokwi.
-- Caso precise entregar do exercício, compartilhe o link do seu circuito Wokwi, que inclui o esquema do circuito e o código Python de acordo com as intruções do professor.
-
-Por favor, utilize essa ferramenta para realizar as práticas de laboratório conforme indicado no material do curso. 
-
 #### O comando `sleep`
 
-Para realizar alguns exercícios práticos, será necessário utilizar o comando `sleep` em seus códigos MicroPython. Este comando é responsável por criar um intervalo de tempo entre operações no código.
+Para realizar alguns dos exercícios será necessário utilizar o comando `sleep` em seus códigos MicroPython. Este comando é responsável por criar um intervalo de tempo entre operações no código.
 
 Exemplo simples:
 
@@ -152,17 +138,17 @@ No código anterior, após ligar o LED, utilizamos `sleep(3)` para pausar a exec
 
 Certifique-se de importar o módulo `time` para usar o `sleep` no MicroPython. Este comando é muito útil para criar atrasos ou controlar o tempo de execução de algumas ações no seu código MicroPython.
 
-#### Exercício 1: Manter o LED aceso por 5 segundos.
+#### Exercício 5.1: Manter o LED aceso por 5 segundos
 
-Este exercício tem como objetivo acender o LED por um período de tempo específico, mantendo-o aceso por 5 segundos antes de desligá-lo.
+Você tem como objetivo fazer o LED acender por um período de tempo específico, mantendo-o aceso por 5 segundos antes de desligá-lo.
 
-#### Exercício 2: Alternar o LED entre ligado e desligado duas vezes
+#### Exercício 5.2: Alternar o LED entre ligado e desligado duas vezes
 
 Neste exercício, você irá alternar o LED entre ligado e desligado duas vezes. O LED permanecerá aceso por 2 segundos em cada estado (ligado e desligado) antes de alternar novamente.
 
-#### Exercício 3: Piscar o LED repetidamente por 3 vezes
+#### Exercício 5.3: Piscar o LED repetidamente por 3 vezes
 
-Este exercício consiste em fazer o LED piscar por 3 vezes. O LED ficará aceso por 1 segundo e depois será desligado por 1 segundo, repetindo esse ciclo três vezes.
+Faça o LED piscar por 3 vezes. O LED ficará aceso por 1 segundo e depois será desligado por 1 segundo, repetindo esse ciclo três vezes.
 
 ### Conclusão
 

@@ -1,4 +1,4 @@
-## O que é o Raspberry Pi Pico?
+## Capítulo 1: O que é o Raspberry Pi Pico?
 
 O Raspberry Pi Pico é uma maravilha em miniatura, colocando a mesma tecnologia que sustenta desde sistemas de casa inteligente até fábricas industriais na palma da sua mão. Esteja você interessado em aprender sobre a linguagem de programação MicroPython, dando os primeiros passos na computação física, ou deseja construir um projeto de hardware, o Raspberry Pi Pico pode lhe apoiar em cada etapa do caminho.
 
@@ -29,6 +29,8 @@ Ao girar o Pico, os rótulos nos pinos indicam suas funções principais, como `
 ![Diagrama dos pinos do Pico](/images/pico-pinout-1.png "Diagrama dos pinos do Pico")
 
 Perceba que um mesmo pino pode ter várias funções. Por exemplo, o pino `GP27` pode ser utilizado tanto como GPIO e PWM, sendo chamado de `GP27` nesses casos. Este mesmo pino também pode ser usado como ADC, sendo então referido como `ADC1`. Além disso, este pino pode desempenhar a função de I2C, sendo denominado `I2C1 SCL`. Em resumo, um único pino pode ser designado por vários nomes conforme a função que estiver sendo utilizada. Não se preocupe em compreender essas funções agora, pois as abordaremos em detalhes durante este curso. O importante é lembrar que um mesmo pino pode ser referenciado por mais de um nome ao longo desse curso.
+
+### Conclusão
 
 Agora que você entendeu um pouco mais sobre o Raspberry Pi Pico, é possível perceber o incrível potencial dessa maravilha em miniatura. Este microcontrolador não só permite explorar os fundamentos da computação física, mas também representa uma entrada emocionante para o vasto mundo da programação.
 

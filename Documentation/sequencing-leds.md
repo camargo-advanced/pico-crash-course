@@ -1,4 +1,4 @@
-## Projeto: LEDs piscando em sequência
+## Capítulo 10: Projeto LEDs piscando em sequência
 
 E se agora você quiser que uma sequência de 3 LEDs pisque seuquencialmente e em uma frequência controlada pelo potenciômetro? Ao girar o potenciômetro a velocidade da sequência de LEDs aumenta ou diminui.
 
@@ -115,7 +115,7 @@ while True:
         sleep_ms(period_ms)
 ```
 
-Programa 9.
+Programa 10.1
 
 Vamos desvendar esse código linha por linha!
 
@@ -150,6 +150,8 @@ Essas linhas de código trabalham juntas para criar um efeito de piscar com os L
 Vocês já perceberam que, ao girar o potenciômetro para aumentar a velocidade dos LEDs ao máximo, algo curioso acontece? Parece que todos os LEDs estão sempre acesos, não é mesmo? Isso acontece porque, a partir de aproximadamente cerca de 50 Hz, o olho humano não consegue mais distinguir as piscadas individuais dos LEDs. Em vez disso, percebemos uma luz contínua. Isso se deve às características da visão humana, que tem uma capacidade limitada de perceber mudanças rápidas na luminosidade. É um exemplo fascinante de como a percepção visual humana pode ser influenciada por fatores físicos e biológicos.
 
 > **`Atenção`**: Você pode conectar mais LEDs a essa sequência se desejar. Apenas adicione mais elementos `Pin` à lista `leds`. O restante do código não precisa ser alterado. E claro, não esqueça de ajustar o circuito físico com os novos LEDs e resistores conectados corretamente !
+
+# Conclusão
 
 Neste capítulo, mergulhamos em um novo conceito em MicroPython chamado Listas e exploramos como elas são cruciais para organizar e manipular dados em Python. Compreendemos como as listas podem armazenar uma coleção de itens e como podemos acessar, modificar, adicionar e remover elementos dentro delas. A utilização das listas se mostra essencial para gerenciar informações de maneira eficiente em nossos programas.
 

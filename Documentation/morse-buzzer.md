@@ -1,4 +1,4 @@
-## Projeto: Código morse com um Buzzer
+## Capítulo 12: Projeto Código morse com um Buzzer
 
 Bem-vindos ao incrível mundo da comunicação através do Código Morse com o Raspberry Pi Pico! Neste capítulo, vamos explorar como utilizar um buzzer para criar sons que representam o Código Morse. 
 
@@ -88,7 +88,7 @@ print("Morse Code:", code)
 flash_morse_code(code)
 ```
 
-Programa 11.
+Programa 12.1
 
 Vamos desvendar esse código !
 
@@ -156,6 +156,8 @@ flash_morse_code(code)
 Aqui, o texto 'Hello World' é convertido em código Morse e exibido. Em seguida, a função `flash_morse_code` é chamada para piscar o LED e emitir som de acordo com o código Morse gerado.
 
 Altere o texto para outras palavras e frases e veja o resultado. Por exemplo, você pode mudar para SOS e dessa forma estar preparado para se comunicar em uma situação de emergência com uma lanterna!
+
+### Conclusão
 
 Parabéns por explorar o projeto emocionante de comunicação através do Código Morse com o Raspberry Pi Pico e um buzzer! Durante este capítulo, você descobriu como um pequeno dispositivo pode ser programado para emitir sons representando letras e números conforme o Código Morse.
 

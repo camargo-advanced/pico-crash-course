@@ -1,4 +1,4 @@
-## Projeto: Qual a temperatura?
+## Capítulo 15: Projeto Qual a temperatura?
 
 Este projeto é um mergulho empolgante no universo da tecnologia, permitindo que você crie um circuito que exibirá a temperatura atual em um display OLED, usando o sensor de temperatura interno do chip do Raspberry Pi Pico.
 
@@ -74,7 +74,7 @@ while True:
     sleep_ms(500)  # Aguarda meio segundo
 ```
 
-Programa 14.
+Programa 15.1
 
 Vamos entender cada uma das linhas desse código juntos.
 
@@ -158,5 +158,7 @@ Esse trecho de código atualiza o display OLED com informações da temperatura.
 - `display.show()` atualiza o display com as informações que foram escritas. Após escrever os textos desejados, essa função exibe o conteúdo no display, mostrando as informações recém-adicionadas.
 
 - `sleep_ms(500)` é uma função que faz o programa aguardar por 500 milissegundos (ou meio segundo) antes de continuar. Essa pausa é útil para controlar a frequência com que as informações são atualizadas no display. No caso, após exibir as informações, o programa espera meio segundo antes de realizar o próximo ciclo de leitura e exibição de temperatura.
+
+### Conclusão
 
 Parabéns! Ao finalizar este projeto, você não apenas explorou o incrível potencial do Raspberry Pi Pico e do MicroPython, mas também mergulhou no universo fascinante da eletrônica e programação utilizando um display para apresentar informações. Nos vemos no próximo projeto!

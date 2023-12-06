@@ -1,4 +1,4 @@
-## Projeto: 'Hello World'
+## Capítulo 4: Projeto: "Hello World"
 
 Bem-vindo ao mundo da programação interativa com o Raspberry Pi Pico e o Thonny! Neste capítulo, vamos explorar uma forma dinâmica de interagir com o seu Raspberry Pi Pico usando o Thonny, através do REPL (Read–Eval–Print Loop em inglês). Esta é uma oportunidade emocionante para aprender a se comunicar diretamente com o seu microcontrolador e ver instantaneamente os resultados das suas linhas de código.
 
@@ -11,7 +11,7 @@ Vamos começar explorando como enviar comandos Python, como o famoso "Hello Worl
 No painel do Shell, localizado na parte inferior do editor Thonny, digite o seguinte comando. 
 
 ```Python
-print('Hello World!')
+print("Hello World!")
 ```
 
 Pressione a tecla `Enter` e você verá a saída.
@@ -32,6 +32,8 @@ Uma string em Python é uma sequência de caracteres, ou seja, um conjunto orden
 O importante é ser consistente: se você iniciou uma string com aspas simples, feche-a com aspas simples. Se iniciou com aspas duplas, feche-a com aspas duplas.
 
 As funções em Python, assim como na maioria das linguagens de programação, utilizam um par de parenteses `()` para indicar onde os argumentos devem ser colocados.  Por isso a string 'Hello World!' foi colocada dentro dos parênteses da função `print`.
+
+# Conclusão
 
 Parabéns por explorar e experimentar o poder da programação interativa com o Raspberry Pi Pico através do Thonny! Neste capítulo, você aprendeu a enviar comandos Python ao Raspberry Pi Pico, observando imediatamente suas saídas no Thonny. Compreendeu também a importância da função `print` em exibir mensagens e resultados na tela do seu computador, bem como o uso adequado de strings em Python para representar texto.
 

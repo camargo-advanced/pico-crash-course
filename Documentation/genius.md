@@ -1,4 +1,4 @@
-## Projeto: Genius, o jogo de memória dos anos 80
+## Capítulo 16: Projeto Genius, o jogo de memória dos anos 80
 
 Seja bem-vindo ao desafio de recriar um clássico dos anos 80! Já ouviu falar do jogo Genius lançado pela Estrela? Imagine a emoção de desenvolver e jogar uma versão própria deste clássico no seu Raspberry Pi Pico usando MicroPython! É isso mesmo! Estamos prestes a mergulhar em uma aventura de aprendizado e diversão enquanto exploramos como esse icônico jogo funciona e o recriamos usando a nossa criatividade e habilidades.
 
@@ -535,6 +535,8 @@ Este bloco avalia se a jogada do jogador está correta.
   - Toca um som de derrota.
   - Reinicia o nível de dificuldade para 3.
   - Define `new_game` como `True` para iniciar um novo jogo.
+
+### Conclusão
 
 Maravilha! Chegamos ao fim! Parabéns por essa incrível jornada! Durante esse projeto, você mergulhou fundo no mundo da eletrônica e programação, explorando o jogo Genius com a Raspberry Pi Pico e o MicroPython. Ao longo desse caminho, você enfrentou desafios empolgantes e adquiriu conhecimentos valiosos.
 
