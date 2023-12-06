@@ -110,6 +110,62 @@ Em programas MicroPython, lembre-se de utilizar o padrão norte-americano para v
 
 Clique no botão `Run` e o seu programa fará o LED piscar até que você clique no botão `Stop`. 
 
+### Exercícios 
+
+#### O simulador Wokwi
+
+Para realizar as atividades práticas relacionadas aos circuitos e códigos em Python,  utilizaremos a plataforma de simulação Wokwi. O Wokwi é um simulador online que permite criar circuitos eletrônicos e desenvolver códigos para interagir com esses circuitos.
+
+Para concluir as atividades práticas propostas, siga estas etapas:
+
+- Acesse o simulador Wokwi através do link: [Wokwi Simulador](https://wokwi.com).
+- Desenhe o circuito correspondente ao exercício proposto utilizando os componentes disponíveis no simulador.
+- Escreva o código Python baseado nas instruções do exercício e integre-o ao circuito e teste-o.
+- Após concluir o circuito e o código, salve seu projeto no Wokwi.
+- Caso precise entregar do exercício, compartilhe o link do seu circuito Wokwi, que inclui o esquema do circuito e o código Python de acordo com as intruções do professor.
+
+Por favor, utilize essa ferramenta para realizar as práticas de laboratório conforme indicado no material do curso. 
+
+#### O comando `sleep`
+
+Para realizar alguns exercícios práticos, será necessário utilizar o comando `sleep` em seus códigos MicroPython. Este comando é responsável por criar um intervalo de tempo entre operações no código.
+
+Exemplo simples:
+
+```Python
+from machine import Pin
+from time import sleep
+
+led = Pin(25, Pin.OUT)
+
+# Liga o LED
+led.value(1)
+
+# Pausa por 3 segundos
+sleep(3)
+
+# Desliga o LED após a pausa
+led.value(0)
+```
+
+No código anterior, após ligar o LED, utilizamos `sleep(3)` para pausar a execução por 3 segundos antes de desligar o LED. 
+
+Certifique-se de importar o módulo `time` para usar o `sleep` no MicroPython. Este comando é muito útil para criar atrasos ou controlar o tempo de execução de algumas ações no seu código MicroPython.
+
+#### Exercício 1: Manter o LED aceso por 5 segundos.
+
+Este exercício tem como objetivo acender o LED por um período de tempo específico, mantendo-o aceso por 5 segundos antes de desligá-lo.
+
+#### Exercício 2: Alternar o LED entre ligado e desligado duas vezes
+
+Neste exercício, você irá alternar o LED entre ligado e desligado duas vezes. O LED permanecerá aceso por 2 segundos em cada estado (ligado e desligado) antes de alternar novamente.
+
+#### Exercício 3: Piscar o LED repetidamente por 3 vezes
+
+Este exercício consiste em fazer o LED piscar por 3 vezes. O LED ficará aceso por 1 segundo e depois será desligado por 1 segundo, repetindo esse ciclo três vezes.
+
+### Conclusão
+
 Parabéns por concluir com sucesso nosso primeiro projeto de computação física com MicroPython! Ao acender e piscar um LED, você deu um passo significativo na compreensão da conexão entre o código que escrevemos e a ação real que acontece no mundo físico.
 
 Este projeto pode parecer simples, mas é um marco importante no seu caminho na programação. Você experimentou o poder de transformar comandos de código em ações tangíveis. Esse LED que brilha agora é apenas o começo de uma série de projetos incríveis que você poderá criar com o MicroPython.

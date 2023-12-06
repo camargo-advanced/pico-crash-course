@@ -24,7 +24,7 @@ Mapa de Exploração:
 
 4. [Projeto: "Hello World"](/Documentation/hello-world.md) - Dê seus primeiros passos, acenda sua imaginação e cumprimente o mundo da programação em Python!
 
-5. [Projeto: Acendendo e piscando o LED embarcado](/Documentation/blinking-onboard-led.md) - Deixe a luz brilhar! Vamos fazer com que seu Pico ganhe vida com um show de luzes. Será esse o "Hello World" da computação física?
+5. [Projeto: Acendendo e piscando o LED embarcado](/Documentation/blinking-onboard-led.md) - Deixe a luz brilhar! Vamos fazer com que seu Pico ganhe vida com um show de luzes. Será esse o verdadeiro "Hello World" da computação física?
 
 6. [Projeto: Piscando um LED externo](/Documentation/blinking-external-led.md) - Expanda seus horizontes e descubra como controlar um LED externo.
 
