@@ -251,6 +251,20 @@ Depois que um botão é pressionado, verificamos qual jogador ganhou na declaç�
 
 Na sequência calculamos quanto tempo levou para o jogador reagir em `timer_reaction = ticks_diff(ticks_ms(), timer_start)`. Isso é mostrado na tela para que os jogadores possam ver o tempo de reação do jogador vencedor.
 
+### Exercícios
+
+#### Exercício 14.1: Modificando o Tempo de Espera
+
+No código fornecido para o jogo, altere o tempo de espera inicial antes que a luz se apague. Experimente aumentar ou diminuir o tempo entre 1 e 5 segundos (em milissegundos). Observe como essa alteração afeta a dificuldade do jogo para os jogadores.
+
+#### Exercício 14.2: Adicionando Mais Jogadores
+
+Atualmente, o jogo suporta dois jogadores. Tente modificar o código para permitir mais jogadores. Adicione novos botões e expanda a lógica do jogo para acomodar três ou mais jogadores. Teste o jogo com amigos e divirta-se!
+
+#### Exercício 14.3: Personalizando Efeitos
+
+Experimente adicionar efeitos visuais ou sonoros ao jogo para torná-lo mais interessante. Por exemplo, você pode adicionar um som quando a luz se apaga, ou fazer a luz piscar antes de apagar completamente. Seja criativo e personalize o jogo para tornar a experiência mais envolvente para os jogadores.
+
 ### Conclusão
 
 Agora que você entendeu como o jogo de reação funciona, chegou a hora de colocar suas habilidades à prova! Lembre-se, a prática leva à excelência, e cada vez que você joga, está dando um passo em direção à maestria.

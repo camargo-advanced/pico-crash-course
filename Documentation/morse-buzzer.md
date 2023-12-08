@@ -157,6 +157,16 @@ Aqui, o texto 'Hello World' é convertido em código Morse e exibido. Em seguida
 
 Altere o texto para outras palavras e frases e veja o resultado. Por exemplo, você pode mudar para SOS e dessa forma estar preparado para se comunicar em uma situação de emergência com uma lanterna!
 
+### Exercícios
+
+#### Exercício 12.1: Nova Tradução Morse
+
+Adicione novos caracteres ao dicionário morse_code para expandir a funcionalidade do Código Morse utilizado no programa. Experimente adicionar símbolos de pontuação, caracteres especiais ou até mesmo letras acentuadas. Use o padrão existente como referência para criar novas representações em Código Morse para os caracteres adicionais.
+
+#### Exercício 12.2: Frases Longas
+
+Altere o texto fornecido para uma frase mais longa, como "Hello from the Raspberry Pi World", e observe como a tradução em Código Morse é transmitida pelo LED e buzzer. Experimente enviar mensagens mais complexas e verifique como o código representa cada letra e palavra na comunicação em Código Morse.
+
 ### Conclusão
 
 Parabéns por explorar o projeto emocionante de comunicação através do Código Morse com o Raspberry Pi Pico e um buzzer! Durante este capítulo, você descobriu como um pequeno dispositivo pode ser programado para emitir sons representando letras e números conforme o Código Morse.

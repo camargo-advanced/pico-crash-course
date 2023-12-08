@@ -188,6 +188,16 @@ flash_morse_code(code)
 
 Aqui, a função `flash_morse_code` é usada para fazer o LED piscar conforme o código Morse que acabamos de criar.
 
+### Exercícios
+
+#### Exercício 11.1: Mensagem Personalizada
+
+Modifique o código fornecido para que ele transmita uma mensagem diferente em Código Morse. Substitua a linha code = text_to_morse("Hello World") por code = text_to_morse("SOS") para representar a mensagem "SOS". Execute o código e veja como a mensagem é transmitida através dos flashes do LED e dos sons do buzzer.
+
+#### Exercício 11.2: Piscar um LED com Código Morse
+
+Altere o código fornecido, acrescente o caractere "@" ao dicionário `morse_code` e defina a sequência de código morse como "... --- ...". Utilize a função `flash_morse_code` para fazer o LED piscar de acordo com a sequência de código morse definida. Execute o programa e observe o LED piscando de acordo com o código morse predefinido.
+
 ### Conclusão
 
 Neste capítulo, exploramos o Código Morse, um sistema revolucionário de comunicação desenvolvido por Samuel Morse no século 19. Ele usou pontos e traços para representar letras, números e símbolos, permitindo mensagens à distância através de fios telegráficos.

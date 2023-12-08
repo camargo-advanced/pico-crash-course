@@ -151,7 +151,26 @@ Vocês já perceberam que, ao girar o potenciômetro para aumentar a velocidade 
 
 > **`Atenção`**: Você pode conectar mais LEDs a essa sequência se desejar. Apenas adicione mais elementos `Pin` à lista `leds`. O restante do código não precisa ser alterado. E claro, não esqueça de ajustar o circuito físico com os novos LEDs e resistores conectados corretamente !
 
-# Conclusão
+### Exercícios
+
+#### Exercício 10.1: Manipulação de Lista
+
+Crie uma lista de compras com pelo menos cinco itens. Em seguida, realize as seguintes operações:
+
+- Adicione um novo item à lista.
+- Remova um item da lista.
+- Atualize o valor de um item específico na lista.
+- Imprima a lista atualizada.
+
+#### Exercício 10.2: Loop `for` em Listas
+
+Crie uma lista de números inteiros de 1 a 10. Utilizando um loop `for`, itere sobre essa lista e calcule o quadrado de cada número. Imprima os números originais e seus respectivos quadrados.
+
+#### Exercício 10.3: Controle de LEDs com Loop `for`
+
+Utilize o código fornecido no capítulo para controlar três LEDs conectados ao Raspberry Pi Pico. Modifique o código para adicionar um novo LED à sequência (pino `GP16`). Altere a lógica do loop para que esse novo LED pisque em um padrão diferente dos outros três LEDs. Execute o código e observe o comportamento dos LEDs.
+
+### Conclusão
 
 Neste capítulo, mergulhamos em um novo conceito em MicroPython chamado Listas e exploramos como elas são cruciais para organizar e manipular dados em Python. Compreendemos como as listas podem armazenar uma coleção de itens e como podemos acessar, modificar, adicionar e remover elementos dentro delas. A utilização das listas se mostra essencial para gerenciar informações de maneira eficiente em nossos programas.
 

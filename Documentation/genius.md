@@ -536,6 +536,20 @@ Este bloco avalia se a jogada do jogador está correta.
   - Reinicia o nível de dificuldade para 3.
   - Define `new_game` como `True` para iniciar um novo jogo.
 
+### Exercícios
+
+#### Exercício 16.1: Adicionar um Novo Som
+
+Experimente trocar a frequencia de uma das notas musicais utilizadas no jogo. Jogue e verifique a mudança na usabilidade do jogo.
+
+#### Exercício 16.2: Implementar Pontuação
+
+Adicione um sistema de pontuação ao jogo para rastrear o desempenho do jogador. Faça o seguinte:
+
+- Introduza uma variável de pontuação e atualize-a conforme o jogador avança no jogo.
+- Aumente a pontuação sempre que o jogador acertar a sequência correta e diminua a pontuação ou reinicie-a se o jogador cometer um erro.
+- Exiba a pontuação em um display OLED para que o jogador possa acompanhar seu progresso.
+
 ### Conclusão
 
 Maravilha! Chegamos ao fim! Parabéns por essa incrível jornada! Durante esse projeto, você mergulhou fundo no mundo da eletrônica e programação, explorando o jogo Genius com a Raspberry Pi Pico e o MicroPython. Ao longo desse caminho, você enfrentou desafios empolgantes e adquiriu conhecimentos valiosos.

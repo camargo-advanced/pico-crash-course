@@ -238,7 +238,21 @@ song = [
 
 Você pode substituir a variável `song` por qualquer uma dessas listas de notas para tocar a música correspondente. 
 
-### Concllusão
+### Exercícios
+
+#### Exercício 13.1: Alteração de Notas
+
+Experimente alterar a melodia no código fornecido para tocar uma música diferente, como "Happy Birthday", "Jingle Bells" ou qualquer outra melodia conhecida. Substitua a lista `song` por uma nova sequência de notas da música desejada, seguindo o padrão de notas e pausas utilizado no exemplo.
+
+#### Exercício 13.2: Criar uma Melodia
+
+Desafie-se a criar sua própria melodia! Escolha uma sequência de notas musicais para formar uma melodia simples e substitua a lista `song` no código original pela sua sequência de notas personalizada. Execute o código no Raspberry Pi Pico para ouvir sua composição musical reproduzida pelo buzzer.
+
+#### Exercício 13.3: Ritmo Personalizado
+
+Altere a duração de algumas notas na sequência para criar um ritmo diferente. Experimente modificar o tempo de algumas notas (alterando os valores de pausa) para variar o ritmo da melodia e dar-lhe uma sensação única.
+
+### Conclusão
 
 Nesse capítulo você explorou o mundo emocionante da criação musical. O buzzer é um dispositivo que, quando conectado ao Raspberry Pi Pico, pode produzir melodias e efeitos sonoros fascinantes.
 

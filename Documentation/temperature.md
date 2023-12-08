@@ -159,6 +159,12 @@ Esse trecho de código atualiza o display OLED com informações da temperatura.
 
 - `sleep_ms(500)` é uma função que faz o programa aguardar por 500 milissegundos (ou meio segundo) antes de continuar. Essa pausa é útil para controlar a frequência com que as informações são atualizadas no display. No caso, após exibir as informações, o programa espera meio segundo antes de realizar o próximo ciclo de leitura e exibição de temperatura.
 
+### Exercícios
+
+#### Exercício 15.1: Implementando um sistema de alarme de temperatura
+
+Desenvolva um sistema de alarme que acenda um LED conectado ao Raspberry Pi Pico sempre que a temperatura exceder um determinado limite. Utilize uma lógica simples para comparar a temperatura lida pelo sensor com um valor definido por você. Quando a temperatura ultrapassar esse limite, o LED deve acender, indicando que a temperatura está acima do desejado.
+
 ### Conclusão
 
 Parabéns! Ao finalizar este projeto, você não apenas explorou o incrível potencial do Raspberry Pi Pico e do MicroPython, mas também mergulhou no universo fascinante da eletrônica e programação utilizando um display para apresentar informações. Nos vemos no próximo projeto!
