@@ -105,7 +105,7 @@ Aguarde a instalação ser concluída e clique em `Close`.
 
 > **`Atenção`**: Você não precisa atualizar o firmware toda vez que usar o seu Raspberry Pi Pico. Da próxima vez, você pode simplesmente conectá-lo ao seu computador sem pressionar o botão `BOOTSEL`.
 
-# Conclusão
+### Conclusão
 
 Parabéns por concluir a preparação do ambiente de desenvolvimento com sucesso! Durante este capítulo, você aprendeu a instalar o Thonny Python IDE em seu sistema operacional, explorou suas funcionalidades e até mesmo executou um código simples para verificar se tudo estava funcionando perfeitamente.
 

@@ -33,7 +33,18 @@ O importante é ser consistente: se você iniciou uma string com aspas simples, 
 
 As funções em Python, assim como na maioria das linguagens de programação, utilizam um par de parenteses `()` para indicar onde os argumentos devem ser colocados.  Por isso a string 'Hello World!' foi colocada dentro dos parênteses da função `print`.
 
-# Conclusão
+### Exercícios
+
+#### Exercício 4.1: Explorando o Shell Integrado
+
+Abra o Thonny e explore o shell Python integrado na parte inferior da interface.
+Experimente realizar operações matemáticas simples, como adição, subtração, multiplicação e divisão.
+
+#### Exercício 4.2: Escrevendo outras mensagens
+
+Mensagens Simples: Escreva um código Python que exiba mensagens simples, como "Olá, mundo!" ou seu próprio nome na tela.
+
+### Conclusão
 
 Parabéns por explorar e experimentar o poder da programação interativa com o Raspberry Pi Pico através do Thonny! Neste capítulo, você aprendeu a enviar comandos Python ao Raspberry Pi Pico, observando imediatamente suas saídas no Thonny. Compreendeu também a importância da função `print` em exibir mensagens e resultados na tela do seu computador, bem como o uso adequado de strings em Python para representar texto.
 
