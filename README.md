@@ -14,12 +14,6 @@ Este é mais do que um curso. É uma oportunidade para desencadear a sua criativ
 
 O curso é uma emocionante jornada dividida em diversos capítulos, cada um oferecendo uma nova descoberta e um desafio eletrizante. 
 
-Vamos dar uma espiada no que está por vir?
-
-## Sobre o Curso
-
-Este repositório contém o material para uma introdução básica porém abrangente sobre MicroPython usando o Raspberry Pi Pico. O objetivo é oferecer a você uma compreensão sólida do microcontrolador, desde a teoria básica até a criação de projetos práticos emocionantes.
-
 ## Contexto Atual e Objetivo do Curso
 
 Com a ascensão da computação física e a busca por soluções tecnológicas inovadoras, o domínio dos microcontroladores tornou-se crucial. Esse curso visa proporcionar a você as habilidades necessárias para explorar este mundo emergente. Com o Raspberry Pi Pico e o MicroPython, você aprenderá a programar e interagir com componentes eletrônicos de forma prática e divertida.
@@ -30,15 +24,23 @@ Este curso é ideal para entusiastas iniciantes, portanto, não há pré-requisi
 
 Embora não seja necessário ter experiência prévia em programação, algum conhecimento nessa área pode ser útil. Não é preciso ter conhecimento prévio em eletrônica, pois serão fornecidas orientações detalhadas sobre cada um dos componentes eletrônicos utilizados nos projetos.
 
-## Estrutura do Conteúdo
+## Abordagem utilizada
 
 Ao longo do curso, priorizamos a prática sobre a teoria. Cada capítulo apresenta uma seção teórica necessária para a compreensão do próximo projeto prático. Isso permite que você mergulhe diretamente nas experiências práticas, consolidando o aprendizado de forma eficaz.
+
+## Repositório Git
+
+Este repositório contém todo o material necessário para o curso.
+
+A pasta "Documentation" está organizada em capítulos para tornar mais fácil encontrar e estudar cada tópico do curso. Já as imagens associadas ao conteúdo estão na pasta "Images".
+
+Os códigos práticos que serão desenvolvidos estão disponíveis na pasta raiz para acesso rápido, apesar de também estarem integrados ao texto dos capítulos para sua comodidade.
 
 ## Organização do Curso
 
 Este curso é dividido em 16 capítulos, cada um projetado para ensinar conceitos essenciais e aplicá-los em projetos desafiadores. O tempo estimado para cada capítulo varia de acordo com o conteúdo, mas em média, pode levar de 1 a 2 horas para concluir, permitindo um aprendizado progressivo e prático.
 
-### Mapa de Exploração
+Vamos dar uma espiada no que está por vir?
 
 **Capítulo 1**: [O que é Raspberry Pi Pico?](/Documentation/what-is-pico.md) - Descubra o poder dessa pequena maravilha tecnológica que está prestes a se tornar sua melhor amiga no mundo da programação.
 
