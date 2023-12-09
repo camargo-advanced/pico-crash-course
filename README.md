@@ -42,37 +42,37 @@ Este curso é dividido em 16 capítulos, cada um projetado para ensinar conceito
 
 Vamos dar uma espiada no que está por vir?
 
-**Capítulo 1**: [O que é Raspberry Pi Pico?](/Documentation/what-is-pico.md) - Descubra o poder dessa pequena maravilha tecnológica que está prestes a se tornar sua melhor amiga no mundo da programação.
+**Capítulo 1**: [O que é Raspberry Pi Pico?](/Documentation/1-what-is-pico.md) - Descubra o poder dessa pequena maravilha tecnológica que está prestes a se tornar sua melhor amiga no mundo da programação.
 
-**Capítulo 2**: [O que é MicroPython?](/Documentation/what-is-micropython.md) - Descubra o mundo da computação física com MicroPython e mergulhe em um ambiente empolgante onde a fronteira entre software e hardware se dissipa.
+**Capítulo 2**: [O que é MicroPython?](/Documentation/2-what-is-micropython.md) - Descubra o mundo da computação física com MicroPython e mergulhe em um ambiente empolgante onde a fronteira entre software e hardware se dissipa.
 
-**Capítulo 3**: [Preparação do ambiente de desenvolvimento](/Documentation/environment-setup.md) - Prepare-se para a aventura! Vamos configurar o ambiente para iniciar nossa jornada de criação.
+**Capítulo 3**: [Preparação do ambiente de desenvolvimento](/Documentation/3-environment-setup.md) - Prepare-se para a aventura! Vamos configurar o ambiente para iniciar nossa jornada de criação.
 
-**Capítulo 4**: [Projeto "Hello World"](/Documentation/hello-world.md) - Dê seus primeiros passos, acenda sua imaginação e cumprimente o mundo da programação em Python!
+**Capítulo 4**: [Projeto "Hello World"](/Documentation/4-hello-world.md) - Dê seus primeiros passos, acenda sua imaginação e cumprimente o mundo da programação em Python!
 
-**Capítulo 5**: [Projeto Acendendo e piscando o LED embarcado](/Documentation/blinking-onboard-led.md) - Deixe a luz brilhar! Vamos fazer com que seu Pico ganhe vida com um show de luzes. Será esse o verdadeiro "Hello World" da computação física?
+**Capítulo 5**: [Projeto Acendendo e piscando o LED embarcado](/Documentation/5-blinking-onboard-led.md) - Deixe a luz brilhar! Vamos fazer com que seu Pico ganhe vida com um show de luzes. Será esse o verdadeiro "Hello World" da computação física?
 
-**Capítulo 6**: [Projeto Piscando um LED externo](/Documentation/blinking-external-led.md) - Expanda seus horizontes e descubra como controlar um LED externo.
+**Capítulo 6**: [Projeto Piscando um LED externo](/Documentation/6-blinking-external-led.md) - Expanda seus horizontes e descubra como controlar um LED externo.
 
-**Capítulo 7**: [Projeto Acionar um LED com um botão](/Documentation/led-push-button.md) - Vamos mergulhar no mundo dos botões e LEDs, combinando ação e reação.
+**Capítulo 7**: [Projeto Acionar um LED com um botão](/Documentation/7-led-push-button.md) - Vamos mergulhar no mundo dos botões e LEDs, combinando ação e reação.
 
-**Capítulo 8**: [Projeto Controle da intensidade do LED](/Documentation/pulsing-led.md) - Aprenda a controlar a intensidade das luzes e crie um espetáculo visual único.
+**Capítulo 8**: [Projeto Controle da intensidade do LED](/Documentation/8-pulsing-led.md) - Aprenda a controlar a intensidade das luzes e crie um espetáculo visual único.
 
-**Capítulo 9**: [Projeto Dimmer](/Documentation/dimmer.md) - Explore novos níveis de controle de luzes e transforme seu ambiente com a magia do dimmer.
+**Capítulo 9**: [Projeto Dimmer](/Documentation/9-dimmer.md) - Explore novos níveis de controle de luzes e transforme seu ambiente com a magia do dimmer.
 
-**Capítulo 10**: [Projeto LEDs piscando em sequência](/Documentation/sequencing-leds.md) - Prepare-se para um espetáculo de luzes sequenciais que irá hipnotizá-lo!
+**Capítulo 10**: [Projeto LEDs piscando em sequência](/Documentation/10-sequencing-leds.md) - Prepare-se para um espetáculo de luzes sequenciais que irá hipnotizá-lo!
 
-**Capítulo 11**: [Projeto Código Morse com um LED](/Documentation/morse-led.md) - Vamos codificar mensagens secretas com luzes - aventure-se no mundo da comunicação codificada!
+**Capítulo 11**: [Projeto Código Morse com um LED](/Documentation/11-morse-led.md) - Vamos codificar mensagens secretas com luzes - aventure-se no mundo da comunicação codificada!
 
-**Capítulo 12**: [Projeto Código morse com um Buzzer](/Documentation/morse-buzzer.md) - Explore um novo modo de transmitir mensagens em código Morse, mas dessa vez, com som!
+**Capítulo 12**: [Projeto Código morse com um Buzzer](/Documentation/12-morse-buzzer.md) - Explore um novo modo de transmitir mensagens em código Morse, mas dessa vez, com som!
 
-**Capítulo 13**: [Projeto Tocando músicas com um Buzzer](/Documentation/music-buzzer.md) - Dê vida à música com um simples buzzer. Será que você pode tocar suas músicas favoritas?
+**Capítulo 13**: [Projeto Tocando músicas com um Buzzer](/Documentation/13-music-buzzer.md) - Dê vida à música com um simples buzzer. Será que você pode tocar suas músicas favoritas?
 
-**Capítulo 14**: [Projeto Batalha dos Botões](/Documentation/button-battle.md) - É hora da competição! Descubra quem é o mestre dos cliques mais rápidos!
+**Capítulo 14**: [Projeto Batalha dos Botões](/Documentation/14-button-battle.md) - É hora da competição! Descubra quem é o mestre dos cliques mais rápidos!
 
-**Capítulo 15**: [Projeto Qual a temperatura?](/Documentation/temperature.md) - Vamos explorar sensores e descobrir como medir a temperatura ao nosso redor.
+**Capítulo 15**: [Projeto Qual a temperatura?](/Documentation/15-temperature.md) - Vamos explorar sensores e descobrir como medir a temperatura ao nosso redor.
 
-**Capítulo 16**: [Projeto Genius, o jogo de memória dos anos 80](/Documentation/genius.md) - Reviva a nostalgia dos jogos de memória com um toque tecnológico moderno!
+**Capítulo 16**: [Projeto Genius, o jogo de memória dos anos 80](/Documentation/16-genius.md) - Reviva a nostalgia dos jogos de memória com um toque tecnológico moderno!
 
 ## Início da Jornada
 
