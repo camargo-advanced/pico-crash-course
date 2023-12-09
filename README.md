@@ -12,47 +12,71 @@ Durante esta jornada, vamos mergulhar no mundo fascinante dos microcontroladores
 
 Este é mais do que um curso. É uma oportunidade para desencadear a sua criatividade, explorar novas fronteiras da tecnologia e moldar o futuro com as suas próprias mãos. Junte-se a nós nesta incrível aventura eletrônica - o que você vai criar está limitado apenas pela sua imaginação! 
 
-O curso é uma emocionante jornada dividida em diversos capítulos, cada um oferecendo uma nova descoberta e um desafio eletrizante. Vamos dar uma espiada no que está por vir?
+O curso é uma emocionante jornada dividida em diversos capítulos, cada um oferecendo uma nova descoberta e um desafio eletrizante. 
 
-Mapa de Exploração:
+Vamos dar uma espiada no que está por vir?
 
-Capítulo 1: [O que é Raspberry Pi Pico?](/Documentation/what-is-pico.md) - Descubra o poder dessa pequena maravilha tecnológica que está prestes a se tornar sua melhor amiga no mundo da programação.
+## Sobre o Curso
 
-Capítulo 2: [O que é MicroPython?](/Documentation/what-is-micropython.md) - Descubra o mundo da computação física com MicroPython e mergulhe em um ambiente empolgante onde a fronteira entre software e hardware se dissipa.
+Este repositório contém o material para uma introdução básica porém abrangente sobre MicroPython usando o Raspberry Pi Pico. O objetivo é oferecer a você uma compreensão sólida do microcontrolador, desde a teoria básica até a criação de projetos práticos emocionantes.
 
-Capítulo 3: [Preparação do ambiente de desenvolvimento](/Documentation/environment-setup.md) - Prepare-se para a aventura! Vamos configurar o ambiente para iniciar nossa jornada de criação.
+## Contexto Atual e Objetivo do Curso
 
-Capítulo 4: [Projeto "Hello World"](/Documentation/hello-world.md) - Dê seus primeiros passos, acenda sua imaginação e cumprimente o mundo da programação em Python!
+Com a ascensão da computação física e a busca por soluções tecnológicas inovadoras, o domínio dos microcontroladores tornou-se crucial. Esse curso visa proporcionar a você as habilidades necessárias para explorar este mundo emergente. Com o Raspberry Pi Pico e o MicroPython, você aprenderá a programar e interagir com componentes eletrônicos de forma prática e divertida.
 
-Capítulo 5: [Projeto Acendendo e piscando o LED embarcado](/Documentation/blinking-onboard-led.md) - Deixe a luz brilhar! Vamos fazer com que seu Pico ganhe vida com um show de luzes. Será esse o verdadeiro "Hello World" da computação física?
+## Pré-requisitos
 
-Capítulo 6: [Projeto Piscando um LED externo](/Documentation/blinking-external-led.md) - Expanda seus horizontes e descubra como controlar um LED externo.
+Este curso é ideal para entusiastas iniciantes, portanto, não há pré-requisitos necessários. O conteúdo foi preparado com foco em adolescentes a partir de 15 anos, mas é aplicável e acessível para qualquer pessoa interessada no assunto, inclusive profissionais experientes, como uma introdução ao tema.
 
-Capítulo 7: [Projeto Acionar um LED com um botão](/Documentation/led-push-button.md) - Vamos mergulhar no mundo dos botões e LEDs, combinando ação e reação.
+Embora não seja necessário ter experiência prévia em programação, algum conhecimento nessa área pode ser útil. Não é preciso ter conhecimento prévio em eletrônica, pois serão fornecidas orientações detalhadas sobre cada um dos componentes eletrônicos utilizados nos projetos.
 
-Capítulo 8: [Projeto Controle da intensidade do LED](/Documentation/pulsing-led.md) - Aprenda a controlar a intensidade das luzes e crie um espetáculo visual único.
+## Estrutura do Conteúdo
 
-Capítulo 9: [Projeto Dimmer](/Documentation/dimmer.md) - Explore novos níveis de controle de luzes e transforme seu ambiente com a magia do dimmer.
+Ao longo do curso, priorizamos a prática sobre a teoria. Cada capítulo apresenta uma seção teórica necessária para a compreensão do próximo projeto prático. Isso permite que você mergulhe diretamente nas experiências práticas, consolidando o aprendizado de forma eficaz.
 
-Capítulo 10: [Projeto LEDs piscando em sequência](/Documentation/sequencing-leds.md) - Prepare-se para um espetáculo de luzes sequenciais que irá hipnotizá-lo!
+## Organização do Curso
 
-Capítulo 11: [Projeto Código Morse com um LED](/Documentation/morse-led.md) - Vamos codificar mensagens secretas com luzes - aventure-se no mundo da comunicação codificada!
+Este curso é dividido em 16 capítulos, cada um projetado para ensinar conceitos essenciais e aplicá-los em projetos desafiadores. O tempo estimado para cada capítulo varia de acordo com o conteúdo, mas em média, pode levar de 1 a 2 horas para concluir, permitindo um aprendizado progressivo e prático.
 
-Capítulo 12: [Projeto Código morse com um Buzzer](/Documentation/morse-buzzer.md) - Explore um novo modo de transmitir mensagens em código Morse, mas dessa vez, com som!
+### Mapa de Exploração
 
-Capítulo 13: [Projeto Tocando músicas com um Buzzer](/Documentation/music-buzzer.md) - Dê vida à música com um simples buzzer. Será que você pode tocar suas músicas favoritas?
+**Capítulo 1**: [O que é Raspberry Pi Pico?](/Documentation/what-is-pico.md) - Descubra o poder dessa pequena maravilha tecnológica que está prestes a se tornar sua melhor amiga no mundo da programação.
 
-Capítulo 14: [Projeto Batalha dos Botões](/Documentation/button-battle.md) - É hora da competição! Descubra quem é o mestre dos cliques mais rápidos!
+**Capítulo 2**: [O que é MicroPython?](/Documentation/what-is-micropython.md) - Descubra o mundo da computação física com MicroPython e mergulhe em um ambiente empolgante onde a fronteira entre software e hardware se dissipa.
 
-Capítulo 15: [Projeto Qual a temperatura?](/Documentation/temperature.md) - Vamos explorar sensores e descobrir como medir a temperatura ao nosso redor.
+**Capítulo 3**: [Preparação do ambiente de desenvolvimento](/Documentation/environment-setup.md) - Prepare-se para a aventura! Vamos configurar o ambiente para iniciar nossa jornada de criação.
 
-Capítulo 16: [Projeto Genius, o jogo de memória dos anos 80](/Documentation/genius.md) - Reviva a nostalgia dos jogos de memória com um toque tecnológico moderno!
+**Capítulo 4**: [Projeto "Hello World"](/Documentation/hello-world.md) - Dê seus primeiros passos, acenda sua imaginação e cumprimente o mundo da programação em Python!
 
-Durante o curso estudaremos apenas a teoria necessária para executar o próximo projeto, permitindo que você mergulhe diretamente nas experiências práticas. 
+**Capítulo 5**: [Projeto Acendendo e piscando o LED embarcado](/Documentation/blinking-onboard-led.md) - Deixe a luz brilhar! Vamos fazer com que seu Pico ganhe vida com um show de luzes. Será esse o verdadeiro "Hello World" da computação física?
 
-Prepare-se para embarcar nessa jornada incrível, onde você será o protagonista, criando e descobrindo novas maravilhas eletrônicas a cada capítulo. 
+**Capítulo 6**: [Projeto Piscando um LED externo](/Documentation/blinking-external-led.md) - Expanda seus horizontes e descubra como controlar um LED externo.
 
-Vamos nessa? 
+**Capítulo 7**: [Projeto Acionar um LED com um botão](/Documentation/led-push-button.md) - Vamos mergulhar no mundo dos botões e LEDs, combinando ação e reação.
+
+**Capítulo 8**: [Projeto Controle da intensidade do LED](/Documentation/pulsing-led.md) - Aprenda a controlar a intensidade das luzes e crie um espetáculo visual único.
+
+**Capítulo 9**: [Projeto Dimmer](/Documentation/dimmer.md) - Explore novos níveis de controle de luzes e transforme seu ambiente com a magia do dimmer.
+
+**Capítulo 10**: [Projeto LEDs piscando em sequência](/Documentation/sequencing-leds.md) - Prepare-se para um espetáculo de luzes sequenciais que irá hipnotizá-lo!
+
+**Capítulo 11**: [Projeto Código Morse com um LED](/Documentation/morse-led.md) - Vamos codificar mensagens secretas com luzes - aventure-se no mundo da comunicação codificada!
+
+**Capítulo 12**: [Projeto Código morse com um Buzzer](/Documentation/morse-buzzer.md) - Explore um novo modo de transmitir mensagens em código Morse, mas dessa vez, com som!
+
+**Capítulo 13**: [Projeto Tocando músicas com um Buzzer](/Documentation/music-buzzer.md) - Dê vida à música com um simples buzzer. Será que você pode tocar suas músicas favoritas?
+
+**Capítulo 14**: [Projeto Batalha dos Botões](/Documentation/button-battle.md) - É hora da competição! Descubra quem é o mestre dos cliques mais rápidos!
+
+**Capítulo 15**: [Projeto Qual a temperatura?](/Documentation/temperature.md) - Vamos explorar sensores e descobrir como medir a temperatura ao nosso redor.
+
+**Capítulo 16**: [Projeto Genius, o jogo de memória dos anos 80](/Documentation/genius.md) - Reviva a nostalgia dos jogos de memória com um toque tecnológico moderno!
+
+## Início da Jornada
+
+Estamos ansiosos para embarcar nessa jornada eletrônica ao seu lado. Prepare-se para se tornar o protagonista, criando e descobrindo novas maravilhas eletrônicas a cada capítulo.
+
+Vamos juntos nessa?
 
 *****
 
