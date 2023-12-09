@@ -1,6 +1,6 @@
-# Pico Crash Course: Introdução à MicroPython com Raspberry Pi Pico
+# 🚀 Pico Crash Course: Introdução à MicroPython com Raspberry Pi Pico
 
-Bem-vindo!
+Bem-vindo! 👋
 
 Você já parou para pensar no vasto mundo dos computadores para além daqueles que ocupam um espaço fixo na sua mesa? Bem-vindo a uma jornada emocionante pelo universo dos microcontroladores - pequenas e poderosas unidades de processamento! Se você adora a ideia de dar vida a dispositivos e criar tecnologias incríveis, este curso é perfeito para você!
 
@@ -14,21 +14,21 @@ Este é mais do que um curso. É uma oportunidade para desencadear a sua criativ
 
 O curso é uma emocionante jornada dividida em diversos capítulos, cada um oferecendo uma nova descoberta e um desafio eletrizante. 
 
-## Contexto Atual e Objetivo do Curso
+## 🎯 Contexto Atual e Objetivo do Curso
 
 Com a ascensão da computação física e a busca por soluções tecnológicas inovadoras, o domínio dos microcontroladores tornou-se crucial. Esse curso visa proporcionar a você as habilidades necessárias para explorar este mundo emergente. Com o Raspberry Pi Pico e o MicroPython, você aprenderá a programar e interagir com componentes eletrônicos de forma prática e divertida.
 
-## Pré-requisitos
+## 📚 Pré-requisitos
 
 Este curso é ideal para entusiastas iniciantes, portanto, não há pré-requisitos necessários. O conteúdo foi preparado com foco em adolescentes a partir de 15 anos, mas é aplicável e acessível para qualquer pessoa interessada no assunto, inclusive profissionais experientes, como uma introdução ao tema.
 
 Embora não seja necessário ter experiência prévia em programação, algum conhecimento nessa área pode ser útil. Não é preciso ter conhecimento prévio em eletrônica, pois serão fornecidas orientações detalhadas sobre cada um dos componentes eletrônicos utilizados nos projetos.
 
-## Abordagem utilizada
+## 🛠️ Abordagem utilizada
 
 Ao longo do curso, priorizamos a prática sobre a teoria. Cada capítulo apresenta uma seção teórica necessária para a compreensão do próximo projeto prático. Isso permite que você mergulhe diretamente nas experiências práticas, consolidando o aprendizado de forma eficaz.
 
-## Repositório Git
+## 📂 Repositório Git
 
 Este repositório contém todo o material necessário para o curso.
 
@@ -36,7 +36,7 @@ A pasta "Documentation" está organizada em capítulos para tornar mais fácil e
 
 Os códigos práticos que serão desenvolvidos estão disponíveis na pasta raiz para acesso rápido, apesar de também estarem integrados ao texto dos capítulos para sua comodidade.
 
-## Organização do Curso
+## 📖 Organização do Curso
 
 Este curso é dividido em 16 capítulos, cada um projetado para ensinar conceitos essenciais e aplicá-los em projetos desafiadores. O tempo estimado para cada capítulo varia de acordo com o conteúdo, mas em média, pode levar de 1 a 2 horas para concluir, permitindo um aprendizado progressivo e prático.
 
@@ -74,7 +74,7 @@ Vamos dar uma espiada no que está por vir?
 
 **Capítulo 16**: [Projeto Genius, o jogo de memória dos anos 80](/Documentation/16-genius.md) - Reviva a nostalgia dos jogos de memória com um toque tecnológico moderno!
 
-## Início da Jornada
+## 🚀 Início da Jornada
 
 Estamos ansiosos para embarcar nessa jornada eletrônica ao seu lado. Prepare-se para se tornar o protagonista, criando e descobrindo novas maravilhas eletrônicas a cada capítulo.
 
