@@ -105,6 +105,28 @@ Aguarde a instalação ser concluída e clique em `Close`.
 
 > **`Atenção`**: Você não precisa atualizar o firmware toda vez que usar o seu Raspberry Pi Pico. Da próxima vez, você pode simplesmente conectá-lo ao seu computador sem pressionar o botão `BOOTSEL`.
 
+### Exercícios
+
+#### Exercício 3.1
+
+Como o Thonny Python IDE é descrito no texto e quais são as suas principais funcionalidades que o tornam uma ferramenta útil para quem está começando a aprender Python?
+
+#### Exercício 3.2
+
+Por que o MicroPython é considerado uma versão "enxuta" e especializada do Python tradicional? Que vantagens ele oferece ao ser utilizado em placas de microcontrolador, como o Raspberry Pi Pico?
+
+#### Exercício 3.3
+
+Quais são os passos necessários para instalar o Thonny Python IDE? Descreva as etapas para realizar a instalação e explicar como confirmar se foi instalado corretamente.
+
+#### Exercício 3.4
+
+Por que é importante adicionar o firmware MicroPython ao Raspberry Pi Pico? Descreva o procedimento para inserir o firmware no dispositivo, destacando os cuidados necessários durante esse processo.
+
+#### Exercício 3.5
+
+Quais são os principais objetivos e conclusões deste capítulo em relação à preparação do ambiente de desenvolvimento? Descreva o que aprendeu sobre o Thonny, a conexão do Raspberry Pi Pico e a instalação do firmware MicroPython.
+
 ### Conclusão
 
 Parabéns por concluir a preparação do ambiente de desenvolvimento com sucesso! Durante este capítulo, você aprendeu a instalar o Thonny Python IDE em seu sistema operacional, explorou suas funcionalidades e até mesmo executou um código simples para verificar se tudo estava funcionando perfeitamente.
