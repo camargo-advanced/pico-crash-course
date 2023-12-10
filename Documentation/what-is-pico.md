@@ -30,6 +30,28 @@ Ao girar o Pico, os rótulos nos pinos indicam suas funções principais, como `
 
 Perceba que um mesmo pino pode ter várias funções. Por exemplo, o pino `GP27` pode ser utilizado tanto como GPIO e PWM, sendo chamado de `GP27` nesses casos. Este mesmo pino também pode ser usado como ADC, sendo então referido como `ADC1`. Além disso, este pino pode desempenhar a função de I2C, sendo denominado `I2C1 SCL`. Em resumo, um único pino pode ser designado por vários nomes conforme a função que estiver sendo utilizada. Não se preocupe em compreender essas funções agora, pois as abordaremos em detalhes durante este curso. O importante é lembrar que um mesmo pino pode ser referenciado por mais de um nome ao longo desse curso.
 
+### Exercícios
+
+#### Exercício 1.1
+
+O que distingue o Raspberry Pi Pico de um computador pessoal (PC) convencional e como isso influencia seu uso?
+
+#### Exercício 1.2
+
+Explique, de forma simples, o que é um microcontrolador e como ele se relaciona com o Raspberry Pi Pico.
+
+#### Exercício 1.3
+
+Por que o conhecimento sobre pinos de Entrada/Saída (I/O) no Raspberry Pi Pico é crucial para projetos de computação física?
+
+#### Exercício 1.4
+
+Como a porta micro USB no Raspberry Pi Pico é utilizada em sua funcionalidade principal?
+
+#### Exercício 1.5
+
+Por que é importante entender os diferentes rótulos e funções dos pinos do Pico ao desenvolver projetos com ele?
+
 ### Conclusão
 
 Agora que você entendeu um pouco mais sobre o Raspberry Pi Pico, é possível perceber o incrível potencial dessa maravilha em miniatura. Este microcontrolador não só permite explorar os fundamentos da computação física, mas também representa uma entrada emocionante para o vasto mundo da programação.

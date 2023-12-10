@@ -12,6 +12,28 @@ A grande sacada do MicroPython é que ela oferece a simplicidade e a facilidade 
 
 O MicroPython é como uma varinha mágica que transforma linhas de código em ações reais. Imagine criar um programa simples para acender LEDs em sequência, controlar um robô ou até mesmo monitorar sensores de temperatura e umidade – tudo isso com a facilidade da linguagem Python e a potência do MicroPython.
 
+### Exercícios
+
+#### Exercício 2.1
+
+Qual é a diferença entre a linguagem Python convencional e o MicroPython em termos de otimização para microcontroladores como o Raspberry Pi Pico?
+
+#### Exercício 2.2
+
+Como o MicroPython é comparado ao Python tradicional em termos de familiaridade para quem já programou antes? E para quem está começando na programação, como é a curva de aprendizado?
+
+#### Exercício 2.3
+
+Quais são as principais vantagens de usar o MicroPython em dispositivos com recursos limitados, como microcontroladores, em comparação com outras linguagens de programação?
+
+#### Exercício 2.4
+
+Dê exemplos práticos de como o MicroPython pode ser aplicado em projetos do mundo real envolvendo controle de dispositivos eletrônicos.
+
+#### Exercício 2.5
+
+Como a capacidade do MicroPython de transformar linhas de código em ações reais pode ser explorada em projetos de automação residencial ou criação de dispositivos interativos?
+
 ### Conclusão 
 
 Prepare-se para explorar um universo onde a criatividade não tem limites! Com MicroPython, você será capaz de criar projetos impressionantes, desde robôs inteligentes até dispositivos para automação residencial. Estamos prestes a decolar em uma aventura fascinante, e você está convidado a se juntar a nós nessa jornada de descobertas e criações incríveis. Vamos lá!
