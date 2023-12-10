@@ -28,7 +28,7 @@ A imagem que segue apresenta uma forma de se montar esse cicuito na placa de pro
 
 > **`Importante`**: O buzzer, assim como o LED, possui uma perna mais longa que deve ser conectada a tensão mais alta gerada por um pino do seu pico. Lembre-se de sempre considerar essa regra para não queimar o componente.
 
-Após conectar o buzzer, adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `morse_led_buzzer.py` e depois execute-o. 
+Após conectar o buzzer, adicione este código a um novo arquivo no Thonny, salve-o em seu Raspberry Pi Pico como `morse-led-buzzer.py` e depois execute-o. 
 
 Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382822078849464321).
 
