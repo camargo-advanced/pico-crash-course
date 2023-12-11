@@ -159,13 +159,17 @@ Altere o texto para outras palavras e frases e veja o resultado. Por exemplo, vo
 
 ### Exercícios
 
-#### Exercício 12.1: Nova Tradução Morse
+#### Exercício 12.1: Sinais de Pausa
 
-Adicione novos caracteres ao dicionário morse_code para expandir a funcionalidade do Código Morse utilizado no programa. Experimente adicionar símbolos de pontuação, caracteres especiais ou até mesmo letras acentuadas. Use o padrão existente como referência para criar novas representações em Código Morse para os caracteres adicionais.
+Acrescente um novo caractere, como o ponto-e-vírgula (;), ao dicionário `morse_code` e defina sua representação em Código Morse como uma pausa longa entre palavras. Modifique um texto para incluir essa pausa e observe como ela é representada tanto no LED quanto no buzzer.
 
 #### Exercício 12.2: Frases Longas
 
 Altere o texto fornecido para uma frase mais longa, como "Hello from the Raspberry Pi World", e observe como a tradução em Código Morse é transmitida pelo LED e buzzer. Experimente enviar mensagens mais complexas e verifique como o código representa cada letra e palavra na comunicação em Código Morse.
+
+#### Exercício 12.3: Sons Personalizados
+
+Modifique a função `flash_morse_code` para criar tons diferentes no buzzer para representar os pontos e traços do Código Morse. Experimente usar frequências diferentes para cada ponto e traço. Por exemplo, faça o ponto ter uma frequência de 1000 Hz e o traço de 2000 Hz.
 
 ### Conclusão
 

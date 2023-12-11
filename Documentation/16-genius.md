@@ -544,11 +544,11 @@ Experimente trocar a frequencia de uma das notas musicais utilizadas no jogo. Jo
 
 #### Exercício 16.2: Implementar Pontuação
 
-Adicione um sistema de pontuação ao jogo para rastrear o desempenho do jogador. Faça o seguinte:
+Introduza uma representação visual da pontuação. Utilize um display OLED para exibir a pontuação atual do jogador enquanto ele avança no jogo.
 
-- Introduza uma variável de pontuação e atualize-a conforme o jogador avança no jogo.
-- Aumente a pontuação sempre que o jogador acertar a sequência correta e diminua a pontuação ou reinicie-a se o jogador cometer um erro.
-- Exiba a pontuação em um display OLED para que o jogador possa acompanhar seu progresso.
+#### Exercício 16.3: Modificação da Velocidade da Sequência
+
+Altere a velocidade com que as luzes da sequência são exibidas. Experimente aumentar ou diminuir a duração de exibição de cada cor na sequência para aumentar o desafio ou facilitar o jogo.
 
 ### Conclusão
 

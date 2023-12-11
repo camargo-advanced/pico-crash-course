@@ -110,6 +110,14 @@ Escreva um código que leia os valores do potenciômetro e mapeie esses valores 
 
 Experimente ajustar o mapeamento dos valores do potenciômetro para diferentes faixas de brilho e observe como o LED responde a essas mudanças.
 
+#### Exercício 9.2: Inversão do Controle do LED
+
+Escreva um código que inverta o controle do LED em relação ao potenciômetro. Por exemplo, quando o potenciômetro estiver no mínimo, o LED estará no máximo de brilho, e vice-versa. Experimente com diferentes tipos de inversão para explorar como isso afeta o comportamento do LED.
+
+#### Exercício 9.3: LED Pulsante com Controle do Potenciômetro
+
+Crie um código que faça o LED piscar e, ao mesmo tempo, permita que o potenciômetro controle a intensidade do brilho durante esse piscar. Combine o código de controle do LED pulsante com a leitura do potenciômetro para criar um efeito visual interessante.
+
 ### Conclusão
 
 Exploramos o papel fundamental do potenciômetro como uma valiosa ferramenta para controlar o brilho de um LED através da leitura de sinais analógicos. Compreendemos sua analogia com uma torneira, regulando o fluxo de eletricidade e, consequentemente, a intensidade luminosa do LED.
