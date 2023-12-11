@@ -63,6 +63,18 @@ Desafie-se a modificar o código para que o LED pisque em intervalos de tempo di
 
 Modifique o código para que o LED permaneça aceso enquanto o botão estiver pressionado e se apague quando o botão for solto. Esta mudança requer alterações na lógica do código para controlar o estado do LED com base na leitura contínua do botão.
 
+#### Exercício 7.3: Botão Invertido
+
+Altere a lógica do botão para funcionar invertido. Ou seja, o LED deve piscar quando o botão não estiver pressionado e permanecer aceso quando pressionado.
+
+#### Exercício 7.4: Piscar LEDs alternadamente
+
+Adicione um segundo LED ao circuito e altere o código para fazer com que os LEDs pisquem alternadamente quando o botão for pressionado.
+
+#### Exercício 7.5: Botão de Desligamento
+
+Modifique o código para usar o botão como um interruptor. Pressionar o botão liga o LED e mantém aceso até que o botão seja pressionado novamente para desligá-lo.
+
 ### Conclusão
 
 E assim, concluímos mais um capítulo repleto de descobertas fascinantes no mundo da eletrônica e programação. Ao controlar um LED com um botão, mergulhamos nas nuances da programação em MicroPython e na interação de componentes eletrônicos, transformando conceitos teóricos em experiências tangíveis.

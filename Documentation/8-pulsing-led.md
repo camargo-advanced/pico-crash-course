@@ -141,13 +141,17 @@ Experimente brincar com os valores de frequência, ciclo de trabalho, assim como
 
 ### Exercícios
 
-#### Exercício 8.1: Pulsar do LED
+#### Exercício 8.1: Pulsar do LED em 5 Hz
 
 Escreva um código que faça o LED pulsar a uma frequência de 5 Hz.
 
 Experimente diferentes valores de ciclo de trabalho para variar a intensidade do brilho durante o pulsar.
 
-#### Exercício 8.2: Frequência Variável do LED
+#### Exercício 8.2: Pulsar em Ritmo de Coração
+
+Desenvolva um código que simule o ritmo de um batimento cardíaco com o LED. Faça o LED pulsar em um ritmo específico que imite um batimento cardíaco em repouso: aproximadamente 70 batimentos por minuto.
+
+#### Exercício 8.3: Frequência Variável do LED
 
 Escreva um código que permita variar a frequência do pulsar do LED de 2 Hz para 10 Hz em intervalos de 2 Hz.
 

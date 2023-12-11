@@ -165,6 +165,14 @@ Esse trecho de código atualiza o display OLED com informações da temperatura.
 
 Desenvolva um sistema de alarme que acenda um LED conectado ao Raspberry Pi Pico sempre que a temperatura exceder um determinado limite. Utilize uma lógica simples para comparar a temperatura lida pelo sensor com um valor definido por você. Quando a temperatura ultrapassar esse limite, o LED deve acender, indicando que a temperatura está acima do desejado.
 
+#### Exercício 15.2: Conversão para Fahrenheit
+
+Modifique o código para calcular e exibir a temperatura em graus Fahrenheit ao invés de Celsius. Utilize a fórmula de conversão de temperatura de Celsius para Fahrenheit: F = C * 9/5 + 32, onde F é a temperatura em Fahrenheit e C é a temperatura em Celsius.
+
+#### Exercício 15.3: Display de Mais Informações
+
+Expanda o código para exibir mais informações no display OLED. Além da temperatura em Celcius, mostre também em Fahrenheit simultaneamente.
+
 ### Conclusão
 
 Parabéns! Ao finalizar este projeto, você não apenas explorou o incrível potencial do Raspberry Pi Pico e do MicroPython, mas também mergulhou no universo fascinante da eletrônica e programação utilizando um display para apresentar informações. Nos vemos no próximo projeto!

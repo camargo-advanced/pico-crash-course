@@ -129,6 +129,23 @@ Salve o seu programa no seu Raspberry Pi Pico com o nome de `blink1.py`. Execute
 
 Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382840288712936449).
 
+### Exercícios
+
+#### Exercício 6.1: Piscando em 1 Hz
+
+Faça uma modificação no programa fornecido para alterar a frequência de piscar do LED para 1 Hz (um piscar por segundo) e teste o circuito.
+
+#### Exercício 6.2: Limitação de corrente com resitor
+
+Qual desses dois resistores de valores diferentes (100Ω e 220Ω) limita mais a corrente elétrica em um circuito com um LED?
+
+#### Exercício 6.3: Calculando o valor de um resistor
+
+Calcule o valor da resistência necessária para limitar a corrente em um LED com as seguintes características técnicas no seu datasheet: 
+- forward voltage = 1,8 V
+- forward current = 20 mA
+- tensão de fornecimento de 5 V
+
 ### Conclusão
 
 Neste capítulo, exploramos os fascinantes princípios da eletricidade e dos circuitos, mergulhando no mundo da energia controlada e das maravilhas dos elétrons. Compreendemos como a eletricidade flui por meio de circuitos, alimentando nossos projetos como uma mágica invisível. Desde a explicação dos LEDs até o uso de placas de prototipagem e resistores, cada componente desempenha um papel vital na construção e segurança dos circuitos.

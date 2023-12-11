@@ -38,11 +38,21 @@ As funções em Python, assim como na maioria das linguagens de programação, u
 #### Exercício 4.1: Explorando o Shell Integrado
 
 Abra o Thonny e explore o shell Python integrado na parte inferior da interface.
-Experimente realizar operações matemáticas simples, como adição, subtração, multiplicação e divisão.
+Utilizando o shell Python integrado no Thonny, realize as seguintes operações matemáticas:
+- Adição de dois números inteiros.
+- Subtração de dois números inteiros.
+- Multiplicação de dois números inteiros.
+- Divisão de dois números inteiros.
+
+Experimente realizar operações matemáticas simples. O que acontece se você dividir um número por zero?
 
 #### Exercício 4.2: Escrevendo outras mensagens
 
-Mensagens Simples: Escreva um código Python que exiba mensagens simples, como "Olá, mundo!" ou seu próprio nome na tela.
+Escreva um código Python que exiba mensagens simples, como "Olá, mundo!" ou seu próprio nome na tela, assim como uma mensagem de saudação para o seu dia.
+
+#### Exercício 4.3: Calculando a média aritmética
+
+Utilize o shell do Thonny para calcular a média entre 3 números inteiros.
 
 ### Conclusão
 

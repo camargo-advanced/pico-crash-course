@@ -194,9 +194,13 @@ Aqui, a função `flash_morse_code` é usada para fazer o LED piscar conforme o 
 
 Modifique o código fornecido para que ele transmita uma mensagem diferente em Código Morse. Substitua a linha code = text_to_morse("Hello World") por code = text_to_morse("SOS") para representar a mensagem "SOS". Execute o código e veja como a mensagem é transmitida através dos flashes do LED e dos sons do buzzer.
 
-#### Exercício 11.2: Piscar um LED com Código Morse
+#### Exercício 11.2: Introdução de Novos Caracteres
 
-Altere o código fornecido, acrescente o caractere "@" ao dicionário `morse_code` e defina a sequência de código morse como "... --- ...". Utilize a função `flash_morse_code` para fazer o LED piscar de acordo com a sequência de código morse definida. Execute o programa e observe o LED piscando de acordo com o código morse predefinido.
+Expanda o dicionário morse_code para incluir caracteres especiais, como '@', '$', '*', entre outros, e seus equivalentes em Código Morse. Use essa expansão para converter uma frase que contenha esses caracteres em Código Morse e faça o LED piscar de acordo.
+
+#### Exercício 11.3: LED Piscante com Intervalos Variados
+
+Modifique a função `flash_morse_code` para que os intervalos de tempo do LED sejam variáveis. Por exemplo, para um ponto, faça o LED piscar por 100 milissegundos e para um traço, por 300 milissegundos. Execute o código com diferentes mensagens para ver como isso afeta a representação do Código Morse.
 
 ### Conclusão
 
