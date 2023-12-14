@@ -42,23 +42,23 @@ Este curso é dividido em 16 capítulos, cada um projetado para ensinar conceito
 
 Vamos dar uma espiada no que está por vir?
 
-**Capítulo 1**: [O que é Raspberry Pi Pico?](/Documentation/1-what-is-pico.md) - Descubra o poder dessa pequena maravilha tecnológica que está prestes a se tornar sua melhor amiga no mundo da programação.
+**Capítulo 1**: [O que é Raspberry Pi Pico?](/Documentation/01-what-is-pico.md) - Descubra o poder dessa pequena maravilha tecnológica que está prestes a se tornar sua melhor amiga no mundo da programação.
 
-**Capítulo 2**: [O que é MicroPython?](/Documentation/2-what-is-micropython.md) - Descubra o mundo da computação física com MicroPython e mergulhe em um ambiente empolgante onde a fronteira entre software e hardware se dissipa.
+**Capítulo 2**: [O que é MicroPython?](/Documentation/02-what-is-micropython.md) - Descubra o mundo da computação física com MicroPython e mergulhe em um ambiente empolgante onde a fronteira entre software e hardware se dissipa.
 
-**Capítulo 3**: [Preparação do ambiente de desenvolvimento](/Documentation/3-environment-setup.md) - Prepare-se para a aventura! Vamos configurar o ambiente para iniciar nossa jornada de criação.
+**Capítulo 3**: [Preparação do ambiente de desenvolvimento](/Documentation/03-environment-setup.md) - Prepare-se para a aventura! Vamos configurar o ambiente para iniciar nossa jornada de criação.
 
-**Capítulo 4**: [Projeto "Hello World"](/Documentation/4-hello-world.md) - Dê seus primeiros passos, acenda sua imaginação e cumprimente o mundo da programação em Python!
+**Capítulo 4**: [Projeto "Hello World"](/Documentation/04-hello-world.md) - Dê seus primeiros passos, acenda sua imaginação e cumprimente o mundo da programação em Python!
 
-**Capítulo 5**: [Projeto Acendendo e piscando o LED embarcado](/Documentation/5-blinking-onboard-led.md) - Deixe a luz brilhar! Vamos fazer com que seu Pico ganhe vida com um show de luzes. Será esse o verdadeiro "Hello World" da computação física?
+**Capítulo 5**: [Projeto Acendendo e piscando o LED embarcado](/Documentation/05-blinking-onboard-led.md) - Deixe a luz brilhar! Vamos fazer com que seu Pico ganhe vida com um show de luzes. Será esse o verdadeiro "Hello World" da computação física?
 
-**Capítulo 6**: [Projeto Piscando um LED externo](/Documentation/6-blinking-external-led.md) - Expanda seus horizontes e descubra como controlar um LED externo.
+**Capítulo 6**: [Projeto Piscando um LED externo](/Documentation/06-blinking-external-led.md) - Expanda seus horizontes e descubra como controlar um LED externo.
 
-**Capítulo 7**: [Projeto Acionar um LED com um botão](/Documentation/7-led-push-button.md) - Vamos mergulhar no mundo dos botões e LEDs, combinando ação e reação.
+**Capítulo 7**: [Projeto Acionar um LED com um botão](/Documentation/07-led-push-button.md) - Vamos mergulhar no mundo dos botões e LEDs, combinando ação e reação.
 
-**Capítulo 8**: [Projeto Controle da intensidade do LED](/Documentation/8-pulsing-led.md) - Aprenda a controlar a intensidade das luzes e crie um espetáculo visual único.
+**Capítulo 8**: [Projeto Controle da intensidade do LED](/Documentation/08-pulsing-led.md) - Aprenda a controlar a intensidade das luzes e crie um espetáculo visual único.
 
-**Capítulo 9**: [Projeto Dimmer](/Documentation/9-dimmer.md) - Explore novos níveis de controle de luzes e transforme seu ambiente com a magia do dimmer.
+**Capítulo 9**: [Projeto Dimmer](/Documentation/09-dimmer.md) - Explore novos níveis de controle de luzes e transforme seu ambiente com a magia do dimmer.
 
 **Capítulo 10**: [Projeto LEDs piscando em sequência](/Documentation/10-sequencing-leds.md) - Prepare-se para um espetáculo de luzes sequenciais que irá hipnotizá-lo!
 
