@@ -80,6 +80,26 @@ Por exemplo, para os dados do LED acima, é necessário um resistor de pelo meno
 
 Seu resistor pode ser conectado a qualquer um dos pinos do seu LED, e depois ao seu Raspberry Pi Pico. Entretanto o LED só acenderá quando a eletricidade passar por ele na direção correta, do pino mais longo (ânodo) para o pino mais curto (cátodo). O pino mais curto do LED deve ser sempre conectado a um dos pinos `GND` do seu Raspberry Pi Pico.
 
+#### Polaridade do LED
+
+Na eletricidade, a polaridade refere-se à diferença de potencial entre dois pontos em um circuito elétrico. Em componentes eletrônicos como baterias, capacitores ou LEDs, a polaridade indica a direção ou orientação correta na qual a corrente elétrica deve fluir para o correto funcionamento do dispositivo.
+
+Para que um LED funcione corretamente, é essencial entender a sua polaridade. Os LEDs possuem dois terminais: o terminal positivo (ânodo) e o terminal negativo (cátodo).
+
+Em geral, a identificação do ânodo e cátodo de um LED pode ser feita considerando algumas características visuais do próprio LED, conforme a imagem que segue.
+
+![3 LEDs nas cores vermelho, verde e azul](/images/cathode-anode.png "3 LEDs nas cores vermelho, verde e azul")
+
+Identificação dos Terminais:
+
+- Ânodo (+): O terminal do ânodo geralmente é mais longo que o terminal do cátodo. Na imagem, observe que um dos terminais do LED é mais longo do que o outro. Este terminal mais longo é comumente associado ao ânodo do LED.
+
+- Cátodo (-): Em contrapartida, o terminal do cátodo é mais curto. Na imagem, você notará um terminal mais curto que o outro, indicando o cátodo do LED.
+
+Outra maneira de identificar a polaridade do LED é observando a estrutura física do próprio LED. Geralmente, o lado do LED onde o invólucro é plano é associado ao cátodo, enquanto o lado que tem um invólucro côncavo é associado ao ânodo.
+
+Lembre-se sempre de verificar o datasheet do LED ou procurar por especificações do fabricante para ter certeza sobre a polaridade, já que algumas variações podem existir dependendo do modelo ou fabricante específico do LED.
+
 ### Fios de conexão com pinos e soquetes
 
 Os fios de conexão, também conhecidos como jumpers, são usados para conduzir a corrente elétrica entre os componentes eletrônicos. Eles são utilizados em projetos de prototipagem porque permitem que você conecte e desconecte os componentes sem a necessidade de soldagem. A soldagem é um método que cria conexões permanentes ao fundir o metal.
