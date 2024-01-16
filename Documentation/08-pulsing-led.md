@@ -40,7 +40,7 @@ Modulação por largura de pulso (PWM, Pulse Width Molulation em inglês), é um
 
 Agora que você já entendeu esses conceitos, imagine fazer um código que faça um LED piscar em 3 Hz e além disso pulsar como um coração? Você fará isso acendendo e desligando o LED a cada período, só que gradualmente através da alteração do ciclo de trabalho (duty cycle) a cada milisegundo usando o PWM do seu Raspberry Pi Pico. 
 
-Primeiramente monte o circuito do jogo colocando um led vermelho no pino GP15 do seu Raspberry Pi Pico. Lembre de colocar um resistor para limitar a corrente conforme discutido em exemplos anteriores, como por exemplo, um resistor de 220 Ohms.
+Primeiramente monte o circuito do jogo colocando um led vermelho no pino `GP15` do seu Raspberry Pi Pico. Lembre de colocar um resistor para limitar a corrente conforme discutido em exemplos anteriores, como por exemplo, um resistor de 220 Ohms.
 
 Uma forma de montar esse circuito segue na figura que segue. Fique a vontade para ajustar o circuito de acordo com o que for mais conveniente para você!
 
@@ -100,7 +100,7 @@ pwm = PWM(Pin(15))
 pwm.freq(500)
 ```
 
-- `pwm = PWM(Pin(15))`: Aqui, estamos configurando o pino GP15 como uma saída PWM (Modulação por Largura de Pulso) e associando isso à variável chamada `pwm`.
+- `pwm = PWM(Pin(15))`: Aqui, estamos configurando o pino `GP15` como uma saída PWM (Modulação por Largura de Pulso) e associando isso à variável chamada `pwm`.
 
 - `pwm.freq(500)`: Estamos definindo a frequência do sinal PWM como 500 Hz (ciclos por segundo). Isso significa que o LED irá ligar e desligar 500 vezes por segundo.
 
@@ -153,7 +153,7 @@ Desenvolva um código que simule o ritmo de um batimento cardíaco com o LED. Fa
 
 #### Exercício 8.3: Frequência Variável do LED
 
-Escreva um código que permita variar a frequência do pulsar do LED de 2 Hz para 10 Hz em intervalos de 2 Hz.
+Crie um código que faça o LED pulsar em diferentes frequências, começando com 3 Hz, aumentando para 10 Hz e, em seguida, retornando para 3 Hz. Isso deve acontecer de forma repetida, com intervalos de 5 segundos entre as mudanças de frequência.
 
 Execute o código e observe como a mudança na frequência afeta a percepção visual do LED.
 
