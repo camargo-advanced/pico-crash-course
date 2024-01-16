@@ -75,7 +75,7 @@ Gire novamente o potenciômetro e veja a alteração dos valores no Plotter. É 
 
 E porque não usar esse valor para controlar o ciclo de trabalho do PWM e dessa forma controlar a intensidade do LED?
 
-Primeiramente monte o circuito do jogo colocando um led vermelho no pino GP15 do seu Raspberry Pi Pico. Lembre de colocar um resistor para limitar a corrente conforme discutido em exemplos anteriores, como por exemplo, um resistor de 220 Ohms.
+Primeiramente monte o circuito do jogo colocando um led vermelho no pino `GP15` do seu Raspberry Pi Pico. Lembre de colocar um resistor para limitar a corrente conforme discutido em exemplos anteriores, como por exemplo, um resistor de 220 Ohms.
 
 Uma forma de montar esse circuito segue na figura que segue. Fique a vontade para ajustar o circuito de acordo com o que for mais conveniente para você!
 
@@ -102,11 +102,46 @@ Programa 9.2
 
 Para ver este circuito em funcionamento no simulador Wokwi, clique [aqui](https://wokwi.com/projects/382842211410367489).
 
+Esse código é usado para controlar a intensidade de brilho de um LED usando um potenciômetro (dispositivo que pode variar a resistência). Vamos explicar linha por linha:
+
+- `from machine import Pin, PWM, ADC`: Importa as bibliotecas necessárias para trabalhar com os pinos da placa, controle de PWM (Pulse Width Modulation) e conversor analógico-digital (ADC).
+
+- `from time import sleep_ms`: Importa a função `sleep_ms` da biblioteca `time`, que permite adicionar atrasos em milissegundos.
+
+- `pwm = PWM(Pin(15))`: Configura um objeto PWM no pino `GP15` da placa, que será usado para controlar a intensidade do LED.
+
+- `adc = ADC(Pin(26))`: Configura um objeto ADC no pino `GP26`, que será usado para ler a entrada analógica do potenciômetro.
+
+- `pwm.freq(1000)`: Define a frequência do sinal PWM como 1000 Hz. O sinal PWM é o que controla a intensidade do brilho do LED.
+
+- `while True:`: Inicia um loop infinito, onde o código a seguir será executado continuamente.
+
+- `duty = adc.read_u16()`: Lê o valor analógico do potenciômetro e armazena na variável `duty`. Esse valor representa a intensidade do brilho do LED. Caso seja necessário, volte ao capítulo 8 e reveja a explicação detalhada sobre o ciclo de trabalho (duty cicle em inglês).
+
+- `pwm.duty_u16(duty)`: Configura a intensidade do brilho do LED de acordo com o valor lido do potenciômetro.
+
+- `sleep_ms(5)`: Espera por 5 milissegundos antes de repetir o loop. Isso evita que o código leia o potenciômetro muito rapidamente, tornando o ajuste mais suave.
+
+Resumindo, o código usa um potenciômetro para ajustar a intensidade do brilho de um LED. O loop infinito faz com que o código leia continuamente o valor do potenciômetro e ajuste o LED de acordo. Isso é possível graças ao uso da técnica PWM para controlar a intensidade luminosa do LED.
+
 ### Exercícios
 
 #### Exercício 9.1: Mapeamento de Valores do Potenciômetro
 
 Escreva um código que leia os valores do potenciômetro e mapeie esses valores para diferentes faixas de intensidade de brilho do LED. Por exemplo, você pode definir apenas 3 níveis de brilho para o LED e mapear a 3 faixas de valores do potenciômetro.
+
+Imagine que o potenciômetro é como um controle deslizante, onde você pode ajustar a intensidade da luz de um LED movendo o controle para frente e para trás. Neste exemplo, vamos dividir esse controle deslizante em três seções.
+
+1. **Baixa Intensidade:**
+   - Se o controle deslizante (potenciômetro) estiver na primeira parte, o LED terá uma baixa intensidade de brilho. Isso pode ser associado a uma leitura de potenciômetro em uma faixa específica, por exemplo, de 0 a 21845.
+
+2. **Média Intensidade:**
+   - Se o controle deslizante estiver na segunda parte, o LED terá uma intensidade de brilho média. Isso pode ser associado a uma leitura de potenciômetro em outra faixa, por exemplo, de 21846 a 43690.
+
+3. **Alta Intensidade:**
+   - Se o controle deslizante estiver na terceira parte, o LED terá uma alta intensidade de brilho. Isso pode ser associado a uma leitura de potenciômetro em uma faixa final, por exemplo, de 43691 a 65535.
+
+O código que você escreverá servirá para ler constantemente o valor do potenciômetro. Dependendo de qual parte do controle deslizante estiver, você ajustará a intensidade do brilho do LED para refletir esses diferentes níveis. É uma maneira de controlar o LED de forma proporcional ao movimento do potenciômetro. Isso cria uma experiência interativa, onde o ajuste do potenciômetro se traduz diretamente no brilho do LED.
 
 Experimente ajustar o mapeamento dos valores do potenciômetro para diferentes faixas de brilho e observe como o LED responde a essas mudanças.
 
